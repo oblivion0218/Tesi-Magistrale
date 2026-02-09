@@ -27,8 +27,8 @@ P_TARGET = H_CORE/2               # Posizione verticale (shift) rispetto al top 
 
 S = 1e15                        # Intensità della sorgente (gamma al secondo)
 photon_energy = 13e6            # Energia del fascio monocromatico di fotoni sul target
-bin_ris = 300                   # Numero di bin per le mesh tally 
+bin_ris = 200                   # Numero di bin per le mesh tally 
 
-batches = 150
+batches = 5
 particles = 100000
-inactive = 0 
+inactive = 50 
