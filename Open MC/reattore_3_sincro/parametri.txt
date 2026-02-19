@@ -28,6 +28,9 @@ P_TARGET = H_CORE/2               # Posizione verticale (shift) rispetto al top 
 S = 1e17                        # Intensità della sorgente (gamma al secondo)
 bin_ris = 300                   # Numero di bin per le mesh tally 
 
-batches = 300
-particles = 10000
-inactive = 50
+batches_auto = 300
+particles_auto = 10000
+inactive_auto = 50
+
+batches_fix = 500
+particles_fix = 100000
