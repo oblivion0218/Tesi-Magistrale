@@ -42,77 +42,21 @@ TEMP [K]   K_EFF        STD_DEV
 
 
 
------- SIMULAZIONE DEL 09/02/2026 ALLE ORE 19:57 ------
+------ SIMULAZIONE DEL 19/02/2026 ALLE ORE 10:38 ------
 === PARAMETRI DI SIMULAZIONE ===
-Arricchimento: 0.02
-RAGGGIO CORE: 45.0 cm
+Arricchimento: 0.032
+RAGGGIO CORE: 35.0 cm
 REFLECTOR SIDE: 15.0 cm
 REFLECTOR BOTTOM: 15.0 cm
-H_CORE: 90.0 cm
+H_CORE: 80.0 cm
 R_PIPE (Soglia): 10.0 cm
-Geometria PIN (R_FUEL, CLAD, R_WATER): 1, 0.05, 2.0 cm
-PITCH: 5.28275 cm
-Target (R, H, Pos): 3.5, 10.0, 35.0 cm
-Sorgente: 1.0 x 1e15 gamma/s @ 13.0 MeV
-Mesh/Tally bins: 300
-Settings: 20 batches, 50000 particles, 0 inactive batches
-================================
-
-TEMP [K]   K_EFF        STD_DEV     
-
-
------- SIMULAZIONE DEL 09/02/2026 ALLE ORE 20:34 ------
-=== PARAMETRI DI SIMULAZIONE ===
-Arricchimento: 0.02
-RAGGGIO CORE: 45.0 cm
-REFLECTOR SIDE: 15.0 cm
-REFLECTOR BOTTOM: 15.0 cm
-H_CORE: 90.0 cm
-R_PIPE (Soglia): 10.0 cm
-Geometria PIN (R_FUEL, CLAD, R_WATER): 1, 0.05, 2.0 cm
-PITCH: 5.28275 cm
-Target (R, H, Pos): 3.0, 30.0, 45.0 cm
-Sorgente: 1.0 x 1e15 gamma/s @ 13.0 MeV
-Mesh/Tally bins: 300
-Settings: 150 batches, 100000 particles, 0 inactive batches
-================================
-
-TEMP [K]   K_EFF        STD_DEV     
-
-
------- SIMULAZIONE DEL 09/02/2026 ALLE ORE 22:09 ------
-=== PARAMETRI DI SIMULAZIONE ===
-Arricchimento: 0.02
-RAGGGIO CORE: 45.0 cm
-REFLECTOR SIDE: 15.0 cm
-REFLECTOR BOTTOM: 15.0 cm
-H_CORE: 90.0 cm
-R_PIPE (Soglia): 10.0 cm
-Geometria PIN (R_FUEL, CLAD, R_WATER): 1, 0.05, 2.0 cm
-PITCH: 5.28275 cm
-Target (R, H, Pos): 3.0, 30.0, 45.0 cm
-Sorgente: 1.0 x 1e15 gamma/s @ 13.0 MeV
+Geometria PIN (R_FUEL, CLAD, R_WATER): 0.5, 0.06, 1 cm
+PITCH: 2.70200 cm
+Target (R, H, Pos): 3.5, 10.0, 40.0 cm
+Sorgente: 100.0 x 1e15 gamma/s
 Mesh/Tally bins: 200
-Settings: 15 batches, 100000 particles, 50 inactive batches
+Settings: 500 batches, 100000 particles, 50 inactive batches
 ================================
 
 TEMP [K]   K_EFF        STD_DEV     
-
-
------- SIMULAZIONE DEL 09/02/2026 ALLE ORE 22:09 ------
-=== PARAMETRI DI SIMULAZIONE ===
-Arricchimento: 0.02
-RAGGGIO CORE: 45.0 cm
-REFLECTOR SIDE: 15.0 cm
-REFLECTOR BOTTOM: 15.0 cm
-H_CORE: 90.0 cm
-R_PIPE (Soglia): 10.0 cm
-Geometria PIN (R_FUEL, CLAD, R_WATER): 1, 0.05, 2.0 cm
-PITCH: 5.28275 cm
-Target (R, H, Pos): 3.0, 30.0, 45.0 cm
-Sorgente: 1.0 x 1e15 gamma/s @ 13.0 MeV
-Mesh/Tally bins: 200
-Settings: 5 batches, 100000 particles, 1 inactive batches
-================================
-
-TEMP [K]   K_EFF        STD_DEV     
+300        0.74569      0.00014     
