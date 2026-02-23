@@ -1,4 +1,5 @@
 arricchimento = 0.05
+mix_acqua = 0.15
 
 # --- PARAMETRI GEOMETRICI ---
 # Questi definiscono i contenitori esterni che "tagliano" il reticolo esagonale
@@ -9,14 +10,14 @@ H_CORE = 80.0           # Altezza totale del core attivo
 
 # --- PARAMETRI LOGICI DEL LATTICE ---
 # R_PIPE non è un muro fisico, ma una soglia di selezione
-R_PIPE = 3.0            # Raggio di soglia: gli esagoni del lattice con centro entro questo raggio diventano "Canale Centrale" (Target/Vuoto)
+R_PIPE = 5            # Raggio di soglia: gli esagoni del lattice con centro entro questo raggio diventano "Canale Centrale" (Target/Vuoto)
 
 # --- PARAMETRI DEI PRISMI ESAGONALI (PIN) ---
 # Questi valori definiscono il LATO dell'esagono (Edge Length)
 
-R_FUEL = 0.5                                          # Lato dell'esagono di combustibile (parte interna)
+R_FUEL = 0.5                                        # Lato dell'esagono di combustibile (parte interna)
 CLAD_THICK = 0.05                                    # Spessore del cladding (aggiunto al lato del fuel)
-R_WATER_THICK = 1                                 # Spessore dell'acqua attorno al pin (aggiunto al lato del cladding)
+R_WATER_THICK = 1.5                                 # Spessore dell'acqua attorno al pin (aggiunto al lato del cladding)
 R_PIN = R_FUEL + CLAD_THICK + R_WATER_THICK         # Lato dell'esagono esterno (Combustibile + Cladding + Water)
 PITCH = R_PIN * np.sqrt(3)                          # Passo del reticolo esagonale (Distanza tra i centri di due esagoni adiacenti)
 
@@ -28,9 +29,9 @@ P_TARGET = H_CORE/2               # Posizione verticale (shift) rispetto al top 
 S = 1e17                        # Intensità della sorgente (gamma al secondo)
 bin_ris = 300                   # Numero di bin per le mesh tally 
 
-batches_auto = 300
+batches_auto = 250
 particles_auto = 10000
-inactive_auto = 50
+inactive_auto = 20
 
 batches_fix = 500
 particles_fix = 100000

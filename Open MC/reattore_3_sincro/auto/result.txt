@@ -1,39 +1,19 @@
------- SIMULAZIONE DEL 19/02/2026 ALLE ORE 15:41 ------
+s  
+
+
+------ SIMULAZIONE DEL 23/02/2026 ALLE ORE 23:38 ------
 === PARAMETRI DI SIMULAZIONE ===
 Arricchimento: 0.05
 RAGGGIO CORE: 40.0 cm
 REFLECTOR SIDE: 10.0 cm
 REFLECTOR BOTTOM: 15.0 cm
 H_CORE: 80.0 cm
-R_PIPE (Soglia): 3.0 cm
-Geometria PIN (R_FUEL, CLAD, R_WATER): 0.5, 0.05, 1 cm
-PITCH: 2.68468 cm
+mix acqua: 0.15
+R_PIPE (Soglia): 5 cm
+Geometria PIN (R_FUEL, CLAD, R_WATER): 0.5, 0.05, 1.5 cm
+PITCH: 3.55070 cm
 Target (R, H, Pos): 2, 10.0, 40.0 cm
-Settings: 300 batches, 10000 particles, 50 inactive batches
+Settings: 250 batches, 10000 particles, 20 inactive batches
 ================================
 
-TEMP [K]   K_EFF        STD_DEV     
-300        0.95347      0.00065     
-350        0.95024      0.00068     
-400        0.94508      0.00063     
-450        0.94216      0.00061     
-500        0.93861      0.00060     
-550        0.93696      0.00064     
-600        0.93118      0.00062     
-650        0.93019      0.00063     
-700        0.92856      0.00063     
-750        0.92792      0.00065     
-800        0.92535      0.00060     
-850        0.92408      0.00064     
-900        0.92469      0.00063     
-950        0.92079      0.00064     
-1000       0.92099      0.00064     
-1050       0.92033      0.00059     
-1100       0.91791      0.00064     
-1150       0.91743      0.00060     
-1200       0.91658      0.00064     
-1250       0.91575      0.00059     
-1300       0.91429      0.00065     
-1350       0.91307      0.00063     
-1400       0.91336      0.00061     
-1450       0.91207      0.00061   
+T_WATER [K]  T_FUEL [K]   K_EFF        STD_DEV     
