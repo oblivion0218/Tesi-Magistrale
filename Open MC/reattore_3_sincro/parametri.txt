@@ -33,5 +33,5 @@ batches_auto = 150
 particles_auto = 10000
 inactive_auto = 50
 
-batches_fix = 300
+batches_fix = 500
 particles_fix = 100000
