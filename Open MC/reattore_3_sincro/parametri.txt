@@ -29,6 +29,13 @@ P_TARGET = H_CORE/2               # Posizione verticale (shift) rispetto al top 
 S = 1e17                        # Intensità della sorgente (gamma al secondo)
 bin_ris = 300                   # Numero di bin per le mesh tally 
 
+T_water  = 400                      # Setting delle temperature
+T_fuel =  400
+T_clad = 400
+T_target = 400
+
+Pressione_funzionamento = 15000000      #Pascal
+
 batches_auto = 150
 particles_auto = 10000
 inactive_auto = 50
