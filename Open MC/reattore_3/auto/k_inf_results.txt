@@ -1,0 +1,20 @@
+
+
+------ SIMULAZIONE DEL 05/03/2026 ALLE ORE 15:19 ------
+=== PARAMETRI DI SIMULAZIONE ===
+Arricchimento: 0.05
+RAGGGIO CORE: 4 cm
+REFLECTOR SIDE: 10.0 cm
+REFLECTOR BOTTOM: 15.0 cm
+H_CORE: 80.0 cm
+mix acqua: 0.15
+R_PIPE (Soglia): 5 cm
+Geometria PIN (R_FUEL, CLAD, R_WATER): 0.5, 0.05, 1.5 cm
+PITCH: 3.55070 cm
+Target (R, H, Pos): 2, 10.0, 40.0 cm
+Settings: 150 batches, 10000 particles, 50 inactive batches
+================================
+
+=== RISULTATI FORMULA DEI 4 FATTORI ===
+T_water, T_fuel , epsilon, p, f, eta, Leakage_Fraction, k_inf_analytical, k_inf_leakage
+300          300          1.69176      0.53029      0.80215      2.16626      0.91999      1.38082      0.11048     

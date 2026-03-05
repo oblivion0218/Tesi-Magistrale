@@ -3,7 +3,7 @@ mix_acqua = 0.15
 
 # --- PARAMETRI GEOMETRICI ---
 # Questi definiscono i contenitori esterni che "tagliano" il reticolo esagonale
-R_CORE = 40.0           # Raggio del cilindro di taglio (tutto il lattice fuori da qui viene rimosso)
+R_CORE = 4
 REF_SIDE = 10.0          # Spessore radiale del riflettore (corona circolare attorno a R_CORE)
 REF_BOT = 15.0          # Spessore del riflettore inferiore (disco sotto il core)
 H_CORE = 80.0           # Altezza totale del core attivo
