@@ -1,10 +1,10 @@
 # --- COSTANTI FISICHE E TERMODINAMICHE ---
-Pressione_funzionamento = 15.0e6  # [Pa] 150 bar (tipica PWR)
+Pressione_funzionamento = 101325  
 arricchimento           = 0.05    # Frfazione di U235
 mix_acqua               = 0.15    # Frazione di H2O in D2O 
 
-T_water                 = 400     # Temperatura acqua per simulazione a sorgente fissa
-T_resto                 = 400     # Temperatura di tutti gli altri elementi al di fuori dell'acqua per simulazione in sorgente fizza
+T_water                 = 300     # Temperatura acqua per simulazione a sorgente fissa
+T_resto                 = 300     # Temperatura di tutti gli altri elementi al di fuori dell'acqua per simulazione in sorgente fizza
 
 T_water_HZP             = 350     # temperatura dell'acqua a piena potenza , autovalore
 T_fuel_HFP              = 600     # temperatura del fuel a piena potenza , autovalore
@@ -41,10 +41,10 @@ S                       = 2.0e17  # Intensità sorgente fotonica [gamma/s]
 bin_ris                 = 300     # Risoluzione mesh tally (numero di bin)
 
 # Configurazione Run Mode: Eigenvalue 
-batches_auto            = 5
+batches_auto            = 50
 particles_auto          = 10000
-inactive_auto           = 0
+inactive_auto           = 5
 
 # Configurazione Run Mode: Fixed Source
 batches_fix             = 5
-particles_fix           = 100000
+particles_fix           = 10000
