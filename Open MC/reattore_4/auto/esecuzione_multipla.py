@@ -2,10 +2,10 @@ import os
 import shutil
 import papermill as pm
 
-# ../parametri_1.txt', '../parametri_2.txt', '../parametri_3.txt', '../parametri_4.txt',
+# ../parametri_1.txt', '../parametri_2.txt', '../parametri_3.txt', '../parametri_4.txt','../parametri_5.txt', '../parametri_6.txt' , '../parametri_7.txt'
 
 # --- Configurazione path e input ---
-lista_file_parametri = ['../parametri_5.txt', '../parametri_6.txt' , '../parametri_7.txt']  # Lista dei file parametri da processare
+lista_file_parametri = ['../parametri_5.txt', '../parametri_6.txt']  # Lista dei file parametri da processare
 notebook_path = os.path.abspath('auto.ipynb')
 
 for file_param in lista_file_parametri:
