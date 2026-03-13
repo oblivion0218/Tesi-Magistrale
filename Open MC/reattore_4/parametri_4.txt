@@ -1,5 +1,5 @@
 # --- COSTANTI FISICHE E TERMODINAMICHE ---
-Pressione_funzionamento = 15.0e6   
+Pressione_funzionamento = 101325   
 arricchimento           = 0.03    # Frfazione di U235
 mix_acqua               = 1    # Frazione di H2O in D2O 
 
@@ -42,8 +42,8 @@ bin_ris                 = 300     # Risoluzione mesh tally (numero di bin)
 
 # Configurazione Run Mode: Eigenvalue 
 batches_auto            = 100
-particles_auto          = 10000
-inactive_auto           = 15
+particles_auto          = 100000
+inactive_auto           = 20
 
 # Configurazione Run Mode: Fixed Source
 batches_fix             = 5
