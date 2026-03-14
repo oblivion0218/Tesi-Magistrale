@@ -1,20 +1,26 @@
 
 
------- SIMULAZIONE DEL 13/03/2026 ALLE ORE 08:54 ------
+------ SIMULAZIONE DEL 14/03/2026 ALLE ORE 15:18 ------
 === PARAMETRI DI SIMULAZIONE ===
 intensità sorgente: 2e+17 fotoni/s
 Arricchimento: 0.05
-Pressione di funzionamento: 101325 Pa
+Pressione di funzionamento: 7599375 Pa
 percentuale di acqua leggera nella miscela: 15.00 % 
-RAGGGIO CORE: 80.0 cm
+RAGGGIO CORE: 41.8 cm
 REFLECTOR SIDE: 10.0 cm
 REFLECTOR BOTTOM: 15.0 cm
 H_CORE: 80.0 cm
 R_PIPE (Soglia): 5.0 cm
 Geometria PIN (R_FUEL, CLAD, R_WATER): 0.5, 0.05, 1.5 cm
-PITCH: 7.10141 cm
+PITCH: 3.71049 cm
 Target (R, H, Pos): 2.0, 10.0, 40.0 cm
-Settings: 100 batches, 100000 particles, 20 inactive batches
+Settings: 70 batches, 50000 particles, 10 inactive batches
 ================================
 
 T_WATER [K]  T_FUEL [K]   K_EFF        STD_DEV      EPSILON      P            F            ETA          LEAKAGE_FRACTION K_INF_LEAKAGE
+300          300          0.99999      0.00065      1.16585      0.72770      0.93754      1.93251      0.35178      0.99638     
+300          325          1.00103      0.00057      1.16609      0.72690      0.93757      1.93250      0.35047      0.99754     
+300          350          1.00017      0.00049      1.16626      0.72645      0.93769      1.93230      0.35075      0.99666     
+300          375          0.99995      0.00050      1.16637      0.72580      0.93778      1.93226      0.35079      0.99587     
+300          400          0.99829      0.00063      1.16654      0.72488      0.93774      1.93241      0.35071      0.99491     
+300          425          0.99797      0.00062      1.16663      0.72480      0.93786      1.93234      0.35077      0.99489     

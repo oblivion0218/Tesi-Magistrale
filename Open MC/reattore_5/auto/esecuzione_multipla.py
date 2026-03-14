@@ -4,8 +4,8 @@ import os
 import warnings
 warnings.filterwarnings("ignore", category=UserWarning, module="papermill")
 
-list_i = [1 , 1.5 , 2, 2.5 , 3 , 3.5 , 4 , 4.5 , 5]
-list_pressure = [1]
+list_i = [1.045]
+list_pressure = [100 ]
 
 notebook_in = 'auto.ipynb'
 is_first = True
