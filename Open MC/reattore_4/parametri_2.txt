@@ -1,9 +1,9 @@
-# QUESTO è L'OTTIMO DEL REATTORE 5/6 CIOè K HFP più elevato
+# QUESTA è LA SIMULAZIONE DELL'OTTIMO DEL REATTORE 7, POTENZA PIù ALTA
 
 # --- COSTANTI FISICHE E TERMODINAMICHE ---
-Pressione_funzionamento = 101325*75  # [Pa]
+Pressione_funzionamento = 101325 # [Pa]
 arricchimento           = 0.05    # Frfazione di U235
-mix_acqua               = 0.15    # Frazione di H2O in D2O 
+mix_acqua               = 0.34090    # Frazione di H2O in D2O 
 
 T_water_HZP             = 350     # temperatura dell'acqua a piena potenza , autovalore
 T_fuel_HFP              = 600     # temperatura del fuel a piena potenza , autovalore
@@ -11,7 +11,7 @@ T_fuel_HZP              = 350     # temperatura fuel a HZP
 
 ### --- GEOMETRIA DEL CORE E RIFLETTORE ---
 H_CORE                  = 80.0    # Altezza attiva del nocciolo [cm]
-R_CORE                  = 40.0*1.045    # Raggio massimo del nocciolo [cm]
+R_CORE                  = 40.0* 0.80914    # Raggio massimo del nocciolo [cm]
 REF_SIDE                = 10.0    # Spessore radiale del riflettore di Grafite [cm]
 REF_BOT                 = 15.0    # Spessore riflettore inferiore [cm]
 
@@ -31,7 +31,7 @@ R_WATER_THICK           = 1.5     # Spessore d'acqua attorno al pin [cm]
 
 # Calcolo derivato del Pitch
 R_PIN                   = R_FUEL + CLAD_THICK + R_WATER_THICK
-PITCH                   = R_PIN * np.sqrt(3)*1.045 # Passo del reticolo [cm]
+PITCH                   = R_PIN * np.sqrt(3)* 0.80914 # Passo del reticolo [cm]
 
 
 ### --- IMPOSTAZIONI SIMULAZIONE OPENMC ---
@@ -44,5 +44,5 @@ particles_auto          = 25000
 inactive_auto           = 10
 
 # Configurazione Run Mode: Fixed Source
-batches_fix             = 500
+batches_fix             = 275
 particles_fix           = 100000

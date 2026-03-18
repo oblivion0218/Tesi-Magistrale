@@ -176,6 +176,21 @@ Pres [Pa]    PITCH [cm]   T_WATER [K]  T_FUEL [K]   K_EFF        STD_DEV
 7599375     3.710       350          350          0.98325      0.00062     
 7599375     3.710       350          600          0.97912      0.00061     
 
-BEST CONFIGURATION , L'ULTIMA ! ( 1.045 , 75)
+BEST CONFIGURATION , L'ULTIMA ! 
 
    
+
+
+------ SIMULAZIONE DEL 18/03/2026 ALLE ORE 11:35 ------
+=== PARAMETRI DI SIMULAZIONE ===
+intensità sorgente: 2e+17 fotoni/s
+Arricchimento: 0.05
+percentuale di acqua leggera: 34.09 % 
+Target (R, H, Pos): 2.0, 10.0, 40.0 cm
+Settings: 100 batches, 50000 particles, 10 inactive batches
+================================
+
+Pres [Pa]    PITCH [cm]   T_WATER [K]  T_FUEL [K]   K_EFF        STD_DEV     
+101325      2.873       300          300          1.01693      0.00047     
+101325      2.873       350          350          1.00327      0.00047     
+101325      2.873       350          600          0.99815      0.00050     

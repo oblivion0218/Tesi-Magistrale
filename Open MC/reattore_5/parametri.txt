@@ -3,9 +3,6 @@ Pressione_funzionamento = 101325  # [Pa] 1 bar (tipica PWR)
 arricchimento           = 0.05    # Frfazione di U235
 mix_acqua               = 0.15    # Frazione di H2O in D2O 
 
-T_water                 = 300     # Temperatura acqua per simulazione a sorgente fissa
-T_resto                 = 300     # Temperatura di tutti gli altri elementi al di fuori dell'acqua per simulazione in sorgente fizza
-
 T_water_HZP             = 350     # temperatura dell'acqua a piena potenza , autovalore
 T_water_HFP             = 350
 T_fuel_HFP              = 600     # temperatura del fuel a piena potenza , autovalore
@@ -41,7 +38,7 @@ S                       = 2.0e17  # Intensità sorgente fotonica [gamma/s]
 bin_ris                 = 300     # Risoluzione mesh tally (numero di bin)
 
 # Configurazione Run Mode: Eigenvalue 
-batches_auto            = 70
+batches_auto            = 100
 particles_auto          = 50000
 inactive_auto           = 10
 
