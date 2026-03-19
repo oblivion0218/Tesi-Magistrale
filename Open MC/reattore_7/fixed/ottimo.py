@@ -84,8 +84,8 @@ def objective_function(moltiplicatore, mix_acqua):
 
 if __name__ == "__main__":
     pbounds = {
-        'moltiplicatore': (0.8, 1),
-        'mix_acqua': (0.6, 0.8)      
+        'moltiplicatore': (0.8, 0.9),
+        'mix_acqua': (0.3, 0.35)      
     }
 
     optimizer = BayesianOptimization(
@@ -106,7 +106,7 @@ if __name__ == "__main__":
 
     optimizer.maximize(
         init_points=punti_randomici_aggiuntivi,  
-        n_iter=10
+        n_iter=100
     )
 
     print("\n======================================")
