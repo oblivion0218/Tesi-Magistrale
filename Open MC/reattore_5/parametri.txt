@@ -38,8 +38,8 @@ S                       = 2.0e17  # Intensità sorgente fotonica [gamma/s]
 bin_ris                 = 300     # Risoluzione mesh tally (numero di bin)
 
 # Configurazione Run Mode: Eigenvalue 
-batches_auto            = 100
-particles_auto          = 50000
+batches_auto            = 120
+particles_auto          = 1000000
 inactive_auto           = 10
 
 # Configurazione Run Mode: Fixed Source

@@ -4,7 +4,7 @@ import papermill as pm
 
 
 # --- Configurazione path e input ---
-lista_file_parametri = ['../parametri_7.txt']  # Lista dei file parametri da processare
+lista_file_parametri = ['../parametri_5.txt']  # Lista dei file parametri da processare
 notebook_path = os.path.abspath('auto.ipynb')
 
 for file_param in lista_file_parametri:

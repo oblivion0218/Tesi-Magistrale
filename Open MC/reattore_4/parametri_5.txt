@@ -1,4 +1,4 @@
-# REATTORE TEST AD ACQUA CON PITCH STD = 3.55
+#REATTORE TEST AD ACQUA CON PITCH 1,26
 
 # --- COSTANTI FISICHE E TERMODINAMICHE ---
 Pressione_funzionamento = 101325   
@@ -14,7 +14,7 @@ T_fuel_HZP              = 350     # temperatura fuel a HZP
 
 ### --- GEOMETRIA DEL CORE E RIFLETTORE ---
 H_CORE                  = 80.0    # Altezza attiva del nocciolo [cm]
-R_CORE                  = 40.0    # Raggio massimo del nocciolo [cm]
+R_CORE                  = 40.0*0.35486    # Raggio massimo del nocciolo [cm]
 REF_SIDE                = 10.0    # Spessore radiale del riflettore di Grafite [cm]
 REF_BOT                 = 15.0    # Spessore riflettore inferiore [cm]
 
@@ -34,12 +34,12 @@ R_WATER_THICK           = 1.5     # Spessore d'acqua attorno al pin [cm]
 
 # Calcolo derivato del Pitch
 R_PIN                   = R_FUEL + CLAD_THICK + R_WATER_THICK
-PITCH                   = R_PIN * np.sqrt(3) # Passo del reticolo [cm]
+PITCH                   = R_PIN * np.sqrt(3)*0.35486 # Passo del reticolo [cm]
 
 
 
 ### --- IMPOSTAZIONI SIMULAZIONE OPENMC ---
-S                       = 2.0e17  # Intensità sorgente fotonica [gamma/s]
+S                       = 2.02e17  # Intensità sorgente fotonica [gamma/s]
 bin_ris                 = 300     # Risoluzione mesh tally (numero di bin)
 
 # Configurazione Run Mode: Eigenvalue 
@@ -48,5 +48,5 @@ particles_auto          = 25000
 inactive_auto           = 10
 
 # Configurazione Run Mode: Fixed Source
-batches_fix             = 5
-particles_fix           = 10000
+batches_fix             = 50
+particles_fix           = 100000

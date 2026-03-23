@@ -1,14 +1,9 @@
-# REATTORE TEST AD ACQUA CON PITCH STD = 3.55
-
 # --- COSTANTI FISICHE E TERMODINAMICHE ---
-Pressione_funzionamento = 101325   
-arricchimento           = 0.03    # Frfazione di U235
-mix_acqua               = 1    # Frazione di H2O in D2O 
-
-T_water                 = 300     # Temperatura acqua per simulazione a sorgente fissa
-T_resto                 = 300     # Temperatura di tutti gli altri elementi al di fuori dell'acqua per simulazione in sorgente fizza
+Pressione_funzionamento = 101325  # 1 bar (tipica PWR)
+enrich_target = 0.007       # TARGET DI URANIO NATURALEs
 
 T_water_HZP             = 350     # temperatura dell'acqua a piena potenza , autovalore
+T_water_HFP             = 350
 T_fuel_HFP              = 600     # temperatura del fuel a piena potenza , autovalore
 T_fuel_HZP              = 350     # temperatura fuel a HZP
 
@@ -37,16 +32,15 @@ R_PIN                   = R_FUEL + CLAD_THICK + R_WATER_THICK
 PITCH                   = R_PIN * np.sqrt(3) # Passo del reticolo [cm]
 
 
-
 ### --- IMPOSTAZIONI SIMULAZIONE OPENMC ---
-S                       = 2.0e17  # Intensità sorgente fotonica [gamma/s]
+S                       = 2.02e17  # Intensità sorgente fotonica [gamma/s]
 bin_ris                 = 300     # Risoluzione mesh tally (numero di bin)
 
 # Configurazione Run Mode: Eigenvalue 
-batches_auto            = 70
-particles_auto          = 25000
+batches_auto            = 60
+particles_auto          = 50000
 inactive_auto           = 10
 
 # Configurazione Run Mode: Fixed Source
-batches_fix             = 5
-particles_fix           = 10000
+batches_fix             = 500
+particles_fix           = 100000

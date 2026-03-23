@@ -1,0 +1,1 @@
+implemento una procedura di calcolo della potenza dai risultati di 5 
