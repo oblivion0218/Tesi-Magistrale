@@ -1,6 +1,5 @@
------- SIMULAZIONE DEL 23/03/2026 ALLE ORE 14:49 ------
+
+
+------ SIMULAZIONE DEL 24/03/2026 ALLE ORE 18:59 ------
 === PARAMETRI DI SIMULAZIONE ===
 Pres [Atm]   moltiplicatore  PERC_water   Arricch. MAX Arricch.min T_WATER [K]  T_FUEL [K]   K_max        std_k_max    K_auto       std_k_auto   Compatibilità
-1            1.045           0.15         13.469       1            350          600          0.97661      0.00120      0.97730      0.00072      0.49103     
-1            1.045           0.15         10.719       2            350          600          0.97661      0.00120      0.97671      0.00060      0.07775     
-1            1.045           0.15         8.578        3            350          600          0.97661      0.00120      0.97702      0.00068      0.29444     

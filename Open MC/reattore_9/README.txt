@@ -7,4 +7,4 @@ se questo è vero allora passo a reattore 9
 in questo eseguo solo arricchimento 1% esterno e cerco l'ottimo per ogni configurazione con bisezione
 una volta finito con il primo valore passa al secondo del file k _max 
 
-poi dovrei calcolarne la potenza
+poi dovrei calcolarne la potenza in fixed

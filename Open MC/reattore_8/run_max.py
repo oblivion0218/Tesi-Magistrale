@@ -1,4 +1,4 @@
-# DEVO FARE BISEZIONE PER OGNI VALORE INTERO DI a_m
+# DEVO FARE BISEZIONE PER OGNI VALORE INTERO DI a_m su un SOLO dao
 # CERCANDO LA COMPATIBILITÀ CON K_MAX
 
 import pandas as pd
@@ -55,7 +55,7 @@ def parse_result_auto(filename):
 
 
 is_first = True
-i = 3 # terzo elemento pitch = 0.75
+i = 3 # terzo elemento pitch = 0.1
 
 now = datetime.now()
 output_file = "result_final.txt"  
