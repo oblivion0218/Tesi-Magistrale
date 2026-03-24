@@ -5,7 +5,6 @@ import numpy as np
 from datetime import datetime
 
 # Lettura di file 
-
 def parse_kmax_file(filename):
     data = []
     with open(filename, 'r') as file:
@@ -28,10 +27,7 @@ def parse_kmax_file(filename):
             data.append([pressione, pitch, k_max, sigma_k, delta_rho, err_rho])
             
     columns = ['Pressione_atm', 'Pitch', 'k_max', 'sigma_k', 'Delta_rho_pcm', 'err_rho_pcm']
-    df = pd.DataFrame(data, columns=columns)
-    return df
-
-# --------------------------------------------------------------
+    return pd.DataFrame(data, columns=columns)
 
 def parse_result_auto(filename):
     data = []
@@ -47,18 +43,16 @@ def parse_result_auto(filename):
             cols = line.split()
             if len(cols) == 12:
                 try:
-                    row_data = list(map(float, cols))
-                    data.append(row_data)
+                    data.append(list(map(float, cols)))
                 except ValueError:
                     continue
                     
     columns = ['Pres_Pa', 'Pitch_cm', 'Perc_water','arricchimento_max', 'arricchimento_min', 'T_water_K', 'T_fuel_K', 'k_eff', 'std_dev', 'k_max', 'k_max_std','compatibility']
-    df = pd.DataFrame(data, columns=columns)
-    return df
+    return pd.DataFrame(data, columns=columns)
+
 
 now = datetime.now()
 output_file = "result_final.txt"  
-
 timestamp = now.strftime("\n\n------ SIMULAZIONE DEL %d/%m/%Y ALLE ORE %H:%M ------\n")
 
 # Header Result Final
@@ -67,52 +61,71 @@ with open(output_file, "a") as f_out:
     f_out.write("=== PARAMETRI DI SIMULAZIONE ===\n")
     f_out.write(f"{'Pres [Atm]':<12} {'moltiplicatore':<15} {'PERC_water':<12} {'Arricch. MAX':<12} {'Arricch.min':<12}{'T_WATER [K]':<12} {'T_FUEL [K]':<12} {'K_max':<12} {'std_k_max':<12} {'K_auto':<12} {'std_k_auto':<12} {'Compatibilità':<12}\n")
 
-df_kmax = parse_kmax_file('../reattore_5/auto/k_max.txt')
+df_kmax = parse_kmax_file('k_max.txt')
+notebook_in = 'auto/auto.ipynb'
 
 is_first = True
-i = 0
-
-now = datetime.now()
-output_file = "result_final.txt"  
-
-timestamp = now.strftime("\n\n------ SIMULAZIONE DEL %d/%m/%Y ALLE ORE %H:%M ------\n")
-
-# Header Result Final
-with open(output_file, "a") as f_out:
-    f_out.write(timestamp)
-    f_out.write("=== PARAMETRI DI SIMULAZIONE ===\n")
-    f_out.write(f"{'Pres [Atm]':<12} {'moltiplicatore':<15} {'PERC_water':<12} {'Arricch. MAX':<12} {'Arricch.min':<12}{'T_WATER [K]':<12} {'T_FUEL [K]':<12} {'K_max':<12} {'std_k_max':<12} {'K_auto':<12} {'std_k_auto':<12} {'Compatibilità':<12}\n")
-
-df_kmax = parse_kmax_file('../reattore_5/auto/k_max.txt')
-
-is_first = True
-
-# Inizializzazione globale dello stato per WARM START
-a_M_opt = 0.01  # primo anello
-a_m_opt = 0.01  # ultimo anello
 
 for i, k in enumerate(df_kmax['k_max']):
-
     std_k_max = df_kmax['sigma_k'].iloc[i]
     m = df_kmax['Pitch'].iloc[i] 
     p = df_kmax['Pressione_atm'].iloc[i]
-    w = 0.15    # percentuale acqua
+    w = 0.15    # percentuale acqua fissa
+    a_m = 0.01  # arricchimento esterno fisso
     
-    # 1. WARM START: Partenza ESATTA dalla soluzione ottimale precedente 
-    a_M = a_M_opt
-    a_m = a_m_opt
+    # --- 1. TEST PRELIMINARE (MAX ARRICCHIMENTO INTERNO) ---
+    a_M_test = 0.20
+    print(f"\n[TEST] Iter {i} - p={p:.0f}, m={m:.3f} | a_M={a_M_test*100:.0f}%, a_m={a_m*100:.0f}% ...")
     
-    notebook_in = 'auto/auto.ipynb'
+    pm.execute_notebook(
+        notebook_in,
+        os.devnull,
+        parameters=dict(moltiplicatore=m, pressione=p, water_perc=w, enrich_min=a_m, enrich_max=a_M_test, is_first_run=is_first, iter=i)
+    )
+    is_first = False 
+
+    df_results = parse_result_auto('result_auto.txt')
+    idx = len(df_results) - 1  
+    
+    k_auto = df_results['k_eff'].iloc[idx] 
+    std_k_auto = df_results['std_dev'].iloc[idx]
+    T_water = df_results['T_water_K'].iloc[idx]
+    T_fuel = df_results['T_fuel_K'].iloc[idx]
+    sigma = df_results['compatibility'].iloc[idx] 
+
+    delta_k_abs = np.abs(k - k_auto)
+    current_line = f"{p:<12.0f} {m:<15.3f} {w:<12.2f} {a_M_test*100:<12.3f} {a_m*100:<12.0f} {T_water:<12.0f} {T_fuel:<12.0f} {k:<12.5f} {std_k_max:<12.5f} {k_auto:<12.5f} {std_k_auto:<12.5f} {sigma:<12.5f}\n"
+
+    # Controllo fattibilità
+    if k_auto < k:
+        print(f"-> FALLIMENTO: k_auto ({k_auto:.5f}) < k_max ({k:.5f}). Nessuna convergenza possibile.")
+        with open(output_file, "a") as f_out:
+            f_out.write(f"{p:<12.0f} {m:<15.3f} --- CONFIGURAZIONE NON COMPATIBILE (k_auto < k_max con a_M=20%, a_m=1%) ---\n")
+        continue
+    elif delta_k_abs <= 0.0015:
+        # Se siamo già entro la tolleranza al primo colpo
+        print(f"-> CONVERGENZA IMMEDIATA. Scarto = {delta_k_abs:.5f}")
+        with open(output_file, "a") as f_out:
+            f_out.write(current_line)
+        continue
+    else : 
+        print ("Delta k : ", delta_k_abs, "\n")
+
+
+    # --- 2. ALGORITMO DI BISEZIONE ---
+    a_M_min = 0.01
+    a_M_max = 0.20
     
     best_delta_k = np.inf
     best_line = ""
-    is_compatible = False
-
-    while not is_compatible and a_m <= 0.20:
-
-        print(f"\nAvvio simulazione: moltiplicatore={m:.3f}, pressione={p:.0f}, perc_water={w*100:.0f}%, arric. MAX={a_M*100:.0f}%, arric. MIN={a_m*100:.0f}% ...")
+    converged = False
+    max_bisection_iters = 20
+    
+    for iter_count in range(max_bisection_iters):
+        a_M = (a_M_min + a_M_max) / 2.0
         
-        # Chiamata unica a Papermill
+        print(f"[BISEZIONE] iter={iter_count+1}/{max_bisection_iters}: a_M={a_M*100:.2f}% ...")
+        
         pm.execute_notebook(
             notebook_in,
             os.devnull,
@@ -126,50 +139,43 @@ for i, k in enumerate(df_kmax['k_max']):
         std_k_auto = df_results['std_dev'].iloc[idx]
         T_water = df_results['T_water_K'].iloc[idx]
         T_fuel = df_results['T_fuel_K'].iloc[idx]
+        sigma = df_results['compatibility'].iloc[idx]
 
-        # Calcolo metriche
         delta_k_abs = np.abs(k - k_auto)
+        current_line = f"{p:<12.0f} {m:<15.3f} {w:<12.2f} {a_M*100:<12.3f} {a_m*100:<12.0f} {T_water:<12.0f} {T_fuel:<12.0f} {k:<12.5f} {std_k_max:<12.5f} {k_auto:<12.5f} {std_k_auto:<12.5f} {sigma:<12.5f}\n"
         
-        current_line = f"{p:<12.0f} {m:<15.3f} {w:<12.2f} {a_M:<12.2f} {a_m:<12.2f} {T_water:<12.0f} {T_fuel:<12.0f} {k:<12.5f} {std_k_max:<12.5f} {k_auto:<12.5f} {std_k_auto:<12.5f} {sigma:<12.5f}\n"
-
-        # Tracking configurazione ottimale (basato sul residuo minimo e assicurando k_auto < 1)
-        if delta_k_abs < best_delta_k and k_auto < 1.0:
+        # Tracking della migliore configurazione sub-critica (o in generale con il minor delta)
+        if delta_k_abs < best_delta_k:
             best_delta_k = delta_k_abs
             best_line = current_line
 
-        # 2. Logica di aggiustamento
-        if delta_k_abs < 0.001: 
-            # SUCCESS: Salva e chiudi
-            is_compatible = True
-            a_M_opt, a_m_opt = a_M, a_m
+        # Controllo convergenza
+        if delta_k_abs <= 0.0015: 
+            converged = True
             break
             
-# C'è QUALCOSA CHE NON MI CONVINCE IN QUESTI DUE ELIF
-
-        elif k_auto > k:
-            # OVERSHOOT: Siamo troppo alti
-            a_M = max(0.01, round(a_M - 0.02, 2)) 
-            a_m = min(0.20, round(a_m + 0.01, 2))
-                
+        # Aggiornamento limiti bisezione
+        if k_auto < k:
+            a_M_min = a_M
         else:
-            # UNDERSHOOT: Siamo troppo bassi, sali
-            delta = k - k_auto
-            step = 0.04 if delta >= 0.1 else 0.01
+            a_M_max = a_M
             
-            if a_M < 0.20:
-                a_M = min(0.20, round(a_M + step, 2))
-            else: # a_M = 0.20
-                a_m = round(a_m + 0.01, 2)
-                a_M = 0.15 # Riparti da un gradiente logico
-
-        is_first = False 
-
-    # 5. Uscita limite per saturazione spazio di ricerca (a_m > 0.20)
-    if not is_compatible and best_line:
-        with open(output_file, "a") as f_out:
-            f_out.write(best_line)
+    if not converged:
+        print(f"-> ATTENZIONE: Tolleranza non raggiunta per iter {i}. Ultimo scarto = {delta_k_abs:.5f}")
+        
+    # Scrittura del risultato migliore trovato
+    with open(output_file, "a") as f_out:
+        f_out.write(best_line)
 
 os.system("rm *.h5 *.xml *.out *.png 2>/dev/null")
+
+
+
+
+
+
+
+
 
 ''' IMPLEMENTAZIONE A SIGMA 
 
