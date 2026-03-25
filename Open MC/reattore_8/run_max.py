@@ -79,46 +79,46 @@ w = 0.15    # percentuale acqua
 
 notebook_in = 'auto/auto.ipynb'
 
-a_m = 0.01
+a_m = 0.02
 ARR_MAX = 0.2
 
 while a_m <= ARR_MAX:
     
-    # --- 1. TEST PRELIMINARE CON a_M = 0.20 ---
-    a_M_test = ARR_MAX
-    print(f"\n[TEST PRELIMINARE] m={m:.3f}, p={p:.0f}, w={w*100:.0f}%, a_M={a_M_test*100:.2f}%, a_m={a_m*100:.0f}% ...")
-    
-    pm.execute_notebook(
-        notebook_in,
-        os.devnull,
-        parameters=dict(moltiplicatore=m, pressione=p, water_perc=w, enrich_min=a_m, enrich_max=a_M_test, is_first_run=is_first, iter=i)
-    )
-    is_first = False  
-
-    df_results = parse_result_auto('result_auto.txt')
-    idx = len(df_results) - 1  
-    
-    k_auto = df_results['k_eff'].iloc[idx] 
-    std_k_auto = df_results['std_dev'].iloc[idx]
-    T_water = df_results['T_water_K'].iloc[idx]
-    T_fuel = df_results['T_fuel_K'].iloc[idx]
-    sigma = df_results['compatibility'].iloc[idx] 
-
-    delta_k_abs = np.abs(k - k_auto)
-    current_line = f"{p:<12.0f} {m:<15.3f} {w:<12.2f} {a_M_test*100:<12.3f} {a_m*100:<12.0f} {T_water:<12.0f} {T_fuel:<12.0f} {k:<12.5f} {std_k_max:<12.5f} {k_auto:<12.5f} {std_k_auto:<12.5f} {sigma:<12.5f}\n"
-
-    # Se k_auto è minore del target o già in tolleranza, salto la bisezione
-    if k_auto < k or delta_k_abs <= 0.0015:
-        if k_auto < k:
-            print(f"-> SKIP BISEZIONE: k_auto ({k_auto:.5f}) < k_max ({k:.5f}) con arricchimento massimo.")
-        else:
-            print(f"-> CONVERGENZA IMMEDIATA al test preliminare. Scarto = {delta_k_abs:.5f}")
-            
-        with open(output_file, "a") as f_out:
-            f_out.write(current_line)
-        
-        a_m = round(a_m + 0.01, 2)
-        continue
+    ## --- 1. TEST PRELIMINARE CON a_M = 0.20 ---
+    #a_M_test = ARR_MAX
+    #print(f"\n[TEST PRELIMINARE] m={m:.3f}, p={p:.0f}, w={w*100:.0f}%, a_M={a_M_test*100:.2f}%, a_m={a_m*100:.0f}% ...")
+    #
+    #pm.execute_notebook(
+    #    notebook_in,
+    #    os.devnull,
+    #    parameters=dict(moltiplicatore=m, pressione=p, water_perc=w, enrich_min=a_m, enrich_max=a_M_test, is_first_run=is_first, iter=i)
+    #)
+    #is_first = False  
+#
+    #df_results = parse_result_auto('result_auto.txt')
+    #idx = len(df_results) - 1  
+    #
+    #k_auto = df_results['k_eff'].iloc[idx] 
+    #std_k_auto = df_results['std_dev'].iloc[idx]
+    #T_water = df_results['T_water_K'].iloc[idx]
+    #T_fuel = df_results['T_fuel_K'].iloc[idx]
+    #sigma = df_results['compatibility'].iloc[idx] 
+#
+    #delta_k_abs = np.abs(k - k_auto)
+    #current_line = f"{p:<12.0f} {m:<15.3f} {w:<12.2f} {a_M_test*100:<12.3f} {a_m*100:<12.0f} {T_water:<12.0f} {T_fuel:<12.0f} {k:<12.5f} {std_k_max:<12.5f} {k_auto:<12.5f} {std_k_auto:<12.5f} {sigma:<12.5f}\n"
+#
+    ## Se k_auto è minore del target o già in tolleranza, salto la bisezione
+    #if k_auto < k or delta_k_abs <= 0.0015:
+    #    if k_auto < k:
+    #        print(f"-> SKIP BISEZIONE: k_auto ({k_auto:.5f}) < k_max ({k:.5f}) con arricchimento massimo.")
+    #    else:
+    #        print(f"-> CONVERGENZA IMMEDIATA al test preliminare. Scarto = {delta_k_abs:.5f}")
+    #        
+    #    with open(output_file, "a") as f_out:
+    #        f_out.write(current_line)
+    #    
+    #    a_m = round(a_m + 0.01, 2)
+    #    continue
 
     # --- 2. INIZIALIZZAZIONE E CICLO DI BISEZIONE ---
     a_M_min = a_m
@@ -140,6 +140,8 @@ while a_m <= ARR_MAX:
             os.devnull,
             parameters=dict(moltiplicatore=m, pressione=p, water_perc=w, enrich_min=a_m, enrich_max=a_M, is_first_run=is_first, iter=i)
         )
+
+        is_first = False  
 
         df_results = parse_result_auto('result_auto.txt')
         idx = len(df_results) - 1  
