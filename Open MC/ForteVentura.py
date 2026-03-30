@@ -3,7 +3,7 @@ import subprocess
 print("Inizio esecuzione sequenziale...")
 
 print("Esecuzione di run_max.py in reattore_8...")
-subprocess.run(["python", "run_max.py"], cwd="reattore_8", check=True)
+#subprocess.run(["python", "run_max.py"], cwd="reattore_8", check=True)
 
 print("Esecuzione di run_pot.py in reattore_8...")
 subprocess.run(["python", "run_pot.py"], cwd="reattore_8", check=True)
