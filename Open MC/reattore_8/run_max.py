@@ -1,4 +1,4 @@
-# DEVO FARE BISEZIONE PER OGNI VALORE INTERO DI a_m su un SOLO dao
+# DEVO FARE BISEZIONE PER OGNI VALORE INTERO DI a_m su un SOLO dato
 # CERCANDO LA COMPATIBILITÀ CON K_MAX
 
 import pandas as pd
@@ -55,7 +55,7 @@ def parse_result_auto(filename):
 
 
 is_first = True
-i = 3 # terzo elemento pitch = 0.1
+i = 6 # sesto elemento pitch = 0.1
 
 now = datetime.now()
 output_file = "result_final.txt"  
@@ -79,7 +79,7 @@ w = 0.15    # percentuale acqua
 
 notebook_in = 'auto/auto.ipynb'
 
-a_m = 0.02
+a_m = 0.08
 ARR_MAX = 0.2
 
 while a_m <= ARR_MAX:
@@ -121,8 +121,9 @@ while a_m <= ARR_MAX:
     #    continue
 
     # --- 2. INIZIALIZZAZIONE E CICLO DI BISEZIONE ---
-    a_M_min = a_m
-    a_M_max = ARR_MAX
+    a_M_min = 0
+    a_M_max = ((0.125 * (a_m*100)**2 - 2.971*100*a_m + 18.290)*2)/100   # da interpolazione parabolica 
+
     a_M = (a_M_min + a_M_max) / 2.0
     
     best_delta_k = np.inf

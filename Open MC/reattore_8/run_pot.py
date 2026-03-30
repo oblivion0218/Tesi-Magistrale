@@ -29,7 +29,7 @@ notebook_in = 'fixed/fixed.ipynb'
 # 2. Esecuzione ciclica
 for idx, row in df_results.iterrows():
     # ID univoco per il salvataggio dei file
-    run_id = f"case_{idx}_P{row['pressione_atm']:.0f}_m{row['moltiplicatore']:.3f}"
+    run_id = f"arr_min_{row['arricch_min']:.0f}_pitch_{row['moltiplicatore']:.0f}"
     
     print(f"Avvio simulazione fixed: {run_id}...")
 

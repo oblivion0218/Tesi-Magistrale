@@ -4,7 +4,7 @@ import os
 import warnings
 warnings.filterwarnings("ignore", category=UserWarning, module="papermill")
 
-list_i = [ 0.1 , 0.375, 0.625]
+list_i = [0.175, 0.15]
 list_pressure = [1]
 list_water = [0.15]
 
