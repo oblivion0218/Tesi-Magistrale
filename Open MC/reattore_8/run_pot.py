@@ -17,21 +17,28 @@ def parse_result_final(filename):
                 except ValueError:
                     continue
                     
-    columns = ['pressione_atm', 'moltiplicatore', 'perc_water', 'arricch_max', 'arricch_min', 't_water', 't_fuel', 'k_max', 'std_k_max', 'k_auto', 'std_k_auto', 'compatibilita']
+    columns = ['pressione_atm', 'moltiplicatore', 'perc_water', 'arricch_INT', 'arricch_EXT', 't_water', 't_fuel', 'k_max', 'std_k_max', 'k_auto', 'std_k_auto', 'compatibilita']
     return pd.DataFrame(data, columns=columns)
 
 # 1. Lettura dei risultati
 df_results = parse_result_final('result_final.txt')
-
 notebook_in = 'fixed/fixed.ipynb'
 
+# Definizione della riga di partenza (0-based: 3 corrisponde alla quarta riga dei dati validi)
+riga_partenza = 2
 
-# 2. Esecuzione ciclica
-for idx, row in df_results.iterrows():
-    # ID univoco per il salvataggio dei file
-    run_id = f"arr_min_{row['arricch_min']:.0f}_pitch_{row['moltiplicatore']:.0f}"
+# 2. Esecuzione ciclica con slicing del DataFrame
+for idx, row in df_results.iloc[riga_partenza:].iterrows():
     
-    print(f"Avvio simulazione fixed: {run_id}...")
+    # Condizione di skip se arricch_INT è 0
+    if row['arricch_INT'] == 0.0:
+        print(f"Skipping simulazione alla riga {idx}: arricch_INT è 0.")
+        continue
+
+    # ID univoco per il salvataggio dei file
+    run_id = f"arr_ext_{row['arricch_EXT']:.0f}_pitch_{row['moltiplicatore']:.0f}"
+    
+    print(f"Avvio simulazione fixed: {run_id} ...")
 
     pm.execute_notebook(
         notebook_in,
@@ -41,8 +48,8 @@ for idx, row in df_results.iterrows():
             pressione_atm=row['pressione_atm'],
             moltiplicatore=row['moltiplicatore'],
             perc_water=row['perc_water'],
-            arricch_max=row['arricch_max'], # Arriva come percentuale 
-            arricch_min=row['arricch_min'], # Arriva come percentuale
+            arricch_max=row['arricch_INT'], 
+            arricch_min=row['arricch_EXT'], 
             t_water=row['t_water'],
             t_fuel=row['t_fuel'],
             run_id=run_id
