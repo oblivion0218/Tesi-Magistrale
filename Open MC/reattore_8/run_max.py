@@ -66,7 +66,7 @@ timestamp = now.strftime("\n\n------ SIMULAZIONE DEL %d/%m/%Y ALLE ORE %H:%M ---
 with open(output_file, "a") as f_out:
     f_out.write(timestamp)
     f_out.write("=== PARAMETRI DI SIMULAZIONE ===\n")
-    f_out.write(f"{'Pres [Atm]':<12} {'moltiplicatore':<15} {'PERC_water':<12} {'Arricch. MAX':<12} {'Arricch.min':<12}{'T_WATER [K]':<12} {'T_FUEL [K]':<12} {'K_max':<12} {'std_k_max':<12} {'K_auto':<12} {'std_k_auto':<12} {'Compatibilità':<12}\n")
+    f_out.write(f"{'Pres [Atm]':<12} {'moltiplicatore':<15} {'PERC_water':<12} {'Arricch. INT':<12} {'Arricch. EXT':<12}{'T_WATER [K]':<12} {'T_FUEL [K]':<12} {'K_max':<12} {'std_k_max':<12} {'K_auto':<12} {'std_k_auto':<12} {'Compatibilità':<12}\n")
 
 
 df_kmax = parse_kmax_file('k_max.txt')
@@ -79,7 +79,7 @@ w = 0.15    # percentuale acqua
 
 notebook_in = 'auto/auto.ipynb'
 
-a_m = 0.11
+a_m = 0.11          # a_m rappresenta l'arricimento più esterno
 ARR_MAX = 0.2
 
 while a_m <= ARR_MAX:
