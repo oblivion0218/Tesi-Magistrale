@@ -122,7 +122,7 @@ while a_m <= ARR_MAX:
 
     # --- 2. INIZIALIZZAZIONE E CICLO DI BISEZIONE ---
     a_M_min = 0
-    a_M_max = ((0.125 * (a_m*100)**2 - 2.971*100*a_m + 18.290)*2)/100   # da interpolazione parabolica 
+    a_M_max = ((0.101 * (a_m*100)**2 - 2.791*100*a_m + 18.043)*2)/100   # da interpolazione parabolica 
 
     a_M = (a_M_min + a_M_max) / 2.0
     
