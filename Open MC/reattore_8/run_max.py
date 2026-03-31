@@ -79,7 +79,7 @@ w = 0.15    # percentuale acqua
 
 notebook_in = 'auto/auto.ipynb'
 
-a_m = 0.08
+a_m = 0.11
 ARR_MAX = 0.2
 
 while a_m <= ARR_MAX:
@@ -124,13 +124,20 @@ while a_m <= ARR_MAX:
     a_M_min = 0
     a_M_max = ((0.101 * (a_m*100)**2 - 2.791*100*a_m + 18.043)*2)/100   # da interpolazione parabolica 
 
+    if a_M_max <= 0:
+        a_M_max = 0
+        max_bisection_iters = 1
+        print(f"-> ATTENZIONE: a_M_max <= 0 per a_m = {a_m*100:.0f}%. Imposto a_M_max = 0 e salto bisezione.")
+    
+    else:
+        max_bisection_iters = 10
+
     a_M = (a_M_min + a_M_max) / 2.0
     
     best_delta_k = np.inf
     best_line = ""
     converged = False
     
-    max_bisection_iters = 25
     iter_count = 0
     
     while iter_count < max_bisection_iters:
