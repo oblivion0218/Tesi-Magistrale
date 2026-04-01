@@ -79,7 +79,7 @@ w = 0.15    # percentuale acqua
 
 notebook_in = 'auto/auto.ipynb'
 
-a_m = 0.11          # a_m rappresenta l'arricimento più esterno
+a_m = 0          # a_m rappresenta l'arricimento più esterno
 ARR_MAX = 0.2
 
 while a_m <= ARR_MAX:
@@ -123,6 +123,7 @@ while a_m <= ARR_MAX:
     # --- 2. INIZIALIZZAZIONE E CICLO DI BISEZIONE ---
     a_M_min = 0
     a_M_max = ((0.101 * (a_m*100)**2 - 2.791*100*a_m + 18.043)*2)/100   # da interpolazione parabolica 
+    
 
     if a_M_max <= 0:
         a_M_max = 0
