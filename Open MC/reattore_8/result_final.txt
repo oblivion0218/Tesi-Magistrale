@@ -18,15 +18,6 @@ Pres [Atm]   moltiplicatore  PERC_water   Arricch.INT  Arricch. EXT T_WATER [K] 
 1            1.000           0.15         0.000        15           350          600          0.97547      0.00020      1.03018      0.00014      223.71958   
 1            1.000           0.15         0.000        16           350          600          0.97547      0.00020      1.03801      0.00015      251.09626   
 1            1.000           0.15         0.000        17           350          600          0.97547      0.00020      1.04550      0.00014      288.83619   
-1            1.000           0.15         0.000        18           350          600          0.97547      0.00020      1.05202      0.00014      309.91094   1            1.000           0.15         0.000        19           350          600          0.97547      0.00020      1.05817      0.00013      343.66783   
+1            1.000           0.15         0.000        18           350          600          0.97547      0.00020      1.05202      0.00014      309.91094   
+1            1.000           0.15         0.000        19           350          600          0.97547      0.00020      1.05817      0.00013      343.66783   
 1            1.000           0.15         0.000        20           350          600          0.97547      0.00020      1.06359      0.00014      361.21539   
-
-
------- SIMULAZIONE DEL 01/04/2026 ALLE ORE 17:23 ------
-=== PARAMETRI DI SIMULAZIONE ===
-Pres [Atm]   moltiplicatore  PERC_water   Arricch. INT Arricch. EXTT_WATER [K]  T_FUEL [K]   K_max        std_k_max    K_auto       std_k_auto   Compatibilità
-
-
------- SIMULAZIONE DEL 01/04/2026 ALLE ORE 17:24 ------
-=== PARAMETRI DI SIMULAZIONE ===
-Pres [Atm]   moltiplicatore  PERC_water   Arricch. INT Arricch. EXTT_WATER [K]  T_FUEL [K]   K_max        std_k_max    K_auto       std_k_auto   Compatibilità
