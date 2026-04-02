@@ -84,8 +84,8 @@ ARR_MAX = 0.2
 
 while a_m <= ARR_MAX:
     
-    a_M_min = (0.120 * (a_m*100)**2 - 3.040*100*a_m + 18.698)/100 - 0.75    # da interpolazione parabolica
-    a_M_max = (0.120 * (a_m*100)**2 - 3.040*100*a_m + 18.698)/100 + 0.75   
+    a_M_min = (0.120 * (a_m*100)**2 - 3.040*100*a_m + 18.698)/100 - 0.0075    # da interpolazione parabolica
+    a_M_max = (0.120 * (a_m*100)**2 - 3.040*100*a_m + 18.698)/100 + 0.0075   
     
     if a_M_max <= 0:
         a_M_max = 0
