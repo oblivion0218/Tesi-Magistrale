@@ -1,0 +1,20 @@
+
+
+------ SIMULAZIONE DEL 02/04/2026 ALLE ORE 17:32 ------
+=== PARAMETRI DI SIMULAZIONE ===
+intensità sorgente: 2.02e+17 fotoni/s
+Target (R, H, Pos): 2.0, 10.0, 40.0 cm
+Settings: 120 batches, 500000 particles, 10 inactive batches
+================================
+
+Pres [Pa]    PITCH [cm]   PERC_water   Arricch_INT     Arricch_EXT     T_WATER [K]  T_FUEL [K]   K_AUTO       STD_DEV     K_MAX        STD_DEV     Compatibilità
+
+
+------ SIMULAZIONE DEL 02/04/2026 ALLE ORE 17:34 ------
+=== PARAMETRI DI SIMULAZIONE ===
+intensità sorgente: 2.02e+17 fotoni/s
+Target (R, H, Pos): 2.0, 10.0, 40.0 cm
+Settings: 120 batches, 500000 particles, 10 inactive batches
+================================
+
+Pres [Pa]    PITCH [cm]   PERC_water   Arricch_INT     Arricch_EXT     T_WATER [K]  T_FUEL [K]   K_AUTO       STD_DEV     K_MAX        STD_DEV     Compatibilità
