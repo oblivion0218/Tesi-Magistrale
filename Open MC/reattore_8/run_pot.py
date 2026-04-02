@@ -25,7 +25,7 @@ df_results = parse_result_final('result_final.txt')
 notebook_in = 'fixed/fixed.ipynb'
 
 # Definizione della riga di partenza (0-based: 3 corrisponde alla quarta riga dei dati validi)
-riga_partenza = 17
+riga_partenza = 0
 
 # 2. Esecuzione ciclica con slicing del DataFrame
 for idx, row in df_results.iloc[riga_partenza:].iterrows():
