@@ -79,12 +79,12 @@ w = 0.15    # percentuale acqua
 
 notebook_in = 'auto/auto.ipynb'
 
-a_m = 0.07         # a_m rappresenta l'arricimento più esterno
+a_m = 0.10        # a_m rappresenta l'arricimento più esterno
 ARR_MAX = 0.2
 
 while a_m <= ARR_MAX:
     
-    a_M_min = (0.120 * (a_m*100)**2 - 3.040*100*a_m + 18.698)/100 - 0.0075    # da interpolazione parabolica
+    a_M_min = np.maximum(0, (0.120 * (a_m*100)**2 - 3.040*100*a_m + 18.698)/100 - 0.0075)    # da interpolazione parabolica
     a_M_max = (0.120 * (a_m*100)**2 - 3.040*100*a_m + 18.698)/100 + 0.0075   
     
     if a_m > 0.10:

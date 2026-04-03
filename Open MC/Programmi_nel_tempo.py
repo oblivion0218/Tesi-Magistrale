@@ -2,11 +2,8 @@ import subprocess
 
 print("Inizio esecuzione sequenziale...")
 
-print("Esecuzione di run_max.py in reattore_8 a <= 50PCM...")
-subprocess.run(["python", "run_max.py"], cwd="reattore_8/50PCM", check=True)
-
 print("Esecuzione di circolarita_k_max.py in reattore_8 a <= 50PCM...")
-subprocess.run(["python", " circolarita_k_max.py"], cwd="reattore_8/50PCM", check=True)
+subprocess.run(["python", "circolarita_k_max.py"], cwd="reattore_8/50PCM/circolarita_k_max", check=True)
 
 print("Esecuzione di run_pot.py in reattore_8 a <= 50PCM...")
 subprocess.run(["python", "run_pot.py"], cwd="reattore_8/50PCM", check=True)
