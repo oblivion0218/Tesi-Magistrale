@@ -79,17 +79,18 @@ w = 0.15    # percentuale acqua
 
 notebook_in = 'auto/auto.ipynb'
 
-a_m = 0.00          # a_m rappresenta l'arricimento più esterno
+a_m = 0.07          # a_m rappresenta l'arricimento più esterno
 ARR_MAX = 0.2
 
 while a_m <= ARR_MAX:
     
-    a_M_min = (0.120 * (a_m*100)**2 - 3.040*100*a_m + 18.698)/100 - 0.0075    # da interpolazione parabolica
-    a_M_max = (0.120 * (a_m*100)**2 - 3.040*100*a_m + 18.698)/100 + 0.0075   
+    a_M_min = (0.172 * (a_m*100)**2 - 3.345*100*a_m + 18.930)/100 - 0.005    # da interpolazione parabolica
+    a_M_max = (0.172 * (a_m*100)**2 - 3.345*100*a_m + 18.930)/100 + 0.005   
     
-    if a_M_max <= 0:
+    if a_m > 0.10:
         a_M_max = 0
-        max_bisection_iters = 0
+        a_M_min = 0
+        max_bisection_iters = 1
         print(f"-> ATTENZIONE: a_int <= 0 per a_ext = {a_m*100:.0f}%. Imposto a_int = 0 e salto bisezione.")
     
     else:
