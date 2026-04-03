@@ -26,13 +26,3 @@ Pres [Pa]    PITCH [cm]   PERC_water   Arricch_INT     Arricch_EXT     T_WATER [
 101325.0    3.551       0.15        4.78           6              350          600          0.97311      0.00011     0.97547     0.00020     10.25998    
 101325.0    3.551       0.15        5.15           6              350          600          0.97704      0.00013     0.97547     0.00020     6.66657     
 101325.0    3.551       0.15        4.97           6              350          600          0.97524      0.00014     0.97547     0.00020     0.96256     
-
-
------- SIMULAZIONE DEL 03/04/2026 ALLE ORE 08:07 ------
-=== PARAMETRI DI SIMULAZIONE ===
-intensità sorgente: 2.02e+17 fotoni/s
-Target (R, H, Pos): 2.0, 10.0, 40.0 cm
-Settings: 120 batches, 500000 particles, 10 inactive batches
-================================
-
-Pres [Pa]    PITCH [cm]   PERC_water   Arricch_INT     Arricch_EXT     T_WATER [K]  T_FUEL [K]   K_AUTO       STD_DEV     K_MAX        STD_DEV     Compatibilità
