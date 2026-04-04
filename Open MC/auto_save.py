@@ -23,8 +23,8 @@ def git_auto_sync():
         print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Errore critico in esecuzione Git: {e}")
 
 if __name__ == "__main__":
-    ore_intervallo = 1
-    secondi_intervallo = ore_intervallo * 36
+    ore_intervallo = 3
+    secondi_intervallo = ore_intervallo * 3600
     
     print(f"Script di auto-sync avviato. Frequenza: {ore_intervallo} ore.")
     
