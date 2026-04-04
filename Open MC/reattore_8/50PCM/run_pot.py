@@ -21,7 +21,7 @@ def parse_result_final(filename):
     return pd.DataFrame(data, columns=columns)
 
 # 1. Lettura dei risultati
-df_results = parse_result_final('result_final.txt')
+df_results = parse_result_final('result_final_all.txt')
 notebook_in = 'fixed/fixed.ipynb'
 
 # Definizione della riga di partenza (0-based: 3 corrisponde alla quarta riga dei dati validi)
