@@ -23,7 +23,7 @@ def analizza(file_path):
     x_tutti = df['Arricch_EXT'].values
     y_tutti = df['Arricch_INT'].values
 
-    maschera_validi = x_tutti < 10
+    maschera_validi = x_tutti < 11
 
     x_validi = x_tutti[maschera_validi]
     y_validi = y_tutti[maschera_validi]
@@ -58,7 +58,7 @@ def parse_kmax_file(filename):
 
 # -------- CODE -----------
 
-arr_ext , arr_int = analizza ('../result_final.txt')
+arr_ext , arr_int = analizza ('../result_10.txt')
 
 df_kmax = parse_kmax_file('../k_max.txt')
 
