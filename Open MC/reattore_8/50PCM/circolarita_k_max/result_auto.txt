@@ -55,3 +55,6 @@ Settings: 120 batches, 500000 particles, 10 inactive batches
 ================================
 
 Pres [Pa]    PITCH [cm]   PERC_water   Arricch_INT     Arricch_EXT     T_WATER [K]  T_FUEL [K]   K_AUTO       STD_DEV     
+101325.0    3.551       0.15        0.07           10             300          300          0.99613      0.00015     
+101325.0    3.551       0.15        0.07           10             350          350          0.97935      0.00014     
+101325.0    3.551       0.15        0.07           10             350          600          0.97536      0.00015     
