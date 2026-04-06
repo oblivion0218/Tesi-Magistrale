@@ -21,11 +21,11 @@ def parse_result_final(filename):
     return pd.DataFrame(data, columns=columns)
 
 # 1. Lettura dei risultati
-df_results = parse_result_final('result_final_all.txt')
+df_results = parse_result_final('result_final.txt')
 notebook_in = 'fixed/fixed.ipynb'
 
 # Definizione della riga di partenza (0-based: 3 corrisponde alla quarta riga dei dati validi)
-riga_partenza = 0
+riga_partenza = 1
 
 # 2. Esecuzione ciclica con slicing del DataFrame
 for idx, row in df_results.iloc[riga_partenza:].iterrows():
