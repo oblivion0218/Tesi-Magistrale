@@ -54,7 +54,7 @@ def parse_result_auto(filename):
 # FASE 1: RICERCA ARRICCHIMENTO (REGULA FALSI OTTIMIZZATA)
 # ==========================================
 
-list_i = [1.0, 1.5, 2.0, 2.5, 0.5, 0.75, 0.375, 0.25]  
+list_i = [ 1.5, 2.0, 2.5, 0.5, 0.75, 0.375, 0.25]  
 a_m = 0.05        # Arricchimento esterno FISSO al 5%
 w = 0.15          # Percentuale acqua
 
@@ -148,7 +148,7 @@ for m in list_i:
         a_new = a_1 + (k_target - k_1) * (a_2 - a_1) / (k_2 - k_1)
         a_new = max(0.00, min(1.00, a_new))
         
-        if abs(a_new - a_1) < 0.0005 or abs(a_new - a_2) < 0.0005:
+        if abs(a_new - a_1) < 0.00025 or abs(a_new - a_2) < 0.00025:
             print(f"-> STALLO su a_int={a_new*100:.2f}%. Precisione limite raggiunta.")
             break
         
