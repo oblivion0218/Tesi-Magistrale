@@ -1,4 +1,6 @@
------- SIMULAZIONE DEL 10/04/2026 ALLE ORE 16:24 ------
+
+
+------ SIMULAZIONE DEL 10/04/2026 ALLE ORE 20:14 ------
 === PARAMETRI DI SIMULAZIONE ===
 intensità sorgente: 2.02e+17 fotoni/s
 Target (R, H, Pos): 2.0, 10.0, 40.0 cm
@@ -6,4 +8,5 @@ Settings: 120 batches, 500000 particles, 10 inactive batches
 ================================
 
 Pres [Pa]    PITCH [cm]   PERC_water   Arricch_INT     Arricch_EXT     T_WATER [K]  T_FUEL [K]   K_AUTO       STD_DEV     K_MAX        STD_DEV     Compatibilità
-101325.0    3.551       0.15        10.00          5              350          600          1.00396      0.00015     0.97547     0.00020     115.28146   
+101325.0    3.551       0.15        5.00           5              350          600          0.95729      0.00013     0.97547     0.00020     76.96550    
+101325.0    3.551       0.15        15.00          5              350          600          1.03239      0.00014     0.97547     0.00020     231.75282   
