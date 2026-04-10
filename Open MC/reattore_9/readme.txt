@@ -1,0 +1,1 @@
+Scopo di questa repo è quello di fornire il plot pitch Vs potenza nell 'ipotesi (per ora non fondata) che l'arricchimento sia inidpendente
