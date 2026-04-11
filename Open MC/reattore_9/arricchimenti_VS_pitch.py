@@ -58,8 +58,8 @@ warnings.filterwarnings("ignore", category=UserWarning, module="papermill")
 # FASE 1: RICERCA ARRICCHIMENTO (SURROGATE MODELING - PCHIP)
 # ==========================================
 
-list_i = [ 0.5, 0.75, 0.375, 0.25]  
-a_m = 0.2        
+list_i = [0.375, 0.25]  
+a_m = 0.5        
 w = 0.15          
 
 notebook_auto = 'auto/auto.ipynb'
