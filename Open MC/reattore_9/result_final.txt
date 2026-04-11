@@ -1,4 +1,4 @@
 ------ SIMULAZIONE DEL 10/04/2026 ALLE ORE 20:13 ------
 === PARAMETRI CONVERGENTI / MIGLIORI ===
 Pres [Atm]   moltiplicatore  PERC_water   Arricch. INT Arricch. EXTT_WATER [K]  T_FUEL [K]   K_max        std_k_max    K_auto       std_k_auto   Compatibilità
-1            1.000           0.15         6.592        5            350          600          0.97547      0.00020      0.97515      0.00013      1.35692     
+1            1.000           0.15         6.592        5            350          600          0.97547      0.00020      0.97515      0.00013      1.35692     1            1.500           0.15         1.625        5            350          600          0.98296      0.00017      0.98368      0.00014      3.26737     
