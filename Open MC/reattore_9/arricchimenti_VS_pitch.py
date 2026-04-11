@@ -59,7 +59,7 @@ warnings.filterwarnings("ignore", category=UserWarning, module="papermill")
 # ==========================================
 
 list_i = [ 0.5, 0.75, 0.375, 0.25]  
-a_m = 0.05        
+a_m = 0.2        
 w = 0.15          
 
 notebook_auto = 'auto/auto.ipynb'
