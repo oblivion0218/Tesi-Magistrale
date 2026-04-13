@@ -13,11 +13,14 @@
 import subprocess
 import time
 
-attesa_secondi =  3600  # 50 ore in secondi
+attesa_secondi =  3600 * 3  # 50 ore in secondi
 print("Attesa di 24 ore...")
 time.sleep(attesa_secondi)
 
 print("Avvio run_pot.py in reattore_8...")
 # Popen avvia il processo in background permettendo allo script di proseguire con il timer
-subprocess.Popen(["python", "arricchimenti_VS_pitch.py"], cwd="reattore_9")
+subprocess.Popen(["python", "analisi.ipynb"], cwd="reattore_9")
 
+print("Avvio run_pot.py in reattore_8...")
+# Popen avvia il processo in background permettendo allo script di proseguire con il timer
+subprocess.Popen(["python", "auto_save.py"], cwd="..")
