@@ -8,7 +8,7 @@
 #print("Esecuzione di run_pot.py in reattore_8 a <= 50PCM...")
 #subprocess.run(["python", "run_pot.py"], cwd="reattore_8/50PCM", check=True)
 #
-#print("Tutte le simulazioni sono terminate con successo.")
+
 
 import subprocess
 import time
@@ -19,8 +19,10 @@ time.sleep(attesa_secondi)
 
 print("Avvio run_pot.py in reattore_8...")
 # Popen avvia il processo in background permettendo allo script di proseguire con il timer
-subprocess.Popen(["python", "analisi.ipynb"], cwd="reattore_9")
+subprocess.Popen(["python", "arricchimenti_VS_pitch.py"], cwd="reattore_9", check=True)
 
 print("Avvio run_pot.py in reattore_8...")
 # Popen avvia il processo in background permettendo allo script di proseguire con il timer
-subprocess.Popen(["python", "auto_save.py"], cwd="..")
+subprocess.Popen(["python", "run_pot.py"], cwd="reattore_9", check=True)
+
+print("Tutte le simulazioni sono terminate con successo.")
