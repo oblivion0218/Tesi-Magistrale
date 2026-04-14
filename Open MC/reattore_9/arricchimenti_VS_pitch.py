@@ -58,7 +58,7 @@ warnings.filterwarnings("ignore", category=UserWarning, module="papermill")
 # FASE 1: RICERCA ARRICCHIMENTO (SURROGATE MODELING - PCHIP)
 # ==========================================
 
-list_i = [1.875]  
+list_i = [2.25 , 2.75 , 3 , 3.25 , 3.5 , 3.75 , 4]  
 a_m = 0.05     
 w = 0.15          
 
@@ -91,7 +91,7 @@ for m in list_i:
     p = df_kmax['Pressione_atm'].iloc[iter_kmax]
     
     # Punti di partenza per inizializzare il modello
-    a_vals = [0.03, 0.02]
+    a_vals = [0.03, 0.06]
     k_vals_dict = {}
     converged = False
     best_delta_k = np.inf
