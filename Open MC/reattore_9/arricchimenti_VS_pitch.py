@@ -166,7 +166,7 @@ for m in list_i:
                 a_new = max(0.00, min(1.00, a_new))
                 
                 # Prevenzione di stallo: se l'algoritmo ripropone un punto già calcolato (tolleranza numerica)
-                if any(abs(a_new - a_old) < 0.00025 for a_old in a_arr):
+                if any(abs(a_new - a_old) < 0.00005 for a_old in a_arr):
                     print(f"-> STALLO NUMERICO: Convergenza ai limiti del fit su a_int={a_new*100:.2f}%.")
                     break
                     
