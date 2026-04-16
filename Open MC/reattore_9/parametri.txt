@@ -42,5 +42,5 @@ particles_auto          = 500000
 inactive_auto           = 10
 
 # Configurazione Run Mode: Fixed Source
-batches_fix             = 3
-particles_fix           = 5
+batches_fix             = 250
+particles_fix           = 500000
