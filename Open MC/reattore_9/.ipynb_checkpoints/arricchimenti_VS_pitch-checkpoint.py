@@ -91,7 +91,7 @@ for m in list_i:
     p = df_kmax['Pressione_atm'].iloc[iter_kmax]
     
     # Punti di partenza per inizializzare il modello
-    a_vals = [0.15,0.05]
+    a_vals = [0.15,0,05]
     k_vals_dict = {}
     converged = False
     best_delta_k = np.inf
