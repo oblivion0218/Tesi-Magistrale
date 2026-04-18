@@ -4,6 +4,7 @@ import os
 import numpy as np
 from datetime import datetime
 import warnings
+from scipy.interpolate import PchipInterpolator
 
 warnings.filterwarnings("ignore", category=UserWarning, module="papermill")
 
@@ -50,20 +51,31 @@ def parse_result_auto(filename):
     columns = ['Pres_Pa', 'Pitch_cm', 'Perc_water','arricchimento_max', 'arricchimento_min', 'T_water_K', 'T_fuel_K', 'k_eff', 'std_dev', 'k_max', 'k_max_std','compatibility']
     return pd.DataFrame(data, columns=columns)
 
-from scipy.interpolate import PchipInterpolator
-
-warnings.filterwarnings("ignore", category=UserWarning, module="papermill")
 
 # ==========================================
 # FASE 1: RICERCA ARRICCHIMENTO (SURROGATE MODELING - PCHIP)
 # ==========================================
 
-list_i = [3.25 , 3.5 , 3.75 , 4]  
 a_m = 0.05     
-w = 0.15          
+w = 0.15         
 
 notebook_auto = 'auto/auto.ipynb'
 output_final = "result_final.txt"
+
+# --- LETTURA DATI GIA' ELABORATI ---
+completed_pitches = []
+if os.path.exists(output_final):
+    with open(output_final, 'r') as f_read:
+        for line in f_read:
+            line = line.strip()
+            if not line or line.startswith('-') or line.startswith('=') or 'Pres' in line or 'SIMULAZIONE' in line or 'PARAMETRI' in line:
+                continue
+            cols = line.split()
+            if len(cols) >= 2:
+                try:
+                    completed_pitches.append(float(cols[1]))
+                except ValueError:
+                    pass
 
 now = datetime.now()
 timestamp = now.strftime("\n\n------ SIMULAZIONE DEL %d/%m/%Y ALLE ORE %H:%M ------\n")
@@ -74,12 +86,20 @@ with open(output_final, "a") as f_out:
     f_out.write("=== PARAMETRI CONVERGENTI / MIGLIORI ===\n")
     f_out.write(header)
 
-df_kmax = parse_kmax_file('k_max.txt')
+df_kmax = parse_kmax_file('../reattore_5/auto/k_max.txt')
 is_first = True
 
 print(">>> INIZIO FASE 1: RICERCA ARRICCHIMENTO INTERNO <<<")
 
+# Estrazione dinamica della lista dei pitch dai dati caricati
+list_i = df_kmax['Pitch'].unique().tolist()
+
 for m in list_i:
+    # --- CONTROLLO SALTO ITERAZIONE ---
+    if any(np.isclose(m, cp, atol=1e-4) for cp in completed_pitches):
+        print(f"-> Pitch {m} già elaborato e presente in {output_final}. Salto.")
+        continue
+
     row_idx_array = df_kmax.index[np.isclose(df_kmax['Pitch'], m, atol=1e-4)].tolist()
     if not row_idx_array:
         print(f"-> ATTENZIONE: Pitch {m} non trovato nel file k_max.txt. Salto.")
@@ -91,7 +111,7 @@ for m in list_i:
     p = df_kmax['Pressione_atm'].iloc[iter_kmax]
     
     # Punti di partenza per inizializzare il modello
-    a_vals = [0.15,0,05]
+    a_vals = [0.15,0.05]
     k_vals_dict = {}
     converged = False
     best_delta_k = np.inf
@@ -183,4 +203,5 @@ for m in list_i:
             f_out.write(best_line)
             
 os.system("rm *.h5 *.xml *.out *.png 2>/dev/null")
-print("\n>>> FASE 1 COMPLETATA <<<")
+print("\n>>> FASE ARRICCHIMENTI COMPLETATA <<<")
+
