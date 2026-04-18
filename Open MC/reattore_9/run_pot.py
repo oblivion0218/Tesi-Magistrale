@@ -21,29 +21,29 @@ def parse_result_final(filename):
     return pd.DataFrame(data, columns=columns)
 
 # 1. Lettura dei risultati
-
-os.makedirs('fixed/statepoints', exist_ok=True)
+statepoints_dir = 'fixed/statepoints'
+os.makedirs(statepoints_dir, exist_ok=True)
 
 df_results = parse_result_final('result_final.txt')
 notebook_in = 'fixed/fixed.ipynb'
 
-# Definizione della riga di partenza (0-based: 3 corrisponde alla quarta riga dei dati validi)
-riga_partenza = 25
-
-# 2. Esecuzione ciclica con slicing del DataFrame
-for idx, row in df_results.iloc[riga_partenza:].iterrows():
+# 2. Esecuzione ciclica con controllo automatico dei file esistenti
+for idx, row in df_results.iterrows():
     
-
-    # ID univoco CORRETTO per il salvataggio dei file (mantiene 3 decimali)
+    # ID univoco per il salvataggio dei file
     run_id = f"pitch_{row['moltiplicatore']:.3f}".replace('.', '_')
+    
+    # Controllo dinamico: verifica se esiste già un file contenente il run_id nella directory
+    if any(run_id in filename for filename in os.listdir(statepoints_dir)):
+        print(f"-> Simulazione per {run_id} già completata. Salto.")
+        continue
     
     print(f"Avvio simulazione fixed: {run_id} con ARR. INT : {row['arricch_INT']:.3f}, e ARR. EXT : {row['arricch_EXT']:.3f} ...")
 
-    
     pm.execute_notebook(
         notebook_in,
         os.devnull,
-        cwd='fixed/statepoints',
+        cwd=statepoints_dir,
         parameters=dict(
             pressione_atm=row['pressione_atm'],
             moltiplicatore=row['moltiplicatore'],

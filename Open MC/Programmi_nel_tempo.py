@@ -1,13 +1,15 @@
-#import subprocess
+import subprocess
 
-#print("Inizio esecuzione sequenziale...")
-#
-#print("Esecuzione di circolarita_k_max.py in reattore_8 a <= 50PCM...")
-#subprocess.run(["python", "circolarita_k_max.py"], cwd="reattore_8/50PCM/circolarita_k_max", check=True)
-#
-#print("Esecuzione di run_pot.py in reattore_8 a <= 50PCM...")
-#subprocess.run(["python", "run_pot.py"], cwd="reattore_8/50PCM", check=True)
-#
+print("Inizio esecuzione sequenziale...")
+
+print("Esecuzione di reattore_5 ...")
+subprocess.run(["python", "esecuzione_multipla.py"], cwd="reattore_5/auto", check=True)
+
+print("Esecuzione di arricchimenti in reattore_9 ")
+subprocess.run(["python", "arricchimenti_VS_pitch.py"], cwd="reattore_9", check=True)
+
+print("Esecuzione di potenza in reattore_9 ")
+subprocess.run(["python", "run_pot.py"], cwd="reattore_9", check=True)
 
 
 #import subprocess
@@ -27,22 +29,22 @@
 
 #print("Tutte le simulazioni sono terminate con successo.")
 
-import subprocess
-import time
+#import subprocess
+#import time
 
 # Imposta il tempo di attesa (es. 3 ore)
-attesa_secondi =  3*3600 
-print(f"Inizio conteggio: attesa di {attesa_secondi/3600} ore...")
-time.sleep(attesa_secondi)
+#attesa_secondi =  3*3600 
+#print(f"Inizio conteggio: attesa di {attesa_secondi/3600} ore...")
+#time.sleep(attesa_secondi)
 
-print("--- FASE 1: Avvio arricchimenti_VS_pitch.py ---")
+#print("--- FASE 1: Avvio arricchimenti_VS_pitch.py ---")
 # Usiamo subprocess.run senza check=True così continua anche se il primo script fallisce
-subprocess.run(["python", "arricchimenti_VS_pitch.py"], cwd="reattore_9")
+#subprocess.run(["python", "arricchimenti_VS_pitch.py"], cwd="reattore_9")
 
-print("--- FASE 1 COMPLETATA (o terminata con errore) ---")
+#print("--- FASE 1 COMPLETATA (o terminata con errore) ---")
 
-print("--- FASE 2: Avvio run_pot.py ---")
+#print("--- FASE 2: Avvio run_pot.py ---")
 # Ora parte il secondo
-subprocess.run(["python", "run_pot.py"], cwd="reattore_9")
+#subprocess.run(["python", "run_pot.py"], cwd="reattore_9")
 
-print("Tutte le simulazioni programmate sono state eseguite.")
+#print("Tutte le simulazioni programmate sono state eseguite.")
