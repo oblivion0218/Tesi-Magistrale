@@ -56,7 +56,7 @@ def parse_result_auto(filename):
 # FASE 1: RICERCA ARRICCHIMENTO (SURROGATE MODELING - PCHIP)
 # ==========================================
 
-a_m = 0.05     
+a_m = 1
 w = 0.15         
 
 notebook_auto = 'auto/auto.ipynb'
@@ -86,7 +86,7 @@ with open(output_final, "a") as f_out:
     f_out.write("=== PARAMETRI CONVERGENTI / MIGLIORI ===\n")
     f_out.write(header)
 
-df_kmax = parse_kmax_file('../reattore_5/auto/k_max.txt')
+df_kmax = parse_kmax_file('k_max.txt')
 is_first = True
 
 print(">>> INIZIO FASE 1: RICERCA ARRICCHIMENTO INTERNO <<<")
@@ -111,7 +111,7 @@ for m in list_i:
     p = df_kmax['Pressione_atm'].iloc[iter_kmax]
     
     # Punti di partenza per inizializzare il modello
-    a_vals = [0.15,0.05]
+    a_vals = [0.5,0.25]
     k_vals_dict = {}
     converged = False
     best_delta_k = np.inf
