@@ -187,30 +187,35 @@ Pres [Pa]    PITCH [cm]   PERC_water   Arricch_INT     Arricch_EXT     T_WATER [
 101325.0    15.978      0.15        37.95          100            350          600          0.99120      0.00027     0.99050     0.00048     1.26667     
 101325.0    15.978      0.15        36.71          100            350          600          0.99041      0.00025     0.99050     0.00048     0.17379     
 
-
------- SIMULAZIONE DEL 20/04/2026 ALLE ORE 07:21 ------
-=== PARAMETRI DI SIMULAZIONE ===
-intensità sorgente: 2.02e+17 fotoni/s
-Target (R, H, Pos): 2.0, 10.0, 40.0 cm
-Settings: 120 batches, 500000 particles, 10 inactive batches
-================================
-
-Pres [Pa]    PITCH [cm]   PERC_water   Arricch_INT     Arricch_EXT     T_WATER [K]  T_FUEL [K]   K_AUTO       STD_DEV     K_MAX        STD_DEV     Compatibilità
-101325.0    15.090      0.15        50.00          100            350          600          1.04485      0.00027     0.80301     0.00033     567.73503   
-101325.0    15.090      0.15        25.00          100            350          600          1.03019      0.00024     0.80301     0.00033     560.33998   
-101325.0    15.090      0.15        0.00           100            350          600          1.00742      0.00020     0.80301     0.00033     531.49456   
-101325.0    15.090      0.15        100.00         100            350          600          1.06666      0.00029     0.80301     0.00033     603.02625   
-
-
------- SIMULAZIONE DEL 20/04/2026 ALLE ORE 16:23 ------
-=== PARAMETRI DI SIMULAZIONE ===
-intensità sorgente: 2.02e+17 fotoni/s
-Target (R, H, Pos): 2.0, 10.0, 40.0 cm
-Settings: 120 batches, 500000 particles, 10 inactive batches
-================================
-
-Pres [Pa]    PITCH [cm]   PERC_water   Arricch_INT     Arricch_EXT     T_WATER [K]  T_FUEL [K]   K_AUTO       STD_DEV     K_MAX        STD_DEV     Compatibilità
 101325.0    16.866      0.15        50.00          100            350          600          0.95113      0.00028     0.99114     0.00057     62.82852    
 101325.0    16.866      0.15        25.00          100            350          600          0.93755      0.00027     0.99114     0.00057     85.06239    
 101325.0    16.866      0.15        100.00         100            350          600          0.97219      0.00031     0.99114     0.00057     29.17787    
+
 101325.0    15.090      0.15        50.00          100            350          600          1.04485      0.00027     0.98915     0.00042     111.63096   
+101325.0    15.090      0.15        25.00          100            350          600          1.03019      0.00024     0.98915     0.00042     85.22777    
+101325.0    15.090      0.15        0.00           100            350          600          1.00742      0.00020     0.98915     0.00042     39.35685    
+
+
+------ SIMULAZIONE DEL 20/04/2026 ALLE ORE 19:00 ------
+=== PARAMETRI DI SIMULAZIONE ===
+intensità sorgente: 2.02e+17 fotoni/s
+Target (R, H, Pos): 2.0, 10.0, 40.0 cm
+Settings: 120 batches, 500000 particles, 10 inactive batches
+================================
+
+Pres [Pa]    PITCH [cm]   PERC_water   Arricch_INT     Arricch_EXT     T_WATER [K]  T_FUEL [K]   K_AUTO       STD_DEV     K_MAX        STD_DEV     Compatibilità
+
+
+------ SIMULAZIONE DEL 20/04/2026 ALLE ORE 19:02 ------
+=== PARAMETRI DI SIMULAZIONE ===
+intensità sorgente: 2.02e+17 fotoni/s
+Target (R, H, Pos): 2.0, 10.0, 40.0 cm
+Settings: 120 batches, 500000 particles, 10 inactive batches
+================================
+
+Pres [Pa]    PITCH [cm]   PERC_water   Arricch_INT     Arricch_EXT     T_WATER [K]  T_FUEL [K]   K_AUTO       STD_DEV     K_MAX        STD_DEV     Compatibilità
+101325.0    15.090      0.15        49.00          10             350          600          0.96198      0.00022     0.98915     0.00042     57.47724    
+101325.0    15.090      0.15        25.00          10             350          600          0.89058      0.00021     0.98915     0.00042     209.15566   
+101325.0    15.090      0.15        58.13          10             350          600          0.97721      0.00024     0.98915     0.00042     24.56305    
+101325.0    15.090      0.15        64.70          10             350          600          0.98597      0.00025     0.98915     0.00042     6.50297     
+101325.0    15.090      0.15        67.29          10             350          600          0.98869      0.00026     0.98915     0.00042     0.92989     

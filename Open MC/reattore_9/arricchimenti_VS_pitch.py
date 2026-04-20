@@ -56,7 +56,7 @@ def parse_result_auto(filename):
 # FASE 1: RICERCA ARRICCHIMENTO (SURROGATE MODELING - PCHIP)
 # ==========================================
 
-a_m = 1
+a_m =0.1
 w = 0.15         
 
 notebook_auto = 'auto/auto.ipynb'
@@ -111,7 +111,7 @@ for m in list_i:
     p = df_kmax['Pressione_atm'].iloc[iter_kmax]
     
     # Punti di partenza per inizializzare il modello
-    a_vals = [0.5,0.25]
+    a_vals = [0.49,0.25]
     k_vals_dict = {}
     converged = False
     best_delta_k = np.inf
