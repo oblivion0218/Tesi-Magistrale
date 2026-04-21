@@ -56,7 +56,7 @@ def parse_result_auto(filename):
 # FASE 1: RICERCA ARRICCHIMENTO (SURROGATE MODELING - PCHIP)
 # ==========================================
 
-a_m =0.1
+a_m =0.5
 w = 0.15         
 
 notebook_auto = 'auto/auto.ipynb'
@@ -64,11 +64,12 @@ output_final = "result_final.txt"
 
 # --- LETTURA DATI GIA' ELABORATI ---
 completed_pitches = []
+
 if os.path.exists(output_final):
     with open(output_final, 'r') as f_read:
         for line in f_read:
             line = line.strip()
-            if not line or line.startswith('-') or line.startswith('=') or 'Pres' in line or 'SIMULAZIONE' in line or 'PARAMETRI' in line:
+            if not line or line.startswith('-') or line.startswith('=') or 'Pres' in line or 'SIMULAZIONE' in line or '$' in line:
                 continue
             cols = line.split()
             if len(cols) >= 2:
@@ -86,13 +87,13 @@ with open(output_final, "a") as f_out:
     f_out.write("=== PARAMETRI CONVERGENTI / MIGLIORI ===\n")
     f_out.write(header)
 
-df_kmax = parse_kmax_file('k_max.txt')
+df_kmax = parse_kmax_file('../reattore_5/auto/k_max.txt')
 is_first = True
 
 print(">>> INIZIO FASE 1: RICERCA ARRICCHIMENTO INTERNO <<<")
 
-# Estrazione dinamica della lista dei pitch dai dati caricati
-list_i = df_kmax['Pitch'].unique().tolist()
+# Estrazione dinamica della lista dei pitch dai dati caricati, FILTRANDO per > 0.5
+list_i = [p for p in df_kmax['Pitch'].unique() if 0.5 < p < 4.5]
 
 for m in list_i:
     # --- CONTROLLO SALTO ITERAZIONE ---
@@ -204,4 +205,3 @@ for m in list_i:
             
 os.system("rm *.h5 *.xml *.out *.png 2>/dev/null")
 print("\n>>> FASE ARRICCHIMENTI COMPLETATA <<<")
-

@@ -2,7 +2,7 @@ import subprocess
 
 print("Inizio esecuzione sequenziale...")
 
-#print("Esecuzione di reattore_5 ...")
+print("Esecuzione di reattore_5 ...")
 #subprocess.run(["python", "esecuzione_multipla.py"], cwd="reattore_5/auto", check=True)
 
 print("Esecuzione di arricchimenti in reattore_9 ")
