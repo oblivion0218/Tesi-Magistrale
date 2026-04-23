@@ -95,8 +95,8 @@ w = 0.15    # percentuale acqua
 
 notebook_in = 'auto/auto.ipynb'
 
-a_m = 0.35        # a_m rappresenta l'arricchimento più esterno
-ARR_MAX = 0.40
+a_m = 0.065        # a_m rappresenta l'arricchimento più esterno
+ARR_MAX = 0.30
 
 while a_m <= ARR_MAX:
     max_iters = 20
@@ -138,7 +138,7 @@ while a_m <= ARR_MAX:
         k_vals_dict[a_test] = k_auto
 
         delta_k_abs = np.abs(k_target - k_auto)
-        current_line = f"{p:<12.0f} {m:<15.3f} {w:<12.2f} {a_test*100:<12.3f} {a_m*100:<12.0f} {T_water:<12.0f} {T_fuel:<12.0f} {k_target:<12.5f} {std_k_max:<12.5f} {k_auto:<12.5f} {std_k_auto:<12.5f} {sigma:<12.5f}\n"
+        current_line = f"{p:<12.0f} {m:<15.3f} {w:<12.2f} {a_test*100:<12.3f} {a_m*100:<12.2f} {T_water:<12.0f} {T_fuel:<12.0f} {k_target:<12.5f} {std_k_max:<12.5f} {k_auto:<12.5f} {std_k_auto:<12.5f} {sigma:<12.5f}\n"
         
         # Tracking della migliore configurazione sub-critica
         if delta_k_abs < best_delta_k and k_auto < 1.0:

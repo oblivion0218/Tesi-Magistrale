@@ -39,7 +39,7 @@ for idx, row in df_results[::-1].iterrows():
         continue
 
     # ID univoco per il salvataggio dei file
-    run_id = f"arr_ext_{row['arricch_EXT']:.0f}_pitch_{row['moltiplicatore']:.0f}"
+    run_id = f"arr_ext_{row['arricch_EXT']:.1f}_pitch_{row['moltiplicatore']:.1f}"
     
     # 3. Controllo file esistenti tramite matching parziale del nome
     file_esistenti = glob.glob(os.path.join(output_dir, f"*{run_id}*"))
