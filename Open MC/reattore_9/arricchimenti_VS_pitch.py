@@ -56,7 +56,7 @@ def parse_result_auto(filename):
 # FASE 1: RICERCA ARRICCHIMENTO (SURROGATE MODELING - PCHIP)
 # ==========================================
 
-a_m =0.2
+a_m =0.05
 w = 0.15         
 
 notebook_auto = 'auto/auto.ipynb'
