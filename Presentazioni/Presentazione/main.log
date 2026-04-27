@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.23)  20 APR 2026 11:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.23)  27 APR 2026 12:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -382,7 +382,15 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty (/usr/share/texlive/texmf-dist/tex/latex/translator/translator.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
+Package: sansmathaccent 2020/01/31
+ (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2023/07/07 v3.41 KOMA-Script package (file load hooks)
+ (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2023/07/07 v3.41 KOMA-Script package (using LaTeX hooks)
+ (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2023/07/07 v3.41 KOMA-Script package (logo)
+))))) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty (/usr/share/texlive/texmf-dist/tex/latex/translator/translator.sty
 Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
 )) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasemisc.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetwoscreens.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseoverlay.sty
 \beamer@argscount=\count309
@@ -607,66 +615,144 @@ LaTeX Info: Redefining \GenericWarning on input line 433.
 \sl@TempBOE=\toks54
 \sl@BankOfErrors=\toks55
 LaTeX Info: Redefining \GenericError on input line 601.
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box76
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen307
+\pgf@nodesepend=\dimen308
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen309
+\pgffor@skip=\dimen310
+\pgffor@stack=\toks56
+\pgffor@toks=\toks57
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count350
+\pgfplotmarksize=\dimen311
 )
-/home/bossi_ricky/WSL_Shared/Tesi_magistrale/Presentazioni/Presentazione/main.tex:12: Undefined control sequence.
-l.12 \disablemag
-                
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemeMadrid.sty (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty)) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemecircles.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerfontthemeprofessionalfonts.sty)
+\tikz@lastx=\dimen312
+\tikz@lasty=\dimen313
+\tikz@lastxsaved=\dimen314
+\tikz@lastysaved=\dimen315
+\tikz@lastmovetox=\dimen316
+\tikz@lastmovetoy=\dimen317
+\tikzleveldistance=\dimen318
+\tikzsiblingdistance=\dimen319
+\tikz@figbox=\box77
+\tikz@figbox@bg=\box78
+\tikz@tempbox=\box79
+\tikz@tempbox@bg=\box80
+\tikztreelevel=\count351
+\tikznumberofchildren=\count352
+\tikznumberofcurrentchild=\count353
+\tikz@fig@count=\count354
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count355
+\pgfmatrixcurrentcolumn=\count356
+\pgf@matrix@numberofcolumns=\count357
+)
+\tikz@expandcount=\count358
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen320
+\pgfarrowlength=\dimen321
+\pgfarrowwidth=\dimen322
+\pgfarrowlinewidth=\dimen323
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2024/01/10 version 6.2.0 text color boxes
+ (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2023-11-06 v1.5v LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks58
+\verbatim@line=\toks59
+\verbatim@in@stream=\read3
+) (/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+ (/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\tcb@titlebox=\box81
+\tcb@upperbox=\box82
+\tcb@lowerbox=\box83
+\tcb@phantombox=\box84
+\c@tcbbreakpart=\count359
+\c@tcblayer=\count360
+\c@tcolorbox@number=\count361
+\l__tcobox_tmpa_box=\box85
+\l__tcobox_tmpa_dim=\dimen324
+\tcb@temp=\box86
+\tcb@temp=\box87
+\tcb@temp=\box88
+\tcb@temp=\box89
+) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemeMadrid.sty (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty)) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemecircles.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerfontthemeprofessionalfonts.sty)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 30.
+(hyperref)                removing `\\' on input line 33.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 38.
+(hyperref)                removing `\\' on input line 41.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\new@ifnextchar' on input line 38.
+(hyperref)                removing `\new@ifnextchar' on input line 41.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\medskipamount' on input line 38.
+(hyperref)                removing `\medskipamount' on input line 41.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 38.
+(hyperref)                removing `\\' on input line 41.
 
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 41.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 44.
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count350
-\l__pdf_internal_box=\box76
+\l__color_backend_stack_int=\count362
+\l__pdf_internal_box=\box90
 )
 No file main.aux.
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -703,24 +789,24 @@ LaTeX Font Info:    ... okay on input line 41.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count351
-\scratchdimen=\dimen307
-\scratchbox=\box77
-\nofMPsegments=\count352
-\nofMParguments=\count353
-\everyMPshowfont=\toks56
-\MPscratchCnt=\count354
-\MPscratchDim=\dimen308
-\MPnumerator=\count355
-\makeMPintoPDFobject=\count356
-\everyMPtoPDFconversion=\toks57
+\scratchcounter=\count363
+\scratchdimen=\dimen325
+\scratchbox=\box91
+\nofMPsegments=\count364
+\nofMParguments=\count365
+\everyMPshowfont=\toks60
+\MPscratchCnt=\count366
+\MPscratchDim=\dimen326
+\MPnumerator=\count367
+\makeMPintoPDFobject=\count368
+\everyMPtoPDFconversion=\toks61
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 41.
+Package hyperref Info: Link coloring OFF on input line 44.
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
@@ -739,37 +825,37 @@ Dictionary: translator-theorem-dictionary, Language: English
 ) (./main.nav) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 62.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 65.
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 62.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 65.
  (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 62.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 65.
  (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 62.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 65.
  (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 62.
+(Font)              <10.95> on input line 65.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 62.
+(Font)              <8> on input line 65.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 62.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 62.
+(Font)              <6> on input line 65.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 65.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \vbox (0.78506pt too high) detected at line 62
+Overfull \vbox (0.78506pt too high) detected at line 65
  []
 
 [2
@@ -781,7 +867,7 @@ Overfull \vbox (0.78506pt too high) detected at line 62
 ] [5
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 93.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 96.
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [6
@@ -792,44 +878,44 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 <reactor_xy.png, id=288, 442.65375pt x 380.17032pt>
 File: reactor_xy.png Graphic file (type png)
 <use reactor_xy.png>
-Package pdftex.def Info: reactor_xy.png  used on input line 111.
+Package pdftex.def Info: reactor_xy.png  used on input line 114.
 (pdftex.def)             Requested size: 176.86118pt x 151.8972pt.
 <reactor_xz.png, id=290, 441.90094pt x 542.025pt>
 File: reactor_xz.png Graphic file (type png)
 <use reactor_xz.png>
-Package pdftex.def Info: reactor_xz.png  used on input line 111.
+Package pdftex.def Info: reactor_xz.png  used on input line 114.
 (pdftex.def)             Requested size: 135.24454pt x 165.88391pt.
  [8
 
  <./reactor_xy.png> <./reactor_xz.png>]
-/home/bossi_ricky/WSL_Shared/Tesi_magistrale/Presentazioni/Presentazione/main.tex:138: Missing $ inserted.
+/home/bossi_ricky/WSL_Shared/Tesi_magistrale/Presentazioni/Presentazione/main.tex:141: Missing $ inserted.
 <inserted text> 
                 $
-l.138 \end{frame}
+l.141 \end{frame}
                  
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-/home/bossi_ricky/WSL_Shared/Tesi_magistrale/Presentazioni/Presentazione/main.tex:138: Missing $ inserted.
+/home/bossi_ricky/WSL_Shared/Tesi_magistrale/Presentazioni/Presentazione/main.tex:141: Missing $ inserted.
 <inserted text> 
                 $
-l.138 \end{frame}
+l.141 \end{frame}
                  
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-/home/bossi_ricky/WSL_Shared/Tesi_magistrale/Presentazioni/Presentazione/main.tex:138: Missing $ inserted.
+/home/bossi_ricky/WSL_Shared/Tesi_magistrale/Presentazioni/Presentazione/main.tex:141: Missing $ inserted.
 <inserted text> 
                 $
-l.138 \end{frame}
+l.141 \end{frame}
                  
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-/home/bossi_ricky/WSL_Shared/Tesi_magistrale/Presentazioni/Presentazione/main.tex:138: Missing $ inserted.
+/home/bossi_ricky/WSL_Shared/Tesi_magistrale/Presentazioni/Presentazione/main.tex:141: Missing $ inserted.
 <inserted text> 
                 $
-l.138 \end{frame}
+l.141 \end{frame}
                  
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -837,28 +923,28 @@ you left one out. Proceed, with fingers crossed.
 <Sincrotrone_anello.png, id=332, 396.2805pt x 233.07076pt>
 File: Sincrotrone_anello.png Graphic file (type png)
 <use Sincrotrone_anello.png>
-Package pdftex.def Info: Sincrotrone_anello.png  used on input line 138.
+Package pdftex.def Info: Sincrotrone_anello.png  used on input line 141.
 (pdftex.def)             Requested size: 190.73476pt x 112.18208pt.
 
-Overfull \vbox (14.74614pt too high) detected at line 138
+Overfull \vbox (14.74614pt too high) detected at line 141
  []
 
 [9
 
  <./Sincrotrone_anello.png>]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 159.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 162.
 <syncro_spectrum.png, id=364, 1606.0pt x 1003.75pt>
 File: syncro_spectrum.png Graphic file (type png)
 <use syncro_spectrum.png>
-Package pdftex.def Info: syncro_spectrum.png  used on input line 159.
+Package pdftex.def Info: syncro_spectrum.png  used on input line 162.
 (pdftex.def)             Requested size: 216.74202pt x 135.45445pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 159.
+(Font)              <10> on input line 162.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 159.
+(Font)              <7> on input line 162.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 159.
+(Font)              <5> on input line 162.
  [10
 
  <./syncro_spectrum.png>] [11
@@ -871,15 +957,15 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 <superficie.png, id=505, 677.8926pt x 714.7503pt>
 File: superficie.png Graphic file (type png)
 <use superficie.png>
-Package pdftex.def Info: superficie.png  used on input line 202.
+Package pdftex.def Info: superficie.png  used on input line 205.
 (pdftex.def)             Requested size: 195.06648pt x 205.66907pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 202.
+(Font)              <9> on input line 205.
  [14
 
  <./superficie.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 222.
+(Font)              <14.4> on input line 225.
  [15
 
 ] [16
@@ -888,10 +974,10 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 <pitch-k.png, id=634, 1196.97188pt x 744.53156pt>
 File: pitch-k.png Graphic file (type png)
 <use pitch-k.png>
-Package pdftex.def Info: pitch-k.png  used on input line 231.
+Package pdftex.def Info: pitch-k.png  used on input line 234.
 (pdftex.def)             Requested size: 281.76198pt x 175.24895pt.
 
-Overfull \vbox (11.19444pt too high) detected at line 231
+Overfull \vbox (11.19444pt too high) detected at line 234
  []
 
 [17
@@ -904,12 +990,12 @@ Overfull \vbox (11.19444pt too high) detected at line 231
 <reactor_xy_v.png, id=756, 446.41782pt x 373.395pt>
 File: reactor_xy_v.png Graphic file (type png)
 <use reactor_xy_v.png>
-Package pdftex.def Info: reactor_xy_v.png  used on input line 262.
+Package pdftex.def Info: reactor_xy_v.png  used on input line 265.
 (pdftex.def)             Requested size: 187.26216pt x 156.6311pt.
 <reactor_xz_v.png, id=757, 803.0pt x 803.0pt>
 File: reactor_xz_v.png Graphic file (type png)
 <use reactor_xz_v.png>
-Package pdftex.def Info: reactor_xz_v.png  used on input line 262.
+Package pdftex.def Info: reactor_xz_v.png  used on input line 265.
 (pdftex.def)             Requested size: 156.05286pt x 156.05138pt.
  [20
 
@@ -917,10 +1003,10 @@ Package pdftex.def Info: reactor_xz_v.png  used on input line 262.
 <regressione_parabolica_filtrata.png, id=787, 1156.32pt x 722.7pt>
 File: regressione_parabolica_filtrata.png Graphic file (type png)
 <use regressione_parabolica_filtrata.png>
-Package pdftex.def Info: regressione_parabolica_filtrata.png  used on input line 271.
+Package pdftex.def Info: regressione_parabolica_filtrata.png  used on input line 274.
 (pdftex.def)             Requested size: 338.11702pt x 211.31998pt.
 
-Overfull \vbox (36.86548pt too high) detected at line 271
+Overfull \vbox (36.86548pt too high) detected at line 274
  []
 
 [21
@@ -929,15 +1015,10 @@ Overfull \vbox (36.86548pt too high) detected at line 271
 <rette_di_arricchimento.png, id=818, 1149.093pt x 714.7503pt>
 File: rette_di_arricchimento.png Graphic file (type png)
 <use rette_di_arricchimento.png>
-Package pdftex.def Info: rette_di_arricchimento.png  used on input line 281.
+Package pdftex.def Info: rette_di_arricchimento.png  used on input line 284.
 (pdftex.def)             Requested size: 294.76596pt x 183.34409pt.
 
-pdfTeX warning (ext4): destination with the same identifier (name{fig:stabilit\303\240}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.281 \end{frame}
-                 
-Overfull \vbox (36.0896pt too high) detected at line 281
+Overfull \vbox (36.0896pt too high) detected at line 284
  []
 
 [22
@@ -947,13 +1028,13 @@ Overfull \vbox (36.0896pt too high) detected at line 281
 ] [24
 
 ]
-<scatter_potenza_errore.png, id=900, 1156.32pt x 722.7pt>
+<scatter_potenza_errore.png, id=901, 1156.32pt x 722.7pt>
 File: scatter_potenza_errore.png Graphic file (type png)
 <use scatter_potenza_errore.png>
-Package pdftex.def Info: scatter_potenza_errore.png  used on input line 313.
+Package pdftex.def Info: scatter_potenza_errore.png  used on input line 316.
 (pdftex.def)             Requested size: 303.4375pt x 189.63991pt.
 
-Overfull \vbox (23.64098pt too high) detected at line 313
+Overfull \vbox (23.64098pt too high) detected at line 316
  []
 
 [25
@@ -961,45 +1042,56 @@ Overfull \vbox (23.64098pt too high) detected at line 313
  <./scatter_potenza_errore.png>] [26
 
 ]
-<circolarità.png, id=959, 1148.3703pt x 714.7503pt>
+<circolarità.png, id=960, 1148.3703pt x 714.7503pt>
 File: circolarità.png Graphic file (type png)
 <use circolarità.png>
-Package pdftex.def Info: circolarità.png  used on input line 362.
+Package pdftex.def Info: circolarità.png  used on input line 365.
 (pdftex.def)             Requested size: 216.74202pt x 134.89876pt.
  [27
 
  <./circolarità.png>]
-<operatività.png, id=988, 1148.3703pt x 714.7503pt>
+<operatività.png, id=989, 1148.3703pt x 714.7503pt>
 File: operatività.png Graphic file (type png)
 <use operatività.png>
-Package pdftex.def Info: operatività.png  used on input line 382.
+Package pdftex.def Info: operatività.png  used on input line 385.
 (pdftex.def)             Requested size: 216.74202pt x 134.89876pt.
  [28
 
  <./operatività.png>] [29
 
 ]
-<potenza_kmax_vs_pitch.png, id=1045, 1156.32pt x 722.7pt>
+<potenza_kmax_vs_pitch.png, id=1046, 1156.32pt x 722.7pt>
 File: potenza_kmax_vs_pitch.png Graphic file (type png)
 <use potenza_kmax_vs_pitch.png>
-Package pdftex.def Info: potenza_kmax_vs_pitch.png  used on input line 407.
-(pdftex.def)             Requested size: 292.07877pt x 182.54922pt.
+Package pdftex.def Info: potenza_kmax_vs_pitch.png  used on input line 410.
+(pdftex.def)             Requested size: 433.48404pt x 270.92361pt.
 
-Overfull \vbox (36.18518pt too high) detected at line 407
+Overfull \vbox (124.55957pt too high) detected at line 410
  []
 
 [30
 
  <./potenza_kmax_vs_pitch.png>] [31
 
-] [32
-
-] [33
-
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 450.
- [34
+(Font)              <12> on input line 486.
+
+Overfull \hbox (9.63799pt too wide) detected at line 486
+[]
+ []
+
+
+Overfull \vbox (35.67464pt too high) detected at line 486
+ []
+
+[32
+
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [33
+
+] [34
+
+] [35
 
 ]
 \tf@nav=\write6
@@ -1030,18 +1122,18 @@ Package rerunfilecheck Info: Checksums for `main.out':
 (rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 22477 strings out of 476182
- 434194 string characters out of 5795595
- 1943975 words of memory out of 5000000
- 43913 multiletter control sequences out of 15000+600000
- 634950 words of font info for 100 fonts, out of 8000000 for 9000
+ 28665 strings out of 476182
+ 587175 string characters out of 5795595
+ 1953975 words of memory out of 5000000
+ 50014 multiletter control sequences out of 15000+600000
+ 640486 words of font info for 102 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 101i,15n,107p,479b,644s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (34 pages, 3004050 bytes).
+ 128i,19n,123p,479b,1110s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
+Output written on main.pdf (35 pages, 3038265 bytes).
 PDF statistics:
- 1321 PDF objects out of 1440 (max. 8388607)
- 1057 compressed objects within 11 object streams
- 74 named destinations out of 1000 (max. 500000)
+ 1365 PDF objects out of 1440 (max. 8388607)
+ 1093 compressed objects within 11 object streams
+ 77 named destinations out of 1000 (max. 500000)
  827 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -8,8 +8,11 @@
 \usepackage{booktabs} % Per tabelle più pulite
 \usepackage{silence} % Silenzia warning inutili che intasano il log
 \WarningFilter{beamerthememadrid}{You have requested}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, shapes.geometric}
+\usepackage{amsmath}
+\usepackage{tcolorbox}
 
-\disablemag
 
 % --- SCELTA DEL TEMA E PERSONALIZZAZIONE ---
 \usetheme{Madrid}
@@ -412,6 +415,74 @@ I punti di lavoro della slide precedente sono trovati con questa distribuzione r
         \item Analisi di possibili altri meccanismi di feedback come per esempio i veleni.
         \item Analisi di sensibilità del modello con diverse geometrie e condizioni operative di pressione e moderatore.
     \end{itemize}
+\end{frame}
+
+
+\begin{frame}{ $^{135}$Xe Buildup (Xenon Poisoning)}
+    
+    \begin{columns}[T]
+        
+        % COLONNA SINISTRA
+        \begin{column}{0.48\textwidth}
+            {$^{135}$Xe:} $\sigma_a \approx 2 \times 10^6$ b (very large thermal cross section).
+            
+            \vspace{0.4cm}
+            {\Large \textbf{Production/removal scheme:}}
+            \vspace{0.2cm}
+            
+            \begin{center}
+            \begin{tikzpicture}[
+                box/.style={draw, rounded corners, minimum width=1.5cm, minimum height=0.8cm, fill=gray!10, font=\large},
+                greenbox/.style={box, draw=green, text=black},
+                graybox/.style={box, draw=gray, text=black},
+                bluebox/.style={box, draw=blue, text=black},
+                arrow/.style={-stealth, thick}
+            ]
+                % Nodi
+                \node[bluebox] (I) {$^{135}$\textbf{I}};
+                \node[bluebox, right=1.5cm of I] (Xe) {$^{135}$\textbf{Xe}};
+                \node[greenbox, above right=0.2cm and 0.8cm of Xe] (Cs) {$^{135}$\textbf{Cs}};
+                \node[graybox, below right=0.2cm and 0.8cm of Xe] (Xe136) {$^{136}$\textbf{Xe}};
+                
+                % Frecce orizzontali e oblique
+                \draw[arrow, blue] (I) -- node[above, font=\small] {$\beta^-, \lambda_I$} (Xe);
+                \draw[arrow, green] (Xe.east) -- node[above left, font=\small] {$\beta^-$} (Cs.west);
+                \draw[arrow, gray] (Xe.east) -- node[below left, font=\small] {$n, \gamma$} (Xe136.west);
+                
+                % Frecce verticali (fission)
+                \draw[arrow, orange] ([yshift=-1cm]I.south) -- node[below, font=\small] {fission} (I.south);
+                \draw[arrow, orange] ([yshift=-1cm]Xe.south) -- node[below, font=\small] {fission} (Xe.south);
+            \end{tikzpicture}
+            \end{center}
+            
+            \vspace{0.2cm}
+            \begin{tcolorbox}[colframe=red, colback=gray!5, boxrule=1pt, arc=4pt, left=1mm, right=1mm, top=1mm, bottom=1mm]
+                After shutdown: $^{135}$Xe peaks (\textbf{xenon pit}) as $^{135}$I continues to decay but neutron capture removal stops --- can prevent reactor restart for 20--40 h.
+            \end{tcolorbox}
+        \end{column}
+        
+        % COLONNA DESTRA
+        \begin{column}{0.48\textwidth}
+            {\Large \textbf{Rate equations:}}
+            \begin{align*}
+                \frac{dN_I}{dt} &= \gamma_I \Sigma_f \phi - \lambda_I N_I \\[0.4cm]
+                \frac{dN_{Xe}}{dt} &= \underbrace{\gamma_{Xe} \Sigma_f \phi}_{\text{direct}} + \underbrace{\lambda_I N_I}_{\text{from }^{135}\text{I}} - \underbrace{(\lambda_{Xe} + \sigma_a \phi) N_{Xe}}_{\text{removal}}
+            \end{align*}
+            
+            \vspace{0.2cm}
+            {\Large \textbf{Equilibrium:}}
+            \begin{equation*}
+                N_{Xe}^{\text{eq}} = \frac{(\gamma_I + \gamma_{Xe}) \Sigma_f \phi}{\lambda_{Xe} + \sigma_{a,Xe} \phi}
+            \end{equation*}
+            
+            \vspace{0.3cm}
+            \begin{tcolorbox}[colframe=orange, colback=orange!5, boxrule=1pt, arc=4pt, left=1mm, right=1mm, top=1mm, bottom=1mm]
+                Parameters: $\gamma_I = 0.061$, $\gamma_{Xe} = 0.003$, $\lambda_I = 2.9 \times 10^{-5} \text{ s}^{-1}$, $\lambda_{Xe} = 2.1 \times 10^{-5} \text{ s}^{-1}$.
+            \end{tcolorbox}
+        \end{column}
+        
+    \end{columns}
+    
 \end{frame}
 
 \begin{frame}{}
