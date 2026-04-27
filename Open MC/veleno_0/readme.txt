@@ -1,0 +1,1 @@
+bruciatura in autovalore
