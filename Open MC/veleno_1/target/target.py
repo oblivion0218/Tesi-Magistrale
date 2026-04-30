@@ -60,9 +60,9 @@ materials.export_to_xml()
 # Target Centrato nell'origine
 
 z_mid = H_CORE - P_TARGET
-z_tgt_bot = openmc.ZPlane(z0=z_mid - (H_TARGET / 2.0))
-z_tgt_top = openmc.ZPlane(z0=z_mid + (H_TARGET / 2.0))
-cyl_target = openmc.ZCylinder(r=R_TARGET)
+cyl_target = openmc.ZCylinder(surface_id=1000, r=R_TARGET)
+z_tgt_bot  = openmc.ZPlane(surface_id=1001, z0=z_mid - (H_TARGET / 2.0))
+z_tgt_top  = openmc.ZPlane(surface_id=1002, z0=z_mid + (H_TARGET / 2.0))
 
 # Sfera per ispezione isotropia e Boundary mondo
 R_SPHERE = max(R_TARGET, H_TARGET / 2.0) + 2.0

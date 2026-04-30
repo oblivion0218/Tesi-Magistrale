@@ -1,4 +1,5 @@
 import os
+import openmc.deplete
 import openmc
 import numpy as np
 import shutil
@@ -108,41 +109,36 @@ z_top_world = openmc.ZPlane(z0=H_CORE + 5.0, boundary_type='vacuum')
 
 # Piani Target
 z_mid_tgt = H_CORE - P_TARGET
-z_tgt_bot = openmc.ZPlane(z0=z_mid_tgt - (H_TARGET / 2.0))
-z_tgt_top = openmc.ZPlane(z0=z_mid_tgt + (H_TARGET / 2.0))
-
-# Superfici base
-cyl_target = openmc.ZCylinder(r=R_TARGET)
+cyl_target = openmc.ZCylinder(surface_id=1000, r=R_TARGET)
+z_tgt_bot  = openmc.ZPlane(surface_id=1001, z0=z_mid_tgt - (H_TARGET / 2.0))
+z_tgt_top  = openmc.ZPlane(surface_id=1002, z0=z_mid_tgt + (H_TARGET / 2.0))
 
 # Sostituzione delle funzioni deprecate con le classi moderne
 # Nota: HexagonalPrism restituisce una regione, non una superficie singola
 reg_fuel = openmc.model.HexagonalPrism(edge_length=R_FUEL, orientation='x')
 reg_clad = openmc.model.HexagonalPrism(edge_length=R_FUEL + CLAD_THICK, orientation='x')
 
-# 1. Creazione degli Universi per i Pin (fuel_mats è una lista per anello)
+# 1. Creazione degli Universi per i Pin
 fuel_universes = []
 for f in fuel_mats:
-    c_f = openmc.Cell(fill=f, region=reg_fuel)
-    c_c = openmc.Cell(fill=cladding, region=reg_clad & ~reg_fuel)
-    c_w = openmc.Cell(fill=water, region=~reg_clad)
+    c_f = openmc.Cell(fill=f, region=-reg_fuel)
+    c_c = openmc.Cell(fill=cladding, region=-reg_clad & +reg_fuel)
+    c_w = openmc.Cell(fill=water, region=+reg_clad)
     fuel_universes.append(openmc.Universe(cells=[c_f, c_c, c_w]))
 
 # 2. Costruzione della lista di liste per il HexLattice
-# OpenMC vuole gli anelli dall'esterno verso l'interno
 rings_universes = []
 for i in range(len(fuel_universes)):
     if i == 0:
-        # Anello centrale (1 elemento)
         rings_universes.append([fuel_universes[0]])
     else:
-        # Anelli successivi (6*i elementi)
         rings_universes.append([fuel_universes[i]] * (6 * i))
 
 lattice = openmc.HexLattice(name='core_hex_lattice')
 lattice.center = (0.0, 0.0)
 lattice.pitch = (PITCH,)
 lattice.outer = openmc.Universe(cells=[openmc.Cell(fill=water)])
-lattice.universes = rings_universes[::-1]  # Inverte per avere l'esterno prima
+lattice.universes = rings_universes[::-1]
 lattice.orientation = 'x'
 
 # 3. Definizione dei prismi per le regioni macroscopiche
@@ -157,26 +153,25 @@ reg_prism_ref  = openmc.model.HexagonalPrism(edge_length=hex_ref_edge, orientati
 reg_prism_pipe = openmc.model.HexagonalPrism(edge_length=edge_pipe, orientation='x')
 
 # 4. Celle Finali
-# Core: zona attiva con lattice escludendo il condotto centrale
 c_main_core = openmc.Cell(name='main_core', fill=lattice, 
-                          region=reg_prism_core & ~reg_prism_pipe & +z_bot_core & -z_top_core)
+                          region=-reg_prism_core & +reg_prism_pipe & +z_bot_core & -z_top_core)
 
 # Target e Gap nel condotto centrale
-region_target = reg_prism_pipe & -cyl_target & +z_tgt_bot & -z_tgt_top
+region_target = -reg_prism_pipe & -cyl_target & +z_tgt_bot & -z_tgt_top
 c_target = openmc.Cell(name='target', fill=mat_target, region=region_target)
 
-region_void_gap = (reg_prism_pipe & +z_bot_core & -z_top_core) & ~region_target
+region_void_gap = (-reg_prism_pipe & +z_bot_core & -z_top_core) & ~region_target
 c_void_gap = openmc.Cell(name='void_gap', fill=void_air, region=region_void_gap)
 
 # Riflettore laterale e inferiore
 c_ref_side = openmc.Cell(name='ref_side', fill=reflector, 
-                         region=reg_prism_ref & ~reg_prism_core & +z_bot_core & -z_top_core)
+                         region=-reg_prism_ref & +reg_prism_core & +z_bot_core & -z_top_core)
 c_ref_bot = openmc.Cell(name='ref_bot', fill=reflector, 
-                        region=reg_prism_ref & +z_bot_ref & -z_bot_core)
+                        region=-reg_prism_ref & +z_bot_ref & -z_bot_core)
 
 # Cielo (Top void)
 c_top_void = openmc.Cell(name='top_void', fill=void_air, 
-                         region=reg_prism_ref & +z_top_core & -z_top_world)
+                         region=-reg_prism_ref & +z_top_core & -z_top_world)
 
 # 5. Assemblaggio Geometria
 geometry = openmc.Geometry([c_main_core, c_target, c_void_gap, c_ref_side, c_ref_bot, c_top_void])
@@ -185,11 +180,20 @@ settings = openmc.Settings()
 settings.run_mode = 'fixed source'
 settings.batches = batches
 settings.particles = particles
-settings.surf_source_read = {'path': 'surface_source.h5'} # Link simbolico
+settings.max_collisions = 10000
+settings.max_lost_particles = 50
+settings.temperature = {'method': 'interpolation'}
+
+# Path assoluto: evita copie e link simbolici
+path_sorgente_originale = os.path.abspath(os.path.join(root_dir, "target", "surface_source.h5"))
+if not os.path.exists(path_sorgente_originale):
+    raise FileNotFoundError(f"Sorgente mancante in: {path_sorgente_originale}")
+
+settings.surf_source_read = {'path': path_sorgente_originale} 
 settings.photon_transport = False
 settings.create_fission_neutrons = True
 
-# --- 5. GESTIONE DIRECTORY E LINK SIMBOLICO ---
+# --- 5. GESTIONE DIRECTORY ---
 os.environ["OMP_NUM_THREADS"] = "40"
 nome_base = f"{batches}b_{particles}p"
 nome_cartella = nome_base
@@ -200,16 +204,6 @@ while os.path.exists(nome_cartella):
 
 os.makedirs(nome_cartella)
 print(f"Directory di run: {nome_cartella}")
-
-# Creazione link simbolico alla sorgente presente nella cartella 'target'
-path_sorgente_originale = os.path.join(root_dir, "target", "surface_source.h5")
-path_link_destinazione = os.path.join(root_dir, nome_cartella, "surface_source.h5")
-
-if not os.path.exists(path_sorgente_originale):
-    raise FileNotFoundError(f"Sorgente mancante in: {path_sorgente_originale}")
-
-if os.path.lexists(path_link_destinazione): os.remove(path_link_destinazione)
-os.symlink(path_sorgente_originale, path_link_destinazione)
 
 # Spostamento nella cartella di run
 os.chdir(nome_cartella)
