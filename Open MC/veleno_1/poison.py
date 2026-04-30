@@ -99,48 +99,87 @@ for i in range(int(np.ceil(R_CORE / PITCH)) + 1):
 materials = openmc.Materials(fuel_mats + [cladding, water, reflector, void_air, mat_target])
 
 # --- 3. GEOMETRIA ---
-z_bot_ref = openmc.ZPlane(z0=-REF_BOT, boundary_type='vacuum')
-z_bot_core = openmc.ZPlane(z0=0.0)
-z_top_core = openmc.ZPlane(z0=H_CORE)
+
+# Piani Z
+z_bot_ref   = openmc.ZPlane(z0=-REF_BOT, boundary_type='vacuum')
+z_bot_core  = openmc.ZPlane(z0=0.0)
+z_top_core  = openmc.ZPlane(z0=H_CORE)
 z_top_world = openmc.ZPlane(z0=H_CORE + 5.0, boundary_type='vacuum')
+
+# Piani Target
 z_mid_tgt = H_CORE - P_TARGET
 z_tgt_bot = openmc.ZPlane(z0=z_mid_tgt - (H_TARGET / 2.0))
 z_tgt_top = openmc.ZPlane(z0=z_mid_tgt + (H_TARGET / 2.0))
 
+# Superfici base
 cyl_target = openmc.ZCylinder(r=R_TARGET)
-hex_fuel_prism = openmc.model.hexagonal_prism(edge_length=R_FUEL, orientation='x')
-hex_clad_prism = openmc.model.hexagonal_prism(edge_length=R_FUEL + CLAD_THICK, orientation='x')
 
-# Lattice
+# Sostituzione delle funzioni deprecate con le classi moderne
+# Nota: HexagonalPrism restituisce una regione, non una superficie singola
+reg_fuel = openmc.model.HexagonalPrism(edge_length=R_FUEL, orientation='x')
+reg_clad = openmc.model.HexagonalPrism(edge_length=R_FUEL + CLAD_THICK, orientation='x')
+
+# 1. Creazione degli Universi per i Pin (fuel_mats è una lista per anello)
 fuel_universes = []
 for f in fuel_mats:
-    c_f = openmc.Cell(fill=f, region=hex_fuel_prism)
-    c_c = openmc.Cell(fill=cladding, region=hex_clad_prism & ~hex_fuel_prism)
-    c_w = openmc.Cell(fill=water, region=~hex_clad_prism)
+    c_f = openmc.Cell(fill=f, region=reg_fuel)
+    c_c = openmc.Cell(fill=cladding, region=reg_clad & ~reg_fuel)
+    c_w = openmc.Cell(fill=water, region=~reg_clad)
     fuel_universes.append(openmc.Universe(cells=[c_f, c_c, c_w]))
 
-lattice = openmc.HexLattice()
-lattice.center = (0, 0)
+# 2. Costruzione della lista di liste per il HexLattice
+# OpenMC vuole gli anelli dall'esterno verso l'interno
+rings_universes = []
+for i in range(len(fuel_universes)):
+    if i == 0:
+        # Anello centrale (1 elemento)
+        rings_universes.append([fuel_universes[0]])
+    else:
+        # Anelli successivi (6*i elementi)
+        rings_universes.append([fuel_universes[i]] * (6 * i))
+
+lattice = openmc.HexLattice(name='core_hex_lattice')
+lattice.center = (0.0, 0.0)
 lattice.pitch = (PITCH,)
 lattice.outer = openmc.Universe(cells=[openmc.Cell(fill=water)])
-lattice.universes = [fuel_universes[::-1]] 
+lattice.universes = rings_universes[::-1]  # Inverte per avere l'esterno prima
+lattice.orientation = 'x'
 
-# Celle Finali
-prism_core = openmc.model.hexagonal_prism(edge_length=(len(fuel_mats)) * PITCH, orientation='x')
+# 3. Definizione dei prismi per le regioni macroscopiche
+num_rings = len(fuel_universes)
+hex_core_edge = num_rings * PITCH
+hex_ref_edge  = hex_core_edge + REF_SIDE
 n_rings_removed = int(np.ceil(R_PIPE / PITCH))
-hex_pipe_prism = openmc.model.hexagonal_prism(edge_length=(n_rings_removed - 0.5) * PITCH, orientation='x')
+edge_pipe = (n_rings_removed - 0.5) * PITCH if n_rings_removed > 0 else 0.1
 
-c_main_core = openmc.Cell(fill=lattice, region=prism_core & ~hex_pipe_prism & +z_bot_core & -z_top_core)
-c_target = openmc.Cell(fill=mat_target, region=hex_pipe_prism & -cyl_target & +z_tgt_bot & -z_tgt_top)
-c_void_gap = openmc.Cell(fill=void_air, region=hex_pipe_prism & ~( -cyl_target & +z_tgt_bot & -z_tgt_top) & +z_bot_core & -z_top_core)
+reg_prism_core = openmc.model.HexagonalPrism(edge_length=hex_core_edge, orientation='x')
+reg_prism_ref  = openmc.model.HexagonalPrism(edge_length=hex_ref_edge, orientation='x', boundary_type='vacuum')
+reg_prism_pipe = openmc.model.HexagonalPrism(edge_length=edge_pipe, orientation='x')
 
-prism_ref = openmc.model.hexagonal_prism(edge_length=(len(fuel_mats)) * PITCH + REF_SIDE, orientation='x', boundary_type='vacuum')
-c_ref_side = openmc.Cell(fill=reflector, region=prism_ref & ~prism_core & +z_bot_core & -z_top_core)
-c_ref_bot = openmc.Cell(fill=reflector, region=prism_ref & +z_bot_ref & -z_bot_core)
-c_top_void = openmc.Cell(fill=void_air, region=prism_ref & +z_top_core & -z_top_world)
+# 4. Celle Finali
+# Core: zona attiva con lattice escludendo il condotto centrale
+c_main_core = openmc.Cell(name='main_core', fill=lattice, 
+                          region=reg_prism_core & ~reg_prism_pipe & +z_bot_core & -z_top_core)
 
+# Target e Gap nel condotto centrale
+region_target = reg_prism_pipe & -cyl_target & +z_tgt_bot & -z_tgt_top
+c_target = openmc.Cell(name='target', fill=mat_target, region=region_target)
+
+region_void_gap = (reg_prism_pipe & +z_bot_core & -z_top_core) & ~region_target
+c_void_gap = openmc.Cell(name='void_gap', fill=void_air, region=region_void_gap)
+
+# Riflettore laterale e inferiore
+c_ref_side = openmc.Cell(name='ref_side', fill=reflector, 
+                         region=reg_prism_ref & ~reg_prism_core & +z_bot_core & -z_top_core)
+c_ref_bot = openmc.Cell(name='ref_bot', fill=reflector, 
+                        region=reg_prism_ref & +z_bot_ref & -z_bot_core)
+
+# Cielo (Top void)
+c_top_void = openmc.Cell(name='top_void', fill=void_air, 
+                         region=reg_prism_ref & +z_top_core & -z_top_world)
+
+# 5. Assemblaggio Geometria
 geometry = openmc.Geometry([c_main_core, c_target, c_void_gap, c_ref_side, c_ref_bot, c_top_void])
-
 # --- 4. SETTINGS ---
 settings = openmc.Settings()
 settings.run_mode = 'fixed source'
