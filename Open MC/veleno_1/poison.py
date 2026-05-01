@@ -175,7 +175,13 @@ c_top_void = openmc.Cell(name='top_void', fill=void_air,
 
 # 5. Assemblaggio Geometria
 geometry = openmc.Geometry([c_main_core, c_target, c_void_gap, c_ref_side, c_ref_bot, c_top_void])
-# --- 4. SETTINGS ---
+
+
+# --- 4. SETTINGS ------------------------
+
+import h5py
+
+# --- 4. SETTINGS E SORGENTE "BRUTE FORCE" POINT-BY-POINT ---
 settings = openmc.Settings()
 settings.run_mode = 'fixed source'
 settings.batches = batches
@@ -183,15 +189,56 @@ settings.particles = particles
 settings.max_collisions = 10000
 settings.max_lost_particles = 50
 settings.temperature = {'method': 'interpolation'}
+settings.photon_transport = False
+settings.create_fission_neutrons = True
 
-# Path assoluto: evita copie e link simbolici
+# Path assoluto
 path_sorgente_originale = os.path.abspath(os.path.join(root_dir, "target", "surface_source.h5"))
 if not os.path.exists(path_sorgente_originale):
     raise FileNotFoundError(f"Sorgente mancante in: {path_sorgente_originale}")
 
-settings.surf_source_read = {'path': path_sorgente_originale} 
-settings.photon_transport = False
-settings.create_fission_neutrons = True
+print("Lettura HDF5 e costruzione della sorgente esplicita... (Potrebbe volerci un po')")
+with h5py.File(path_sorgente_originale, 'r') as f:
+    bank = f['source_bank'][...]
+    mask = (bank['particle'] == 0) & (bank['E'] < 8e6) 
+    neutroni = bank[mask]
+
+# Limitiamo a 50.000 sorgenti per non saturare la RAM e l'XML. 
+# È un campionamento eccellente per definire la distribuzione nel nocciolo.
+MAX_SOURCES = 50000
+if len(neutroni) > MAX_SOURCES:
+    # Campionamento casuale senza rimpiazzo per preservare la statistica
+    idx = np.random.choice(len(neutroni), MAX_SOURCES, replace=False)
+    campione = neutroni[idx]
+else:
+    campione = neutroni
+
+sources = []
+tot_weight = np.sum(campione['wgt'])
+
+# Generiamo una sorgente indipendente per ogni singola particella
+for p in campione:
+    s = openmc.IndependentSource()
+    s.particle = 'neutron'
+    
+    # Coordinate di nascita esatte
+    s.space = openmc.stats.Point((p['r']['x'], p['r']['y'], p['r']['z']))
+    
+    # Vettore direzione esatto (verso l'esterno, nessuna emissione back-in)
+    s.angle = openmc.stats.Monodirectional((p['u']['x'], p['u']['y'], p['u']['z']))
+    
+    # Energia esatta
+    s.energy = openmc.stats.Discrete([p['E']], [1.0])
+    
+    # Normalizziamo il peso relativo della singola sorgente
+    s.strength = p['wgt'] / tot_weight 
+    
+    sources.append(s)
+
+# Passiamo la lista di sorgenti a OpenMC (il depletion ora la riconoscerà senza problemi!)
+settings.source = sources
+print(f"Generazione completata: {len(sources)} sorgenti indipendenti correlate create.")
+# =====================================================================
 
 # --- 5. GESTIONE DIRECTORY ---
 os.environ["OMP_NUM_THREADS"] = "40"
