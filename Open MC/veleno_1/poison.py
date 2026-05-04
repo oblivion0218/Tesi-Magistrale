@@ -278,10 +278,25 @@ operator = openmc.deplete.CoupledOperator(model, chain_file, normalization_mode=
 yield_fn = 0.006233780865925537 
 S_rate = S_val * yield_fn
 
-giorni_on = [10.0] * 10
-giorni_off = [0.1, 0.4, 0.5, 1.0, 3.0, 10.0, 30.0, 55.0]
+# --- FASE ON (Totale: 100 giorni) ---
+# Transitorio veleni: traccia la curva di inserzione reattività negativa di Xe e Sm
+giorni_on_transitorio = [0.1, 0.4, 0.5, 1.0, 3.0, 10.0] 
+# Burn-up profondo: traccia la pendenza lineare del consumo di combustibile
+giorni_on_burnup = [20.0, 30.0, 35.0] 
+
+giorni_on = giorni_on_transitorio + giorni_on_burnup
+
+# --- FASE OFF (Totale: 20 giorni) ---
+# Picco dello Xeno: cattura l'assorbimento massimo nelle prime 24-48 ore post-spegnimento
+giorni_off_picco_xe = [0.1, 0.3, 0.6, 1.0, 3.0] 
+# Stabilizzazione finale: decadimento residuo e saturazione finale del Samario
+giorni_off_coda = [15.0] 
+
+giorni_off = giorni_off_picco_xe + giorni_off_coda
+
+# --- ASSEGNAZIONE ---
 time_steps = giorni_on + giorni_off
-source_rates = [S_rate]*len(giorni_on) + [0.0]*len(giorni_off)
+source_rates = [S_rate] * len(giorni_on) + [0.0] * len(giorni_off)
 
 integrator = openmc.deplete.PredictorIntegrator(operator, time_steps, source_rates=source_rates, timestep_units='d')
 integrator.integrate()
