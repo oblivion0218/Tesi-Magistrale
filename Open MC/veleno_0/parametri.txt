@@ -38,5 +38,5 @@ bin_ris                 = 300     # Risoluzione mesh tally (numero di bin)
 
 # Configurazione Run Mode: Eigenvalue 
 batches_auto            = 15
-particles_auto          = 50000
+particles_auto          = 500000
 inactive_auto           = 2
