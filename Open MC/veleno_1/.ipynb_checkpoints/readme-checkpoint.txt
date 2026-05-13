@@ -1,0 +1,1 @@
+impossibilitato alle fotonucleari , provo con diverse tecniche... no surface eprche il compilatore deve generare lui aprticellle, no nemmeno a 50000 puntiformi sul target , overkill di pesantezza
