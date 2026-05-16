@@ -286,7 +286,7 @@ S_rate = S_val * yield_fn
 giorni_on_transitorio = [0.1, 0.4, 0.5, 1.0, 3.0, 5.0, 10.0] 
 
 # Burn-up profondo: traccia la pendenza lineare del consumo per i restanti 180 giorni
-giorni_on_burnup = [30.0, 50.0, 50.0, 50.0] 
+giorni_on_burnup = [30.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0] 
 
 giorni_on = giorni_on_transitorio + giorni_on_burnup
 

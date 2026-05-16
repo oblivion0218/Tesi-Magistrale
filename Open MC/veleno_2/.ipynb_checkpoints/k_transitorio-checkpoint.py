@@ -32,9 +32,9 @@ os.system("rm *.png")
 param_file = 'parametri.txt'
 moltiplicatore = 4.0
 pressione = 1.0
-water_perc = 0.15
-enrich_min =0.05
-enrich_max = 0.45553
+water_perc = 1.0
+enrich_min = 1
+enrich_max = 1
 iter = 1
 is_first_run = True
 

@@ -1,0 +1,8 @@
+
+
+------ ANALISI K_EFF CONGELATO DEL 16/05/2026 ALLE ORE 10:01 ------
+Settings base: 75 b, 100000 p | Settings high: 200 b, 1000000 p
+===============================================================
+Step   Tempo [gg]      K_EFF           STD_DEV         STATISTICA     
+0      0.0000          1.00274         0.00048         NORM           
+1      0.1000          0.98906         0.00046         NORM           
