@@ -35,7 +35,6 @@ pressione = 1.0
 water_perc = 0.15
 enrich_min =0.05
 enrich_max = 0.45553
-iter = 1
 is_first_run = True
 
 
@@ -322,14 +321,15 @@ settings_k = openmc.Settings()
 settings_k.run_mode = 'eigenvalue'
 settings_k.inactive = inactive
 
-# Definiamo un box che racchiude l'intero core
-lower_left = [-R_CORE, -R_CORE, 0.0]
-upper_right = [R_CORE, R_CORE, H_CORE]
+r_search = R_FUEL 
+lower_left = [-r_search, -r_search, -50]
+upper_right = [r_search, r_search, 50]
 
-# Creazione di una distribuzione spaziale uniforme confinata ai materiali fessili
-uniform_dist = openmc.stats.Box(lower_left, upper_right, only_fissionable=True)
+# only_fissionable assicura il campionamento esclusivo nel materiale fissile
+source_area = openmc.stats.Box(lower_left, upper_right, only_fissionable=True)
 
-settings_k.source = openmc.IndependentSource(space=uniform_dist)
+# Assegnazione rigorosa del dominio spaziale alla sorgente indipendente
+settings_k.source = openmc.IndependentSource(space=source_area)
 
 # Override della frazione di rigetto
 settings_k.source_rejection_fraction = 0.001 
