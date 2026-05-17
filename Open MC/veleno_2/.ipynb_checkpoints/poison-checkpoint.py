@@ -293,7 +293,7 @@ giorni_on = giorni_on_transitorio + giorni_on_burnup
 # --- FASE OFF (Totale: 50 giorni) ---
 # Picco dello Xeno: altissima risoluzione per le prime 120 ore (5 giorni)
 # Gli step più fitti (0.05, 0.15, 0.2) si concentrano attorno alle 8-12 ore (picco massimo)
-giorni_off_picco_xe = [0.05, 0.1, 0.15, 0.2, 0.5, 1.0, 3.0] 
+giorni_off_picco_xe = [0.05, 0.1, 0.15, 0.2, 0.5, 1.0, 3.0, 3,3,3,3,3] 
 
 # Stabilizzazione finale: decadimento residuo e saturazione finale del Samario nei restanti 45 giorni
 giorni_off_coda = [10.0, 15.0, 20.0] 

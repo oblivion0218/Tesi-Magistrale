@@ -2,14 +2,12 @@ import subprocess
 
 print("Inizio esecuzione sequenziale...")
 
-print("Esecuzione di reattore_5 ...")
-#subprocess.run(["python", "esecuzione_multipla.py"], cwd="reattore_5/auto", check=True)
+print("Esecuzione di poison.py in veleno_2 ...")
 
-print("Esecuzione di arricchimenti in reattore_9 ")
-subprocess.run(["python", "arricchimenti_VS_pitch.py"], cwd="reattore_9", check=True)
+subprocess.run(["python", "poison.py"], cwd="veleno_2", check=True)
 
-print("Esecuzione di potenza in reattore_9 ")
-subprocess.run(["python", "run_pot.py"], cwd="reattore_9", check=True)
+print("Esecuzione di k_trans in veleno_2 ")
+subprocess.run(["python", "k_transitorio.py"], cwd="veleno_2", check=True)
 
 
 #import subprocess

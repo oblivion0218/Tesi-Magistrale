@@ -32,9 +32,9 @@ os.system("rm *.png")
 param_file = 'parametri.txt'
 moltiplicatore = 4.0
 pressione = 1.0
-water_perc = 1.0
-enrich_min = 1
-enrich_max = 1
+water_perc = 0.15
+enrich_min =0.05
+enrich_max = 0.45553
 iter = 1
 is_first_run = True
 
@@ -368,7 +368,7 @@ from datetime import datetime
 # 1. SETUP E CARICAMENTO RISULTATI DEPLETION
 # ==============================================================================
 # Percorso alla cartella dove poison.py ha salvato i file .h5
-PATH_DEPLETION = "25b_100000p_2" 
+PATH_DEPLETION = "50b_100000p" 
 results_file = os.path.join(PATH_DEPLETION, "depletion_results.h5")
 
 if not os.path.exists(results_file):
@@ -383,15 +383,14 @@ batches_norm = batches
 particles_norm = particles
 
 # Definisci qui la statistica maggiorata (MODIFICA A PIACIMENTO)
-batches_high = 200
+batches_high = 300
 particles_high = 1000000
 
 # ==============================================================================
 # 2. INIZIALIZZAZIONE FILE DI OUTPUT
 # ==============================================================================
 now = datetime.now()
-PATH  = "25b_1000000p_2"
-output_file = "k_eff_transitorio_" + PATH + ".txt"
+output_file = "k_eff_transitorio_" + PATH_DEPLATION + ".txt"
 
 if is_first_run:
     timestamp = now.strftime("\n\n------ ANALISI K_EFF CONGELATO DEL %d/%m/%Y ALLE ORE %H:%M ------\n")
@@ -416,7 +415,7 @@ for step in range(len(times_days)):
     
     # --- LOGICA STATISTICA DINAMICA ---
     # np.isclose evita errori di arrotondamento floating-point (es. 199.99999)
-    if np.isclose(t, 200.0, atol=1e-3) or np.isclose(t, 205.0, atol=1e-3):
+    if t>=395.0:
         curr_batches = batches_high
         curr_particles = particles_high
         stat_label = "HIGH"
