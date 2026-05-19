@@ -390,7 +390,7 @@ particles_high = 1000000
 # 2. INIZIALIZZAZIONE FILE DI OUTPUT
 # ==============================================================================
 now = datetime.now()
-output_file = "k_eff_transitorio_" + PATH_DEPLATION + ".txt"
+output_file = "k_eff_transitorio_" + PATH_DEPLETION + ".txt"
 
 if is_first_run:
     timestamp = now.strftime("\n\n------ ANALISI K_EFF CONGELATO DEL %d/%m/%Y ALLE ORE %H:%M ------\n")
