@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.23)  27 APR 2026 12:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.17)  19 MAY 2026 16:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -731,8 +731,7 @@ File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count362
 \l__pdf_internal_box=\box90
-)
-No file main.aux.
+) (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
@@ -753,6 +752,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
 LaTeX Font Info:    ... okay on input line 44.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
 LaTeX Font Info:    ... okay on input line 44.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -888,63 +888,31 @@ Package pdftex.def Info: reactor_xz.png  used on input line 114.
  [8
 
  <./reactor_xy.png> <./reactor_xz.png>]
-/home/bossi_ricky/WSL_Shared/Tesi_magistrale/Presentazioni/Presentazione/main.tex:141: Missing $ inserted.
-<inserted text> 
-                $
-l.141 \end{frame}
-                 
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/home/bossi_ricky/WSL_Shared/Tesi_magistrale/Presentazioni/Presentazione/main.tex:141: Missing $ inserted.
-<inserted text> 
-                $
-l.141 \end{frame}
-                 
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/home/bossi_ricky/WSL_Shared/Tesi_magistrale/Presentazioni/Presentazione/main.tex:141: Missing $ inserted.
-<inserted text> 
-                $
-l.141 \end{frame}
-                 
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/home/bossi_ricky/WSL_Shared/Tesi_magistrale/Presentazioni/Presentazione/main.tex:141: Missing $ inserted.
-<inserted text> 
-                $
-l.141 \end{frame}
-                 
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
 <Sincrotrone_anello.png, id=332, 396.2805pt x 233.07076pt>
 File: Sincrotrone_anello.png Graphic file (type png)
 <use Sincrotrone_anello.png>
-Package pdftex.def Info: Sincrotrone_anello.png  used on input line 141.
+Package pdftex.def Info: Sincrotrone_anello.png  used on input line 142.
 (pdftex.def)             Requested size: 190.73476pt x 112.18208pt.
 
-Overfull \vbox (14.74614pt too high) detected at line 141
+Overfull \vbox (24.08371pt too high) detected at line 142
  []
 
 [9
 
  <./Sincrotrone_anello.png>]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 162.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 163.
 <syncro_spectrum.png, id=364, 1606.0pt x 1003.75pt>
 File: syncro_spectrum.png Graphic file (type png)
 <use syncro_spectrum.png>
-Package pdftex.def Info: syncro_spectrum.png  used on input line 162.
+Package pdftex.def Info: syncro_spectrum.png  used on input line 163.
 (pdftex.def)             Requested size: 216.74202pt x 135.45445pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 162.
+(Font)              <10> on input line 163.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 162.
+(Font)              <7> on input line 163.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 162.
+(Font)              <5> on input line 163.
  [10
 
  <./syncro_spectrum.png>] [11
@@ -957,15 +925,15 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 <superficie.png, id=505, 677.8926pt x 714.7503pt>
 File: superficie.png Graphic file (type png)
 <use superficie.png>
-Package pdftex.def Info: superficie.png  used on input line 205.
+Package pdftex.def Info: superficie.png  used on input line 206.
 (pdftex.def)             Requested size: 195.06648pt x 205.66907pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 205.
+(Font)              <9> on input line 206.
  [14
 
  <./superficie.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 225.
+(Font)              <14.4> on input line 226.
  [15
 
 ] [16
@@ -974,10 +942,10 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 <pitch-k.png, id=634, 1196.97188pt x 744.53156pt>
 File: pitch-k.png Graphic file (type png)
 <use pitch-k.png>
-Package pdftex.def Info: pitch-k.png  used on input line 234.
+Package pdftex.def Info: pitch-k.png  used on input line 235.
 (pdftex.def)             Requested size: 281.76198pt x 175.24895pt.
 
-Overfull \vbox (11.19444pt too high) detected at line 234
+Overfull \vbox (11.19444pt too high) detected at line 235
  []
 
 [17
@@ -990,12 +958,12 @@ Overfull \vbox (11.19444pt too high) detected at line 234
 <reactor_xy_v.png, id=756, 446.41782pt x 373.395pt>
 File: reactor_xy_v.png Graphic file (type png)
 <use reactor_xy_v.png>
-Package pdftex.def Info: reactor_xy_v.png  used on input line 265.
+Package pdftex.def Info: reactor_xy_v.png  used on input line 266.
 (pdftex.def)             Requested size: 187.26216pt x 156.6311pt.
 <reactor_xz_v.png, id=757, 803.0pt x 803.0pt>
 File: reactor_xz_v.png Graphic file (type png)
 <use reactor_xz_v.png>
-Package pdftex.def Info: reactor_xz_v.png  used on input line 265.
+Package pdftex.def Info: reactor_xz_v.png  used on input line 266.
 (pdftex.def)             Requested size: 156.05286pt x 156.05138pt.
  [20
 
@@ -1003,10 +971,10 @@ Package pdftex.def Info: reactor_xz_v.png  used on input line 265.
 <regressione_parabolica_filtrata.png, id=787, 1156.32pt x 722.7pt>
 File: regressione_parabolica_filtrata.png Graphic file (type png)
 <use regressione_parabolica_filtrata.png>
-Package pdftex.def Info: regressione_parabolica_filtrata.png  used on input line 274.
+Package pdftex.def Info: regressione_parabolica_filtrata.png  used on input line 275.
 (pdftex.def)             Requested size: 338.11702pt x 211.31998pt.
 
-Overfull \vbox (36.86548pt too high) detected at line 274
+Overfull \vbox (36.86548pt too high) detected at line 275
  []
 
 [21
@@ -1015,10 +983,10 @@ Overfull \vbox (36.86548pt too high) detected at line 274
 <rette_di_arricchimento.png, id=818, 1149.093pt x 714.7503pt>
 File: rette_di_arricchimento.png Graphic file (type png)
 <use rette_di_arricchimento.png>
-Package pdftex.def Info: rette_di_arricchimento.png  used on input line 284.
+Package pdftex.def Info: rette_di_arricchimento.png  used on input line 285.
 (pdftex.def)             Requested size: 294.76596pt x 183.34409pt.
 
-Overfull \vbox (36.0896pt too high) detected at line 284
+Overfull \vbox (36.0896pt too high) detected at line 285
  []
 
 [22
@@ -1031,10 +999,10 @@ Overfull \vbox (36.0896pt too high) detected at line 284
 <scatter_potenza_errore.png, id=901, 1156.32pt x 722.7pt>
 File: scatter_potenza_errore.png Graphic file (type png)
 <use scatter_potenza_errore.png>
-Package pdftex.def Info: scatter_potenza_errore.png  used on input line 316.
+Package pdftex.def Info: scatter_potenza_errore.png  used on input line 317.
 (pdftex.def)             Requested size: 303.4375pt x 189.63991pt.
 
-Overfull \vbox (23.64098pt too high) detected at line 316
+Overfull \vbox (23.64098pt too high) detected at line 317
  []
 
 [25
@@ -1045,7 +1013,7 @@ Overfull \vbox (23.64098pt too high) detected at line 316
 <circolarità.png, id=960, 1148.3703pt x 714.7503pt>
 File: circolarità.png Graphic file (type png)
 <use circolarità.png>
-Package pdftex.def Info: circolarità.png  used on input line 365.
+Package pdftex.def Info: circolarità.png  used on input line 366.
 (pdftex.def)             Requested size: 216.74202pt x 134.89876pt.
  [27
 
@@ -1053,7 +1021,7 @@ Package pdftex.def Info: circolarità.png  used on input line 365.
 <operatività.png, id=989, 1148.3703pt x 714.7503pt>
 File: operatività.png Graphic file (type png)
 <use operatività.png>
-Package pdftex.def Info: operatività.png  used on input line 385.
+Package pdftex.def Info: operatività.png  used on input line 386.
 (pdftex.def)             Requested size: 216.74202pt x 134.89876pt.
  [28
 
@@ -1063,10 +1031,10 @@ Package pdftex.def Info: operatività.png  used on input line 385.
 <potenza_kmax_vs_pitch.png, id=1046, 1156.32pt x 722.7pt>
 File: potenza_kmax_vs_pitch.png Graphic file (type png)
 <use potenza_kmax_vs_pitch.png>
-Package pdftex.def Info: potenza_kmax_vs_pitch.png  used on input line 410.
+Package pdftex.def Info: potenza_kmax_vs_pitch.png  used on input line 411.
 (pdftex.def)             Requested size: 433.48404pt x 270.92361pt.
 
-Overfull \vbox (124.55957pt too high) detected at line 410
+Overfull \vbox (124.55957pt too high) detected at line 411
  []
 
 [30
@@ -1074,66 +1042,44 @@ Overfull \vbox (124.55957pt too high) detected at line 410
  <./potenza_kmax_vs_pitch.png>] [31
 
 ]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 486.
-
-Overfull \hbox (9.63799pt too wide) detected at line 486
+Overfull \hbox (9.63799pt too wide) detected at line 490
 []
- []
-
-
-Overfull \vbox (35.67464pt too high) detected at line 486
  []
 
 [32
 
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [33
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 559.
+ [33
 
 ] [34
 
-] [35
+])
+Runaway argument?
+\@kernel@before@enddocument \UseOneTimeHook {enddocument}\@kernel@after@enddocument \ETC.
+! File ended while scanning use of \beamer@collect@@body.
+<inserted text> 
+                \par 
+<*> ...strale/Presentazioni/Presentazione/main.tex
+                                                  
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
 
-]
-\tf@nav=\write6
-\openout6 = `main.nav'.
+! Emergency stop.
+<*> ...strale/Presentazioni/Presentazione/main.tex
+                                                  
+*** (job aborted, no legal \end found)
 
-\tf@toc=\write7
-\openout7 = `main.toc'.
-
-\tf@snm=\write8
-\openout8 = `main.snm'.
-
- (./main.aux)
- ***********
-LaTeX2e <2023-11-01> patch level 1
-L3 programming layer <2024-01-22>
- ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
- ) 
+ 
 Here is how much of TeX's memory you used:
- 28665 strings out of 476182
- 587175 string characters out of 5795595
+ 28672 strings out of 474222
+ 586597 string characters out of 5748733
  1953975 words of memory out of 5000000
- 50014 multiletter control sequences out of 15000+600000
- 640486 words of font info for 102 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 128i,19n,123p,479b,1110s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (35 pages, 3038265 bytes).
-PDF statistics:
- 1365 PDF objects out of 1440 (max. 8388607)
- 1093 compressed objects within 11 object streams
- 77 named destinations out of 1000 (max. 500000)
- 827 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 50275 multiletter control sequences out of 15000+600000
+ 636505 words of font info for 97 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 128i,19n,123p,515b,1135s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!

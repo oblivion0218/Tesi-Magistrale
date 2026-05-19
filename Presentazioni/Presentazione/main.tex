@@ -114,8 +114,9 @@ Muovendosi da HFP a CZP la temperatura si abbassa, ma a causa dei feedback, il $
 \end{frame}
 
 \begin{frame}{Progetto SYNERGY}
+    
     \begin{block}{Sistema Synchrotron-driven Neutron source}
-        Infrastruttura progettata per colmare il gap di flusso tra le grandi sorgenti a spallazione (\sim $10^{16}$ n/$cm^2$ s) e le macchine compatte (CANS: \sim $10^{10}$ n/$cm^2$ s). Attualmente in fase di studio.
+    Infrastruttura progettata per colmare il gap di flusso tra le grandi sorgenti a spallazione ($\sim 10^{16} \, \text{n}/\text{cm}^2\text{s}$) e le macchine compatte (CANS: $\sim 10^{10} \, \text{n}/\text{cm}^2\text{s}$). Attualmente in fase di studio.
     \end{block}
     
     \begin{itemize}
@@ -126,7 +127,7 @@ Muovendosi da HFP a CZP la temperatura si abbassa, ma a causa dei feedback, il $
     \begin{columns}[c]
         \begin{column}{0.45\textwidth}
                 \footnotesize
-                \textbf Figura3: Layout dell'anello di accumulazione e delle beamline di estrazione del fascio fotonico.
+                \textbf{Figura3:} Layout dell'anello di accumulazione e delle beamline di estrazione del fascio fotonico.
                 \label{fig:synergy_ring}
             
         \end{column}
@@ -411,8 +412,8 @@ I punti di lavoro della slide precedente sono trovati con questa distribuzione r
 
 \begin{frame}{Next steps}
     \begin{itemize}
-        \item Ulteriori test del modello con diversi pitch.
-        \item Analisi di possibili altri meccanismi di feedback come per esempio i veleni.
+        \item Ulteriori test del modello con diversi pitch, fuel e materiali.
+        \item Analisi di possibili altri meccanismi di feedback correlati, come per esempio la dilatazione termica.
         \item Analisi di sensibilità del modello con diverse geometrie e condizioni operative di pressione e moderatore.
     \end{itemize}
 \end{frame}
@@ -424,15 +425,15 @@ I punti di lavoro della slide precedente sono trovati con questa distribuzione r
         
         % COLONNA SINISTRA
         \begin{column}{0.48\textwidth}
-            {$^{135}$Xe:} $\sigma_a \approx 2 \times 10^6$ b (very large thermal cross section).
+            {\small \textbf{$^{135}$Xe:} $\sigma_a \approx 2 \times 10^6$ b \\ (very large thermal cross section).}
             
-            \vspace{0.4cm}
-            {\Large \textbf{Production/removal scheme:}}
-            \vspace{0.2cm}
+            \vspace{0.1cm}
+            \textbf{Production/removal scheme:}
             
             \begin{center}
+            \resizebox{\textwidth}{!}{%
             \begin{tikzpicture}[
-                box/.style={draw, rounded corners, minimum width=1.5cm, minimum height=0.8cm, fill=gray!10, font=\large},
+                box/.style={draw, rounded corners, minimum width=1.2cm, minimum height=0.6cm, fill=gray!10},
                 greenbox/.style={box, draw=green, text=black},
                 graybox/.style={box, draw=gray, text=black},
                 bluebox/.style={box, draw=blue, text=black},
@@ -440,44 +441,47 @@ I punti di lavoro della slide precedente sono trovati con questa distribuzione r
             ]
                 % Nodi
                 \node[bluebox] (I) {$^{135}$\textbf{I}};
-                \node[bluebox, right=1.5cm of I] (Xe) {$^{135}$\textbf{Xe}};
-                \node[greenbox, above right=0.2cm and 0.8cm of Xe] (Cs) {$^{135}$\textbf{Cs}};
-                \node[graybox, below right=0.2cm and 0.8cm of Xe] (Xe136) {$^{136}$\textbf{Xe}};
+                \node[bluebox, right=1.2cm of I] (Xe) {$^{135}$\textbf{Xe}};
+                \node[greenbox, above right=0.1cm and 0.5cm of Xe] (Cs) {$^{135}$\textbf{Cs}};
+                \node[graybox, below right=0.1cm and 0.5cm of Xe] (Xe136) {$^{136}$\textbf{Xe}};
                 
                 % Frecce orizzontali e oblique
-                \draw[arrow, blue] (I) -- node[above, font=\small] {$\beta^-, \lambda_I$} (Xe);
-                \draw[arrow, green] (Xe.east) -- node[above left, font=\small] {$\beta^-$} (Cs.west);
-                \draw[arrow, gray] (Xe.east) -- node[below left, font=\small] {$n, \gamma$} (Xe136.west);
+                \draw[arrow, blue] (I) -- node[above, font=\scriptsize] {$\beta^-, \lambda_I$} (Xe);
+                \draw[arrow, green] (Xe.east) -- node[above left, font=\scriptsize] {$\beta^-$} (Cs.west);
+                \draw[arrow, gray] (Xe.east) -- node[below left, font=\scriptsize] {$n, \gamma$} (Xe136.west);
                 
                 % Frecce verticali (fission)
-                \draw[arrow, orange] ([yshift=-1cm]I.south) -- node[below, font=\small] {fission} (I.south);
-                \draw[arrow, orange] ([yshift=-1cm]Xe.south) -- node[below, font=\small] {fission} (Xe.south);
-            \end{tikzpicture}
+                \draw[arrow, orange] ([yshift=-0.4cm]I.south) -- node[below, font=\scriptsize] {fission} (I.south);
+                \draw[arrow, orange] ([yshift=-0.4cm]Xe.south) -- node[below, font=\scriptsize] {fission} (Xe.south);
+            \end{tikzpicture}%
+            }
             \end{center}
             
-            \vspace{0.2cm}
-            \begin{tcolorbox}[colframe=red, colback=gray!5, boxrule=1pt, arc=4pt, left=1mm, right=1mm, top=1mm, bottom=1mm]
-                After shutdown: $^{135}$Xe peaks (\textbf{xenon pit}) as $^{135}$I continues to decay but neutron capture removal stops --- can prevent reactor restart for 20--40 h.
+            \vspace{0.1cm}
+            \begin{tcolorbox}[colframe=red, colback=gray!5, boxrule=0.5pt, arc=2pt, left=1mm, right=1mm, top=1mm, bottom=1mm]
+                \scriptsize After shutdown: $^{135}$Xe peaks (\textbf{xenon pit}) as $^{135}$I continues to decay but neutron capture removal stops --- can prevent reactor restart for 20--40 h.
             \end{tcolorbox}
         \end{column}
         
         % COLONNA DESTRA
         \begin{column}{0.48\textwidth}
-            {\Large \textbf{Rate equations:}}
+            \textbf{Rate equations:}
+            \vspace{-0.2cm}
             \begin{align*}
-                \frac{dN_I}{dt} &= \gamma_I \Sigma_f \phi - \lambda_I N_I \\[0.4cm]
+                \frac{dN_I}{dt} &= \gamma_I \Sigma_f \phi - \lambda_I N_I \\[0.1cm]
                 \frac{dN_{Xe}}{dt} &= \underbrace{\gamma_{Xe} \Sigma_f \phi}_{\text{direct}} + \underbrace{\lambda_I N_I}_{\text{from }^{135}\text{I}} - \underbrace{(\lambda_{Xe} + \sigma_a \phi) N_{Xe}}_{\text{removal}}
             \end{align*}
             
-            \vspace{0.2cm}
-            {\Large \textbf{Equilibrium:}}
+            \vspace{0.1cm}
+            \textbf{Equilibrium:}
+            \vspace{-0.1cm}
             \begin{equation*}
                 N_{Xe}^{\text{eq}} = \frac{(\gamma_I + \gamma_{Xe}) \Sigma_f \phi}{\lambda_{Xe} + \sigma_{a,Xe} \phi}
             \end{equation*}
             
-            \vspace{0.3cm}
-            \begin{tcolorbox}[colframe=orange, colback=orange!5, boxrule=1pt, arc=4pt, left=1mm, right=1mm, top=1mm, bottom=1mm]
-                Parameters: $\gamma_I = 0.061$, $\gamma_{Xe} = 0.003$, $\lambda_I = 2.9 \times 10^{-5} \text{ s}^{-1}$, $\lambda_{Xe} = 2.1 \times 10^{-5} \text{ s}^{-1}$.
+            \vspace{0.1cm}
+            \begin{tcolorbox}[colframe=orange, colback=orange!5, boxrule=0.5pt, arc=2pt, left=1mm, right=1mm, top=1mm, bottom=1mm]
+                \scriptsize Parameters: $\gamma_I = 0.061$, $\gamma_{Xe} = 0.003$, $\lambda_I = 2.9 \times 10^{-5} \text{ s}^{-1}$, $\lambda_{Xe} = 2.1 \times 10^{-5} \text{ s}^{-1}$.
             \end{tcolorbox}
         \end{column}
         
@@ -485,9 +489,188 @@ I punti di lavoro della slide precedente sono trovati con questa distribuzione r
     
 \end{frame}
 
-\begin{frame}{}
+\begin{frame}{ $^{149}$Sm Buildup (Samarium Poisoning)}
+    
+    \begin{columns}[T]
+        
+        % COLONNA SINISTRA
+        \begin{column}{0.48\textwidth}
+            {\small \textbf{$^{149}$Sm:} $\sigma_a \approx 4.1 \times 10^4$ b \\ (large thermal cross section, but \textbf{stable}).}
+            
+            \vspace{0.1cm}
+            \textbf{Production/removal scheme:}
+            
+            \begin{center}
+            \resizebox{0.9\textwidth}{!}{%
+            \begin{tikzpicture}[
+                box/.style={draw, rounded corners, minimum width=1.2cm, minimum height=0.6cm, fill=gray!10},
+                graybox/.style={box, draw=gray, text=black},
+                bluebox/.style={box, draw=blue, text=black},
+                arrow/.style={-stealth, thick}
+            ]
+                % Nodi (Il Nd-149 decade velocemente in Pm-149, spesso si parte dal Pm)
+                \node[bluebox] (Pm) {$^{149}$\textbf{Pm}};
+                \node[bluebox, right=1.2cm of Pm] (Sm) {$^{149}$\textbf{Sm}};
+                \node[graybox, right=1.2cm of Sm] (Sm150) {$^{150}$\textbf{Sm}};
+                
+                % Frecce orizzontali
+                \draw[arrow, blue] (Pm) -- node[above, font=\scriptsize] {$\beta^-, \lambda_{Pm}$} (Sm);
+                \draw[arrow, gray] (Sm.east) -- node[above, font=\scriptsize] {$n, \gamma$} (Sm150.west);
+                
+                % Frecce verticali (fission) - Usata sintassi sicura
+                \draw[arrow, orange] (Pm.south) ++(0,-0.6cm) -- node[left, font=\scriptsize] {fission} (Pm.south);
+                
+                % Nessun decadimento in uscita dal Sm perché è stabile!
+            \end{tikzpicture}%
+            }
+            \end{center}
+            
+            \vspace{0.1cm}
+            \begin{tcolorbox}[colframe=red, colback=gray!5, boxrule=0.5pt, arc=2pt, left=1mm, right=1mm, top=1mm, bottom=1mm]
+                \scriptsize After shutdown: $^{149}$Sm builds up to an asymptotic maximum as $^{149}$Pm decays. Because $^{149}$Sm is \textbf{stable} ($\lambda_{Sm}=0$), this poison \textbf{does not decay} and remains in the core until restart.
+            \end{tcolorbox}
+        \end{column}
+        
+        % COLONNA DESTRA
+        \begin{column}{0.48\textwidth}
+            \textbf{Rate equations:}
+            \vspace{-0.2cm}
+            \begin{align*}
+                \frac{dN_{Pm}}{dt} &= \gamma_{Pm} \Sigma_f \phi - \lambda_{Pm} N_{Pm} \\[0.1cm]
+                \frac{dN_{Sm}}{dt} &= \underbrace{\lambda_{Pm} N_{Pm}}_{\text{from }^{149}\text{Pm}} - \underbrace{\sigma_a \phi N_{Sm}}_{\text{removal (no decay)}}
+            \end{align*}
+            
+            \vspace{0.1cm}
+            \textbf{Equilibrium:}
+            \vspace{-0.1cm}
+            \begin{equation*}
+                N_{Sm}^{\text{eq}} = \frac{\lambda_{Pm} N_{Pm}^{eq}}{\sigma_{a,Sm} \phi} = \frac{\gamma_{Pm} \Sigma_f}{\sigma_{a,Sm}}
+            \end{equation*}
+            
+            \vspace{0.1cm}
+            \begin{tcolorbox}[colframe=orange, colback=orange!5, boxrule=0.5pt, arc=2pt, left=1mm, right=1mm, top=1mm, bottom=1mm]
+                \scriptsize Parameters: $\gamma_{Pm} = 0.0113$, $\lambda_{Pm} = 3.56 \times 10^{-6} \text{ s}^{-1}$ ($T_{1/2} = 53$ h), $\lambda_{Sm} = 0$. \\
+                \textbf{Note:} $N_{Sm}^{\text{eq}}$ is \textit{independent} of flux $\phi$.
+            \end{tcolorbox}
+        \end{column}
+        
+    \end{columns}
     
 \end{frame}
+
+% --- SLIDE 1: COSA FA UNA SIMULAZIONE IN DEPLETION ---
+\begin{frame}{Simulazioni di Depletion (Burn-up)}
+    \begin{block}{Accoppiamento Trasporto-Evoluzione Isotopica}
+        La simulazione in modalità \textit{depletion} permette di tracciare l'evoluzione temporale della composizione isotopica del combustibile nucleare sotto l'effetto del flusso neutronico, risolvendo in modo accoppiato il trasporto Monte Carlo e le equazioni di Bateman.
+    \end{block}
+
+    \vspace{0.2cm}
+    \begin{itemize}
+        \item \textbf{Fase di Trasporto (OpenMC):} Calcolo del flusso neutronico spaziale e spettrale $\Phi(\vec{r}, E)$ e dei ratei di reazione microscopici ($\sigma_i \phi$) all'inizio del passo temporale (\textit{time-step}).
+        \item \textbf{Fase di Evoluzione (Bateman):} Utilizzo dei ratei estratti per risolvere numericamente il sistema di equazioni differenziali linearizzate, aggiornando le densità atomiche $N_i(t)$ per il passo successivo.
+        \item \textbf{Feedback di Composizione:} L'accumulo di prodotti di fissione (veleni) e il consumo di fissile alterano le proprietà macroscopiche del mezzo ($\Sigma_a, \Sigma_f$), modificando la risposta neutronica nei passaggi successivi.
+    \end{itemize}
+\end{frame}
+
+% --- SLIDE 2: FOTO SULLO XENON ---
+\begin{frame}{Evoluzione Temporale di $^{135}\text{I}$ e $^{135}\text{Xe}$}
+    \begin{center}
+        \includegraphics[height=0.65\textheight]{Xe.png} % Sostituisci con il nome del tuo file
+    \end{center}
+    \vfill
+    \begin{flushleft}
+        \scriptsize
+        \textbf{Figura X:} Andamento accoppiato delle densità atomiche dello Iodio-135 e dello Xenon-135 durante l'operatività nominale e nella fase successiva allo spegnimento del reattore (\textit{shutdown}). 
+\end{frame}
+
+% --- SLIDE 2: FOTO SULLO XENON ---
+\begin{frame}{Evoluzione Temporale di $^{135}\text{I}$ e $^{135}\text{Xe}$}
+    \begin{center}
+        \includegraphics[height=0.65\textheight]{Xe_zoom.png} % Sostituisci con il nome del tuo file
+    \end{center}
+    \vfill
+    \begin{flushleft}
+        \scriptsize
+        \textbf{Figura X:} Il grafico mostra meglio l'insorgenza del picco di avvelenamento post-climax indotto dal disaccoppiamento dei tempi di dimezzamento dei due nuclidi.
+    \end{flushleft}
+\end{frame}
+
+% --- SLIDE 3: COMMENTO XENON ---
+\begin{frame}{Analisi della Cinetica dello Xenon-135}
+    \begin{itemize}
+        \item \textbf{Fase Operativa (Equilibrio):} Durante il funzionamento stazionario, la produzione di $^{135}\text{Xe}$ (da fissione diretta e decadimento del $^{135}\text{I}$) è bilanciata perfettamente dalla sua distruzione per decadimento naturale e, soprattutto, per cattura neutronica parassita ($n,\gamma$).
+        \item \textbf{Transitorio di Transizione (Xenon Pit):} Allo spegnimento del reattore, il flusso neutronico crolla istantaneamente ($\phi \to 0$), annullando il termine di rimozione per cattura ($\sigma_{a,\text{Xe}}\phi N_{\text{Xe}} \to 0$).
+        \item \textbf{Meccanismo del Picco:} Il $^{135}\text{I}$ accumulato nel core continua a decadere in $^{135}\text{Xe}$ con un tempo di dimezzamento inferiore ($T_{1/2} = 6.6$ h) rispetto a quello di distruzione dello Xenon ($T_{1/2} = 9.2$ h). Questo dislivello cinetico genera un accumulo netto di veleno che raggiunge un massimo assoluto prima di decadere asintoticamente.
+    \end{itemize}
+\end{frame}
+
+% --- SLIDE 4: FOTO SUL SAMARIO ---
+\begin{frame}{Evoluzione Temporale di $^{149}\text{Pm}$ e $^{149}\text{Sm}$}
+    \begin{center}
+        \includegraphics[height=0.65\textheight]{sm.png} % Sostituisci con il nome del tuo file
+    \end{center}
+    \vfill
+    \begin{flushleft}
+        \scriptsize
+        \textbf{Figura Y:} Concentrazione del Promezio-149 e del Samario-149 in funzione del tempo di irraggiamento e dopo lo spegnimento. Si evidenzia il comportamento asintotico non decrescente del $^{149}\text{Sm}$ nella fase post-operativa dovuto alla stabilità intrinseca dell'isotopo.
+    \end{flushleft}
+\end{frame}
+
+% --- SLIDE 5: COMMENTO SAMARIO ---
+\begin{frame}{Analisi della Cinetica del Samario-149}
+    \begin{itemize}
+        \item \textbf{Indipendenza dal Flusso all'Equilibrio:} A differenza dello Xenon, la densità stazionaria di $^{149}\text{Sm}$ non dipende quantitativamente dal flusso neutronico totale $\phi$, poiché il flusso si semplifica analiticamente nel rapporto tra il tasso di produzione e quello di bruciamento (\textit{burn-out}).
+        \item \textbf{Comportamento Post-Shutdown:} Quando il reattore viene spento, la distruzione per cattura neutronica si interrompe. Il $^{149}\text{Pm}$ presente nel core continua a decadere in $^{149}\text{Sm}$ con un tempo di dimezzamento di circa $53$ ore.
+        \item \textbf{Stabilità Asintotica:} Poiché il $^{149}\text{Sm}$ è un nuclide stabile ($\lambda_{\text{Sm}} = 0$), la sua concentrazione post-spegnimento cresce fino a raggiungere un plateau costante senza subire successivi decadimenti. Questo livello di avvelenamento residuo rimane congelato nel core fino alla successiva riaccensione del sistema.
+    \end{itemize}
+\end{frame}
+
+% --- SLIDE 6: FOTO POTENZA ---
+\begin{frame}{Evoluzione della Potenza Termica del Core}
+    \begin{center}
+        \includegraphics[height=0.65\textheight]{power.png} % Sostituisci con il nome del tuo file
+    \end{center}
+    \vfill
+    \begin{flushleft}
+        \scriptsize
+        \textbf{Figura Z:} Profilo temporale della potenza termica globale espressa in MW nel corso del ciclo di vita del combustibile. La stabilità del rateo riflette l'equilibrio tra la sorgente esterna fotonica costante e le proprietà moltiplicative macroscopiche della matrice sottocrtica.
+    \end{flushleft}
+\end{frame}
+
+% --- SLIDE 7: FOTO K_EFF ---
+\begin{frame}{Evoluzione del Fattore di Moltiplicazione Effettivo ($k_{eff}$)}
+    \begin{center}
+        \includegraphics[height=0.65\textheight]{keff.png} % Sostituisci con il nome del tuo file
+    \end{center}
+    \vfill
+    \begin{flushleft}
+        \scriptsize
+        \textbf{Figura K:} Andamento del fattore di moltiplicazione effettivo $k_{eff}$ in funzione dei giorni di operatività in piena potenza (HFP). Il tracciato documenta i margini di sicurezza legali e la stabilità complessiva del sistema rispetto all'avvelenamento e al consumo di fissile.
+    \end{flushleft}
+\end{frame}
+
+\begin{frame}{Evoluzione del Fattore di Moltiplicazione Effettivo ($k_{eff}$)}
+    \begin{center}
+        \includegraphics[height=0.65\textheight]{k_eff_zoom.png} % Sostituisci con il nome del tuo file
+    \end{center}
+    \vfill
+    \begin{flushleft}
+        \scriptsize
+        \textbf{Figura K:} Andamento del fattore di moltiplicazione effettivo $k_{eff}$ in funzione dei giorni di operatività in piena potenza (HFP). Il tracciato documenta i margini di sicurezza legali e la stabilità complessiva del sistema rispetto all'avvelenamento e al consumo di fissile.
+    \end{flushleft}
+\end{frame}
+
+% --- SLIDE 8: COMMENTO POTENZA E K_EFF ---
+\begin{frame}{Correlazione tra Potenza e Reattività nel Ciclo di Vita}
+    \begin{itemize}
+        \item \textbf{Stabilità della Potenza Termica:} In un ADS operante in regime stazionario, la potenza termica totale è linearmente vincolata all'intensità della sorgente esterna $S$. Il mantenimento di un profilo stabile della potenza dimostra l'efficace accoppiamento energetico tra la sorgente fotonucleare centrale e il core moltiplicante.
+        \item \textbf{Deriva Cinetica del $k_{eff}$:} L'andamento temporale del $k_{eff}$ mostra l'impatto combinato dell'accumulo dei prodotti di fissione parassiti ($^{135}\text{Xe}$ e $^{149}\text{Sm}$) e del progressivo consumo dell'isotopo fissile. 
+        \item \textbf{Effetto di Compensazione del Breeding:} Nello spettro epitemico/veloce considerato, il consumo di fissile è parzialmente compensato dal meccanismo di \textit{breeding} endogeno da nucleo fertile. Questo bilanciamento isotopico stabilizza l'autovalore nel lungo periodo, minimizzando le oscillazioni di reattività e garantendo la persistenza dei margini di sottocriticità impostati a freddo ($k_{max} < 1$).
+    \end{itemize}
+\end{frame}
+
+
+
 
 % --- SLIDE 1: Formulazione e Operatori ---
 \begin{frame}{Fondamento Matematico: L'Equazione del Trasporto}
