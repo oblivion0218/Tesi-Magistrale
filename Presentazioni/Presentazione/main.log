@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.17)  19 MAY 2026 16:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.17)  19 MAY 2026 17:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -807,6 +807,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring OFF on input line 44.
+ (./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
@@ -1055,31 +1056,118 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
 
 ] [34
 
-])
-Runaway argument?
-\@kernel@before@enddocument \UseOneTimeHook {enddocument}\@kernel@after@enddocument \ETC.
-! File ended while scanning use of \beamer@collect@@body.
-<inserted text> 
-                \par 
-<*> ...strale/Presentazioni/Presentazione/main.tex
-                                                  
-I suspect you have forgotten a `}', causing me
-to read past where you wanted me to stop.
-I'll try to recover; but if the error is serious,
-you'd better type `E' or `X' now and fix your file.
+]
+<Xe.png, id=1200, 941.6781pt x 624.4128pt>
+File: Xe.png Graphic file (type png)
+<use Xe.png>
+Package pdftex.def Info: Xe.png  used on input line 585.
+(pdftex.def)             Requested size: 275.30682pt x 182.55624pt.
 
-! Emergency stop.
-<*> ...strale/Presentazioni/Presentazione/main.tex
-                                                  
-*** (job aborted, no legal \end found)
+Overfull \vbox (7.55731pt too high) detected at line 585
+ []
 
- 
+[35
+
+ <./Xe.png>]
+<Xe_zoom.png, id=1229, 956.1321pt x 624.4128pt>
+File: Xe_zoom.png Graphic file (type png)
+<use Xe_zoom.png>
+Package pdftex.def Info: Xe_zoom.png  used on input line 597.
+(pdftex.def)             Requested size: 279.53256pt x 182.55624pt.
+
+Overfull \vbox (7.11281pt too high) detected at line 597
+ []
+
+[36
+
+ <./Xe_zoom.png>] [37
+
+]
+<sm.png, id=1287, 1148.3703pt x 714.7503pt>
+File: sm.png Graphic file (type png)
+<use sm.png>
+Package pdftex.def Info: sm.png  used on input line 619.
+(pdftex.def)             Requested size: 293.31242pt x 182.55624pt.
+
+Overfull \vbox (16.61281pt too high) detected at line 619
+ []
+
+[38
+
+ <./sm.png>] [39
+
+]
+<power.png, id=1343, 1148.3703pt x 714.7503pt>
+File: power.png Graphic file (type png)
+<use power.png>
+Package pdftex.def Info: power.png  used on input line 640.
+(pdftex.def)             Requested size: 293.31242pt x 182.55624pt.
+ [40
+
+ <./power.png>]
+<k_eff.png, id=1373, 1149.093pt x 714.7503pt>
+File: k_eff.png Graphic file (type png)
+<use k_eff.png>
+Package pdftex.def Info: k_eff.png  used on input line 653.
+(pdftex.def)             Requested size: 293.49702pt x 182.55624pt.
+
+Overfull \vbox (15.05731pt too high) detected at line 653
+ []
+
+[41
+
+ <./k_eff.png>]
+<k_eff_zoom.png, id=1402, 1148.3703pt x 714.7503pt>
+File: k_eff_zoom.png Graphic file (type png)
+<use k_eff_zoom.png>
+Package pdftex.def Info: k_eff_zoom.png  used on input line 665.
+(pdftex.def)             Requested size: 293.31242pt x 182.55624pt.
+
+Overfull \vbox (15.05731pt too high) detected at line 665
+ []
+
+[42
+
+ <./k_eff_zoom.png>] [43
+
+] [44
+
+]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 708.
+ [45
+
+]
+\tf@nav=\write6
+\openout6 = `main.nav'.
+
+\tf@toc=\write7
+\openout7 = `main.toc'.
+
+\tf@snm=\write8
+\openout8 = `main.snm'.
+
+ (./main.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+ ***********
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+ ) 
 Here is how much of TeX's memory you used:
- 28672 strings out of 474222
- 586597 string characters out of 5748733
+ 28781 strings out of 474222
+ 588661 string characters out of 5748733
  1953975 words of memory out of 5000000
- 50275 multiletter control sequences out of 15000+600000
- 636505 words of font info for 97 fonts, out of 8000000 for 9000
+ 50356 multiletter control sequences out of 15000+600000
+ 640522 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,19n,123p,515b,1135s stack positions out of 10000i,1000n,20000p,200000b,200000s
-!  ==> Fatal error occurred, no output PDF file produced!
+</usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
+Output written on main.pdf (45 pages, 3706146 bytes).
+PDF statistics:
+ 1677 PDF objects out of 1728 (max. 8388607)
+ 1361 compressed objects within 14 object streams
+ 97 named destinations out of 1000 (max. 500000)
+ 887 words of extra memory for PDF output out of 10000 (max. 10000000)
+
