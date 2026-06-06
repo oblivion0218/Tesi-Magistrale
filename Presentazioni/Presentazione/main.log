@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.17)  19 MAY 2026 17:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.17)  20 MAY 2026 16:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -706,25 +706,25 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemeMadrid.sty (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty)) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemecircles.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerfontthemeprofessionalfonts.sty)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 33.
+(hyperref)                removing `\\' on input line 32.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 41.
+(hyperref)                removing `\\' on input line 40.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\new@ifnextchar' on input line 41.
+(hyperref)                removing `\new@ifnextchar' on input line 40.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\medskipamount' on input line 41.
+(hyperref)                removing `\medskipamount' on input line 40.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 41.
+(hyperref)                removing `\\' on input line 40.
 
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 44.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 43.
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -734,24 +734,24 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -806,7 +806,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 44.
+Package hyperref Info: Link coloring OFF on input line 43.
  (./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
@@ -826,37 +826,37 @@ Dictionary: translator-theorem-dictionary, Language: English
 ) (./main.nav) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 65.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 64.
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 65.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 64.
  (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 65.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 64.
  (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 65.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 64.
  (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 65.
+(Font)              <10.95> on input line 64.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 65.
+(Font)              <8> on input line 64.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 65.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 65.
+(Font)              <6> on input line 64.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 64.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 64.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \vbox (0.78506pt too high) detected at line 65
+Overfull \vbox (0.78506pt too high) detected at line 64
  []
 
 [2
@@ -868,7 +868,7 @@ Overfull \vbox (0.78506pt too high) detected at line 65
 ] [5
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 96.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 95.
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [6
@@ -879,12 +879,12 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 <reactor_xy.png, id=288, 442.65375pt x 380.17032pt>
 File: reactor_xy.png Graphic file (type png)
 <use reactor_xy.png>
-Package pdftex.def Info: reactor_xy.png  used on input line 114.
+Package pdftex.def Info: reactor_xy.png  used on input line 113.
 (pdftex.def)             Requested size: 176.86118pt x 151.8972pt.
 <reactor_xz.png, id=290, 441.90094pt x 542.025pt>
 File: reactor_xz.png Graphic file (type png)
 <use reactor_xz.png>
-Package pdftex.def Info: reactor_xz.png  used on input line 114.
+Package pdftex.def Info: reactor_xz.png  used on input line 113.
 (pdftex.def)             Requested size: 135.24454pt x 165.88391pt.
  [8
 
@@ -892,28 +892,28 @@ Package pdftex.def Info: reactor_xz.png  used on input line 114.
 <Sincrotrone_anello.png, id=332, 396.2805pt x 233.07076pt>
 File: Sincrotrone_anello.png Graphic file (type png)
 <use Sincrotrone_anello.png>
-Package pdftex.def Info: Sincrotrone_anello.png  used on input line 142.
+Package pdftex.def Info: Sincrotrone_anello.png  used on input line 141.
 (pdftex.def)             Requested size: 190.73476pt x 112.18208pt.
 
-Overfull \vbox (24.08371pt too high) detected at line 142
+Overfull \vbox (24.08371pt too high) detected at line 141
  []
 
 [9
 
  <./Sincrotrone_anello.png>]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 163.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 162.
 <syncro_spectrum.png, id=364, 1606.0pt x 1003.75pt>
 File: syncro_spectrum.png Graphic file (type png)
 <use syncro_spectrum.png>
-Package pdftex.def Info: syncro_spectrum.png  used on input line 163.
+Package pdftex.def Info: syncro_spectrum.png  used on input line 162.
 (pdftex.def)             Requested size: 216.74202pt x 135.45445pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 163.
+(Font)              <10> on input line 162.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 163.
+(Font)              <7> on input line 162.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 163.
+(Font)              <5> on input line 162.
  [10
 
  <./syncro_spectrum.png>] [11
@@ -926,15 +926,15 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 <superficie.png, id=505, 677.8926pt x 714.7503pt>
 File: superficie.png Graphic file (type png)
 <use superficie.png>
-Package pdftex.def Info: superficie.png  used on input line 206.
+Package pdftex.def Info: superficie.png  used on input line 205.
 (pdftex.def)             Requested size: 195.06648pt x 205.66907pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 206.
+(Font)              <9> on input line 205.
  [14
 
  <./superficie.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 226.
+(Font)              <14.4> on input line 225.
  [15
 
 ] [16
@@ -943,10 +943,10 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 <pitch-k.png, id=634, 1196.97188pt x 744.53156pt>
 File: pitch-k.png Graphic file (type png)
 <use pitch-k.png>
-Package pdftex.def Info: pitch-k.png  used on input line 235.
+Package pdftex.def Info: pitch-k.png  used on input line 234.
 (pdftex.def)             Requested size: 281.76198pt x 175.24895pt.
 
-Overfull \vbox (11.19444pt too high) detected at line 235
+Overfull \vbox (11.19444pt too high) detected at line 234
  []
 
 [17
@@ -959,12 +959,12 @@ Overfull \vbox (11.19444pt too high) detected at line 235
 <reactor_xy_v.png, id=756, 446.41782pt x 373.395pt>
 File: reactor_xy_v.png Graphic file (type png)
 <use reactor_xy_v.png>
-Package pdftex.def Info: reactor_xy_v.png  used on input line 266.
+Package pdftex.def Info: reactor_xy_v.png  used on input line 265.
 (pdftex.def)             Requested size: 187.26216pt x 156.6311pt.
 <reactor_xz_v.png, id=757, 803.0pt x 803.0pt>
 File: reactor_xz_v.png Graphic file (type png)
 <use reactor_xz_v.png>
-Package pdftex.def Info: reactor_xz_v.png  used on input line 266.
+Package pdftex.def Info: reactor_xz_v.png  used on input line 265.
 (pdftex.def)             Requested size: 156.05286pt x 156.05138pt.
  [20
 
@@ -972,10 +972,10 @@ Package pdftex.def Info: reactor_xz_v.png  used on input line 266.
 <regressione_parabolica_filtrata.png, id=787, 1156.32pt x 722.7pt>
 File: regressione_parabolica_filtrata.png Graphic file (type png)
 <use regressione_parabolica_filtrata.png>
-Package pdftex.def Info: regressione_parabolica_filtrata.png  used on input line 275.
+Package pdftex.def Info: regressione_parabolica_filtrata.png  used on input line 274.
 (pdftex.def)             Requested size: 338.11702pt x 211.31998pt.
 
-Overfull \vbox (36.86548pt too high) detected at line 275
+Overfull \vbox (36.86548pt too high) detected at line 274
  []
 
 [21
@@ -984,10 +984,10 @@ Overfull \vbox (36.86548pt too high) detected at line 275
 <rette_di_arricchimento.png, id=818, 1149.093pt x 714.7503pt>
 File: rette_di_arricchimento.png Graphic file (type png)
 <use rette_di_arricchimento.png>
-Package pdftex.def Info: rette_di_arricchimento.png  used on input line 285.
+Package pdftex.def Info: rette_di_arricchimento.png  used on input line 284.
 (pdftex.def)             Requested size: 294.76596pt x 183.34409pt.
 
-Overfull \vbox (36.0896pt too high) detected at line 285
+Overfull \vbox (36.0896pt too high) detected at line 284
  []
 
 [22
@@ -1000,10 +1000,10 @@ Overfull \vbox (36.0896pt too high) detected at line 285
 <scatter_potenza_errore.png, id=901, 1156.32pt x 722.7pt>
 File: scatter_potenza_errore.png Graphic file (type png)
 <use scatter_potenza_errore.png>
-Package pdftex.def Info: scatter_potenza_errore.png  used on input line 317.
+Package pdftex.def Info: scatter_potenza_errore.png  used on input line 316.
 (pdftex.def)             Requested size: 303.4375pt x 189.63991pt.
 
-Overfull \vbox (23.64098pt too high) detected at line 317
+Overfull \vbox (23.64098pt too high) detected at line 316
  []
 
 [25
@@ -1014,7 +1014,7 @@ Overfull \vbox (23.64098pt too high) detected at line 317
 <circolarità.png, id=960, 1148.3703pt x 714.7503pt>
 File: circolarità.png Graphic file (type png)
 <use circolarità.png>
-Package pdftex.def Info: circolarità.png  used on input line 366.
+Package pdftex.def Info: circolarità.png  used on input line 365.
 (pdftex.def)             Requested size: 216.74202pt x 134.89876pt.
  [27
 
@@ -1022,20 +1022,20 @@ Package pdftex.def Info: circolarità.png  used on input line 366.
 <operatività.png, id=989, 1148.3703pt x 714.7503pt>
 File: operatività.png Graphic file (type png)
 <use operatività.png>
-Package pdftex.def Info: operatività.png  used on input line 386.
+Package pdftex.def Info: operatività.png  used on input line 385.
 (pdftex.def)             Requested size: 216.74202pt x 134.89876pt.
  [28
 
  <./operatività.png>] [29
 
 ]
-<potenza_kmax_vs_pitch.png, id=1046, 1156.32pt x 722.7pt>
+<potenza_kmax_vs_pitch.png, id=1046, 1148.3703pt x 715.473pt>
 File: potenza_kmax_vs_pitch.png Graphic file (type png)
 <use potenza_kmax_vs_pitch.png>
-Package pdftex.def Info: potenza_kmax_vs_pitch.png  used on input line 411.
-(pdftex.def)             Requested size: 433.48404pt x 270.92361pt.
+Package pdftex.def Info: potenza_kmax_vs_pitch.png  used on input line 410.
+(pdftex.def)             Requested size: 303.4375pt x 189.05357pt.
 
-Overfull \vbox (124.55957pt too high) detected at line 411
+Overfull \vbox (42.68953pt too high) detected at line 410
  []
 
 [30
@@ -1043,7 +1043,7 @@ Overfull \vbox (124.55957pt too high) detected at line 411
  <./potenza_kmax_vs_pitch.png>] [31
 
 ]
-Overfull \hbox (9.63799pt too wide) detected at line 490
+Overfull \hbox (9.63799pt too wide) detected at line 489
 []
  []
 
@@ -1051,7 +1051,7 @@ Overfull \hbox (9.63799pt too wide) detected at line 490
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 559.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 558.
  [33
 
 ] [34
@@ -1060,10 +1060,10 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
 <Xe.png, id=1200, 941.6781pt x 624.4128pt>
 File: Xe.png Graphic file (type png)
 <use Xe.png>
-Package pdftex.def Info: Xe.png  used on input line 585.
+Package pdftex.def Info: Xe.png  used on input line 584.
 (pdftex.def)             Requested size: 275.30682pt x 182.55624pt.
 
-Overfull \vbox (7.55731pt too high) detected at line 585
+Overfull \vbox (7.55731pt too high) detected at line 584
  []
 
 [35
@@ -1072,70 +1072,82 @@ Overfull \vbox (7.55731pt too high) detected at line 585
 <Xe_zoom.png, id=1229, 956.1321pt x 624.4128pt>
 File: Xe_zoom.png Graphic file (type png)
 <use Xe_zoom.png>
-Package pdftex.def Info: Xe_zoom.png  used on input line 597.
+Package pdftex.def Info: Xe_zoom.png  used on input line 596.
 (pdftex.def)             Requested size: 279.53256pt x 182.55624pt.
 
-Overfull \vbox (7.11281pt too high) detected at line 597
+Overfull \vbox (7.11281pt too high) detected at line 596
  []
 
 [36
 
- <./Xe_zoom.png>] [37
-
-]
-<sm.png, id=1287, 1148.3703pt x 714.7503pt>
-File: sm.png Graphic file (type png)
-<use sm.png>
-Package pdftex.def Info: sm.png  used on input line 619.
-(pdftex.def)             Requested size: 293.31242pt x 182.55624pt.
-
-Overfull \vbox (16.61281pt too high) detected at line 619
- []
-
-[38
-
- <./sm.png>] [39
-
-]
-<power.png, id=1343, 1148.3703pt x 714.7503pt>
-File: power.png Graphic file (type png)
-<use power.png>
-Package pdftex.def Info: power.png  used on input line 640.
-(pdftex.def)             Requested size: 293.31242pt x 182.55624pt.
- [40
-
- <./power.png>]
-<k_eff.png, id=1373, 1149.093pt x 714.7503pt>
-File: k_eff.png Graphic file (type png)
-<use k_eff.png>
-Package pdftex.def Info: k_eff.png  used on input line 653.
+ <./Xe_zoom.png>]
+<Xenon_post_shutdown.png, id=1259, 1149.093pt x 714.7503pt>
+File: Xenon_post_shutdown.png Graphic file (type png)
+<use Xenon_post_shutdown.png>
+Package pdftex.def Info: Xenon_post_shutdown.png  used on input line 607.
 (pdftex.def)             Requested size: 293.49702pt x 182.55624pt.
 
-Overfull \vbox (15.05731pt too high) detected at line 653
+Overfull \vbox (7.55731pt too high) detected at line 607
  []
 
-[41
+[37
 
- <./k_eff.png>]
-<k_eff_zoom.png, id=1402, 1148.3703pt x 714.7503pt>
-File: k_eff_zoom.png Graphic file (type png)
-<use k_eff_zoom.png>
-Package pdftex.def Info: k_eff_zoom.png  used on input line 665.
+ <./Xenon_post_shutdown.png>] [38
+
+]
+<sm.png, id=1316, 1148.3703pt x 714.7503pt>
+File: sm.png Graphic file (type png)
+<use sm.png>
+Package pdftex.def Info: sm.png  used on input line 627.
+(pdftex.def)             Requested size: 254.20177pt x 158.21391pt.
+ [39
+
+ <./sm.png>] [40
+
+]
+<power.png, id=1373, 1148.3703pt x 714.7503pt>
+File: power.png Graphic file (type png)
+<use power.png>
+Package pdftex.def Info: power.png  used on input line 648.
 (pdftex.def)             Requested size: 293.31242pt x 182.55624pt.
+ [41
 
-Overfull \vbox (15.05731pt too high) detected at line 665
+ <./power.png>]
+<k_eff.png, id=1402, 1149.093pt x 714.7503pt>
+File: k_eff.png Graphic file (type png)
+<use k_eff.png>
+Package pdftex.def Info: k_eff.png  used on input line 660.
+(pdftex.def)             Requested size: 293.49702pt x 182.55624pt.
+
+Overfull \vbox (11.05731pt too high) detected at line 660
  []
 
 [42
 
- <./k_eff_zoom.png>] [43
+ <./k_eff.png>]
+<k_eff_zoom.png, id=1431, 1148.3703pt x 714.7503pt>
+File: k_eff_zoom.png Graphic file (type png)
+<use k_eff_zoom.png>
+Package pdftex.def Info: k_eff_zoom.png  used on input line 672.
+(pdftex.def)             Requested size: 293.31242pt x 182.55624pt.
 
-] [44
+Overfull \vbox (15.05731pt too high) detected at line 672
+ []
+
+[43
+
+ <./k_eff_zoom.png>] [44
+
+] [45
+
+] [46
+
+] [47
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 708.
- [45
+(Font)              <12> on input line 733.
+ [48
 
 ]
 \tf@nav=\write6
@@ -1156,18 +1168,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28781 strings out of 474222
- 588661 string characters out of 5748733
+ 28801 strings out of 474222
+ 588989 string characters out of 5748733
  1953975 words of memory out of 5000000
- 50356 multiletter control sequences out of 15000+600000
- 640522 words of font info for 102 fonts, out of 8000000 for 9000
+ 50370 multiletter control sequences out of 15000+600000
+ 643290 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,19n,123p,515b,1135s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,19n,123p,479b,1135s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (45 pages, 3706146 bytes).
+Output written on main.pdf (48 pages, 3707837 bytes).
 PDF statistics:
- 1677 PDF objects out of 1728 (max. 8388607)
- 1361 compressed objects within 14 object streams
- 97 named destinations out of 1000 (max. 500000)
- 887 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1762 PDF objects out of 2073 (max. 8388607)
+ 1437 compressed objects within 15 object streams
+ 103 named destinations out of 1000 (max. 500000)
+ 892 words of extra memory for PDF output out of 10000 (max. 10000000)
 

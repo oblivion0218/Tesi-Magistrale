@@ -13,7 +13,6 @@
 \usepackage{amsmath}
 \usepackage{tcolorbox}
 
-
 % --- SCELTA DEL TEMA E PERSONALIZZAZIONE ---
 \usetheme{Madrid}
 \usecolortheme{default}
@@ -403,7 +402,7 @@ I punti di lavoro della slide precedente sono trovati con questa distribuzione r
     \begin{figure}
         \centering
         % L'altezza è impostata per occupare quasi tutto lo spazio utile lasciando posto alla didascalia
-        \includegraphics[width=\linewidth]{potenza_kmax_vs_pitch.png}
+        \includegraphics[width=0.7\linewidth]{potenza_kmax_vs_pitch.png}
         
         \vspace{0.2cm}
         \caption{\small Caratterizzazione delle prestazioni del core: correlazione tra il fattore di moltiplicazione $k_{max}$ e la potenza termica macroscopica generata in funzione del pitch reticolare. La curva di fit evidenzia l'ottimo di moderazione per il sistema ADS analizzato.}
@@ -592,26 +591,35 @@ I punti di lavoro della slide precedente sono trovati con questa distribuzione r
     \vfill
     \begin{flushleft}
         \scriptsize
-        \textbf{Figura:} Il grafico mostra meglio l'insorgenza del picco di avvelenamento post-climax indotto dal disaccoppiamento dei tempi di dimezzamento dei due nuclidi.
+        \textbf{Figura:} Il grafico mostra meglio l'insorgenza del picco di avvelenamento post spegnimento indotto dal disaccoppiamento dei tempi di dimezzamento dei due nuclidi.
+    \end{flushleft}
+\end{frame}
+
+\begin{frame}{Evoluzione Temporale dello $^{135}\text{Xe}$ da simulazione}
+    \begin{center}
+        \includegraphics[height=0.75\textheight]{Xenon_post_shutdown.png} % Sostituisci con il nome del tuo file
+    \end{center}
+    \vfill
+    \begin{flushleft}
+        \scriptsize
+        \textbf{Figura:} Il plot mostra l'evoluzione dello $^{135}\text{Xe}$ dopo lo spegnimento del reattore, evidenziando il picco di avvelenamento (xenon pit) e la successiva decrescita asintotica.
     \end{flushleft}
 \end{frame}
 
 % --- SLIDE 3: COMMENTO XENON ---
 \begin{frame}{Analisi della Cinetica dello Xenon-135}
     \begin{itemize}
-        \item \textbf{Produzione:} Il $^{135}\text{Xe}$ è prodotto sia direttamente dalla fissione sia indirettamente tramite il decadimento del $^{135}\text{I}$.
-        \item \textbf{Fase Operativa (Equilibrio):} Durante il primo funzionamento, la produzione di $^{135}\text{I}$ è molto elevata, la sua eccessiva presenza porta a un crollo della reattività. La stabilità si raggiunge quando il tasso di produzione e quello di rimozione (decadimento + cattura) si bilanciano, determinando una densità stazionaria di $^{135}\text{Xe}$ che dipende dal flusso neutronico.
-        \item \textbf{Transitorio di Transizione (Xenon Pit):} Allo spegnimento del reattore, il flusso neutronico crolla istantaneamente ($\phi \to 0$), annullando il termine di rimozione per cattura ($\sigma_{a,\text{Xe}}\phi N_{\text{Xe}} \to 0$).
-        \item \textbf{Meccanismo del Picco:} Il $^{135}\text{I}$ accumulato nel core continua a decadere in $^{135}\text{Xe}$ con un tempo di dimezzamento inferiore ($T_{1/2} = 6.6$ h) rispetto a quello di distruzione dello Xenon ($T_{1/2} = 9.2$ h). Questo dislivello cinetico genera un accumulo netto di veleno che raggiunge un massimo assoluto prima di decadere asintoticamente.
+        \item \textbf{Fase Operativa (Equilibrio):} Durante il primo funzionamento, la produzione di $^{135}\text{I}$ è molto elevata, la sua presenza porta a produrre Xe (velenoso), il quale diminuisce il flusso neutronico che fa diminuire la produzione di iodio in un circolo ripetitivo. 
+        \item \textbf{Xenon Pit:} Allo spegnimento del reattore, il flusso neutronico crolla istantaneamente ($\phi \to 0$), annullando il termine di rimozione per cattura ($\sigma_{a,\text{Xe}}\phi N_{\text{Xe}} \to 0$) e la produzione di iodio.
+        \item \textbf{Meccanismo del Picco:} Il $^{135}\text{I}$ accumulato nel core continua a decadere in $^{135}\text{Xe}$ con un tempo di dimezzamento inferiore ($T_{1/2} = 6.6$ h) rispetto a quello di distruzione dello Xenon ($T_{1/2} = 9.2$ h). Questa differenza genera un accumulo netto di veleno che raggiunge un massimo assoluto prima di decadere asintoticamente.
     \end{itemize}
 \end{frame}
 
 % --- SLIDE 4: FOTO SUL SAMARIO ---
 \begin{frame}{Evoluzione Temporale di $^{149}\text{Pm}$ e $^{149}\text{Sm}$}
     \begin{center}
-        \includegraphics[height=0.75\textheight]{sm.png} % Sostituisci con il nome del tuo file
+        \includegraphics[height=0.65\textheight]{sm.png} % Sostituisci con il nome del tuo file
     \end{center}
-    \vfill
     \begin{flushleft}
         \scriptsize
         \textbf{Figura:} Concentrazione del Promezio-149 e del Samario-149 in funzione del tempo di irraggiamento e dopo lo spegnimento. Si evidenzia il comportamento asintotico non decrescente del $^{149}\text{Sm}$ nella fase post-operativa dovuto alla stabilità intrinseca dell'isotopo.
@@ -621,7 +629,7 @@ I punti di lavoro della slide precedente sono trovati con questa distribuzione r
 % --- SLIDE 5: COMMENTO SAMARIO ---
 \begin{frame}{Analisi della Cinetica del Samario-149}
     \begin{itemize}
-        \item \textbf{Indipendenza dal Flusso all'Equilibrio:} A differenza dello Xenon, la densità stazionaria di $^{149}\text{Sm}$ non dipende quantitativamente dal flusso neutronico totale $\phi$, poiché il flusso si semplifica analiticamente nel rapporto tra il tasso di produzione e quello di bruciamento (\textit{burn-out}).
+        \item \textbf{Indipendenza dal Flusso all'Equilibrio:} A differenza dello Xenon, la densità stazionaria di $^{149}\text{Sm}$ non dipende dal flusso neutronico totale $\phi$, poiché il flusso si semplifica analiticamente nel rapporto tra il tasso di produzione e quello di bruciamento .
         \item \textbf{Comportamento Post-Shutdown:} Quando il reattore viene spento, la distruzione per cattura neutronica si interrompe. Il $^{149}\text{Pm}$ presente nel core continua a decadere in $^{149}\text{Sm}$ con un tempo di dimezzamento di circa $53$ ore.
         \item \textbf{Stabilità Asintotica:} Poiché il $^{149}\text{Sm}$ è un nuclide stabile ($\lambda_{\text{Sm}} = 0$), la sua concentrazione post-spegnimento cresce fino a raggiungere un plateau costante senza subire successivi decadimenti. Questo livello di avvelenamento residuo rimane congelato nel core fino alla successiva riaccensione del sistema.
     \end{itemize}
@@ -645,7 +653,6 @@ I punti di lavoro della slide precedente sono trovati con questa distribuzione r
         % Assicurati che keff.png sia presente nella cartella delle immagini
         \includegraphics[height=0.75\textheight]{k_eff.png} 
     \end{center}
-    \vfill
     \begin{flushleft}
         \scriptsize
         \textbf{Figura:} Andamento del fattore di moltiplicazione effettivo $k_{eff}$ in funzione dei giorni di operatività in piena potenza (HFP). Il tracciato documenta i margini di sicurezza legali e la stabilità complessiva del sistema rispetto all'avvelenamento e al consumo di fissile.
@@ -667,14 +674,32 @@ I punti di lavoro della slide precedente sono trovati con questa distribuzione r
 % --- SLIDE 8: COMMENTO POTENZA E K_EFF ---
 \begin{frame}{Correlazione tra Potenza e Reattività nel Ciclo di Vita}
     \begin{itemize}
-        \item \textbf{Stabilità della Potenza Termica:} In un ADS operante in regime stazionario, la potenza termica totale è linearmente vincolata all'intensità della sorgente esterna $S$. Il mantenimento di un profilo stabile della potenza dimostra l'efficace accoppiamento energetico tra la sorgente fotonucleare centrale e il core moltiplicante.
-        \item \textbf{Deriva Cinetica del $k_{eff}$:} L'andamento temporale del $k_{eff}$ mostra l'impatto combinato dell'accumulo dei prodotti di fissione parassiti ($^{135}\text{Xe}$ e $^{149}\text{Sm}$) e del progressivo consumo dell'isotopo fissile. 
-        \item \textbf{Effetto di Compensazione del Breeding:} Nello spettro epitemico/veloce considerato, il consumo di fissile è parzialmente compensato dal meccanismo di \textit{breeding} endogeno da nucleo fertile. Questo bilanciamento isotopico stabilizza l'autovalore nel lungo periodo, minimizzando le oscillazioni di reattività e garantendo la persistenza dei margini di sottocriticità impostati a freddo ($k_{max} < 1$).
-    \end{itemize}
+        \item Il fatto che la potenza crolli è un problema non da poco che può essere mitigato con l'aggiunta di Gadolinio nel fuel
+        \item Allo stato attuale del lavoro non è un aspetto che approfondirò, ma sicuramente è una strada da intraprendere per migliorare le prestazioni del sistema.
+        \item per il mio interesse di tesi considero un transiente sufficiente a stabilizzare la potenza e la considero costante
+        \item commenti a keff
+     \end{itemize}
 \end{frame}
 
+\begin{frame}{Differenza di reattività post-spegnimento}
+    
+    \centering
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Stato} & \textbf{Tempo $t$ [gg]} & \textbf{$k_{\text{eff}}$} \\
+        \midrule
+        Spegnimento ($k_{\text{off}}$) & 400.0 & $0.56111 \pm 0.00005$ \\
+        Massima Reattività ($k_{\text{max}}$) & 405.00 & $0.56789 \pm 0.00005$ \\
+        \bottomrule
+    \end{tabular}
 
+    $$ \Delta \rho \text{(Riscalata al k ideale)} = \dfrac{k_{\text{max}} - k_{\text{off}}}{k_{\text{ideale}} \cdot k_{\text{ideale + $\Delta$}}} = 687.9 \pm 22.2 \text{pcm}$$
 
+\end{frame}
+
+\begin{frame}
+    
+\end{frame}
 
 % --- SLIDE 1: Formulazione e Operatori ---
 \begin{frame}{Fondamento Matematico: L'Equazione del Trasporto}

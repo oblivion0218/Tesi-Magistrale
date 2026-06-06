@@ -554,6 +554,11 @@ INPUT ./Xe_zoom.png
 INPUT ./Xe_zoom.png
 INPUT ./Xe_zoom.png
 INPUT ./Xe_zoom.png
+INPUT ./Xenon_post_shutdown.png
+INPUT ./Xenon_post_shutdown.png
+INPUT ./Xenon_post_shutdown.png
+INPUT ./Xenon_post_shutdown.png
+INPUT ./Xenon_post_shutdown.png
 INPUT ./sm.png
 INPUT ./sm.png
 INPUT ./sm.png
@@ -574,6 +579,7 @@ INPUT ./k_eff_zoom.png
 INPUT ./k_eff_zoom.png
 INPUT ./k_eff_zoom.png
 INPUT ./k_eff_zoom.png
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmssbx10.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmr12.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/lmmi12.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/lmsy10.tfm
