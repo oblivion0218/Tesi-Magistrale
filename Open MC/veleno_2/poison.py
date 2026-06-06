@@ -281,11 +281,11 @@ operator = openmc.deplete.CoupledOperator(model, chain_file, normalization_mode=
 yield_fn = 5.87905e-03 
 S_rate = S_val * yield_fn
 
-# --- FASE ON (Totale: 200 giorni) ---
+# --- FASE ON (Totale: 400 giorni) ---
 # Transitorio veleni: traccia la curva di inserzione reattività negativa di Xe e Sm nei primi 20 giorni
 giorni_on_transitorio = [0.1, 0.4, 0.5, 1.0, 3.0, 5.0, 10.0] 
 
-# Burn-up profondo: traccia la pendenza lineare del consumo per i restanti 180 giorni
+# Burn-up profondo: traccia la pendenza lineare del consumo per i restanti 380 giorni
 giorni_on_burnup = [30.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0] 
 
 giorni_on = giorni_on_transitorio + giorni_on_burnup
