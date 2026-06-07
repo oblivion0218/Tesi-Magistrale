@@ -46,6 +46,7 @@ T_water = 350.0
 T_resto = 600.0
 run_id = "default"
 
+
 # --- 2. MATERIALI ---
 def densita_mix_dinamica(T_K, P_Pa=101325.0, frac_mass_H2O=0.15):
     rho_H2O = PropsSI('D', 'T', T_K, 'P', P_Pa, 'Water') / 1000  
@@ -82,10 +83,18 @@ mat_target.add_nuclide('U238', 1.0 - enrich_target)
 mat_target.add_nuclide('O16', 2.0)
 mat_target.set_density('g/cm3', 10.96)
 mat_target.volume = np.pi * (R_TARGET**2) * H_TARGET
+mat_target.depletable = False
 
 # Fuel Rings
 fuel_mats = []
 for i in range(int(np.ceil(R_CORE / PITCH)) + 1):
+    ring_radius = i * PITCH
+    # Calcolo dei pin effettivi per il volume esatto (fondamentale per depletion)
+    if ring_radius >= R_PIPE and ring_radius <= R_CORE:
+        n_pins = 1 if i == 0 else 6 * i
+    else:
+        n_pins = 0
+
     e_i = (arricch_max/100.0) - ((arricch_max - arricch_min)/100.0) * (i / (int(np.ceil(R_CORE / PITCH))))
     f = openmc.Material(name=f'fuel_ring_{i}')
     f.temperature = T_resto
@@ -93,32 +102,41 @@ for i in range(int(np.ceil(R_CORE / PITCH)) + 1):
     f.add_nuclide('U238', 1.0 - e_i)
     f.add_nuclide('O16', 2.0)
     f.set_density('g/cm3', 10.96)
-    f.volume = 1.0 # Verrà calcolato correttamente dall'operatore se necessario
-    f.depletable = True
+    
+    if n_pins > 0:
+        f.volume = n_pins * np.pi * (R_FUEL**2) * H_CORE
+        f.depletable = True
+    else:
+        f.volume = 1.0 
+        f.depletable = False
+        
     fuel_mats.append(f)
 
 materials = openmc.Materials(fuel_mats + [cladding, water, reflector, void_air, mat_target])
 
 # --- 3. GEOMETRIA ---
 
-# Piani Z
+# Piani Z Assoluti
 z_bot_ref   = openmc.ZPlane(z0=-REF_BOT, boundary_type='vacuum')
 z_bot_core  = openmc.ZPlane(z0=0.0)
 z_top_core  = openmc.ZPlane(z0=H_CORE)
 z_top_world = openmc.ZPlane(z0=H_CORE + 5.0, boundary_type='vacuum')
-z_mid = H_CORE - P_TARGET
 
-# Sostituzione delle funzioni deprecate con le classi moderne
-# Nota: HexagonalPrism restituisce una regione, non una superficie singola
+# Piani Z Target
+z_mid = H_CORE - P_TARGET
+z_tgt_bot = openmc.ZPlane(z0=z_mid - (H_TARGET / 2.0))
+z_tgt_top = openmc.ZPlane(z0=z_mid + (H_TARGET / 2.0))
+
+# Regioni Base (Prismi per Pin)
 reg_fuel = openmc.model.HexagonalPrism(edge_length=R_FUEL, orientation='x')
 reg_clad = openmc.model.HexagonalPrism(edge_length=R_FUEL + CLAD_THICK, orientation='x')
 
 # 1. Creazione degli Universi per i Pin
 fuel_universes = []
 for f in fuel_mats:
-    c_f = openmc.Cell(fill=f, region=-reg_fuel)
-    c_c = openmc.Cell(fill=cladding, region=-reg_clad & +reg_fuel)
-    c_w = openmc.Cell(fill=water, region=+reg_clad)
+    c_f = openmc.Cell(fill=f, region=reg_fuel)
+    c_c = openmc.Cell(fill=cladding, region=reg_clad & ~reg_fuel)
+    c_w = openmc.Cell(fill=water, region=~reg_clad)
     fuel_universes.append(openmc.Universe(cells=[c_f, c_c, c_w]))
 
 # 2. Costruzione della lista di liste per il HexLattice
@@ -140,6 +158,7 @@ lattice.orientation = 'x'
 num_rings = len(fuel_universes)
 hex_core_edge = num_rings * PITCH
 hex_ref_edge  = hex_core_edge + REF_SIDE
+
 n_rings_removed = int(np.ceil(R_PIPE / PITCH))
 edge_pipe = (n_rings_removed - 0.5) * PITCH if n_rings_removed > 0 else 0.1
 
@@ -147,28 +166,49 @@ reg_prism_core = openmc.model.HexagonalPrism(edge_length=hex_core_edge, orientat
 reg_prism_ref  = openmc.model.HexagonalPrism(edge_length=hex_ref_edge, orientation='x', boundary_type='vacuum')
 reg_prism_pipe = openmc.model.HexagonalPrism(edge_length=edge_pipe, orientation='x')
 
+cyl_target = openmc.ZCylinder(r=R_TARGET)
+
 # 4. Celle Finali
+
+# A. Core Principale (Lattice tagliato al centro)
 c_main_core = openmc.Cell(name='main_core', fill=lattice, 
-                          region=-reg_prism_core & +reg_prism_pipe & +z_bot_core & -z_top_core)
+                          region=reg_prism_core & ~reg_prism_pipe & +z_bot_core & -z_top_core)
 
-# Target e Gap nel condotto centrale
+# B. Canale Centrale (Target + Gap)
+region_central_hex_total = reg_prism_pipe & +z_bot_core & -z_top_core
+region_target_solid = region_central_hex_total & -cyl_target & +z_tgt_bot & -z_tgt_top
+region_void_gap = region_central_hex_total & ~region_target_solid
 
-region_void_gap = (-reg_prism_pipe & +z_bot_core & -z_top_core)
+c_target = openmc.Cell(name='target', fill=mat_target, region=region_target_solid)
 c_void_gap = openmc.Cell(name='void_gap', fill=void_air, region=region_void_gap)
 
-# Riflettore laterale e inferiore
+# C. Riflettore laterale e inferiore
 c_ref_side = openmc.Cell(name='ref_side', fill=reflector, 
-                         region=-reg_prism_ref & +reg_prism_core & +z_bot_core & -z_top_core)
+                         region=reg_prism_ref & ~reg_prism_core & +z_bot_core & -z_top_core)
 c_ref_bot = openmc.Cell(name='ref_bot', fill=reflector, 
-                        region=-reg_prism_ref & +z_bot_ref & -z_bot_core)
+                        region=reg_prism_ref & +z_bot_ref & -z_bot_core)
 
-# Cielo (Top void)
+# D. Cielo (Top void)
 c_top_void = openmc.Cell(name='top_void', fill=void_air, 
-                         region=-reg_prism_ref & +z_top_core & -z_top_world)
+                         region=reg_prism_ref & +z_top_core & -z_top_world)
 
 # 5. Assemblaggio Geometria
-geometry = openmc.Geometry([c_main_core, c_void_gap, c_ref_side, c_ref_bot, c_top_void])
+geometry = openmc.Geometry([c_main_core, c_target, c_void_gap, c_ref_side, c_ref_bot, c_top_void])
 
+# 6. Calcolo pin effettivi (solo per verifica finale)
+def count_fuel_pins(n_rings, pitch, r_pipe, r_core):
+    total_pins = 0
+    for i in range(n_rings):
+        ring_radius = i * pitch
+        if ring_radius >= r_pipe and ring_radius <= r_core:
+            if i == 0:
+                total_pins += 1
+            else:
+                total_pins += (6 * i)
+    return total_pins
+
+n_barre = count_fuel_pins(num_rings, PITCH, R_PIPE, R_CORE)
+print(f"Numero di barre di combustibile effettive: {n_barre}")
 
 
 # --- 4. SETTINGS E SORGENTE PUNTIFORME ---

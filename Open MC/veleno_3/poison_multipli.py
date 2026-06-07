@@ -15,7 +15,6 @@ warnings.filterwarnings("ignore")
 root_dir = os.getcwd()
 
 def load_parameters(filename='parametri.txt'):
-    """Legge i parametri dal file txt nella root directory."""
     params = {}
     context = {'np': np}
     filepath = os.path.join(root_dir, filename)
@@ -26,45 +25,77 @@ def load_parameters(filename='parametri.txt'):
         exec(f.read(), context, params)
     return {k: v for k, v in params.items() if not k.startswith('__') and k != 'np'}
 
-p = load_parameters()
-
-# Estrazione grandezze geometriche e fisiche
-R_CORE = p['R_CORE']
-REF_SIDE = p['REF_SIDE']
-REF_BOT = p['REF_BOT']
-H_CORE = p['H_CORE']
-R_PIPE = p['R_PIPE']
-R_FUEL = p['R_FUEL']
-CLAD_THICK = p['CLAD_THICK']
-P_TARGET = p['P_TARGET'] # Serve ancora per sapere la quota z_mid della sorgente
-
-S_val = p['S']
-yield_fn = 5.87905e-03 # Conversione fotoni -> neutroni
-S_rate = S_val * yield_fn
-
-# Configurazione Monte Carlo (fallback di sicurezza inserito)
-batches = p.get('batches_fix', 100)
-particles = p.get('particles_fix', 5000)
-pressione_funzionamento = p['Pressione_funzionamento']
-
-# ==========================================
-# 2. MODULI FISICI E TERMODINAMICI
-# ==========================================
-def densita_mix_dinamica(T_K, P_Pa=pressione_funzionamento, frac_mass_H2O=1.0):
-    rho_H2O = PropsSI('D', 'T', T_K, 'P', P_Pa, 'Water') / 1000
+def densita_mix_dinamica(T_K, P_Pa, frac_mass_H2O):
+    rho_H2O = PropsSI('D', 'T', T_K, 'P', P_Pa, 'Water') / 1000     
     rho_D2O = PropsSI('D', 'T', T_K, 'P', P_Pa, 'HeavyWater') / 1000
-    return 1 / (frac_mass_H2O / rho_H2O + (1 - frac_mass_H2O) / rho_D2O)
+    return 1 / (frac_mass_H2O / rho_H2O + (1 - frac_mass_H2O) / rho_D2O) 
+
+def parse_kmax_file(filename):
+    data = []
+    if not os.path.exists(filename):
+        return pd.DataFrame()
+        
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+        
+    for line in lines[2:]:
+        line = line.strip()
+        if not line: continue
+        cols = [col.strip() for col in line.split('|')]
+        if len(cols) == 4:
+            data.append([
+                float(cols[0]), float(cols[1]), 
+                *map(float, cols[2].split('+/-')), 
+                *map(float, cols[3].split('+/-'))
+            ])
+            
+    return pd.DataFrame(data, columns=['Pressione_atm', 'Pitch', 'k_max', 'sigma_k', 'Delta_rho_pcm', 'err_rho_pcm'])
+
+def parse_result_final(filename="result_final.txt"):
+    data = []
+    filepath = os.path.join(root_dir, filename)
+    if not os.path.exists(filepath):
+        return pd.DataFrame()
+        
+    with open(filepath, 'r') as file:
+        for line in file:
+            line = line.strip()
+            if not line or line.startswith('-') or line.startswith('=') or 'Pres' in line:
+                continue
+            cols = line.split()
+            if len(cols) >= 12:
+                try:
+                    data.append(list(map(float, cols[:12])))
+                except ValueError:
+                    continue
+    columns = ['pressione_atm', 'pitch', 'perc_water', 'arricch_INT', 'arricch_EXT', 
+               't_water', 't_fuel', 'k_max', 'std_k_max', 'k_auto', 'std_k_auto', 'compatibilita']
+    return pd.DataFrame(data, columns=columns)
 
 # ==========================================
-# 3. GENERAZIONE DINAMICA DEL MODELLO
+# GENERAZIONE MODELLO GEOMETRICO
 # ==========================================
-def build_model(current_pitch, a_int, a_ext, t_fuel, t_water, perc_water, root_dir):
-    num_rings = int(np.ceil(R_CORE / current_pitch)) + 1
-    n_rings_removed = int(np.ceil(R_PIPE / current_pitch))
-    EDGE_PIPE_LARGE = (n_rings_removed - 0.5) * current_pitch if n_rings_removed > 0 else 0.1
+def build_model(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc_water, root_dir):
     
-    # Area esatta per un prisma esagonale
-    AREA_FUEL = (3 * np.sqrt(3) / 2) * (R_FUEL**2)
+    # Parametri non scalati
+    REF_SIDE = p['REF_SIDE']
+    REF_BOT = p['REF_BOT']
+    H_CORE = p['H_CORE']
+    R_PIPE = p['R_PIPE']
+    P_TARGET = p['P_TARGET'] 
+    R_FUEL = p['R_FUEL']
+    CLAD_THICK = p['CLAD_THICK']
+    batches = p['batches_fix']
+    particles = p['particles_fix']
+    pressione_funzionamento = p['Pressione_funzionamento']
+    
+    # Parametri Scalati
+    R_CORE = p['R_CORE'] * moltiplicatore
+    PITCH = p['PITCH'] * moltiplicatore
+    
+    num_rings = int(np.ceil(R_CORE / PITCH)) + 1
+    n_rings_removed = int(np.ceil(R_PIPE / PITCH))
+    EDGE_PIPE_LARGE = (n_rings_removed - 0.5) * PITCH if n_rings_removed > 0 else 0.1
     
     # --- MATERIALI ---
     cladding = openmc.Material(name='cladding')
@@ -76,7 +107,7 @@ def build_model(current_pitch, a_int, a_ext, t_fuel, t_water, perc_water, root_d
     water.add_nuclide('H1', perc_water)
     water.add_nuclide('H2', 1.0 - perc_water)
     water.add_element('O', 1.0)
-    water.set_density('g/cm3', densita_mix_dinamica(t_water, frac_mass_H2O=perc_water))
+    water.set_density('g/cm3', densita_mix_dinamica(t_water, pressione_funzionamento, perc_water))
     water.add_s_alpha_beta('c_H_in_H2O')
     water.add_s_alpha_beta('c_D_in_D2O')
     water.temperature = t_water
@@ -89,24 +120,30 @@ def build_model(current_pitch, a_int, a_ext, t_fuel, t_water, perc_water, root_d
     void_air = openmc.Material(name='void_air')
     void_air.set_density('g/cm3', 1e-10)
     void_air.add_nuclide('N14', 1.0)
-
+    
     marker_mat = openmc.Material(name='marker')
     marker_mat.set_density('g/cm3', 1e-10)
     marker_mat.add_nuclide('He4', 1.0)
 
+    AREA_FUEL = (3 * np.sqrt(3) / 2) * (R_FUEL**2)
+    z_mid = H_CORE - P_TARGET
+
     fuel_mats = []
     for i in range(num_rings):
-        e_i = a_ext if num_rings == 1 else a_int - (a_int - a_ext) * (i / (num_rings - 1))
+        if num_rings > 1:
+            e_i = a_int - (a_int - a_ext) * (i / (num_rings - 1))
+        else:
+            e_i = a_int
+            
         f = openmc.Material(name=f'fuel_ring_{i}')
         f.add_nuclide('U235', e_i)
         f.add_nuclide('U238', 1.0 - e_i)
         f.add_nuclide('O16', 2.0)
         f.set_density('g/cm3', 10.96)
         f.temperature = t_fuel
-        
-        ring_radius = i * current_pitch
-        # Condizione di esistenza fisica per la depletion:
-        is_active = (ring_radius + R_FUEL > EDGE_PIPE_LARGE) and (ring_radius - R_FUEL < R_CORE)
+
+        ring_radius = i * PITCH
+        is_active = (ring_radius > EDGE_PIPE_LARGE) and (ring_radius - R_FUEL < R_CORE)
         
         if is_active:
             f.depletable = True 
@@ -118,7 +155,6 @@ def build_model(current_pitch, a_int, a_ext, t_fuel, t_water, perc_water, root_d
         fuel_mats.append(f)
 
     materials = openmc.Materials(fuel_mats + [cladding, water, reflector, void_air, marker_mat])
-    materials.export_to_xml()
 
     # --- GEOMETRIA ---
     z_bot_ref = openmc.ZPlane(z0=-REF_BOT, boundary_type='vacuum')
@@ -126,7 +162,6 @@ def build_model(current_pitch, a_int, a_ext, t_fuel, t_water, perc_water, root_d
     z_top_core = openmc.ZPlane(z0=H_CORE)
     z_top_world = openmc.ZPlane(z0=H_CORE + 5.0, boundary_type='vacuum')
 
-    z_mid = H_CORE - P_TARGET
     sphere_src = openmc.Sphere(x0=0, y0=0, z0=H_CORE + 2, r=0.5)
 
     hex_fuel_prism = openmc.model.HexagonalPrism(edge_length=R_FUEL, orientation='x')
@@ -141,24 +176,31 @@ def build_model(current_pitch, a_int, a_ext, t_fuel, t_water, perc_water, root_d
         fuel_universes.append(openmc.Universe(cells=[c_f, c_c, c_w]))
 
     u_water = openmc.Universe(cells=[openmc.Cell(fill=water)])
-    lattice_universes = [[fuel_universes[0]]] + [[fuel_universes[i]] * (6 * i) for i in range(1, num_rings)]
+    
+    lattice_universes = []
+    for i in range(num_rings):
+        if i == 0:
+            lattice_universes.append([fuel_universes[i]])
+        else:
+            lattice_universes.append([fuel_universes[i]] * (6 * i))
 
     lattice = openmc.HexLattice()
     lattice.center = (0.0, 0.0)
-    lattice.pitch = (current_pitch,)
+    lattice.pitch = (PITCH,)
     lattice.outer = u_water
     lattice.universes = lattice_universes[::-1]
     lattice.orientation = 'x'
 
-    hex_core_edge = num_rings * current_pitch
+    hex_core_edge = num_rings * PITCH
     hex_ref_edge = hex_core_edge + REF_SIDE
     prism_core = openmc.model.HexagonalPrism(edge_length=hex_core_edge, orientation='x')
     prism_reflector = openmc.model.HexagonalPrism(edge_length=hex_ref_edge, orientation='x', boundary_type='vacuum')
 
-    # Assemblaggio domini: il canale centrale è interamente vuoto
+    # Core con foro centrale
     region_core = -prism_core & +hex_pipe_prism & +z_bot_core & -z_top_core
     c_main_core = openmc.Cell(fill=lattice, region=region_core)
 
+    # Canale centrale interamente ad aria
     region_void_gap = -hex_pipe_prism & +z_bot_core & -z_top_core
     c_void_gap = openmc.Cell(fill=void_air, region=region_void_gap)
 
@@ -168,12 +210,11 @@ def build_model(current_pitch, a_int, a_ext, t_fuel, t_water, perc_water, root_d
     region_ref_bot = -prism_reflector & +z_bot_ref & -z_bot_core
     c_ref_bot = openmc.Cell(fill=reflector, region=region_ref_bot)
 
+    region_top = -prism_reflector & +z_top_core & -z_top_world 
     c_source_marker = openmc.Cell(fill=marker_mat, region=-sphere_src)
-    region_top = -prism_reflector & +z_top_core & -z_top_world & +sphere_src
-    c_top_void = openmc.Cell(fill=void_air, region=region_top)
+    c_top_void = openmc.Cell(fill=void_air, region=region_top & +sphere_src)
 
     geometry = openmc.Geometry([c_main_core, c_void_gap, c_ref_side, c_ref_bot, c_source_marker, c_top_void])
-    geometry.export_to_xml()
 
     # --- SETTINGS ---
     settings = openmc.Settings()
@@ -186,7 +227,7 @@ def build_model(current_pitch, a_int, a_ext, t_fuel, t_water, perc_water, root_d
     settings.photon_transport = False
     settings.create_fission_neutrons = True
 
-    # Estrazione distribuzioni (Path assoluti)
+    # Estrazione distribuzioni
     energy_file = os.path.join(root_dir, "photoneutrons_energy.txt")
     polar_file = os.path.join(root_dir, "photoneutrons_polar.txt")
 
@@ -232,36 +273,16 @@ def build_model(current_pitch, a_int, a_ext, t_fuel, t_water, perc_water, root_d
 # ==========================================
 # 4. LOOP PRINCIPALE E DEPLETION
 # ==========================================
-def parse_result_final(filename="result_final.txt"):
-    data = []
-    filepath = os.path.join(root_dir, filename)
-    if not os.path.exists(filepath):
-        raise FileNotFoundError(f"File {filename} non trovato. Esegui prima l'ottimizzatore.")
-        
-    with open(filepath, 'r') as file:
-        for line in file:
-            line = line.strip()
-            if not line or line.startswith('-') or line.startswith('=') or 'Pres' in line:
-                continue
-            cols = line.split()
-            if len(cols) >= 12:
-                try:
-                    data.append(list(map(float, cols[:12])))
-                except ValueError:
-                    continue
-    columns = ['pressione_atm', 'pitch', 'perc_water', 'arricch_INT', 'arricch_EXT', 
-               't_water', 't_fuel', 'k_max', 'std_k_max', 'k_auto', 'std_k_auto', 'compatibilita']
-    return pd.DataFrame(data, columns=columns)
 
 def main():
-    # Ottimizzazione multithreading
     os.environ["OMP_NUM_THREADS"] = "40"
     
-    # ---------------------------------------------------------
-    # CONFIGURAZIONE PATH E VARIABILI (DA VERIFICARE/MODIFICARE)
-    # ---------------------------------------------------------
+    p = load_parameters('parametri.txt')
     df_results = parse_result_final('result_final.txt')
-    pitches_to_test = [1.0, 1.25,1.5, 1.875 , 2.0, 2.25 , 2.5] # <-- INSERISCI I PITCH CHE VUOI SIMULARE QUI
+
+    S_rate = p['S'] * 5.87905e-03
+    
+    moltiplicatori_to_test = [4,3,2,1] # <-- INSERISCI QUI I MOLTIPLICATORI DA TESTARE
     
     path_arco = "/raid1/users/rbossi/MC/Magistrale/openmc_data/mcnp_endfb71"
     path_pc = "/home/bossi_ricky/openmc_data/mcnp_endfb71"
@@ -269,13 +290,11 @@ def main():
     openmc.config['cross_sections'] = f"{base_path}/cross_sections.xml"
     chain_file = f"{base_path}/chain_endfb71_pwr.xml"
 
-    # ---------------------------------------------------------
-    # ESECUZIONE
-    # ---------------------------------------------------------
-    for current_pitch in pitches_to_test:
-        row = df_results[np.isclose(df_results['pitch'], current_pitch, atol=1e-4)]
+    for moltiplicatore in moltiplicatori_to_test:
+
+        row = df_results[np.isclose(df_results['pitch'], moltiplicatore, atol=1e-4)]
         if row.empty:
-            print(f"ATTENZIONE: Pitch {current_pitch} non trovato in result_final.txt. Salto.")
+            print(f"ATTENZIONE: Moltiplicatore {moltiplicatore} non trovato in result_final.txt. Salto.")
             continue
             
         a_int = row['arricch_INT'].values[0] / 100.0
@@ -284,40 +303,35 @@ def main():
         t_water = row['t_water'].values[0]
         perc_water = row['perc_water'].values[0]
         
-        work_dir = os.path.join(root_dir, f"depletion_pitch_{current_pitch:.3f}".replace('.', '_'))
+        work_dir = os.path.join(root_dir, f"depletion_pitch_{moltiplicatore:.3f}".replace('.', '_'))
         os.makedirs(work_dir, exist_ok=True)
         
-        print(f"\n{'='*50}\nAVVIO DEPLETION: Pitch {current_pitch:.3f} cm\nArricch. Radiale: Centro = {a_int*100:.2f}%, Esterno = {a_ext*100:.2f}%\nWorkspace: {work_dir}\n{'='*50}")
+        print(f"\n{'='*50}\nAVVIO DEPLETION: Moltiplicatore {moltiplicatore:.3f}\nArricch. Radiale: Centro = {a_int*100:.2f}%, Esterno = {a_ext*100:.2f}%\nWorkspace: {work_dir}\n{'='*50}")
         
         os.chdir(work_dir)
         
         try:
-            # 1. Creazione architettura core
-            model = build_model(current_pitch, a_int, a_ext, t_fuel, t_water, perc_water, root_dir)
-            
-            # 2. Inizializzazione Operatore
+            # === CORREZIONE EFFETTUATA QUI: Passato 'p' come secondo argomento ===
+            model = build_model(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc_water, root_dir)
             operator = openmc.deplete.CoupledOperator(model, chain_file, normalization_mode="source-rate")
             
-            # 3. Profilo Temporale e Flusso Fotonico
             giorni_on_transitorio = [0.1, 0.4, 0.5, 1.0, 3.0, 5.0, 10.0]
             giorni_on_burnup = [30.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0]
             giorni_off = [0.05, 0.1, 0.15, 0.2, 0.5, 1.0, 3.0] + [3.0] * 4
             giorni_off_coda = [10.0, 15.0, 20.0] 
-            
+
             time_steps = giorni_on_transitorio + giorni_on_burnup + giorni_off + giorni_off_coda
             source_rates = [S_rate] * (len(giorni_on_transitorio) + len(giorni_on_burnup)) + [1e-15] * (len(giorni_off) + len(giorni_off_coda))
             
-            # 4. Run Integrazione (Unità di tempo esplicitate in GIORNI)
             integrator = openmc.deplete.PredictorIntegrator(operator, time_steps, source_rates=source_rates, timestep_units='d')
             integrator.integrate()
             
-            print(f"-> Simulazione conclusa con successo per pitch {current_pitch:.3f}.")
+            print(f"-> Simulazione conclusa con successo per moltiplicatore {moltiplicatore:.3f}.")
             
         except Exception as e:
-            print(f"-> ERRORE CRITICO sul pitch {current_pitch}: {e}")
+            print(f"-> ERRORE CRITICO sul moltiplicatore {moltiplicatore}: {e}")
             
         finally:
-            # Garantisce il ritorno alla directory padre anche in caso di crash
             os.chdir(root_dir)
 
 if __name__ == "__main__":
