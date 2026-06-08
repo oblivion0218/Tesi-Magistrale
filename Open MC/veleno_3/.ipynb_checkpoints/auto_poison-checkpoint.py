@@ -1,16 +1,16 @@
 import os
-import shutil
 import pandas as pd
 import openmc
-import openmc.deplete
 import numpy as np
 from CoolProp.CoolProp import PropsSI
+import matplotlib.pyplot as plt
+from datetime import datetime
 import warnings
 
 warnings.filterwarnings("ignore")
 
 # ==========================================
-# 1. SETUP INIZIALE E CARICAMENTO PARAMETRI
+# SETUP INIZIALE E CARICAMENTO PARAMETRI
 # ==========================================
 root_dir = os.getcwd()
 
@@ -75,18 +75,18 @@ def parse_result_final(filename="result_final.txt"):
 # ==========================================
 # GENERAZIONE MODELLO GEOMETRICO
 # ==========================================
-def build_model(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc_water, root_dir):
+def build_model_and_plots(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc_water, root_dir):
     
     # Parametri non scalati
     REF_SIDE = p['REF_SIDE']
     REF_BOT = p['REF_BOT']
     H_CORE = p['H_CORE']
     R_PIPE = p['R_PIPE']
-    P_TARGET = p['P_TARGET'] 
     R_FUEL = p['R_FUEL']
     CLAD_THICK = p['CLAD_THICK']
-    batches = p['batches_fix']
-    particles = p['particles_fix']
+    batches = p.get('batches_auto', 1)
+    particles = p.get('particles_auto', 5000)
+    inactive = p.get('inactive_auto', 10)
     pressione_funzionamento = p['Pressione_funzionamento']
     
     # Parametri Scalati
@@ -125,15 +125,12 @@ def build_model(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc_water, ro
     marker_mat.set_density('g/cm3', 1e-10)
     marker_mat.add_nuclide('He4', 1.0)
 
-    AREA_FUEL = (3 * np.sqrt(3) / 2) * (R_FUEL**2)
-    z_mid = H_CORE - P_TARGET
-
     fuel_mats = []
     for i in range(num_rings):
-        if num_rings > 1:
+        if num_rings >= 1:
             e_i = a_int - (a_int - a_ext) * (i / (num_rings - 1))
         else:
-            e_i = a_int
+            e_i = 0
             
         f = openmc.Material(name=f'fuel_ring_{i}')
         f.add_nuclide('U235', e_i)
@@ -141,18 +138,6 @@ def build_model(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc_water, ro
         f.add_nuclide('O16', 2.0)
         f.set_density('g/cm3', 10.96)
         f.temperature = t_fuel
-
-        ring_radius = i * PITCH
-        is_active = (ring_radius > EDGE_PIPE_LARGE) and (ring_radius - R_FUEL < R_CORE)
-        
-        if is_active:
-            f.depletable = True 
-            n_pins = 1 if i == 0 else 6 * i
-            #f.volume = n_pins * AREA_FUEL * H_CORE
-            f.volume = 1
-        else:
-            f.depletable = False
-            
         fuel_mats.append(f)
 
     materials = openmc.Materials(fuel_mats + [cladding, water, reflector, void_air, marker_mat])
@@ -217,118 +202,121 @@ def build_model(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc_water, ro
 
     geometry = openmc.Geometry([c_main_core, c_void_gap, c_ref_side, c_ref_bot, c_source_marker, c_top_void])
 
-    # --- SETTINGS ---
-    settings = openmc.Settings()
-    settings.run_mode = 'fixed source'
-    settings.batches = batches
-    settings.particles = particles
-    settings.max_collisions = 10000
-    settings.max_lost_particles = 50
-    settings.temperature = {'method': 'interpolation'}
-    settings.photon_transport = False
-    settings.create_fission_neutrons = True
+    # --- SETTINGS EIGENVALUE ---
+    settings_k = openmc.Settings()
+    settings_k.run_mode = 'eigenvalue'
+    settings_k.batches = batches
+    settings_k.particles = particles
+    settings_k.inactive = inactive 
 
-    # Estrazione distribuzioni
-    energy_file = os.path.join(root_dir, "photoneutrons_energy.txt")
-    polar_file = os.path.join(root_dir, "photoneutrons_polar.txt")
+    # Box esteso per la sorgente iniziale (evita errori nel vuoto centrale)
+    lower_left = [-R_CORE, -R_CORE, 0.0]
+    upper_right = [R_CORE, R_CORE, H_CORE]
 
-    data_energy = np.loadtxt(energy_file, skiprows=1)
-    E_mid, p_E = data_energy[:, 0], data_energy[:, 1]
-    p_E /= np.trapezoid(p_E, x=E_mid)
-    energy_dist = openmc.stats.Tabular(E_mid, p_E, interpolation='linear-linear')
-
-    data_polar = np.loadtxt(polar_file, skiprows=1)
-    theta, p_theta = data_polar[:, 0], data_polar[:, 1]
-    mu = np.cos(theta)
+    source_area = openmc.stats.Box(lower_left, upper_right)
+    settings_k.source = openmc.IndependentSource(space=source_area, constraints={'fissionable': True})
+    settings_k.source_rejection_fraction = 1e-4 
+    settings_k.temperature = {'method': 'interpolation'}
     
-    sort_idx = np.argsort(mu)
-    mu_sorted, p_mu_sorted = mu[sort_idx], p_theta[sort_idx]
-    p_mu_sorted /= np.trapezoid(p_mu_sorted, x=mu_sorted)
+    # --- PLOTTING ---
+    color_map = {
+        cladding: 'lightgray',
+        water: 'lightblue',
+        reflector: 'green',
+        marker_mat: 'red',
+        void_air: 'white'
+    }
 
-    mu_dist = openmc.stats.Tabular(mu_sorted, p_mu_sorted, interpolation='linear-linear')
-    phi_dist = openmc.stats.Uniform(0.0, 2 * np.pi)
-    angle_dist = openmc.stats.PolarAzimuthal(mu=mu_dist, phi=phi_dist)
+    cmap = plt.get_cmap('YlOrBr')
+    for i, f in enumerate(fuel_mats):
+        norm_val = i / (num_rings - 1) if num_rings > 1 else 0.5
+        rgba = cmap(0.9 - norm_val * 0.6)
+        color_map[f] = (int(rgba[0]*255), int(rgba[1]*255), int(rgba[2]*255))
 
-    source = openmc.IndependentSource()
-    source.particle = 'neutron'
-    source.space = openmc.stats.Point((0.0, 0.0, z_mid))
-    source.angle = angle_dist
-    source.energy = energy_dist
-    settings.source = source
+    p1 = openmc.Plot()
+    p1.basis = 'xy'
+    p1.origin = (0.0, 0.0, H_CORE / 2.0)
+    p1.width = (3 * (R_CORE + REF_SIDE + 2.0), 3 * (R_CORE + REF_SIDE + 2.0))
+    p1.pixels = (800, 800)
+    p1.color_by = 'material'
+    p1.colors = color_map
+    p1.filename = f'reactor_xy_mult_{moltiplicatore}'
 
-    # --- TALLIES ---
-    tallies = openmc.Tallies()
-    fission_tot = openmc.Tally(name='fission_tot')
-    fission_tot.scores = ['kappa-fission', 'nu-fission', 'absorption']
-    tallies.append(fission_tot)
+    p2 = openmc.Plot()
+    p2.basis = 'xz'
+    p2.origin = (0.0, 0.0, (H_CORE - REF_BOT) / 2.0) 
+    p2.width = (3 * (R_CORE + REF_SIDE + 2.0), H_CORE + REF_BOT + 15.0)
+    p2.pixels = (800, 800)
+    p2.color_by = 'material'
+    p2.colors = color_map
+    p2.filename = f'reactor_xz_mult_{moltiplicatore}'
 
-    vacuum_surfaces = [surf for surf in geometry.get_all_surfaces().values() if surf.boundary_type == 'vacuum']
-    surface_filter = openmc.SurfaceFilter(vacuum_surfaces)
-    tally_leakage = openmc.Tally(name='leakage_tot')
-    tally_leakage.filters = [surface_filter]
-    tally_leakage.scores = ['current']
-    tallies.append(tally_leakage)
+    plots = openmc.Plots([p1, p2])
 
-    return openmc.model.Model(geometry=geometry, materials=materials, settings=settings, tallies=tallies)
+    return openmc.model.Model(geometry=geometry, materials=materials, settings=settings_k), plots, R_CORE, PITCH
 
-# ==========================================
-# 4. LOOP PRINCIPALE E DEPLETION
-# ==========================================
-
+# ---
+# LOOP PRINCIPALE
+# ---
 def main():
     os.environ["OMP_NUM_THREADS"] = "40"
     
     p = load_parameters('parametri.txt')
     df_results = parse_result_final('result_final.txt')
-
-    S_rate = p['S'] * 5.87905e-03
     
-    moltiplicatori_to_test = [4,3,2,1, 1.25 , 1.5 , 1.85 , 2.25 ,2.5 , 2.75 , 3.25 , 3.5 , 4.25] # <-- INSERISCI QUI I MOLTIPLICATORI DA TESTARE
+    moltiplicatori_to_test = [1,2,3,4] # <-- INSERISCI QUI I MOLTIPLICATORI DA TESTARE
     
     path_arco = "/raid1/users/rbossi/MC/Magistrale/openmc_data/mcnp_endfb71"
     path_pc = "/home/bossi_ricky/openmc_data/mcnp_endfb71"
     base_path = path_arco if os.path.exists(path_arco) else path_pc
     openmc.config['cross_sections'] = f"{base_path}/cross_sections.xml"
-    chain_file = f"{base_path}/chain_endfb71_pwr.xml"
 
     for moltiplicatore in moltiplicatori_to_test:
-
+        
+        
+        # Cerca i risultati di ottimizzazione associati al pitch scalato
         row = df_results[np.isclose(df_results['pitch'], moltiplicatore, atol=1e-4)]
-        if row.empty:
-            print(f"ATTENZIONE: Moltiplicatore {moltiplicatore} non trovato in result_final.txt. Salto.")
-            continue
-            
+
         a_int = row['arricch_INT'].values[0] / 100.0
         a_ext = row['arricch_EXT'].values[0] / 100.0
         t_fuel = row['t_fuel'].values[0]
         t_water = row['t_water'].values[0]
         perc_water = row['perc_water'].values[0]
         
-        work_dir = os.path.join(root_dir, f"depletion_pitch_{moltiplicatore:.3f}".replace('.', '_'))
+        work_dir = os.path.join(root_dir, f"eigenvalue_mult_{moltiplicatore:.3f}".replace('.', '_'))
         os.makedirs(work_dir, exist_ok=True)
         
-        print(f"\n{'='*50}\nAVVIO DEPLETION: Moltiplicatore {moltiplicatore:.3f}\nArricch. Radiale: Centro = {a_int*100:.2f}%, Esterno = {a_ext*100:.2f}%\nWorkspace: {work_dir}\n{'='*50}")
+        print(f"\n{'='*50}\nAVVIO EIGENVALUE: Moltiplicatore {moltiplicatore:.3f} (Pitch {moltiplicatore:.3f} cm)\n{'='*50}")
         
         os.chdir(work_dir)
         
         try:
+            model, plots, r_core_eff, pitch_eff = build_model_and_plots(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc_water, root_dir)
             
-            model = build_model(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc_water, root_dir)
-            operator = openmc.deplete.CoupledOperator(model, chain_file, normalization_mode="source-rate")
+            # Esportazione
+            model.export_to_xml()
+            plots.export_to_xml()
             
-            giorni_on_transitorio = [0.1, 0.4, 0.5, 4, 5.0, 10.0]
-            giorni_on_burnup = [30.0, 300, 50.0]
-            giorni_off = [0.05, 0.25 , 0.2, 1.5, 6]
-            giorni_off_coda = [45] 
-
-            time_steps = giorni_on_transitorio + giorni_on_burnup + giorni_off + giorni_off_coda
-            source_rates = [S_rate] * (len(giorni_on_transitorio) + len(giorni_on_burnup)) + [1e-15] * (len(giorni_off) + len(giorni_off_coda))
+            # Generazione grafici geometrici
+            openmc.plot_geometry() 
+            print(f"Grafici generati in {work_dir}")
             
-            integrator = openmc.deplete.PredictorIntegrator(operator, time_steps, source_rates=source_rates, timestep_units='d')
-            integrator.integrate()
+            # Esecuzione simulazione K-eff
+            sp_filename = model.run(output=False)
             
-            print(f"-> Simulazione conclusa con successo per moltiplicatore {moltiplicatore:.3f}.")
+            # Parsing StatePoint
+            with openmc.StatePoint(sp_filename) as sp:
+                k = getattr(sp, 'keff', getattr(sp, 'k_combined', None))
+                if k is not None:
+                    print(f"-> R_CORE: {r_core_eff:.3f} cm | PITCH: {pitch_eff:.3f} cm")
+                    print(f"-> Simulazione conclusa. k_eff = {k.nominal_value:.5f} ± {k.std_dev:.5f}")
+                else:
+                    print("-> Errore: Impossibile trovare k_eff nel file StatePoint.")
             
+            # Pulizia automatica file pesanti se necessario
+            if os.path.exists('summary.h5'):
+                os.remove('summary.h5')
+                
         except Exception as e:
             print(f"-> ERRORE CRITICO sul moltiplicatore {moltiplicatore}: {e}")
             
