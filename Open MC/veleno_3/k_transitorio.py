@@ -8,7 +8,6 @@ from datetime import datetime
 import warnings
 
 warnings.filterwarnings("ignore")
-
 root_dir = os.getcwd()
 
 def load_parameters(filename='parametri.txt'):
@@ -216,7 +215,10 @@ def main():
         
         # FIX: Esporta TUTTI i file XML necessari (compreso materials.xml) nella cartella corrente
         model.export_to_xml()
-        
+
+        if os.path.exists("tallies.xml"):
+            os.remove("tallies.xml")
+
         output_file = f"k_eff_transitorio_pitch_{moltiplicatore:.3f}.txt"
         with open(output_file, "w") as f_out:
             f_out.write(f"Step  Tempo[gg]  K_EFF  STD_DEV  STATISTICA\n")
