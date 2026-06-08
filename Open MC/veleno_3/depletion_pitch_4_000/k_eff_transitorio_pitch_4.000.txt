@@ -1,0 +1,2 @@
+Step  Tempo[gg]  K_EFF  STD_DEV  STATISTICA
+0      0.0000          1.04174         0.01175         NORM           
