@@ -75,21 +75,12 @@ def parse_result_final(filename="result_final.txt"):
 # ==========================================
 # GENERAZIONE MODELLO GEOMETRICO
 # ==========================================
-def build_model_and_plots(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc_water, root_dir):
-    
-    # Parametri non scalati
-    REF_SIDE = p['REF_SIDE']
-    REF_BOT = p['REF_BOT']
-    H_CORE = p['H_CORE']
-    R_PIPE = p['R_PIPE']
-    R_FUEL = p['R_FUEL']
-    CLAD_THICK = p['CLAD_THICK']
-    batches = p.get('batches_auto', 1)
-    particles = p.get('particles_auto', 5000)
-    inactive = p.get('inactive_auto', 10)
+def build_k_eff_model(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc_water):
+    # Parametri Scalati
+    REF_SIDE, REF_BOT, H_CORE = p['REF_SIDE'], p['REF_BOT'], p['H_CORE']
+    R_PIPE, R_FUEL, CLAD_THICK = p['R_PIPE'], p['R_FUEL'], p['CLAD_THICK']
     pressione_funzionamento = p['Pressione_funzionamento']
     
-    # Parametri Scalati
     R_CORE = p['R_CORE'] * moltiplicatore
     PITCH = p['PITCH'] * moltiplicatore
     
@@ -97,7 +88,7 @@ def build_model_and_plots(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc
     n_rings_removed = int(np.ceil(R_PIPE / PITCH))
     EDGE_PIPE_LARGE = (n_rings_removed - 0.5) * PITCH if n_rings_removed > 0 else 0.1
     
-    # --- MATERIALI ---
+    # Materiali Costanti
     cladding = openmc.Material(name='cladding')
     cladding.add_element('Zr', 1.0)
     cladding.set_density('g/cm3', 6.49)
@@ -120,35 +111,33 @@ def build_model_and_plots(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc
     void_air = openmc.Material(name='void_air')
     void_air.set_density('g/cm3', 1e-10)
     void_air.add_nuclide('N14', 1.0)
-    
-    marker_mat = openmc.Material(name='marker')
-    marker_mat.set_density('g/cm3', 1e-10)
-    marker_mat.add_nuclide('He4', 1.0)
 
+    # Vettori Fuel per Geometria
     fuel_mats = []
     for i in range(num_rings):
-        if num_rings >= 1:
-            e_i = a_int - (a_int - a_ext) * (i / (num_rings - 1))
-        else:
-            e_i = 0
-            
+        e_i = a_int - (a_int - a_ext) * (i / (num_rings - 1)) if num_rings > 1 else a_int
         f = openmc.Material(name=f'fuel_ring_{i}')
         f.add_nuclide('U235', e_i)
         f.add_nuclide('U238', 1.0 - e_i)
         f.add_nuclide('O16', 2.0)
         f.set_density('g/cm3', 10.96)
         f.temperature = t_fuel
+        
+        ring_radius = i * PITCH
+        # FIX: Casting esplicito a bool nativo di Python
+        is_active = bool((ring_radius > EDGE_PIPE_LARGE) and (ring_radius - R_FUEL < R_CORE))
+        
+        f.depletable = is_active
+        if is_active: f.volume = 1 
         fuel_mats.append(f)
 
-    materials = openmc.Materials(fuel_mats + [cladding, water, reflector, void_air, marker_mat])
+    materials = openmc.Materials(fuel_mats + [cladding, water, reflector, void_air])
 
-    # --- GEOMETRIA ---
+    # Geometria
     z_bot_ref = openmc.ZPlane(z0=-REF_BOT, boundary_type='vacuum')
     z_bot_core = openmc.ZPlane(z0=0.0)
     z_top_core = openmc.ZPlane(z0=H_CORE)
     z_top_world = openmc.ZPlane(z0=H_CORE + 5.0, boundary_type='vacuum')
-
-    sphere_src = openmc.Sphere(x0=0, y0=0, z0=H_CORE + 2, r=0.5)
 
     hex_fuel_prism = openmc.model.HexagonalPrism(edge_length=R_FUEL, orientation='x')
     hex_clad_prism = openmc.model.HexagonalPrism(edge_length=R_FUEL + CLAD_THICK, orientation='x')
@@ -165,10 +154,7 @@ def build_model_and_plots(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc
     
     lattice_universes = []
     for i in range(num_rings):
-        if i == 0:
-            lattice_universes.append([fuel_universes[i]])
-        else:
-            lattice_universes.append([fuel_universes[i]] * (6 * i))
+        lattice_universes.append([fuel_universes[i]] * (1 if i == 0 else 6 * i))
 
     lattice = openmc.HexLattice()
     lattice.center = (0.0, 0.0)
@@ -182,48 +168,47 @@ def build_model_and_plots(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc
     prism_core = openmc.model.HexagonalPrism(edge_length=hex_core_edge, orientation='x')
     prism_reflector = openmc.model.HexagonalPrism(edge_length=hex_ref_edge, orientation='x', boundary_type='vacuum')
 
-    # Core con foro centrale
-    region_core = -prism_core & +hex_pipe_prism & +z_bot_core & -z_top_core
-    c_main_core = openmc.Cell(fill=lattice, region=region_core)
+    c_main_core = openmc.Cell(fill=lattice, region=-prism_core & +hex_pipe_prism & +z_bot_core & -z_top_core)
+    c_void_gap = openmc.Cell(fill=void_air, region=-hex_pipe_prism & +z_bot_core & -z_top_core)
+    c_ref_side = openmc.Cell(fill=reflector, region=-prism_reflector & +prism_core & +z_bot_core & -z_top_core)
+    c_ref_bot = openmc.Cell(fill=reflector, region=-prism_reflector & +z_bot_ref & -z_bot_core)
+    c_top_void = openmc.Cell(fill=void_air, region=-prism_reflector & +z_top_core & -z_top_world)
 
-    # Canale centrale interamente ad aria
-    region_void_gap = -hex_pipe_prism & +z_bot_core & -z_top_core
-    c_void_gap = openmc.Cell(fill=void_air, region=region_void_gap)
+    geometry = openmc.Geometry([c_main_core, c_void_gap, c_ref_side, c_ref_bot, c_top_void])
 
-    region_ref_side = -prism_reflector & +prism_core & +z_bot_core & -z_top_core
-    c_ref_side = openmc.Cell(fill=reflector, region=region_ref_side)
+    # Settings Autovalore
+    settings = openmc.Settings()
+    settings.batches = 30
+    settings.inactive = 10
+    settings.particles = 100000
+    settings.run_mode = 'eigenvalue'
+    settings.temperature = {'method': 'interpolation'}
+    
+    # 1. Troviamo analiticamente l'indice del primo anello di combustibile attivo
+    i_active = None
+    for i in range(num_rings):
+        ring_radius = i * PITCH
+        if (ring_radius > EDGE_PIPE_LARGE) and (ring_radius - R_FUEL < R_CORE):
+            i_active = i
+            break
+            
+    if i_active is None:
+        raise ValueError(f"Nessun pin attivo trovato per moltiplicatore {moltiplicatore}")
 
-    region_ref_bot = -prism_reflector & +z_bot_ref & -z_bot_core
-    c_ref_bot = openmc.Cell(fill=reflector, region=region_ref_bot)
-
-    region_top = -prism_reflector & +z_top_core & -z_top_world 
-    c_source_marker = openmc.Cell(fill=marker_mat, region=-sphere_src)
-    c_top_void = openmc.Cell(fill=void_air, region=region_top & +sphere_src)
-
-    geometry = openmc.Geometry([c_main_core, c_void_gap, c_ref_side, c_ref_bot, c_source_marker, c_top_void])
-
-    # --- SETTINGS EIGENVALUE ---
-    settings_k = openmc.Settings()
-    settings_k.run_mode = 'eigenvalue'
-    settings_k.batches = batches
-    settings_k.particles = particles
-    settings_k.inactive = inactive 
-
-    # Box esteso per la sorgente iniziale (evita errori nel vuoto centrale)
-    lower_left = [-R_CORE, -R_CORE, 0.0]
-    upper_right = [R_CORE, R_CORE, H_CORE]
-
-    source_area = openmc.stats.Box(lower_left, upper_right)
-    settings_k.source = openmc.IndependentSource(space=source_area, constraints={'fissionable': True})
-    settings_k.source_rejection_fraction = 1e-4 
-    settings_k.temperature = {'method': 'interpolation'}
+    # 2. In un HexLattice con orientation='x', i pin sull'asse X si trovano esattamente a (i * PITCH, 0)
+    x_source = i_active * PITCH
+    y_source = 0.0
+    z_source = H_CORE / 2.0  # Fissiamo la sorgente a metà altezza
+    
+    # 3. Definiamo una singola sorgente puntiforme deterministica
+    source_space = openmc.stats.Point((x_source, y_source, z_source))
+    settings.source = openmc.IndependentSource(space=source_space)
     
     # --- PLOTTING ---
     color_map = {
         cladding: 'lightgray',
         water: 'lightblue',
         reflector: 'green',
-        marker_mat: 'red',
         void_air: 'white'
     }
 
@@ -253,7 +238,7 @@ def build_model_and_plots(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc
 
     plots = openmc.Plots([p1, p2])
 
-    return openmc.model.Model(geometry=geometry, materials=materials, settings=settings_k), plots, R_CORE, PITCH
+    return openmc.model.Model(geometry=geometry, materials=materials, settings=settings), plots, R_CORE, PITCH
 
 # ---
 # LOOP PRINCIPALE
@@ -264,7 +249,7 @@ def main():
     p = load_parameters('parametri.txt')
     df_results = parse_result_final('result_final.txt')
     
-    moltiplicatori_to_test = [1,2,3,4] # <-- INSERISCI QUI I MOLTIPLICATORI DA TESTARE
+    moltiplicatori_to_test = [4] # <-- INSERISCI QUI I MOLTIPLICATORI DA TESTARE
     
     path_arco = "/raid1/users/rbossi/MC/Magistrale/openmc_data/mcnp_endfb71"
     path_pc = "/home/bossi_ricky/openmc_data/mcnp_endfb71"
@@ -291,7 +276,7 @@ def main():
         os.chdir(work_dir)
         
         try:
-            model, plots, r_core_eff, pitch_eff = build_model_and_plots(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc_water, root_dir)
+            model, plots, r_core_eff, pitch_eff = build_k_eff_model(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc_water)
             
             # Esportazione
             model.export_to_xml()

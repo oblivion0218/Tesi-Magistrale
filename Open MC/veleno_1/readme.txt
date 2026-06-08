@@ -1,1 +1,2 @@
-impossibilitato alle fotonucleari , provo con diverse tecniche... no surface eprche il compilatore deve generare lui aprticellle, no nemmeno a 50000 puntiformi sul target , overkill di pesantezza
+bruciature in sorgente fissa
+con raccolta dello spettro (energetico e angolare) di fotoneutroni uscenti da target

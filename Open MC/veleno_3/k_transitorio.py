@@ -59,6 +59,10 @@ def build_k_eff_model(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc_wat
     cladding.set_density('g/cm3', 6.49)
     cladding.temperature = t_fuel
 
+    marker_mat = openmc.Material(name='marker')
+    marker_mat.set_density('g/cm3', 1e-10)
+    marker_mat.add_nuclide('He4', 1.0)
+
     water = openmc.Material(name='water')
     water.add_nuclide('H1', perc_water)
     water.add_nuclide('H2', 1.0 - perc_water)
@@ -96,7 +100,7 @@ def build_k_eff_model(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc_wat
         if is_active: f.volume = 1 
         fuel_mats.append(f)
 
-    materials = openmc.Materials(fuel_mats + [cladding, water, reflector, void_air])
+    materials = openmc.Materials(fuel_mats + [cladding, water, reflector, void_air, marker_mat])
 
     # Geometria
     z_bot_ref = openmc.ZPlane(z0=-REF_BOT, boundary_type='vacuum')
@@ -158,7 +162,7 @@ def build_k_eff_model(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc_wat
         raise ValueError(f"Nessun pin attivo trovato per moltiplicatore {moltiplicatore}")
 
     # 2. In un HexLattice con orientation='x', i pin sull'asse X si trovano esattamente a (i * PITCH, 0)
-    x_source = i_active * PITCH
+    x_source = i_active * PITCH 
     y_source = 0.0
     z_source = H_CORE / 2.0  # Fissiamo la sorgente a metà altezza
     
@@ -181,8 +185,8 @@ def main():
 
     moltiplicatori_to_test = [4]
     
-    batches_norm, particles_norm = p['batches_auto'], p['particles_auto']
-    batches_high, particles_high = 30, 10000
+    batches_norm, particles_norm , inactive_norm = p['batches_auto'], p['particles_auto'], p['inactive_auto']
+    batches_high, particles_high , inactive_high = 100, 100000 , 40
 
     for moltiplicatore in moltiplicatori_to_test:
         row = df_results[np.isclose(df_results['pitch'], moltiplicatore, atol=1e-4)]
@@ -227,10 +231,12 @@ def main():
             if t >= 395.0 and t <= 410.0 :
                 model.settings.batches = batches_high
                 model.settings.particles = particles_high
+                model.settings.inactive = inactive_high
                 stat_label = "HIGH"
             else:
                 model.settings.batches = batches_norm
                 model.settings.particles = particles_norm
+                model.settings.inactive = inactive_norm
                 stat_label = "NORM"
             
             model.settings.export_to_xml()
