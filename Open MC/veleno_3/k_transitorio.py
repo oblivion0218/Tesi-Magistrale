@@ -8,7 +8,6 @@ from datetime import datetime
 import warnings
 
 warnings.filterwarnings("ignore")
-
 root_dir = os.getcwd()
 
 def load_parameters(filename='parametri.txt'):
@@ -183,10 +182,10 @@ def main():
     base_path = path_arco if os.path.exists(path_arco) else path_pc
     openmc.config['cross_sections'] = f"{base_path}/cross_sections.xml"
 
-    moltiplicatori_to_test = [4]
+    moltiplicatori_to_test = [2.75 ,4 ,1.25 , 1.5 , 2.25 , 2.5 , 3.25 , 3.5, 3.75]
     
     batches_norm, particles_norm , inactive_norm = p['batches_auto'], p['particles_auto'], p['inactive_auto']
-    batches_high, particles_high , inactive_high = 100, 100000 , 40
+    batches_high, particles_high , inactive_high = 120, 100000 , 40
 
     for moltiplicatore in moltiplicatori_to_test:
         row = df_results[np.isclose(df_results['pitch'], moltiplicatore, atol=1e-4)]
@@ -220,7 +219,10 @@ def main():
         
         # FIX: Esporta TUTTI i file XML necessari (compreso materials.xml) nella cartella corrente
         model.export_to_xml()
-        
+
+        if os.path.exists("tallies.xml"):
+            os.remove("tallies.xml")
+
         output_file = f"k_eff_transitorio_pitch_{moltiplicatore:.3f}.txt"
         with open(output_file, "w") as f_out:
             f_out.write(f"Step  Tempo[gg]  K_EFF  STD_DEV  STATISTICA\n")

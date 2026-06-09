@@ -148,8 +148,8 @@ def build_model(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc_water, ro
         if is_active:
             f.depletable = True 
             n_pins = 1 if i == 0 else 6 * i
-            #f.volume = n_pins * AREA_FUEL * H_CORE
-            f.volume = 1
+            f.volume = n_pins * AREA_FUEL * H_CORE
+          
         else:
             f.depletable = False
             
@@ -276,14 +276,14 @@ def build_model(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc_water, ro
 # ==========================================
 
 def main():
-    os.environ["OMP_NUM_THREADS"] = "40"
+    #os.environ["OMP_NUM_THREADS"] = "40"
     
     p = load_parameters('parametri.txt')
     df_results = parse_result_final('result_final.txt')
 
     S_rate = p['S'] * 5.87905e-03
     
-    moltiplicatori_to_test = [3,2,1, 1.25 , 1.5 , 1.85 , 2.25 ,2.5 , 2.75 , 3.25 , 3.5 , 4.25 , 4 ] # <-- INSERISCI QUI I MOLTIPLICATORI DA TESTARE
+    moltiplicatori_to_test = [1.875, 3, 4.25  ] # <-- INSERISCI QUI I MOLTIPLICATORI DA TESTARE
     
     path_arco = "/raid1/users/rbossi/MC/Magistrale/openmc_data/mcnp_endfb71"
     path_pc = "/home/bossi_ricky/openmc_data/mcnp_endfb71"
@@ -316,8 +316,8 @@ def main():
             model = build_model(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc_water, root_dir)
             operator = openmc.deplete.CoupledOperator(model, chain_file, normalization_mode="source-rate")
             
-            giorni_on_transitorio = [0.1, 0.4, 0.5, 1, 3, 5.0, 10.0]
-            giorni_on_burnup = [30.0, 200,  100, 50.0]
+            giorni_on_transitorio = [0.5, 0.5, 4, 5.0, 10.0]
+            giorni_on_burnup = [30.0, 300, 50.0]
             giorni_off = [0.05, 0.1 , 0.15 , 0.2, 0.5, 1, 3 , 3]
             giorni_off_coda = [25, 20] 
 
