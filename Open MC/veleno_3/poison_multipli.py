@@ -283,7 +283,7 @@ def main():
 
     S_rate = p['S'] * 5.87905e-03
     
-    moltiplicatori_to_test = [1.875, 3, 4.25  ] # <-- INSERISCI QUI I MOLTIPLICATORI DA TESTARE
+    moltiplicatori_to_test = [ 2 ] # <-- INSERISCI QUI I MOLTIPLICATORI DA TESTARE
     
     path_arco = "/raid1/users/rbossi/MC/Magistrale/openmc_data/mcnp_endfb71"
     path_pc = "/home/bossi_ricky/openmc_data/mcnp_endfb71"
@@ -304,7 +304,7 @@ def main():
         t_water = row['t_water'].values[0]
         perc_water = row['perc_water'].values[0]
         
-        work_dir = os.path.join(root_dir, f"depletion_pitch_{moltiplicatore:.3f}".replace('.', '_'))
+        work_dir = os.path.join(root_dir, f"ALTA_STAT_depletion_pitch_{moltiplicatore:.3f}".replace('.', '_'))
         os.makedirs(work_dir, exist_ok=True)
         
         print(f"\n{'='*50}\nAVVIO DEPLETION: Moltiplicatore {moltiplicatore:.3f}\nArricch. Radiale: Centro = {a_int*100:.2f}%, Esterno = {a_ext*100:.2f}%\nWorkspace: {work_dir}\n{'='*50}")
@@ -317,9 +317,9 @@ def main():
             operator = openmc.deplete.CoupledOperator(model, chain_file, normalization_mode="source-rate")
             
             giorni_on_transitorio = [0.5, 0.5, 4, 5.0, 10.0]
-            giorni_on_burnup = [30.0, 300, 50.0]
-            giorni_off = [0.05, 0.1 , 0.15 , 0.2, 0.5, 1, 3 , 3]
-            giorni_off_coda = [25, 20] 
+            giorni_on_burnup = [30.0, 50 , 50, 50,50, 50 ,50, 50.0]
+            giorni_off = [0.05, 0.1 , 0.15 , 0.2, 0.5, 1, 3 , 3 ,3 ,3, 3]
+            giorni_off_coda = [15, 20] 
 
             time_steps = giorni_on_transitorio + giorni_on_burnup + giorni_off + giorni_off_coda
             source_rates = [S_rate] * (len(giorni_on_transitorio) + len(giorni_on_burnup)) + [1e-15] * (len(giorni_off) + len(giorni_off_coda))

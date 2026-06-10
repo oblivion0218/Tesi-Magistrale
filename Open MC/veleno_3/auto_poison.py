@@ -249,7 +249,7 @@ def main():
     p = load_parameters('parametri.txt')
     df_results = parse_result_final('result_final.txt')
     
-    moltiplicatori_to_test = [4] # <-- INSERISCI QUI I MOLTIPLICATORI DA TESTARE
+    moltiplicatori_to_test = [2] # <-- INSERISCI QUI I MOLTIPLICATORI DA TESTARE
     
     path_arco = "/raid1/users/rbossi/MC/Magistrale/openmc_data/mcnp_endfb71"
     path_pc = "/home/bossi_ricky/openmc_data/mcnp_endfb71"

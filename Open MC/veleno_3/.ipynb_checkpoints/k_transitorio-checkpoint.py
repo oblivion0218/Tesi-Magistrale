@@ -170,8 +170,7 @@ def build_k_eff_model(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc_wat
     settings.source = openmc.IndependentSource(space=source_space)
 
     return openmc.model.Model(geometry=geometry, materials=materials, settings=settings)
-
-
+    
 def main():
     os.environ["OMP_NUM_THREADS"] = "40"
     p = load_parameters('parametri.txt')
@@ -182,10 +181,10 @@ def main():
     base_path = path_arco if os.path.exists(path_arco) else path_pc
     openmc.config['cross_sections'] = f"{base_path}/cross_sections.xml"
 
-    moltiplicatori_to_test = [2.75 ,4 ,1.25 , 1.5 , 2.25 , 2.5 , 3.25 , 3.5, 3.75]
+    moltiplicatori_to_test = [1.5,1.875,2,2.25,2.5,2.75,3,3.25,3.5,3.75,4,4.25]
     
     batches_norm, particles_norm , inactive_norm = p['batches_auto'], p['particles_auto'], p['inactive_auto']
-    batches_high, particles_high , inactive_high = 120, 100000 , 40
+    batches_high, particles_high , inactive_high = 200, 250000 , 40
 
     for moltiplicatore in moltiplicatori_to_test:
         row = df_results[np.isclose(df_results['pitch'], moltiplicatore, atol=1e-4)]
@@ -211,26 +210,42 @@ def main():
             os.chdir(root_dir)
             continue
 
+        # 1. Carichiamo i risultati per estrarre gli ID reali usati nel fit HDF5
         results = openmc.deplete.Results(results_file)
         times_days = results.get_times(time_units="d")
+        hdf5_mat_ids = sorted([int(mat_id) for mat_id in results[0].volume.keys()])
 
-        # Genera il modello completo (Geometria + Materiali + Settings)
+        # 2. Generiamo il modello geometrico base (che parte da ID=1)
+        openmc.reset_auto_ids()
         model = build_k_eff_model(moltiplicatore, p, a_int, a_ext, t_fuel, t_water, perc_water)
         
-        # FIX: Esporta TUTTI i file XML necessari (compreso materials.xml) nella cartella corrente
+        # 3. Troviamo i materiali depletabili corrispondenti nel nuovo modello
+        model_depletable_mats = sorted([m for m in model.materials if m.depletable], key=lambda m: m.id)
+
+        # 4. ALGORITMO DI RIALLINEAMENTO: Calcolo del delta di sfasamento degli ID
+        if hdf5_mat_ids and model_depletable_mats:
+            delta = hdf5_mat_ids[0] - model_depletable_mats[0].id
+            if delta != 0:
+                print(f"[INFO] Rilevato sfasamento ID. Applico correzione geometrica: Delta = {delta}")
+                for mat in model.materials:
+                    mat.id += delta  # Trasliamo l'ID dell'oggetto Python (aggiorna automaticamente la cella associata)
+
+        # 5. Esportiamo la geometria corretta e creiamo il template pulito
         model.export_to_xml()
+        
+        import shutil
+        shutil.copy("materials.xml", "materials_base.xml")
 
         if os.path.exists("tallies.xml"):
             os.remove("tallies.xml")
 
-        output_file = f"k_eff_transitorio_pitch_{moltiplicatore:.3f}.txt"
+        output_file = f"k_eff_transitorio_pitch_{moltiplicatore:.3f}".replace('.', '_') + ".txt"
         with open(output_file, "w") as f_out:
             f_out.write(f"Step  Tempo[gg]  K_EFF  STD_DEV  STATISTICA\n")
 
+        # 6. Loop temporale di trasporto
         for step, t in enumerate(times_days):
-            openmc.reset_auto_ids()
-            
-            if t >= 395.0 and t <= 410.0 :
+            if 395.0 <= t <= 410.0 :
                 model.settings.batches = batches_high
                 model.settings.particles = particles_high
                 model.settings.inactive = inactive_high
@@ -243,7 +258,9 @@ def main():
             
             model.settings.export_to_xml()
 
-            mats = results.export_to_materials(step)
+            # Ora l'estrazione funzionerà perfettamente perché gli ID in materials_base.xml coincidono con l'HDF5
+            mats = results.export_to_materials(step, path="materials_base.xml")
+            
             for mat in mats:
                 if mat.name == 'water':
                     mat.add_s_alpha_beta('c_D_in_D2O')
@@ -259,13 +276,11 @@ def main():
                     k_val = sp.k_combined.nominal_value
                     k_std = sp.k_combined.std_dev
                     
-                    print(f"Step {step} (t={t:.2f} d): k = {k_val:.5f} +/- {k_std:.5f}")
+                    print(f"Step {step} (t={t:.2f} d): k = {k_val:.5f} +/- {k_std:.5f} ({stat_label})")
                     with open(output_file, "a") as f_out:
                         f_out.write(f"{step:<6} {t:<15.4f} {k_val:<15.5f} {k_std:<15.5f} {stat_label:<15}\n")
                 os.remove(sp_file)
             if os.path.exists('summary.h5'): os.remove('summary.h5')
-
-            print(f"Step {step} completato. Tempo: {t:.2f} giorni. K_eff: {k_val:.5f} +/- {k_std:.5f} ({stat_label})")  
 
         os.chdir(root_dir)
 
