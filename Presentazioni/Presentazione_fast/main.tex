@@ -1,0 +1,402 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, shapes.geometric}
+\usepackage{tcolorbox}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+\useinnertheme{circles}
+\usefonttheme{professionalfonts}
+
+\setbeamerfont{author in head/foot}{size=\fontsize{6}{7}\selectfont}
+\setbeamerfont{title in head/foot}{size=\fontsize{6}{7}\selectfont}
+\setbeamerfont{date in head/foot}{size=\fontsize{5}{6}\selectfont}
+
+\title[Ottimizzazione Reattore Sottocritico]{Maximization of the operational multiplication factor in a photon driven subcritical reactor: a methodological approach for temperature and poison feedback }
+\author[R. Bossi]{
+  Riccardo Bossi \\ \medskip
+  {\small Relatore: Prof. Antonio Cammi} \\
+  {\small Correlatrice: Prof.ssa Monica Sisti}
+}
+\institute[PoliMi \& Bicocca]{Università degli Studi di Milano-Bicocca \\ Politecnico di Milano}
+\date{\today}
+
+\begin{document}
+
+% === SLIDE 1: TITOLO ===
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% === SLIDE 2: CONTESTO E OBIETTIVO ===
+\begin{frame}{Contesto e Obiettivo della Tesi}
+    \begin{block}{Sistema Sottocritico}
+        Un reattore con $k_{eff} < 1$ richiede una \textbf{sorgente esterna} di neutroni. La potenza è proporzionale all'intensità della sorgente, ma i \textbf{feedback} modificano $k_{eff}$ durante i transitori.
+    \end{block}
+    
+    \vspace{0.5cm}
+    
+    \begin{alertblock}{Obiettivo}
+        Sviluppare una metodologia per \textbf{massimizzare} $k_{eff}^{HFP}$ garantendo che $k_{eff}^{CZP} \leq 1$ in ogni condizione operativa.
+    \end{alertblock}
+    
+    \vspace{0.3cm}
+    
+    \begin{itemize}
+        \item \textbf{CZP} (Cold Zero Power): $T = 300$ K — reattore spento
+        \item \textbf{HFP} (Hot Full Power): $T_{fuel} = 600$ K, $T_{mod} = 350$ K — operatività nominale
+    \end{itemize}
+\end{frame}
+
+% === SLIDE 3: PROGETTO SYNERGY ===
+\begin{frame}{Progetto SYNERGY: Sorgente Fotonica}
+    \begin{columns}[c]
+        \begin{column}{0.55\textwidth}
+            \begin{itemize}
+                \item Sorgente di neutroni basata su \textbf{sincrotrone} con estrazione di fotoni $\gamma$ (1–37 MeV)
+                \item Reazione fotonucleare $(\gamma, n)$ su target di Uranio
+                \item Rate fotonico: $S_\gamma = 2.02 \times 10^{17}$ $\gamma$/s
+                \item Potenza fascio: $\sim 200$ kW
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{Sincrotrone_anello.png}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% === SLIDE 4: FEEDBACK DI REATTIVITÀ ===
+\begin{frame}{Feedback di Reattività}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \textbf{Effetto Doppler}
+            \begin{itemize}
+                \item Broadening delle risonanze di cattura dell'$^{238}$U
+                \item Aumenta le catture $\Rightarrow$ \textcolor{red}{$\Delta\rho < 0$}
+            \end{itemize}
+            
+            \vspace{0.5cm}
+            
+            \textbf{Effetto Moderatore}
+            \begin{itemize}
+                \item Riduzione densità acqua con $T$
+                \item Degrada rallentamento $\Rightarrow$ \textcolor{red}{$\Delta\rho < 0$}
+            \end{itemize}
+        \end{column}
+        
+        \begin{column}{0.5\textwidth}
+            \begin{alertblock}{Variazione di Reattività}
+                \begin{equation*}
+                    \Delta\rho = \frac{k_2 - k_1}{k_1 \cdot k_2}
+                \end{equation*}
+            \end{alertblock}
+            
+            \vspace{0.3cm}
+            
+            \begin{block}{Vincolo di Sicurezza}
+                \begin{equation*}
+                    k_{max}^{HFP} = 1 - \sum_i |\Delta\rho_i|
+                \end{equation*}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% === SLIDE 5: SUPERFICIE k(T) ===
+\begin{frame}{Superficie di Moltiplicazione Termodinamica}
+    \begin{columns}[c]
+        \begin{column}{0.5\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{superficie.png}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \footnotesize
+            Mappa 3D di $k_{eff}(T_{fuel}, T_{mod})$ nel transitorio HFP $\rightarrow$ CZP.
+            
+            \vspace{0.5cm}
+            
+            Il raffreddamento del sistema provoca un \textbf{incremento di reattività} che deve essere compensato dal margine di sottocriticità iniziale.
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% === SLIDE 6: OTTIMIZZAZIONE DEL PITCH ===
+\begin{frame}{Ottimizzazione del Pitch Reticolare}
+    \begin{columns}[c]
+        \begin{column}{0.5\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{operatività.png}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \begin{itemize}
+                \item \textbf{Zona Verde:} Operatività possibile — $k_{max}$ raggiungibile modulando l'arricchimento
+                \item \textbf{Zona Rossa:} Inaccessibile — anche al 100\% di arricchimento non si raggiunge il target
+                \item Non-linearità governata dal rapporto moderatore/combustibile (15\% $D_2O$ in $H_2O$)
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% === SLIDE 7: GEOMETRIA ARRICCHIMENTO ===
+\begin{frame}{Geometria ad Arricchimento Variabile}
+    \begin{columns}[c]
+        \begin{column}{0.5\textwidth}
+            \centering
+            \includegraphics[width=0.85\textwidth]{reactor_xy_v.png}
+            
+            \footnotesize Sezione XY
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Scelta di Design}
+                Profilo di arricchimento \textbf{lineare radiale}: dal centro verso l'esterno del core.
+            \end{block}
+            
+            \vspace{0.3cm}
+            
+            \textbf{Vantaggi:}
+            \begin{itemize}
+                \item Degenerazione macroscopica: stesso $k_{max}$, multiple combinazioni
+                \item Maggiore flessibilità progettuale
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% === SLIDE 8: RISULTATI POTENZA ===
+\begin{frame}{Risultati: Potenza e Moltiplicazione vs Pitch}
+    \begin{columns}[c]
+        \begin{column}{0.55\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{potenza_kmax_vs_pitch.png}
+        \end{column}
+        \begin{column}{0.43\textwidth}
+            \begin{alertblock}{Ottimo Identificato di Potenza}
+                Pitch $\approx 14$ cm
+            \end{alertblock}
+            
+            \vspace{0.3cm}
+            
+            \begin{tabular}{ll}
+                \toprule
+                \textbf{Parametro} & \textbf{Valore} \\
+                \midrule
+                Potenza termica & 2.3 MW \\
+                Q-factor & 5.75 \\
+                \bottomrule
+            \end{tabular}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% === SLIDE 9: VELENI - TEORIA ===
+\begin{frame}{Veleni Neutronici: Xe-135 e Sm-149}
+    \begin{columns}[T]
+        \begin{column}{0.48\textwidth}
+            \textbf{Xenon-135}
+            \begin{itemize}
+                \item $\sigma_a \approx 2 \times 10^6$ b
+                \item Transitorio: \textbf{picco post-shutdown} (xenon pit)
+                \item Decade con $T_{1/2} = 9.2$ h
+            \end{itemize}
+            
+            \begin{equation*}
+                N_{Xe}^{eq} = \frac{(\gamma_I + \gamma_{Xe}) \Sigma_f \phi}{\lambda_{Xe} + \sigma_a \phi}
+            \end{equation*}
+        \end{column}
+        
+        \begin{column}{0.48\textwidth}
+            \textbf{Samario-149}
+            \begin{itemize}
+                \item $\sigma_a \approx 4.1 \times 10^4$ b
+                \item \textbf{Stabile} ($\lambda_{Sm} = 0$)
+                \item Accumulo asintotico permanente
+            \end{itemize}
+            
+            \begin{equation*}
+                N_{Sm}^{eq} = \frac{\gamma_{Pm} \Sigma_f}{\sigma_{a,Sm}}
+            \end{equation*}
+            
+            \footnotesize \textit{Indipendente dal flusso $\phi$}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% === SLIDE 10: SIMULAZIONI DEPLETION ===
+\begin{frame}{Simulazioni di Burn-up: Evoluzione dei Veleni}
+    \begin{columns}[c]
+        \begin{column}{0.5\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{xenon_transient_analysis.png}
+            
+            \footnotesize Xe-135: picco post-shutdown
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{samarium_buildup_analysis.png}
+            
+            \footnotesize Sm-149: plateau asintotico
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% === SLIDE 11: EVOLUZIONE k_eff ===
+\begin{frame}{Evoluzione di $k_{eff}$ nel Ciclo di Vita}
+    \begin{columns}[c]
+        \begin{column}{0.55\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{k_eff_zoom.png}
+        \end{column}
+        \begin{column}{0.43\textwidth}
+            \footnotesize
+            L'andamento di $k_{eff}$ riflette:
+            \begin{itemize}
+                \item Accumulo veleni
+                \item Consumo di fissile
+                \item Feedback termici
+            \end{itemize}
+            
+            \vspace{0.3cm}
+            
+            Il sistema rimane \textbf{sottocritico} per l'intero ciclo operativo.
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% === SLIDE 12: BILANCIO REATTIVITÀ ===
+\begin{frame}{Bilancio di Reattività Totale}
+
+    \begin{equation*}
+        \Delta\rho_{tot} = |\Delta\rho_{Doppler}| + |\Delta\rho_{Mod}| + |\Delta\rho_{Poison}| + |\Delta\rho_{Security}|
+    \end{equation*}
+
+    \vspace{0.3cm}
+
+    \begin{columns}[c]
+        \begin{column}{0.45\textwidth}
+            \begin{table}
+                \centering
+                \begin{tabular}{lc}
+                    \toprule
+                    \textbf{Contributo} & \textbf{[pcm]} \\
+                    \midrule
+                    Doppler & 417 \\
+                    Moderatore & 1897 \\
+                    Veleni & 424 \\
+                    Sicurezza & 200 \\
+                    \midrule
+                    \textbf{Totale} & \textbf{2938} \\
+                    \bottomrule
+                \end{tabular}
+            \end{table}
+        \end{column}
+        
+        \begin{column}{0.5\textwidth}
+            \begin{alertblock}{Limite Operativo}
+                \begin{equation*}
+                    k_{max}^{HFP} = 1 - 2938 \text{ pcm} = \boxed{0.97062}
+                \end{equation*}
+            \end{alertblock}
+            
+            \vspace{0.2cm}
+            
+            \footnotesize Sotto questo limite, la sicurezza è garantita in ogni transitorio termico.
+        \end{column}
+    \end{columns}
+\end{frame}
+
+
+% Slide 1: Poison vs Pitch
+\begin{frame}{Reattività da avvelenamento vs Pitch}
+    \vspace*{-0.5cm} % Sposta tutto leggermente in alto
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.85\textwidth, height=0.65\textheight, keepaspectratio]{poison_VS_pitch.png}
+        
+        \vspace{0.3cm} % Spazio tra immagine e didascalia
+        
+        \begin{minipage}{0.9\textwidth}
+            \scriptsize
+            \textbf{Figura:} Evoluzione del $\Delta\rho_{\text{Poison}}$ al variare del Pitch. L'analisi evidenzia l'assenza di un ottimo globale, identificando invece una condizione limitante ("pessimo") in prossimità del moltiplicatore x2.
+        \end{minipage}
+    \end{figure}
+\end{frame}
+
+% Slide 2: K_max vs Pitch
+\begin{frame}{Operatività HFP vs Pitch}
+    \vspace*{-0.5cm} 
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.85\textwidth, height=0.65\textheight, keepaspectratio]{K_MASSIMO.png}
+        
+        \vspace{0.3cm}
+        
+        \begin{minipage}{0.9\textwidth}
+            \scriptsize
+            \textbf{Figura:} Massimo valore di $k_{\text{eff}}$ in regime HFP al variare del pitch. Il trend mostra un miglioramento costante verso il pitch x4, dove si ottiene il valore di moltiplicazione più elevato disponibile in sicurezza.
+        \end{minipage}
+    \end{figure}
+\end{frame}
+
+% === SLIDE 13: RISULTATI PRINCIPALI ===
+\begin{frame}{Risultati Principali}
+    \begin{columns}[T]
+        \begin{column}{0.48\textwidth}
+            \begin{block}{Metodologia}
+                \begin{itemize}
+                    \item Framework di ottimizzazione \textbf{parametrico} e modulare
+                    \item Validato su CZP, HZP, HFP
+                    \item Indipendente dalla geometria specifica
+                \end{itemize}
+            \end{block}
+        \end{column}
+        
+        \begin{column}{0.48\textwidth}
+            \begin{alertblock}{Valori Per ogni pitch (3.551 cm)}
+                \begin{itemize}
+                    \item $k_{max}^{HFP} = 0.971$
+                    \item Potenza: $0.887$ MW
+                    \item Q-factor: $2.22$
+                    \item Margine veleni: $424$ pcm
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+    
+    \vspace{0.5cm}
+    
+    \begin{block}{Contributo Originale}
+        Prima quantificazione sistematica del \textbf{margine di reattività da veleni} in un sistema ADS fotoguidato, con validazione mediante simulazioni Monte Carlo accoppiate (OpenMC + Bateman).
+    \end{block}
+\end{frame}
+
+% === SLIDE 14: SVILUPPI FUTURI ===
+\begin{frame}{Sviluppi Futuri}
+    \begin{itemize}
+        \item \textbf{Mitigazione calo potenza:} Introduzione di avvelenatori bruciabili (Gd$_2$O$_3$)
+        \item \textbf{Analisi di sensitività:} Validazione con diverse librerie nucleari (ENDF/B vs JEFF)
+        \item \textbf{Feedback aggiuntivi:} Dilatazione termica, variazione pressione operativa
+        \item \textbf{Ottimizzazione multi-obiettivo:} Trade-off potenza/margine di sicurezza
+    \end{itemize}
+\end{frame}
+
+% === SLIDE 15: CHIUSURA ===
+\begin{frame}
+    \centering
+    \vspace{2cm}
+    
+    {\Large Grazie per l'attenzione!}
+    
+    \vspace{1.5cm}
+    
+    {\large Domande?}
+\end{frame}
+
+\end{document}
