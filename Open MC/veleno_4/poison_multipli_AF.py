@@ -276,7 +276,7 @@ def main():
 
     S_rate = p['S'] * 5.87905e-03
     
-    moltiplicatori_to_test = [2.750 , 3.250 , 3.750 , 4.250] # <-- INSERISCI QUI I MOLTIPLICATORI DA TESTARE
+    moltiplicatori_to_test = [0.75] # <-- INSERISCI QUI I MOLTIPLICATORI DA TESTARE
     
     path_arco = "/raid1/users/rbossi/MC/Magistrale/openmc_data/mcnp_endfb71"
     path_pc = "/home/bossi_ricky/openmc_data/mcnp_endfb71"

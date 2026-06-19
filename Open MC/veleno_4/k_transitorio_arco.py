@@ -182,7 +182,7 @@ def main():
     openmc.config['cross_sections'] = f"{base_path}/cross_sections.xml"
 
     
-    moltiplicatori_to_test = [1.250 , 1.875 , 2.250]    
+    moltiplicatori_to_test = [0.5]    
 
     batches_norm, particles_norm , inactive_norm = p['batches_auto'], p['particles_auto'], p['inactive_auto']
     batches_high, particles_high , inactive_high = 200, 250000 , 40

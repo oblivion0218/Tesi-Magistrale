@@ -3,7 +3,7 @@ import time
 
 attesa_secondi =  3600 * 3  # ore in secondi
 print("Attesa di 3 ore...")
-time.sleep(attesa_secondi)
+#time.sleep(attesa_secondi)
 
 print("Inizio esecuzione sequenziale...")
 print("Esecuzione di poison_multipli.py in veleno_4 ...")

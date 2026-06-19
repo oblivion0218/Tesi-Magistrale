@@ -1,4 +1,10 @@
 import subprocess
+import time
+
+attesa_secondi =  3600 * 3  # ore in secondi
+print("Attesa di 3 ore...")
+#time.sleep(attesa_secondi)
+
 print("Inizio esecuzione sequenziale...")
 print("Esecuzione di poison_multipli.py in veleno_4 ...")
 subprocess.run(["python", "poison_multipli_arco.py"],  check=True)

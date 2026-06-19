@@ -181,7 +181,7 @@ def main():
     base_path = path_arco if os.path.exists(path_arco) else path_pc
     openmc.config['cross_sections'] = f"{base_path}/cross_sections.xml"
 
-    moltiplicatori_to_test = [1, 1.5 , 2, 2.5 , 3]
+    moltiplicatori_to_test = [0.75]
  
 
     batches_norm, particles_norm , inactive_norm = p['batches_auto'], p['particles_auto'], p['inactive_auto']
