@@ -39,13 +39,15 @@ def load_k_ideale_dict(filepath):
     return k_dict
 
 def format_plot(ax, title, xlabel, ylabel):
-    ax.set_title(title, fontsize=16, fontweight='bold')
-    ax.set_xlabel(xlabel, fontsize=14, fontweight='bold', color='#2F4F4F')
-    ax.set_ylabel(ylabel, fontsize=14, fontweight='bold', color='#2F4F4F')
+    ax.set_title(title, fontsize=20, fontweight='bold')
+    ax.set_xlabel(xlabel, fontsize=20, fontweight='bold', color='#2F4F4F')
+    ax.set_ylabel(ylabel, fontsize=20, fontweight='bold', color='#2F4F4F')
     ax.minorticks_on()
+    ax.tick_params(axis='both', which='major', labelsize=14, labelcolor='#2F4F4F')
+    ax.tick_params(axis='both', which='minor', labelsize=12)
     ax.grid(which='major', linestyle='--', alpha=0.6, color='#778899')
     ax.grid(which='minor', linestyle=':', alpha=0.3, color='#778899')
-    ax.legend(loc='best', frameon=True, shadow=True, fontsize=12, facecolor='#F0F8FF')
+    ax.legend(loc='best', frameon=True, shadow=True, fontsize=16, facecolor='#F0F8FF')
 
 def salva_plot(fig, folder, filename):
     plt.tight_layout()
@@ -112,29 +114,55 @@ def analizza_pitch(lista_pitch, path_result_final="result_final.txt"):
                 # --- Plot K_eff Completo ---
                 fig, ax = plt.subplots(figsize=(16, 10))
                 ax.errorbar(tempi, k_eff, yerr=k_err, fmt='o-', color='#000000', ecolor='#789DD1', capsize=4, elinewidth=1.5, label='$k_{eff}$')
-                ax.axvline(x=spegnimento, color='red', linestyle='-.', alpha=0.5, label='Shutdown')
-                ax.plot(t_max, k_max, marker='*', color='red', markersize=12, linestyle='None', label='Peak ({:.1f} d)'.format(t_max))
+                ax.axvline(x=spegnimento, color='red', linestyle='-.', label='Shutdown')
+                ax.plot(t_max, k_max, marker='*', color='red', markersize=16, linestyle='None', label='Peak ({:.1f} d)'.format(t_max))
                 format_plot(ax, "Evolution of $k_{eff}$ - Pitch " + n_nnn, "Time [Days]", "Multiplication Factor $k_{eff}$")
                 salva_plot(fig, folder, "k_eff_evolution_{}.png".format(n_nnn))
                 
+            # --- Plot Zoom K_eff ---
+
+                # --- Rimozione del punto a 400.05 giorni ---
+                # Crea una maschera che esclude il valore specifico
+                mask_clean = ~np.isclose(tempi, 400.05, atol=1e-3)
+                
+                # Applica la maschera a tutti i vettori associati
+                tempi = tempi[mask_clean]
+                k_eff = k_eff[mask_clean]
+                k_err = k_err[mask_clean]
+
                 # --- Plot Zoom K_eff ---
                 fig, ax = plt.subplots(figsize=(16, 10))
-                ax.errorbar(tempi, k_eff, yerr=k_err, fmt='o-', color='#000000', ecolor='#789DD1', capsize=4, elinewidth=1.5, label='$k_{eff}$ (Zoom)')
-                ax.axvline(x=spegnimento, color='red', linestyle='-.', alpha=0.5, label='Shutdown')
-                if t_max <= spegnimento + 20: 
-                    ax.plot(t_max, k_max, marker='*', color='red', markersize=15, linestyle='None', label='Peak')
+                ax.errorbar(tempi, k_eff, yerr=k_err, fmt='o-', color='#000000', ecolor='#789DD1', capsize=4, elinewidth=1.5, linewidth=1.5, label='$k_{eff}$ (Zoom)')
+                ax.axvline(x=spegnimento, color='red', linestyle='-.', linewidth=4,  label='Shutdown')
                 
-                ax.set_xlim(spegnimento - 5, spegnimento + 20)
-                mask_zoom = (tempi >= spegnimento - 5) & (tempi <= spegnimento + 20)
+                # Trova il valore di k_eff esattamente allo spegnimento per la linea orizzontale
+                idx_spegnimento = np.argmin(np.abs(tempi - spegnimento))
+                k_spegnimento = k_eff[idx_spegnimento]
+                
+                # Linee orizzontali verdi per i due stati (spegnimento e massimo)
+                ax.axhline(y=k_spegnimento, color='green', linestyle='--', linewidth=4, alpha=0.8, label='$k_{eff}$ Shutdown')
+                ax.axhline(y=k_max, color='green', linestyle='-', linewidth=4, alpha=0.8, label='$k_{max}$ Peak')
+                
+                if t_max <= spegnimento + 10: 
+                    ax.plot(t_max, k_max, marker='*', color='red', markersize=16, linestyle='None', label='Peak')
+                    
+                    # Doppia freccia verticale tra i due livelli di k_eff
+                    x_arrow = (spegnimento + t_max) / 2 if t_max != spegnimento else spegnimento + 2
+                    ax.annotate('', xy=(x_arrow, k_spegnimento), xytext=(x_arrow, k_max),
+                                arrowprops=dict(arrowstyle='<->', color='green', lw=4, mutation_scale=20))
+                
+                ax.set_xlim(spegnimento - 5, spegnimento + 10)
+                mask_zoom = (tempi >= spegnimento - 5) & (tempi <= spegnimento + 10)
                 if np.any(mask_zoom):
                     y_min = np.min(k_eff[mask_zoom] - k_err[mask_zoom])
                     y_max = np.max(k_eff[mask_zoom] + k_err[mask_zoom])
-                    pad = (y_max - y_min) * 0.1 if y_max != y_min else 0.001
+                    pad = (y_max - y_min) * 0.15 if y_max != y_min else 0.001
                     ax.set_ylim(y_min - pad, y_max + pad)
                 
-                format_plot(ax, "Zoom $k_{eff}$ Transitorio - Pitch " + n_nnn, "Time [Days]", "$k_{eff}$")
+                format_plot(ax, "Zoom $k_{eff}$ - Pitch " + n_nnn, "Time [Days]", "$k_{eff}$")
                 salva_plot(fig, folder, "k_eff_zoom_{}.png".format(n_nnn))
-                
+
+
             except Exception as e:
                 print("Skipping pitch {}: Errore elaborazione dati k_eff ({})".format(n_nnn, e))
                 continue
@@ -227,8 +255,8 @@ def analizza_pitch(lista_pitch, path_result_final="result_final.txt"):
                         ax.plot(tempi_d, i_atoms, 's--', color='#789DD1', label='$^{135}$I (Zoom)')
                         ax.axvline(x=spegnimento, color='red', linestyle='-.', alpha=0.5)
                         
-                        ax.set_xlim(spegnimento - 5, spegnimento + 20)
-                        mask_z = (tempi_d >= spegnimento - 5) & (tempi_d <= spegnimento + 20)
+                        ax.set_xlim(spegnimento - 5, spegnimento + 10)
+                        mask_z = (tempi_d >= spegnimento - 5) & (tempi_d <= spegnimento + 10)
                         if np.any(mask_z):
                             y_min = min(np.min(xe_atoms[mask_z]), np.min(i_atoms[mask_z]))
                             y_max = max(np.max(xe_atoms[mask_z]), np.max(i_atoms[mask_z]))
@@ -272,7 +300,8 @@ def analizza_pitch(lista_pitch, path_result_final="result_final.txt"):
 # --- Parametri Esecuzione ---
 lista_da_analizzare = [
   # "1_000", "1_250",  "1_500", "1_875",  "2_000", "2_250","2_500","2_750","3_000","3_250", "3_500", "3_750", "4_000", "4_250"
-    "0_750" , "0_500"	
+  #  "0_750" , "0_500"
+   "1_000"	
 ]
 
 # Esecuzione

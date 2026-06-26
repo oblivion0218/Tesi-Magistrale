@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.17)  12 JUN 2026 13:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.17)  26 JUN 2026 14:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -684,21 +684,21 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemeMadrid.sty (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty)) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemecircles.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerfontthemeprofessionalfonts.sty)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 27.
+(hyperref)                removing `\\' on input line 29.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\new@ifnextchar' on input line 27.
+(hyperref)                removing `\new@ifnextchar' on input line 29.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\medskipamount' on input line 27.
+(hyperref)                removing `\medskipamount' on input line 29.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 27.
+(hyperref)                removing `\\' on input line 29.
 
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 31.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 42.
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -708,24 +708,24 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -780,7 +780,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 31.
+Package hyperref Info: Link coloring OFF on input line 42.
  (./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
@@ -797,145 +797,320 @@ Dictionary: translator-months-dictionary, Language: English
 Dictionary: translator-numbers-dictionary, Language: English 
 ) (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
-) (./main.nav) [1
+) (./main.nav)
+<logo_bicocca.png, id=27, 250.9375pt x 245.91875pt>
+File: logo_bicocca.png Graphic file (type png)
+<use logo_bicocca.png>
+Package pdftex.def Info: logo_bicocca.png  used on input line 47.
+(pdftex.def)             Requested size: 72.58238pt x 71.13188pt.
+<logo_polimi.png, id=29, 666.49pt x 489.83pt>
+File: logo_polimi.png Graphic file (type png)
+<use logo_polimi.png>
+Package pdftex.def Info: logo_polimi.png  used on input line 47.
+(pdftex.def)             Requested size: 96.78603pt x 71.13188pt.
+ [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 56.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc} <./logo_bicocca.png> <./logo_polimi.png>]
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 68.
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 56.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 68.
  (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 56.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 68.
  (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 56.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 68.
  (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 56.
+(Font)              <10.95> on input line 68.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 56.
+(Font)              <8> on input line 68.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 56.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 56.
+(Font)              <6> on input line 68.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 68.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 56.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 68.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [2
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}]
-<Sincrotrone_anello.png, id=120, 396.2805pt x 233.07076pt>
+<Sincrotrone_anello.png, id=125, 396.2805pt x 233.07076pt>
 File: Sincrotrone_anello.png Graphic file (type png)
 <use Sincrotrone_anello.png>
-Package pdftex.def Info: Sincrotrone_anello.png  used on input line 74.
-(pdftex.def)             Requested size: 175.55864pt x 103.2556pt.
+Package pdftex.def Info: Sincrotrone_anello.png  used on input line 90.
+(pdftex.def)             Requested size: 195.06648pt x 114.72844pt.
  [3
 
- <./Sincrotrone_anello.png>] [4
+ <./Sincrotrone_anello.png>]
+<work_flow.png, id=155, 2826.56pt x 1541.76pt>
+File: work_flow.png Graphic file (type png)
+<use work_flow.png>
+Package pdftex.def Info: work_flow.png  used on input line 109.
+(pdftex.def)             Requested size: 368.46407pt x 200.97691pt.
 
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
-<superficie.png, id=204, 677.8926pt x 714.7503pt>
-File: superficie.png Graphic file (type png)
-<use superficie.png>
-Package pdftex.def Info: superficie.png  used on input line 129.
-(pdftex.def)             Requested size: 216.74202pt x 228.51755pt.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 129.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 129.
-
-Overfull \vbox (16.51862pt too high) detected at line 129
+Overfull \vbox (61.04305pt too high) detected at line 109
  []
 
-[5
+[4
 
- <./superficie.png>]
-<operatività.png, id=238, 1149.093pt x 714.7503pt>
-File: operatività.png Graphic file (type png)
-<use operatività.png>
-Package pdftex.def Info: operatività.png  used on input line 146.
-(pdftex.def)             Requested size: 216.74202pt x 134.81151pt.
- [6
+ <./work_flow.png>] [5
 
- <./operatività.png>]
-<reactor_xy_v.png, id=267, 446.41782pt x 373.395pt>
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
+<reactor_xy_v.png, id=237, 446.41782pt x 373.395pt>
 File: reactor_xy_v.png Graphic file (type png)
 <use reactor_xy_v.png>
-Package pdftex.def Info: reactor_xy_v.png  used on input line 171.
-(pdftex.def)             Requested size: 184.23203pt x 154.0957pt.
- [7
+Package pdftex.def Info: reactor_xy_v.png  used on input line 182.
+(pdftex.def)             Requested size: 197.66632pt x 165.33125pt.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 182.
+ [6
 
  <./reactor_xy_v.png>]
-<potenza_kmax_vs_pitch.png, id=310, 1148.3703pt x 715.473pt>
-File: potenza_kmax_vs_pitch.png Graphic file (type png)
-<use potenza_kmax_vs_pitch.png>
-Package pdftex.def Info: potenza_kmax_vs_pitch.png  used on input line 197.
-(pdftex.def)             Requested size: 238.41754pt x 148.53976pt.
+<superficie.png, id=291, 715.473pt x 714.7503pt>
+File: superficie.png Graphic file (type png)
+<use superficie.png>
+Package pdftex.def Info: superficie.png  used on input line 206.
+(pdftex.def)             Requested size: 216.74202pt x 216.52074pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 206.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 206.
+
+Overfull \vbox (4.5218pt too high) detected at line 206
+ []
+
+[7
+
+ <./superficie.png>]
+<operatività.png, id=339, 1145.9613pt x 713.064pt>
+File: operatività.png Graphic file (type png)
+<use operatività.png>
+Package pdftex.def Info: operatività.png  used on input line 224.
+(pdftex.def)             Requested size: 260.09306pt x 161.83604pt.
  [8
 
- <./potenza_kmax_vs_pitch.png>]
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 230.
+ <./operatività.png>]
+<potenza_vs_pitch_zone.png, id=368, 1156.32pt x 722.7pt>
+File: potenza_vs_pitch_zone.png Graphic file (type png)
+<use potenza_vs_pitch_zone.png>
+Package pdftex.def Info: potenza_vs_pitch_zone.png  used on input line 257.
+(pdftex.def)             Requested size: 281.76198pt x 176.09813pt.
  [9
 
+ <./potenza_vs_pitch_zone.png>] [10
+
 ]
-<xenon_transient_analysis.png, id=379, 1156.32pt x 722.7pt>
+<xenon_transient_analysis.png, id=425, 1149.093pt x 714.7503pt>
 File: xenon_transient_analysis.png Graphic file (type png)
 <use xenon_transient_analysis.png>
-Package pdftex.def Info: xenon_transient_analysis.png  used on input line 248.
-(pdftex.def)             Requested size: 216.74202pt x 135.4618pt.
-<samarium_buildup_analysis.png, id=380, 1156.32pt x 722.7pt>
+Package pdftex.def Info: xenon_transient_analysis.png  used on input line 312.
+(pdftex.def)             Requested size: 216.74202pt x 134.81151pt.
+<samarium_buildup_analysis.png, id=426, 1149.093pt x 714.7503pt>
 File: samarium_buildup_analysis.png Graphic file (type png)
 <use samarium_buildup_analysis.png>
-Package pdftex.def Info: samarium_buildup_analysis.png  used on input line 248.
-(pdftex.def)             Requested size: 216.74202pt x 135.4618pt.
- [10
-
- <./xenon_transient_analysis.png> <./samarium_buildup_analysis.png>]
-<k_eff_zoom.png, id=410, 588.39825pt x 364.36125pt>
-File: k_eff_zoom.png Graphic file (type png)
-<use k_eff_zoom.png>
-Package pdftex.def Info: k_eff_zoom.png  used on input line 271.
-(pdftex.def)             Requested size: 238.41754pt x 147.63777pt.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 271.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 271.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 271.
+Package pdftex.def Info: samarium_buildup_analysis.png  used on input line 312.
+(pdftex.def)             Requested size: 216.74202pt x 134.81151pt.
  [11
 
- <./k_eff_zoom.png>] [12
+ <./xenon_transient_analysis.png> <./samarium_buildup_analysis.png>]
+<k_eff_zoom_1_000.png, id=456, 1156.32pt x 722.7pt>
+File: k_eff_zoom_1_000.png Graphic file (type png)
+<use k_eff_zoom_1_000.png>
+Package pdftex.def Info: k_eff_zoom_1_000.png  used on input line 336.
+(pdftex.def)             Requested size: 238.41754pt x 149.00357pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 336.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 336.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 336.
+ [12
 
-]
-<poison_VS_pitch.png, id=480, 1156.32pt x 722.7pt>
+ <./k_eff_zoom_1_000.png>]
+<poison_VS_pitch.png, id=486, 1149.093pt x 714.7503pt>
 File: poison_VS_pitch.png Graphic file (type png)
 <use poison_VS_pitch.png>
-Package pdftex.def Info: poison_VS_pitch.png  used on input line 330.
-(pdftex.def)             Requested size: 253.13846pt x 158.21153pt.
+Package pdftex.def Info: poison_VS_pitch.png  used on input line 352.
+(pdftex.def)             Requested size: 254.36174pt x 158.2162pt.
  [13
 
- <./poison_VS_pitch.png>]
-<K_MASSIMO.png, id=510, 1156.32pt x 722.7pt>
+ <./poison_VS_pitch.png>] [14
+
+]
+<K_MASSIMO.png, id=556, 1156.32pt x 722.7pt>
 File: K_MASSIMO.png Graphic file (type png)
 <use K_MASSIMO.png>
-Package pdftex.def Info: K_MASSIMO.png  used on input line 346.
-(pdftex.def)             Requested size: 253.13846pt x 158.21153pt.
- [14
+Package pdftex.def Info: K_MASSIMO.png  used on input line 410.
+(pdftex.def)             Requested size: 292.07877pt x 182.54922pt.
+ [15
 
- <./K_MASSIMO.png>] [15
-
-] [16
+ <./K_MASSIMO.png>]
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 440.
+ [16
 
 ] [17
+
+]
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 462.
+ [18
+
+]
+File: reactor_xy_v.png Graphic file (type png)
+<use reactor_xy_v.png>
+Package pdftex.def Info: reactor_xy_v.png  used on input line 486.
+(pdftex.def)             Requested size: 187.26216pt x 156.6311pt.
+<reactor_xz_v.png, id=705, 803.0pt x 803.0pt>
+File: reactor_xz_v.png Graphic file (type png)
+<use reactor_xz_v.png>
+Package pdftex.def Info: reactor_xz_v.png  used on input line 486.
+(pdftex.def)             Requested size: 156.05286pt x 156.05138pt.
+ [19
+
+ <./reactor_xz_v.png>]
+<regressione_parabolica_filtrata.png, id=735, 1156.32pt x 722.7pt>
+File: regressione_parabolica_filtrata.png Graphic file (type png)
+<use regressione_parabolica_filtrata.png>
+Package pdftex.def Info: regressione_parabolica_filtrata.png  used on input line 495.
+(pdftex.def)             Requested size: 338.11702pt x 211.31998pt.
+
+Overfull \vbox (36.86548pt too high) detected at line 495
+ []
+
+[20
+
+ <./regressione_parabolica_filtrata.png>]
+<rette_di_arricchimento.png, id=765, 1149.093pt x 714.7503pt>
+File: rette_di_arricchimento.png Graphic file (type png)
+<use rette_di_arricchimento.png>
+Package pdftex.def Info: rette_di_arricchimento.png  used on input line 505.
+(pdftex.def)             Requested size: 294.76596pt x 183.34409pt.
+
+Overfull \vbox (36.0896pt too high) detected at line 505
+ []
+
+[21
+
+ <./rette_di_arricchimento.png>]
+<scatter_potenza_errore.png, id=796, 1156.32pt x 722.7pt>
+File: scatter_potenza_errore.png Graphic file (type png)
+<use scatter_potenza_errore.png>
+Package pdftex.def Info: scatter_potenza_errore.png  used on input line 515.
+(pdftex.def)             Requested size: 303.4375pt x 189.63991pt.
+
+Overfull \vbox (23.64098pt too high) detected at line 515
+ []
+
+[22
+
+ <./scatter_potenza_errore.png>] [23
+
+]
+<circolarità.png, id=853, 1148.3703pt x 714.7503pt>
+File: circolarità.png Graphic file (type png)
+<use circolarità.png>
+Package pdftex.def Info: circolarità.png  used on input line 564.
+(pdftex.def)             Requested size: 216.74202pt x 134.89876pt.
+ [24
+
+ <./circolarità.png>] [25
+
+]
+<xenon-iodio.png, id=923, 713.66624pt x 432.4155pt>
+File: xenon-iodio.png Graphic file (type png)
+<use xenon-iodio.png>
+Package pdftex.def Info: xenon-iodio.png  used on input line 592.
+(pdftex.def)             Requested size: 301.295pt x 182.55624pt.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 592.
+
+Overfull \vbox (7.55731pt too high) detected at line 592
+ []
+
+[26
+
+ <./xenon-iodio.png>]
+<xenon-iodio-zoom.png, id=953, 607.068pt x 375.20175pt>
+File: xenon-iodio-zoom.png Graphic file (type png)
+<use xenon-iodio-zoom.png>
+Package pdftex.def Info: xenon-iodio-zoom.png  used on input line 604.
+(pdftex.def)             Requested size: 295.38171pt x 182.55624pt.
+
+Overfull \vbox (7.11281pt too high) detected at line 604
+ []
+
+[27
+
+ <./xenon-iodio-zoom.png>]
+File: xenon_transient_analysis.png Graphic file (type png)
+<use xenon_transient_analysis.png>
+Package pdftex.def Info: xenon_transient_analysis.png  used on input line 615.
+(pdftex.def)             Requested size: 293.49702pt x 182.55624pt.
+
+Overfull \vbox (7.55731pt too high) detected at line 615
+ []
+
+[28
+
+] [29
+
+]
+<samario.png, id=1038, 723.9045pt x 436.63126pt>
+File: samario.png Graphic file (type png)
+<use samario.png>
+Package pdftex.def Info: samario.png  used on input line 635.
+(pdftex.def)             Requested size: 262.30649pt x 158.21391pt.
+ [30
+
+ <./samario.png>]
+File: samarium_buildup_analysis.png Graphic file (type png)
+<use samarium_buildup_analysis.png>
+Package pdftex.def Info: samarium_buildup_analysis.png  used on input line 646.
+(pdftex.def)             Requested size: 293.49702pt x 182.55624pt.
+
+Overfull \vbox (7.11287pt too high) detected at line 646
+ []
+
+[31
+
+] [32
+
+]
+<potenza.png, id=1122, 1156.32pt x 722.7pt>
+File: potenza.png Graphic file (type png)
+<use potenza.png>
+Package pdftex.def Info: potenza.png  used on input line 667.
+(pdftex.def)             Requested size: 292.07877pt x 182.55624pt.
+ [33
+
+ <./potenza.png>]
+<k_eff.png, id=1152, 1156.32pt x 722.7pt>
+File: k_eff.png Graphic file (type png)
+<use k_eff.png>
+Package pdftex.def Info: k_eff.png  used on input line 679.
+(pdftex.def)             Requested size: 292.07877pt x 182.55624pt.
+
+Overfull \vbox (11.05731pt too high) detected at line 679
+ []
+
+[34
+
+ <./k_eff.png>] [35
+
+]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 710.
+ [36
 
 ]
 \tf@nav=\write6
@@ -956,18 +1131,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28240 strings out of 474222
- 579945 string characters out of 5748733
- 1941975 words of memory out of 5000000
- 49886 multiletter control sequences out of 15000+600000
- 627849 words of font info for 93 fonts, out of 8000000 for 9000
+ 28489 strings out of 474222
+ 585251 string characters out of 5748733
+ 1940975 words of memory out of 5000000
+ 50090 multiletter control sequences out of 15000+600000
+ 656921 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,15n,123p,484b,775s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb>
-Output written on main.pdf (17 pages, 3319153 bytes).
+ 128i,15n,123p,461b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb>
+Output written on main.pdf (36 pages, 9166383 bytes).
 PDF statistics:
- 739 PDF objects out of 1000 (max. 8388607)
- 568 compressed objects within 6 object streams
- 35 named destinations out of 1000 (max. 500000)
- 501 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1389 PDF objects out of 1440 (max. 8388607)
+ 1106 compressed objects within 12 object streams
+ 76 named destinations out of 1000 (max. 500000)
+ 746 words of extra memory for PDF output out of 10000 (max. 10000000)
 
