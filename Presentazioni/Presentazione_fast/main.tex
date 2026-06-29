@@ -47,10 +47,48 @@
 \end{frame}
 
 
+\begin{frame}{The Global Energy Challenge}
+    \begin{columns}[T] % [T] allinea le colonne in alto
+    
+        % Colonna di SINISTRA: Testo
+        \begin{column}{0.50\textwidth}
+            
+            \textcolor{blue!80!black}{\textbf{Climate Emergency}} \\
+            Record CO$_2$ emissions and global warming drive the urgent need for decarbonization. 
+            Most of worldwide electricity still relies on fossil fuels, while energy demand is constantly increasing.
+
+            \vspace{0.2cm}
+            \textcolor{blue!80!black}{\textbf{A Possible Solution}} \\
+            Transitioning to a \textbf{carbon-free baseload} requires innovative technologies. \textbf{Accelerator-Driven Systems} provide a unique solution:
+            \vspace{0.1cm}
+            \begin{itemize}
+                \item Inherent safety due to subcritical operation
+                \item Power modulation via beam intensity
+            \end{itemize}
+            
+        \end{column}
+        
+        % Colonna di DESTRA: Immagine
+        \begin{column}{0.45\textwidth}
+            \vspace{0.2cm} % Regola questo valore per centrare l'immagine verticalmente
+            
+            \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth]{caldo.png}
+                \vspace{0.1cm}
+                \footnotesize{Intense heat wave over Europe in the final days of June 2026.}
+            \end{figure}
+            
+        \end{column}
+        
+    \end{columns}
+\end{frame}
+
+
 % === SLIDE 2: CONTESTO E OBIETTIVO ===
 \begin{frame}{Thesis Context and Objective}
     \begin{block}{Subcritical System}
-        A reactor with $k_{eff} < 1$ requires an \textbf{external neutron source} to sustain the chain reaction. The power is proportional to the source intensity, but \textbf{feedbacks} modify $k_{eff}$ during transients.
+        A reactor with $k_{eff} < 1$ requires an \textbf{external neutron source} to sustain the chain reaction. During operational transients, \textbf{feedback} modify $k_{eff}$ .
     \end{block}
     
     \vspace{0.5cm}
@@ -109,7 +147,7 @@
 \end{frame}
 
 % === SLIDE 4: FEEDBACK DI REATTIVITÀ ===
-\begin{frame}{Reactivity Feedbacks}
+\begin{frame}{Reactivity Feedback}
 
     During the transition from HFP to CZP, the temperature drop induces a \textbf{reactivity insertion}. The primary feedback mechanisms are: \\
     \vspace{0.3cm}
@@ -141,7 +179,7 @@
             
             \begin{block}{Safety Constraint}
                 \begin{equation*}
-                    k_{max}^{HFP} =  k_{max}^{CZP} - \sum_i \Delta\rho_i
+                    k_{max}^{HFP} \approx  k_{max}^{CZP} - \sum_i \Delta\rho_i
                 \end{equation*}
             \end{block}
         \end{column}
@@ -215,8 +253,7 @@
         \end{column}
         \begin{column}{0.4\textwidth}
             \begin{itemize}
-                \item \textbf{Green Zone:} Possible operation — target $k_{max}$ reachable by modulating enrichment
-                \item \textbf{Red Zone:} Inaccessible — target not reached even at 100\% enrichment
+                \item \textbf{Green Zone:} Possible operation — target $k_{max}$ reachable by modulating enrichment while the \textbf{Red Zone} is inaccessible,  $k_{max}$ is not reached even at 50\% enrichment
                 \item Important to emphatized that over multiplication pitch of 2 \textbf{the doppler effect inverts sign}, meaning that the reactore is instable at source oscillation 
             \end{itemize}
         \end{column}
@@ -225,7 +262,7 @@
 
 
 % === SLIDE 8: RISULTATI POTENZA ===
-\begin{frame}{Results: Power and Multiplication vs. Pitch}
+\begin{frame}{Results: Power vs. Pitch}
     \begin{columns}[c]
         \begin{column}{0.65\textwidth}
             \centering
@@ -233,16 +270,6 @@
         \end{column}
         
         \begin{column}{0.35\textwidth}
-            \centering
-            \textbf{Global Maximum}
-            \begin{itemize}
-                \item Pitch $\approx 14$ cm
-                \item $P_{th} = 2.38$ MW
-                \item \textcolor{red}{\textbf{Impractical}} for Doppler inversion
-            \end{itemize}
-            
-            \rule{\linewidth}{0.4pt}
-            \vspace{0.05cm}
             
             \centering
             \textbf{Feasible Maximum}
@@ -252,13 +279,21 @@
                 \item \textbf{Stable and safe}
                 \item $Q$-Value = 4.12
             \end{itemize}
+            
+            \rule{\linewidth}{0.4pt}
+            
+            \centering
+
+            $$ Q = \frac{P_{Th}}{P_{El} / \eta_{Th-El} } $$
+            
+
         \end{column}
     \end{columns}
 \end{frame}
 
 % === SLIDE 9: VELENI - TEORIA ===
 \begin{frame}{Neutron Poisons: Xe-135 and Sm-149}
-    Other than the thermal feedbacks, the presence of neutron poisons (fission products with high absorption cross section) can significantly reduce $k_{eff}$ during operation. The main poisons in a uranium-fueled reactor are:
+    Other than the thermal feedback, the presence of neutron poisons (fission products with high absorption cross section) can significantly reduce $k_{eff}$ during operation. The main poisons in a uranium-fueled reactor are:
     \vspace{0.3cm}
     \begin{columns}[T]
         \begin{column}{0.48\textwidth}
@@ -382,7 +417,7 @@
         \begin{column}{0.5\textwidth}
             \begin{alertblock}{Operational Limit}
                 \begin{equation*}
-                    k_{max}^{HFP} = 1 - 2938 \text{ pcm} = \boxed{0.97062}
+                    k_{max}^{HFP} \approx 1 - 2938 \text{ pcm} = \boxed{0.97062}
                 \end{equation*}
             \end{alertblock}
             
@@ -395,7 +430,6 @@
 
 % Slide 2: K_max vs Pitch
 \begin{frame}{HFP Operability vs Pitch}
-    \vspace*{-0.5cm} 
     \begin{figure}
         \centering
         \includegraphics[width=0.85\textwidth, height=0.75\textheight, keepaspectratio]{K_MASSIMO.png}
@@ -426,7 +460,7 @@
                 \begin{itemize}
                     \item Maximum allowable operational eigenvalue ($k_{\text{HFP}}^{\text{max}}$).
                     \item Extracted thermal power and \textit{Q-value}.
-                    \item Doppler, moderator density, and poisoning reactivity feedbacks.
+                    \item Doppler, moderator density, and poisoning reactivity feedback.
                 \end{itemize}
             \end{alertblock}
         \end{column}
@@ -462,68 +496,91 @@
 \end{frame}
 
 
-
-
-
-
-\begin{frame}{Geometria ad Arricchiemnto variabile}
+\begin{frame}{Variable Enrichment Geometry}
 \begin{figure}
         \centering
       
         \begin{minipage}{0.48\textwidth}
             \centering
             \includegraphics[width=0.9\linewidth]{reactor_xy_v.png}
-            \caption{Sezione piano XY.}
+            \caption{XY plane section.}
         \end{minipage}
         \begin{minipage}{0.48\textwidth}
             \centering
-            \includegraphics[width=0.75\linewidth]{reactor_xz_v.png} % Larghezza ridotta per compensare l'altezza
-            \caption{Sezione piano XZ.}
+            \includegraphics[width=0.75\linewidth]{reactor_xz_v.png} % Reduced width to compensate for height
+            \caption{XZ plane section.}
         \end{minipage}
     \end{figure}
 
     
 \end{frame}
 
-\begin{frame}{Spazio delle Soluzioni Stabili per un Pitch di 3.551 cm}
+\begin{frame}{Stable Solution Space for a 3.551 cm Pitch}
     \begin{figure}
         \centering
         \includegraphics[width=0.78\textwidth]{regressione_parabolica_filtrata.png}
-        \caption{ Locus dei punti di lavoro stabili}
+        \caption{Locus of stable operating points}
         \label{fig:stabilità}
     \end{figure}
 \end{frame}
 
-\begin{frame}{Spazio delle Soluzioni Stabili}
+\begin{frame}{Stable Solution Space}
     \begin{figure}
         \centering
-        \includegraphics[width=0.68\textwidth]{rette_di_arricchimento.png}
-        \caption{estrapolazione radiale per il gradiente di arricchimento.}
+        \includegraphics[width=0.68\textwidth]{retta_arricchimento.png}
+        \caption{Radial extrapolation for the enrichment gradient.}
         \label{fig:stabilità2}
     \end{figure}
-I punti di lavoro della slide precedente sono trovati con questa distribuzione radiale di arricchimenti
 \end{frame}
 
+\begin{frame}{Extracted Power Variation}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.7\textwidth]{deriva_massa_u235.png}
+        \label{fig:uranium}
+    \end{figure}
+\end{frame}
 
-\begin{frame}{Variazione della Potenza Estratta}
+\begin{frame}{Extracted Power Variation}
     \begin{figure}
         \centering
         \includegraphics[width=0.7\textwidth]{scatter_potenza_errore.png}
-        \caption{ Sensibilità della potenza termica macroscopica in funzione del grado di arricchimento radiale all'anello esterno}
         \label{fig:potenze}
     \end{figure}
 \end{frame}
 
 
-\begin{frame}{Parametri Prestazionali: Il Q-Factor}
+\begin{frame}{Model Consistency and Verification of $k_{max}$}
+    \begin{columns}[c]
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item simulation across different linear enrichment configurations aimed at matching the reference $k_{max}$.
+                \item Simulations performed on the three fundamental thermodynamic states: \textbf{CZP, HZP, and HFP}.
+                \item The weighted average analysis confirms the substantial invariance of $k_{max}$ values compared to the limiting case of homogeneous enrichment.
+                \item This behavior formally validates the flexibility of the adopted geometric methodology.
+            \end{itemize}
+        \end{column}
+        
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                % Insert image here: Trend of k_max vs Inner ring enrichment + comparisons
+                \includegraphics[width=\linewidth]{circolarità.png}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}{Performance Parameters: The Q-Factor}
     
-    In un sistema ADS, il fattore di guadagno energetico $Q$ descrive l'amplificazione della potenza della sorgente nel nocciolo sottocritico:
+    In an ADS system, the energy gain factor $Q$ describes the amplification of the source power within the subcritical core:
     \begin{equation*}
         Q = \frac{P_{thermal}}{P_{beam}} = \psi \frac{k_{eff}}{1 - k_{eff}}
     \end{equation*}
-    Dove $\psi$ rappresenta il fattore di importanza relativa dei neutroni di sorgente.
+    Where $\psi$ represents the relative importance factor of source neutrons.
     
-    Per una valutazione coerente si definisce un $Q_{sys}$ riferito alla potenza elettrica del sincrotrone:
+    For a consistent evaluation, a system $Q$-factor ($Q_{sys}$) is defined with respect to the electrical power of the synchrotron:
     \begin{equation*}
         Q_{sys} = \frac{P_{thermal}}{P_{el, sync} / \eta_{th}}
     \end{equation*}
@@ -532,180 +589,118 @@ I punti di lavoro della slide precedente sono trovati con questa distribuzione r
         \centering
         \small
         \begin{tabular}{l | c | l}
-            \textbf{Tecnologia} & \textbf{Q-Value (Target/Record)} & \textbf{Regime} \\
+            \textbf{Technology} & \textbf{Q-Value (Target/Record)} & \textbf{Regime} \\
             \hline
-            \textbf{ITER} & $\sim 10$ & Fusione (In costruzione) \\
-            \textbf{SPARC} & $> 11$ & Fusione (In sviluppo) \\
-            \textbf{JET} & $0.67$ & Fusione (Record 1997) \\
+            \textbf{ITER} & $\sim 10$ & Fusion (Under construction) \\
+            \textbf{SPARC} & $> 11$ & Fusion (Under development) \\
+            \textbf{JET} & $0.67$ & Fusion (1997 Record) \\
         \end{tabular}
     \end{table}
 \end{frame}
 
 
-\begin{frame}{Consistenza del Modello e Verifica di $k_{max}$}
-    \begin{columns}[c]
-        \begin{column}{0.5\textwidth}
-            \begin{itemize}
-                \item Validazione su diverse configurazioni di arricchimento lineare finalizzate all'uguaglianza con il $k_{max}$ di riferimento.
-                \item Simulazioni eseguite sui tre stati termodinamici fondamentali: \textbf{CZP, HZP e HFP}.
-                \item L'analisi della media pesata conferma la sostanziale invarianza dei valori di $k_{max}$ rispetto al caso limite ad arricchimento omogeneo.
-                \item Questo comportamento convalida formalmente la flessibilità della metodologia geometrica adottata.
-            \end{itemize}
-        \end{column}
-        
-        \begin{column}{0.5\textwidth}
-            \begin{figure}
-                \centering
-                % Inserire qui l'immagine: Andamento di k_max vs Arricchimento anello interno + confronti
-                \includegraphics[width=\linewidth]{circolarità.png}
-            \end{figure}
-        \end{column}
-    \end{columns}
-\end{frame}
 
-
-
-% --- SLIDE 1: COSA FA UNA SIMULAZIONE IN DEPLETION ---
-\begin{frame}{Simulazioni di Depletion (Burn-up)}
-    \begin{block}{Accoppiamento Trasporto-Evoluzione Isotopica}
-        La simulazione in modalità \textit{depletion} permette di tracciare l'evoluzione temporale della composizione isotopica del combustibile nucleare sotto l'effetto del flusso neutronico, risolvendo in modo accoppiato il trasporto Monte Carlo e le equazioni di Bateman.
+% --- SLIDE 1: WHAT A DEPLETION SIMULATION DOES ---
+\begin{frame}{Depletion Simulations (Burn-up)}
+    \begin{block}{Transport-Isotopic Evolution Coupling}
+        The simulation in \textit{depletion} mode allows tracking the time evolution of the nuclear fuel isotopic composition under the effect of the neutron flux, by solving the coupled Monte Carlo transport and Bateman equations.
     \end{block}
 
     \vspace{0.2cm}
     \begin{itemize}
-        \item \textbf{Fase di Trasporto (OpenMC):} Calcolo del flusso neutronico spaziale e spettrale $\Phi(\vec{r}, E)$ e dei ratei di reazione microscopici ($\sigma_i \phi$) all'inizio del passo temporale (\textit{time-step}).
-        \item \textbf{Fase di Evoluzione (Bateman):} Utilizzo dei ratei estratti per risolvere numericamente il sistema di equazioni differenziali linearizzate, aggiornando le densità atomiche $N_i(t)$ per il passo successivo.
-        \item \textbf{Feedback di Composizione:} L'accumulo di prodotti di fissione (veleni) e il consumo di fissile alterano le proprietà macroscopiche del mezzo ($\Sigma_a, \Sigma_f$), modificando la risposta neutronica nei passaggi successivi.
+        \item \textbf{Transport Phase (OpenMC):} Calculation of the spatial and spectral neutron flux $\Phi(\vec{r}, E)$ and microscopic reaction rates ($\sigma_i \phi$) at the beginning of the time-step.
+        \item \textbf{Evolution Phase (Bateman):} Use of the extracted rates to numerically solve the system of linearized differential equations, updating the atomic densities $N_i(t)$ for the next step.
+        \item \textbf{Composition Feedback:} The accumulation of fission products (poisons) and the consumption of fissile material alter the macroscopic properties of the medium ($\Sigma_a, \Sigma_f$), modifying the neutron response in subsequent steps.
     \end{itemize}
 \end{frame}
 
-% --- SLIDE 2: FOTO SULLO XENON ---
-\begin{frame}{Evoluzione Temporale di $^{135}\text{I}$ e $^{135}\text{Xe}$}
+% --- SLIDE 2: XENON PHOTO ---
+\begin{frame}{Time Evolution of $^{135}\text{I}$ and $^{135}\text{Xe}$}
     \begin{center}
-        \includegraphics[height=0.75\textheight]{xenon-iodio.png} % Sostituisci con il nome del tuo file
+        \includegraphics[height=0.75\textheight]{xenon_iodine_evolution_1_000.png} % Replace with your file name
     \end{center}
     \vfill
     \begin{flushleft}
         \scriptsize
-        \textbf{Figura:} Andamento accoppiato delle densità atomiche dello Iodio-135 e dello Xenon-135 durante l'operatività nominale e nella fase successiva allo spegnimento del reattore (\textit{shutdown}). 
+        \textbf{Figure:} Coupled behavior of Iodine-135 and Xenon-135 atomic densities during nominal operation and during the post-shutdown phase. 
     \end{flushleft}
 \end{frame}
 
-% --- SLIDE 2: FOTO SULLO XENON ---
-\begin{frame}{Evoluzione Temporale di $^{135}\text{I}$ e $^{135}\text{Xe}$}
+% --- SLIDE 3: XENON PHOTO ZOOM ---
+\begin{frame}{Time Evolution of $^{135}\text{I}$ and $^{135}\text{Xe}$}
     \begin{center}
-        \includegraphics[height=0.75\textheight]{xenon-iodio-zoom.png} % Sostituisci con il nome del tuo file
+        \includegraphics[height=0.75\textheight]{xenon_iodine_zoom_1_000.png} % Replace with your file name
     \end{center}
     \vfill
     \begin{flushleft}
         \scriptsize
-        \textbf{Figura:} Il grafico mostra meglio l'insorgenza del picco di avvelenamento post spegnimento indotto dal disaccoppiamento dei tempi di dimezzamento dei due nuclidi.
+        \textbf{Figure:} The graph highlights the onset of the post-shutdown poisoning peak induced by the decoupling of the half-lives of the two nuclides.
     \end{flushleft}
 \end{frame}
 
-\begin{frame}{Evoluzione Temporale dello $^{135}\text{Xe}$ da simulazione}
+\begin{frame}{Time Evolution of $^{149}\text{Sm}$}
     \begin{center}
-        \includegraphics[height=0.75\textheight]{xenon_transient_analysis.png} % Sostituisci con il nome del tuo file
+        \includegraphics[height=0.75\textheight]{samarium_promethium_evolution_1_000.png} % Replace with your file name
     \end{center}
     \vfill
     \begin{flushleft}
         \scriptsize
-        \textbf{Figura:} Il plot mostra l'evoluzione dello $^{135}\text{Xe}$ dopo lo spegnimento del reattore, evidenziando il picco di avvelenamento (xenon pit) e la successiva decrescita asintotica.
+        \textbf{Figure:} The graph highlights the asintotic behaviur of samarium during core activity.
     \end{flushleft}
 \end{frame}
 
-% --- SLIDE 3: COMMENTO XENON ---
-\begin{frame}{Analisi della Cinetica dello Xenon-135}
-    \begin{itemize}
-        \item \textbf{Fase Operativa (Equilibrio):} Durante il primo funzionamento, la produzione di $^{135}\text{I}$ è molto elevata, la sua presenza porta a produrre Xe, il quale diminuisce il flusso neutronico che fa diminuire la produzione di iodio in un circolo ripetitivo. 
-        \item \textbf{Xenon Pit:} Allo spegnimento del reattore, il flusso neutronico crolla istantaneamente ($\phi \to 0$), annullando il termine di rimozione per cattura ($\sigma_{a,\text{Xe}}\phi N_{\text{Xe}} \to 0$) e la produzione di iodio.
-        \item \textbf{Meccanismo del Picco:} Il $^{135}\text{I}$ accumulato nel core continua a decadere in $^{135}\text{Xe}$ con un tempo di dimezzamento inferiore ($T_{1/2} = 6.6$ h) rispetto a quello di distruzione dello Xenon ($T_{1/2} = 9.2$ h). Questa differenza genera un accumulo netto di veleno che raggiunge un massimo assoluto prima di decadere asintoticamente.
-    \end{itemize}
-\end{frame}
-
-% --- SLIDE 4: FOTO SUL SAMARIO ---
-\begin{frame}{Evoluzione Temporale di $^{149}\text{Pm}$ e $^{149}\text{Sm}$}
+% --- SLIDE 6: POWER PHOTO ---
+\begin{frame}{Core Thermal Power Evolution}
     \begin{center}
-        \includegraphics[height=0.65\textheight]{samario.png} % Sostituisci con il nome del tuo file
-    \end{center}
-    \begin{flushleft}
-        \scriptsize
-        \textbf{Figura:} Concentrazione del Promezio-149 e del Samario-149 in funzione del tempo di irraggiamento e dopo lo spegnimento. Si evidenzia il comportamento asintotico non decrescente del $^{149}\text{Sm}$ nella fase post-operativa dovuto alla stabilità intrinseca dell'isotopo.
-    \end{flushleft}
-\end{frame}
-
-\begin{frame}{Evoluzione Temporale del $^{149}\text{Sm}$ da simulazione}
-    \begin{center}
-        \includegraphics[height=0.75\textheight]{samarium_buildup_analysis.png} % Sostituisci con il nome del tuo file
+        \includegraphics[height=0.75\textheight]{power_evolution_1_000.png} % Replace with your file name
     \end{center}
     \vfill
     \begin{flushleft}
         \scriptsize
-        \textbf{Figura:} Il plot mostra l'evoluzione del $^{149}\text{Sm}$ dopo lo spegnimento del reattore, evidenziando il tempo necessario per raggiungere il plateau di avvelenamento residuo e la sua stabilità nel tempo.
+        \textbf{Figure:} Time profile of the overall thermal power expressed in W over the fuel lifecycle. 
     \end{flushleft}
 \end{frame}
 
-% --- SLIDE 5: COMMENTO SAMARIO ---
-\begin{frame}{Analisi della Cinetica del Samario-149}
-    \begin{itemize}
-        \item \textbf{Indipendenza dal Flusso all'Equilibrio:} A differenza dello Xenon, la densità stazionaria di $^{149}\text{Sm}$ non dipende dal flusso neutronico totale $\phi$, poiché il flusso si semplifica analiticamente nel rapporto tra il tasso di produzione e quello di bruciamento .
-        \item \textbf{Comportamento Post-Shutdown:} Quando il reattore viene spento, la distruzione per cattura neutronica si interrompe. Il $^{149}\text{Pm}$ presente nel core continua a decadere in $^{149}\text{Sm}$ con un tempo di dimezzamento di circa $53$ ore.
-        \item \textbf{Stabilità Asintotica:} Poiché il $^{149}\text{Sm}$ è un nuclide stabile ($\lambda_{\text{Sm}} = 0$), la sua concentrazione post-spegnimento cresce fino a raggiungere un plateau costante senza subire successivi decadimenti. Questo livello di avvelenamento residuo rimane congelato nel core fino alla successiva riaccensione del sistema.
-    \end{itemize}
-\end{frame}
-
-% --- SLIDE 6: FOTO POTENZA ---
-\begin{frame}{Evoluzione della Potenza Termica del Core}
+% --- SLIDE 7: K_EFF PHOTO ---
+\begin{frame}{Evolution of the Effective Multiplication Factor ($k_{eff}$)}
     \begin{center}
-        \includegraphics[height=0.75\textheight]{potenza.png} % Sostituisci con il nome del tuo file
-    \end{center}
-    \vfill
-    \begin{flushleft}
-        \scriptsize
-        \textbf{Figura:} Profilo temporale della potenza termica globale espressa in W nel corso del ciclo di vita del combustibile. 
-    \end{flushleft}
-\end{frame}
-
-% --- SLIDE 7: FOTO K_EFF ---
-\begin{frame}{Evoluzione del Fattore di Moltiplicazione Effettivo ($k_{eff}$)}
-    \begin{center}
-        % Assicurati che keff.png sia presente nella cartella delle immagini
+        % Make sure keff.png is present in the image folder
         \includegraphics[height=0.75\textheight]{k_eff.png} 
     \end{center}
     \begin{flushleft}
         \scriptsize
-        \textbf{Figura:} Andamento del fattore di moltiplicazione effettivo $k_{eff}$ in funzione dei giorni di operatività in piena potenza (HFP). Il tracciato documenta i margini di sicurezza legali e la stabilità complessiva del sistema rispetto all'avvelenamento e al consumo di fissile.
+        \textbf{Figure:} Trend of the effective multiplication factor $k_{eff}$ as a function of Hot Full Power (HFP) operating days. The plot documents the legal safety margins and the overall stability of the system with respect to poisoning and fissile consumption.
     \end{flushleft}
 \end{frame}
 
-% --- SLIDE 1: Formulazione e Operatori ---
-\begin{frame}{Fondamento Matematico: L'Equazione del Trasporto}
-Il bilancio neutronico stazionario è governato dall'equazione del trasporto:
+% --- SLIDE 1: Formulation and Operators ---
+\begin{frame}{Mathematical Foundation: The Transport Equation}
+The steady-state neutron balance is governed by the transport equation:
 
-\begin{alertblock}{Formulazione Operatoriale}
+\begin{alertblock}{Operator Formulation}
 \begin{equation*}
 \mathcal{M} \Phi(\vec{r}, E, \hat{\Omega}) = \frac{1}{k_{eff}} \mathcal{F} \Phi(\vec{r}, E, \hat{\Omega})
- \end{equation*}
+\end{equation*}
 \end{alertblock}
 
-I due operatori descrivono i ratei fisici in competizione nel nocciolo:
+The two operators describe the competing physical rates in the core:
 
 \begin{itemize}
-\item \textbf{$\mathcal{M}$ (Operatore di Migrazione/Distruzione):} Quantifica le perdite nette. Include le fughe geometriche (\textit{streaming}, $\hat{\Omega} \cdot \nabla \Phi$), le interazioni totali ($\Sigma_t \Phi$) e i ripopolamenti cinematici dovuti allo scattering (\textit{in-scattering}).
-\item \textbf{$\mathcal{F}$ (Operatore di Produzione):} Quantifica la sorgente stazionaria, descrivendo l'emissione di nuovi neutroni rapidi indotta dal rateo di fissione integrale ($\chi \nu \Sigma_f \Phi$).
+\item \textbf{$\mathcal{M}$ (Migration/Destruction Operator):} Quantifies net losses. It includes geometric leakage (\textit{streaming}, $\hat{\Omega} \cdot \nabla \Phi$), total interactions ($\Sigma_t \Phi$), and kinematic repopulation due to scattering (\textit{in-scattering}).
+\item \textbf{$\mathcal{F}$ (Production Operator):} Quantifies the steady-state source, describing the emission of new prompt neutrons induced by the integral fission rate ($\chi \nu \Sigma_f \Phi$).
 \end{itemize}
 \end{frame}
 
-% --- SLIDE 2: Spettro e Significato Fisico ---
-\begin{frame}{Fondamento Matematico: Il Teorema di Krein-Rutman}
-Riscrivendo l'equazione come $\mathcal{M}^{-1}\mathcal{F} \Phi = k_{eff} \Phi$, l'operatore $\mathcal{M}^{-1}\mathcal{F}$ mappa una generazione di neutroni in quella successiva. Essendo le densità atomiche e le sezioni d'urto quantità strettamente positive, tale operatore è \textbf{rigorosamente positivo}.
+% --- SLIDE 2: Spectrum and Physical Meaning ---
+\begin{frame}{Mathematical Foundation: The Krein-Rutman Theorem}
+Rewriting the equation as $\mathcal{M}^{-1}\mathcal{F} \Phi = k_{eff} \Phi$, the operator $\mathcal{M}^{-1}\mathcal{F}$ maps one neutron generation to the next. Since atomic densities and cross-sections are strictly positive quantities, this operator is \textbf{rigorously positive}.
 
-\begin{block}{Dominanza dell'Autovalore ($k_{eff}$)}
-Per il \textbf{Teorema di Krein-Rutman}, un operatore integrale positivo garantisce l'esistenza di un autovalore fondamentale ($k_0 \equiv k_{eff}$) reale, positivo e \textbf{maggiore in modulo} di tutti gli altri autovalori dello spettro ($|k_0| > |k_n|$).
+\begin{block}{Eigenvalue Dominance ($k_{eff}$)}
+By the \textbf{Krein-Rutman Theorem}, a positive integral operator guarantees the existence of a fundamental eigenvalue ($k_0 \equiv k_{eff}$) that is real, positive, and \textbf{larger in magnitude} than all other eigenvalues in the spectrum ($|k_0| > |k_n|$).
 \end{block}
 
-\begin{alertblock}{Significato Fisico dell'Autofunzione ($\Phi_0$)}
-Solo all'autovalore dominante $k_{eff}$ è associata un'autofunzione $\Phi_0$ \textbf{ovunque definita positiva}. Le armoniche di ordine superiore presentano inevitabilmente dei nodi (flussi negativi, fisicamente impossibili in stazionario).
+\begin{alertblock}{Physical Meaning of the Eigenfunction ($\Phi_0$)}
+Only the dominant eigenvalue $k_{eff}$ is associated with an eigenfunction $\Phi_0$ that is \textbf{everywhere positive}. Higher-order harmonics inevitably exhibit nodes (negative fluxes, which are physically impossible in steady-state conditions).
 \end{alertblock}
 \end{frame}
 
