@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1782761426.75344 "/home/bossi_ricky/WSL_Shared/Tesi_magistrale/Presentazioni/Presentazione_fast/main.tex" "main.pdf" "main" 1782761446.2741 0
+["pdflatex"] 1782900525.06988 "/home/bossi_ricky/WSL_Shared/Tesi_magistrale/Presentazioni/Presentazione_fast/main.tex" "main.pdf" "main" 1782900596.67036 0
   "/etc/texmf/web2c/texmf.cnf" 1779040683.90732 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/bossi_ricky/WSL_Shared/Tesi_magistrale/Presentazioni/Presentazione_fast/main.tex" 1782761423.20365 28458 2f8d9242b93520a5ce992e979bff8949 ""
+  "/home/bossi_ricky/WSL_Shared/Tesi_magistrale/Presentazioni/Presentazione_fast/main.tex" 1782761980.14146 28412 081dee25d208e42f4f51b19ba9666fc4 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecss1095.tfm" 1136768653 3584 8ece407347b270c252c46fdfaef5a9ef ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -264,7 +264,7 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1779040696.74135 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1779040807 8212582 52e8dfc041a6782962579a44ac47724b ""
-  "K_MASSIMO.png" 1782639215.12341 445014 f43d89cf813f1aef4c917c7cf8bb4011 ""
+  "K_MASSIMO.png" 1782900439.38792 505627 987a8b0974bf865a724e1ae8ff278faf ""
   "Sincrotrone_anello.png" 1781119231.3214 428196 be037ab4214cf2e1438c87ef7a6f8d3d ""
   "caldo.png" 1782760771.7383 46643 7c600873e62814fb4b3133680fdc207d ""
   "circolarità.png" 1779802853.69688 122468 3c4868b9ba2ec4288810bd8879c6a55c ""
@@ -273,9 +273,9 @@
   "k_eff_zoom_1_000.png" 1782469133.32753 376218 99dea230a504bbb7eefceb1c160c6c03 ""
   "logo_bicocca.png" 1782219885.97636 24089 42be99821cf1132fc5b28c05a7467c20 ""
   "logo_polimi.png" 1782219885.84446 98129 775118b888399f1c5dccd766e4fc0ab7 ""
-  "main.aux" 1782761445.82039 5222 75f1061e008427057eb7d4ea3bdc7311 "pdflatex"
-  "main.nav" 1782761445.83611 3341 7d73de7ff642878dd6c36c12ea38837e "pdflatex"
-  "main.out" 1782761428.80803 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.aux" 1782900595.0393 5222 75f1061e008427057eb7d4ea3bdc7311 "pdflatex"
+  "main.nav" 1782900595.11057 3341 7d73de7ff642878dd6c36c12ea38837e "pdflatex"
+  "main.out" 1782900535.41116 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "operatività.png" 1782750917.69149 248841 8116307e6554ad706ff477f012a133a0 ""
   "poison_VS_pitch.png" 1782469497.78634 173640 6ce84cdfb7c2b8871e89a9ff9ad68dfc ""
   "potenza_vs_pitch_zone.png" 1782751114.43558 170853 2b8d884b114f7ea5f84b1ea7b0bdad90 ""
