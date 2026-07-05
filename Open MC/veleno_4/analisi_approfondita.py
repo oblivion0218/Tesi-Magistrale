@@ -43,11 +43,11 @@ def format_plot(ax, title, xlabel, ylabel):
     ax.set_xlabel(xlabel, fontsize=20, fontweight='bold', color='#2F4F4F')
     ax.set_ylabel(ylabel, fontsize=20, fontweight='bold', color='#2F4F4F')
     ax.minorticks_on()
-    ax.tick_params(axis='both', which='major', labelsize=14, labelcolor='#2F4F4F')
+    ax.tick_params(axis='both', which='major', labelsize=20, labelcolor='#2F4F4F')
     ax.tick_params(axis='both', which='minor', labelsize=12)
     ax.grid(which='major', linestyle='--', alpha=0.6, color='#778899')
     ax.grid(which='minor', linestyle=':', alpha=0.3, color='#778899')
-    ax.legend(loc='best', frameon=True, shadow=True, fontsize=16, facecolor='#F0F8FF')
+    ax.legend(loc='best', frameon=True, shadow=True, fontsize=20, facecolor='#F0F8FF')
 
 def salva_plot(fig, folder, filename):
     plt.tight_layout()

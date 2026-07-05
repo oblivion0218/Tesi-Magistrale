@@ -47,63 +47,60 @@
 \end{frame}
 
 
+% === SLIDE 1: THE GLOBAL ENERGY CHALLENGE ===
 \begin{frame}{The Global Energy Challenge}
-    \begin{columns}[T] % [T] allinea le colonne in alto
-    
-        % Colonna di SINISTRA: Testo
-        \begin{column}{0.50\textwidth}
-            
-            \textcolor{blue!80!black}{\textbf{Climate Emergency}} \\
-            Record CO$_2$ emissions and global warming drive the urgent need for decarbonization. 
-            Most of worldwide electricity still relies on fossil fuels, while energy demand is constantly increasing.
 
-            \vspace{0.2cm}
-            \textcolor{blue!80!black}{\textbf{A Possible Solution}} \\
-            Transitioning to a \textbf{carbon-free baseload} requires innovative technologies. \textbf{Accelerator-Driven Systems} provide a unique solution:
-            \vspace{0.1cm}
-            \begin{itemize}
-                \item Inherent safety due to subcritical operation
-                \item Power modulation via beam intensity
-            \end{itemize}
+    \begin{columns}[T] % [T] allinea le colonne in alto
+
+        % Colonna di SINISTRA: Testo
+        \begin{column}{0.45\textwidth}
             
+            \textcolor{blue!80!black}{\textbf{Strategic Energy Security}} \\
+            Rising geopolitical tensions highlight the urgent need for \textbf{energy independence}. Securing a stable, affordable, and resilient electricity supply is now critical for global economic growth.
+
+            \vspace{0.3cm}
+            
+            \textcolor{blue!80!black}{\textbf{Environmental Sustainability}} \\
+            Simultaneously, the transition toward a \textbf{carbon-free baseload} is mandatory to drastically reduce global CO$_2$ emissions without compromising grid stability.
+
         \end{column}
         
         % Colonna di DESTRA: Immagine
-        \begin{column}{0.45\textwidth}
-            \vspace{0.2cm} % Regola questo valore per centrare l'immagine verticalmente
+        \begin{column}{0.54\textwidth}
+    
+            \centering
+                \resizebox{0.95\textwidth}{!}{
+                \begin{tikzpicture}[thick, scale=0.9]
+                  
+                  % Definizione dei vertici del triangolo
+                  \coordinate (A) at (0, 3.2);
+                  \coordinate (B) at (-3.5, -2.2);
+                  \coordinate (C) at (3.5, -2.2);
             
-            \begin{figure}
-                \centering
-                \includegraphics[width=\textwidth]{caldo.png}
-                \vspace{0.1cm}
-                \footnotesize{Intense heat wave over Europe in the final days of June 2026.}
-            \end{figure}
+                  % Disegno del triangolo di sfondo
+                  \draw[fill=gray!10, draw=gray!40, line width=1.5pt] (A) -- (B) -- (C) -- cycle;
             
+                  % Nodi del Trilemma (I tre vertici)
+                  \node[align=center, text=green!60!black] at (0, 3.8) {\textbf{Sustainability}\\ \footnotesize Decarbonization};
+                  \node[align=center, text=blue!60!black] at (-3.5, -3.1) {\textbf{Energy}\\ \textbf{Indipendence}\\ };
+                  \node[align=center, text=red!60!black] at (3.5, -2.8) {\textbf{Energy Equity}\\ \footnotesize Affordability};
+            
+                  % Nodo Centrale: Energia Nucleare (spostato leggermente in alto)
+                  \node[align=center, fill=yellow!30, draw=black!80, rounded corners=1ex, inner sep=6pt, line width=1pt] (NE) at (0, 1.0) {\textbf{Nuclear Energy}\\ \footnotesize \textit{Carbon-free Baseload}};
+                  
+                  % Nodo Inferiore: ADS
+                  \node[align=center, fill=orange!30, draw=black!80, rounded corners=1ex, inner sep=6pt, line width=1pt] (ADS) at (0, -1.2) {\textbf{ADS}\\ \footnotesize \textit{Accelerator Driven Systems}};
+
+                  % Freccia di collegamento tra Nucleare e ADS
+                  \draw[->, >=stealth, line width=1.2pt] (NE) -- (ADS) node[midway, right, align=left, font=\footnotesize, text=black!80] {\textbf{+ Intrinsic Safety}};
+            
+                \end{tikzpicture}
+                }
         \end{column}
         
     \end{columns}
 \end{frame}
 
-
-% === SLIDE 2: CONTESTO E OBIETTIVO ===
-\begin{frame}{Thesis Context and Objective}
-    \begin{block}{Subcritical System}
-        A reactor with $k_{eff} < 1$ requires an \textbf{external neutron source} to sustain the chain reaction. During operational transients, \textbf{feedback} modify $k_{eff}$ .
-    \end{block}
-    
-    \vspace{0.5cm}
-    
-    \begin{alertblock}{Objective}
-        Develop a methodology to \textbf{maximize} $k_{eff}^{HFP}$ (deeply linked to power production) ensuring that $k_{eff}^{CZP} \leq 1$ under any operating condition.
-    \end{alertblock}
-    
-    \vspace{0.3cm}
-    
-    \begin{itemize}
-        \item \textbf{CZP} (Cold Zero Power): $T = 300$ K — reactor shutdown
-        \item \textbf{HFP} (Hot Full Power): $T_{fuel} = 600$ K, $T_{mod} = 350$ K — nominal operation 
-    \end{itemize}
-\end{frame}
 
 % === SLIDE 3: PROGETTO SYNERGY ===
 \begin{frame}{SYNERGY Project: Photonic Source}
@@ -127,23 +124,59 @@
     \end{columns}
 \end{frame}
 
-\begin{frame}{From Source to Core: The Physical Workflow}
-    
-    \vspace{0.2cm}
+% === SLIDE 5: APPLICAZIONI DEI NEUTRONI ===
+\begin{frame}{Neutron Applications: A Multi-User Platform}
     \centering
-    % Inserisci qui il nome del file dell'immagine dello schema a blocchi
-    \includegraphics[width=0.85\textwidth]{work_flow.png} 
+    \vspace{0.2cm}
     
-    \vspace{0.1cm}
+    \resizebox{0.65\textwidth}{!}{
+    \begin{tikzpicture}[
+        central/.style={circle, draw=black!70, fill=yellow!30, thick, inner sep=10pt, text width=2cm, align=center, font=\large\bfseries},
+        box/.style={rectangle, draw=black!70, rounded corners=1ex, thick, inner sep=6pt, text width=3.5cm, align=center},
+        line/.style={->, thick, draw=gray!80, shorten >=2pt, shorten <=2pt}
+    ]
+
+    % Nodo Centrale
+    \node[central] (N) {Neutron\\Source};
+
+    % Nodi Radiali a 60 gradi l'uno dall'altro
+    \node[box, fill=red!20]    (W) at (0:4.2cm)   {\textbf{Waste Transmutation}\\ \textit{\footnotesize Toxicity Reduction}};
+    \node[box, fill=green!20]  (M) at (60:4.2cm)  {\textbf{Medical Isotopes}\\ \textit{\footnotesize Nuclear Medicine}};
+    \node[box, fill=cyan!20]   (R) at (120:4.2cm) {\textbf{Materials Science}\\ \textit{\footnotesize Structural Analysis}};
+    \node[box, fill=purple!20] (S) at (180:4.2cm) {\textbf{Electronics Testing}\\ \textit{\footnotesize Aerospace Reliability}};
+    \node[box, fill=orange!20] (B) at (240:4.2cm) {\textbf{BNCT Therapy}\\ \textit{\footnotesize Cancer Treatment}};
+    \node[box, fill=blue!20]   (A) at (300:4.2cm) {\textbf{ADS Systems}\\ \textit{\footnotesize Energy Generation}};
+
+    % Connessioni
+    \draw[line] (N) -- (W);
+    \draw[line] (N) -- (M);
+    \draw[line] (N) -- (R);
+    \draw[line] (N) -- (S);
+    \draw[line] (N) -- (B);
+    \draw[line] (N) -- (A);
+
+    \end{tikzpicture}
+    }
+\end{frame}
+
+% === SLIDE 2: CONTESTO E OBIETTIVO ===
+\begin{frame}{Thesis Context and Objective}
+    \begin{block}{Subcritical System}
+        A reactor with $k_{eff} < 1$ requires an \textbf{external neutron source} to sustain the chain reaction. During operational transients, \textbf{feedback} modify $k_{eff}$ .
+    \end{block}
     
-    \begin{columns}[c]
-        \begin{column}{0.9\textwidth}
-            \begin{itemize}
-                \item The \textbf{photoneutrons} generated in the central target act as the external driving source ($S$) for the surrounding subcritical core.
-                \item The multiplied neutron flux generates thermal power, which in turn alters the \textbf{thermodynamic state} of the system.
-            \end{itemize}
-        \end{column}
-    \end{columns}
+    \vspace{0.5cm}
+    
+    \begin{alertblock}{Objective}
+        Develop a methodology to \textbf{maximize} $k_{eff}^{HFP}$ (deeply linked to power production) ensuring that $k_{eff}^{CZP} \leq 1$ under any operating condition.
+    \end{alertblock}
+    
+    \vspace{0.3cm}
+    
+    \begin{itemize}
+        \item \textbf{CZP} (Cold Zero Power): $T = 300$ K — reactor shutdown
+        \item \textbf{HFP} (Hot Full Power): $T_{fuel} = 600$ K, $T_{mod} = 350$ K — nominal operation 
+    \end{itemize}
 \end{frame}
 
 % === SLIDE 4: FEEDBACK DI REATTIVITÀ ===
@@ -243,22 +276,161 @@
     \end{columns}
 \end{frame}
 
-% === SLIDE 6: OTTIMIZZAZIONE DEL PITCH ===
+% === SLIDE 2: LATTICE PITCH OPTIMIZATION ===
 \begin{frame}{Lattice Pitch Optimization}
-    Pitch governates the moderation level and the neutron spectrum, thus affecting the multiplication factor
+    
+    \small \textit{Pitch dictates the moderation level and the neutron spectrum, directly affecting the multiplication factor.}
+    
+    
+    \vspace{0.1cm}
+
     \begin{columns}[c]
-        \begin{column}{0.6\textwidth}
+        % Colonna SINISTRA: Grafico
+        \begin{column}{0.60\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{operatività.png}
+            \includegraphics[width=\textwidth]{k_pitch1.png}
         \end{column}
-        \begin{column}{0.4\textwidth}
+        
+        % Colonna DESTRA: Testo compatto
+        \begin{column}{0.38\textwidth}
+            \textcolor{red!80!black}{\textbf{Non-Operational Zone}}
+            \hrule \vspace{0.1cm}
+            {\footnotesize
             \begin{itemize}
-                \item \textbf{Green Zone:} Possible operation — target $k_{max}$ reachable by modulating enrichment while the \textbf{Red Zone} is inaccessible,  $k_{max}$ is not reached even at 50\% enrichment
-                \item Important to emphatized that over multiplication pitch of 2 \textbf{the doppler effect inverts sign}, meaning that the reactore is instable at source oscillation 
+                \item Reactivity balance demands an unphysical layout.
+                \item $^{235}\text{U}$ enrichment strictly exceeds the 50\% technological limit.
             \end{itemize}
+            }
+            
+            \vspace{0.3cm}
+            
+            \textcolor{green!60!black}{\textbf{Operational Zone}}
+            \hrule \vspace{0.1cm}
+            {\footnotesize
+            \begin{itemize}
+                \item \textbf{Feasible operation:} Target matched via \textbf{fuel zoning}.
+                \item Radial enrichment finely modulated within safety boundaries.
+            \end{itemize}
+            }
         \end{column}
     \end{columns}
 \end{frame}
+
+
+% === SLIDE 3: STABLE SOLUTION SPACE ===
+\begin{frame}{Stable Solution Space ($3.551 \text{ cm}$ Pitch)}
+    \begin{columns}[c]
+        % Colonna SINISTRA: Grafico
+        \begin{column}{0.58\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{regressione_parabolica_filtrata.png}
+        \end{column}
+        
+        % Colonna DESTRA: Analisi
+        \begin{column}{0.40\textwidth}
+            \begin{block}{\small Macroscopic Degeneracy}
+                \footnotesize Multiple radial enrichment profiles yield the same target $k_{\text{HFP}}^{\text{max}}$.
+            \end{block}
+            
+            \vspace{0.2cm}
+            
+            {\footnotesize
+            \begin{itemize}
+                \item \textbf{Equivalent Solutions:} Stable configurations lie on a continuous parabolic curve.
+                \item \textbf{Technological Limit:} Crossed points ($\times$) are discarded as $^{235}\text{U}$ enrichment exceeds the $50\%$ safety threshold.
+            \end{itemize}
+            }
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% === SLIDE 4: EXTRACTED POWER INVARIANCE ===
+\begin{frame}{Extracted Power Invariance}
+    \begin{columns}[c]
+        % Colonna SINISTRA: Grafico
+        \begin{column}{0.58\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{scatter_potenza_errore.png}
+        \end{column}
+        
+        % Colonna DESTRA: Analisi
+        \begin{column}{0.40\textwidth}
+            \begin{alertblock}{\small Power Stability}
+                \footnotesize Thermal power generation remains strictly constant across all equivalent enrichment topologies.
+            \end{alertblock}
+            
+            \vspace{0.2cm}
+            
+            {\footnotesize
+            \begin{itemize}
+                \item Stable output at $\approx 0.887 \text{ MW}_{\text{th}}$ for a pitch of $3.551 \text{ cm}$.
+                \item Microscopic fluctuations are purely due to \textbf{Monte Carlo statistical variance}.
+                \item Formally proves the \textit{thermodynamic consistency} of the model.
+            \end{itemize}
+            }
+        \end{column}
+    \end{columns}
+\end{frame}
+
+
+% === SLIDE 5: URANIUM MASS OPTIMIZATION ===
+\begin{frame}{Uranium Mass Optimization}
+    \begin{columns}[c]
+        % Colonna SINISTRA: Grafico
+        \begin{column}{0.58\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{deriva_massa_u235.png}
+        \end{column}
+        
+        % Colonna DESTRA: Analisi
+        \begin{column}{0.40\textwidth}
+            \begin{block}{\small Fuel Economy}
+                \footnotesize Identifying the exact layout that minimizes the required critical mass of Uranium-235.
+            \end{block}
+            
+            \vspace{0.2cm}
+            
+            {\footnotesize
+            \begin{itemize}
+                \item The drift shows a distinct \textbf{global minimum} (at $\approx 3\%$ external enrichment).
+                \item This optimal point reduces fuel costs and enhances proliferation resistance, while perfectly maintaining the target $k_{\text{HFP}}^{\text{max}}$ and power output.
+            \end{itemize}
+            }
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Lattice Pitch Optimization}
+    
+    {\small \textit{Pitch dictates the moderation level and the neutron spectrum, directly affecting the multiplication factor.}}
+
+    \begin{columns}[c]
+        \begin{column}{0.65\textwidth}
+            \centering
+            % Nota: attenzione agli accenti nei nomi dei file in LaTeX, se dà errore rinominalo in operativita.png
+            \includegraphics[width=\textwidth]{operatività.png} 
+        \end{column}
+        
+        \begin{column}{0.33\textwidth}
+            
+            \textcolor{red!80!black}{\textbf{Extreme Over-Moderation}}
+            \vspace{0.1cm}
+            \hrule
+              \vspace{0.1cm}
+            {\footnotesize
+            For pitch multipliers $> 2.0$, operation becomes physically unacceptable:
+            \begin{itemize}
+                \item The excessive moderator volume reduces the epithermal flux.
+                \item Thermal broadening of $^{238}\text{U}$ resonances loses effectiveness, inverting the feedback sign.
+                \item Core self-stabilization is nullified, risking a thermal runaway.
+            \end{itemize}
+            }
+            
+        \end{column}
+    \end{columns}
+\end{frame}
+
+
 
 
 % === SLIDE 8: RISULTATI POTENZA ===
@@ -443,11 +615,56 @@
     \end{figure}
 \end{frame}
 
+\begin{frame}{Conclusions: A Micro-ADS Perspective}
+    
+    \vspace{0.2cm}
+    
+    \begin{columns}[T]
+        % Colonna Sinistra: Achievements
+        \begin{column}{0.48\textwidth}
+            {\large \textcolor{blue!80!black}{\textbf{Safety \& Physics}}}
+            \vspace{0.1cm}
+            \hrule
+            \vspace{0.3cm}
+            \begin{itemize}
+                \item \textbf{Intrinsic Safety:} $k_{\text{HFP}} = 0.9781$, strictly guaranteeing $k_{\text{CZP}} < 1$ against all feedbacks.
+                \item \textbf{Optimal Pitch (7 cm):} Safely prevents the Doppler sign inversion.
+                \item \textbf{Performance:} $1.65\text{ MW}_{\text{th}}$ output ($Q\text{-value} = 4.12$).
+            \end{itemize}
+        \end{column}
+        
+        % Colonna Destra: Applications
+        \begin{column}{0.48\textwidth}
+            {\large \textcolor{red!80!black}{\textbf{Real-World Applications}}}
+            \vspace{0.1cm}
+            \hrule
+            \vspace{0.3cm}
+            \textit{A versatile Micro-Reactor acting as a zero-carbon "nuclear heat pump":}
+            \vspace{0.2cm}
+            \begin{itemize}
+                \item \textbf{District \& Process Heat:} Localized, zero-carbon thermal energy for industrial use.
+                \item \textbf{Water Desalination:} Cogeneration of electricity and clean water.
+        
+            \end{itemize}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.3cm}
+    
+    % Conclusione finale centrata e in evidenza
+    \begin{center}
+        \large
+        \textit{This analysis can be adopted for different reactor configurations, \\ with the aim of identifying the best scenario for having a robust and localized energy source.}
+       \end{center}
+    
+\end{frame}
+
+
 % === SLIDE 13: RISULTATI PRINCIPALI ===
 \begin{frame}{Conclusion}
     \begin{columns}[T]
         \begin{column}{0.48\textwidth}
-            \begin{block}{Methodological Framework}
+            \begin{block}{Framework}
                 \begin{itemize}
                     \item \textbf{Parametric} and modular optimization procedure.
                     \item \textbf{Intrinsically agnostic}: easily adaptable to any alternative reactor layout (geometry, fuel, reflector, or moderator).
@@ -473,6 +690,8 @@
     \end{block}
 \end{frame}
 
+
+
 % === SLIDE 14: SVILUPPI FUTURI ===
 \begin{frame}{Future Developments}
     \begin{itemize}
@@ -480,6 +699,7 @@
         \item \textbf{Dynamic Beam Control:} Implementation of a feedback control loop on the photon source intensity $S(t)$ to compensate for poison accumulation and maintain a constant thermal power.
         \item \textbf{Source Kinematic Refinement:} Integration of the real anisotropic angular distributions (peaked at $90^\circ$ for GDR) of the photoneutron emission.
         \item \textbf{Fast Spectrum Extension:} Application of the framework to a fast ADS core (Lead/LBE cooled) to optimize Minor Actinides (MA) transmutation.
+        \item \textbf{Optimization:} Multi-objective optimization of the core (fuel, moderator, temperature , ...) to maximize $k_{eff}$ and power output.
     \end{itemize}
 \end{frame}
 
@@ -515,14 +735,6 @@
     
 \end{frame}
 
-\begin{frame}{Stable Solution Space for a 3.551 cm Pitch}
-    \begin{figure}
-        \centering
-        \includegraphics[width=0.78\textwidth]{regressione_parabolica_filtrata.png}
-        \caption{Locus of stable operating points}
-        \label{fig:stabilità}
-    \end{figure}
-\end{frame}
 
 \begin{frame}{Stable Solution Space}
     \begin{figure}
@@ -530,22 +742,6 @@
         \includegraphics[width=0.68\textwidth]{retta_arricchimento.png}
         \caption{Radial extrapolation for the enrichment gradient.}
         \label{fig:stabilità2}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{Extracted Power Variation}
-    \begin{figure}
-        \centering
-        \includegraphics[width=0.7\textwidth]{deriva_massa_u235.png}
-        \label{fig:uranium}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{Extracted Power Variation}
-    \begin{figure}
-        \centering
-        \includegraphics[width=0.7\textwidth]{scatter_potenza_errore.png}
-        \label{fig:potenze}
     \end{figure}
 \end{frame}
 
