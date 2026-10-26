@@ -55,7 +55,7 @@ def parse_result_auto(filename):
 
 
 is_first = True
-i = 6 # sesto elemento pitch = 0.1
+i = 6 # sesto elemento pitch = 1
 
 now = datetime.now()
 output_file = "result_final.txt"  
@@ -82,7 +82,7 @@ notebook_in = 'auto/auto.ipynb'
 a_m = 0.10        # a_m rappresenta l'arricimento più esterno
 ARR_MAX = 0.2
 
-while a_m <= ARR_MAX:
+while a_m <= ARR_MAX: #itero fino al 20%
     
     a_M_min = np.maximum(0, (0.120 * (a_m*100)**2 - 3.040*100*a_m + 18.698)/100 - 0.0075)    # da interpolazione parabolica
     a_M_max = (0.120 * (a_m*100)**2 - 3.040*100*a_m + 18.698)/100 + 0.0075   
@@ -107,7 +107,7 @@ while a_m <= ARR_MAX:
     while iter_count < max_bisection_iters:
         print(f"\n[BISEZIONE] iter={iter_count+1}/{max_bisection_iters}: m={m:.3f}, a_M={a_M*100:.2f}%, a_m={a_m*100:.0f}% ...")
         
-        pm.execute_notebook(
+        pm.execute_notebook(    #a_M è max che è interno, FIGA
             notebook_in,
             os.devnull,
             parameters=dict(moltiplicatore=m, pressione=p, water_perc=w, enrich_min=a_m, enrich_max=a_M, is_first_run=is_first, iter=i)

@@ -29,7 +29,7 @@ R_WATER_THICK           = 1.5     # Spessore d'acqua attorno al pin [cm]
 
 # Calcolo derivato del Pitch
 R_PIN                   = R_FUEL + CLAD_THICK + R_WATER_THICK
-PITCH                   = R_PIN * np.sqrt(3) # Passo del reticolo [cm]
+PITCH                   = R_PIN * np.sqrt(3) # Passo del reticolo [cm] 3.55
 
 
 ### --- IMPOSTAZIONI SIMULAZIONE OPENMC ---
