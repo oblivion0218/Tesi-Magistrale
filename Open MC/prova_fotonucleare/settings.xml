@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<settings>
+  <run_mode>fixed source</run_mode>
+  <particles>10000</particles>
+  <batches>10</batches>
+  <max_lost_particles>50</max_lost_particles>
+  <source type="independent" strength="1.0" particle="photon">
+    <space type="point">
+      <parameters>-19.999 0.0 0.0</parameters>
+    </space>
+    <angle type="monodirectional" reference_uvw="1.0 0.0 0.0" />
+    <energy type="discrete">
+      <parameters>12500000.0 1.0</parameters>
+    </energy>
+  </source>
+  <photon_transport>true</photon_transport>
+  <seed>446224073</seed>
+  <create_fission_neutrons>true</create_fission_neutrons>
+<photonuclear>true</photonuclear><photonuclear_physics>true</photonuclear_physics></settings>

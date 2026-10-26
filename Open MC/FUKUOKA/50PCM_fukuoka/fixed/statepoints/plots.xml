@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<plots>
+  <plot id="1" filename="reactor_xy" color_by="material" type="slice" basis="xy">
+    <pixels>800 800</pixels>
+    <origin>0.0 0.0 40.0</origin>
+    <width>156.0 156.0</width>
+    <color id="1" rgb="211 211 211"/>
+    <color id="2" rgb="173 216 230"/>
+    <color id="3" rgb="0 128 0"/>
+    <color id="4" rgb="255 0 0"/>
+    <color id="5" rgb="255 255 255"/>
+    <color id="6" rgb="255 165 0"/>
+    <color id="7" rgb="142 48 4"/>
+    <color id="8" rgb="162 56 3"/>
+    <color id="9" rgb="183 66 2"/>
+    <color id="10" rgb="202 75 2"/>
+    <color id="11" rgb="216 89 8"/>
+    <color id="12" rgb="229 104 16"/>
+    <color id="13" rgb="239 120 24"/>
+    <color id="14" rgb="246 136 32"/>
+    <color id="15" rgb="253 152 40"/>
+    <color id="16" rgb="254 169 55"/>
+    <color id="17" rgb="254 187 71"/>
+    <color id="18" rgb="254 202 92"/>
+    <color id="19" rgb="254 215 119"/>
+  </plot>
+  <plot id="2" filename="reactor_xz" color_by="material" type="slice" basis="xz">
+    <pixels>800 800</pixels>
+    <origin>0.0 0.0 32.5</origin>
+    <width>156.0 110.0</width>
+    <color id="1" rgb="211 211 211"/>
+    <color id="2" rgb="173 216 230"/>
+    <color id="3" rgb="0 128 0"/>
+    <color id="4" rgb="255 0 0"/>
+    <color id="5" rgb="255 255 255"/>
+    <color id="6" rgb="255 165 0"/>
+    <color id="7" rgb="142 48 4"/>
+    <color id="8" rgb="162 56 3"/>
+    <color id="9" rgb="183 66 2"/>
+    <color id="10" rgb="202 75 2"/>
+    <color id="11" rgb="216 89 8"/>
+    <color id="12" rgb="229 104 16"/>
+    <color id="13" rgb="239 120 24"/>
+    <color id="14" rgb="246 136 32"/>
+    <color id="15" rgb="253 152 40"/>
+    <color id="16" rgb="254 169 55"/>
+    <color id="17" rgb="254 187 71"/>
+    <color id="18" rgb="254 202 92"/>
+    <color id="19" rgb="254 215 119"/>
+  </plot>
+</plots>

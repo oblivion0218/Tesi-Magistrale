@@ -10,9 +10,6 @@ import matplotlib.pyplot as plt
 import os
 import random
 
-#openmc.config['cross_sections'] = "/home/renato/Desktop/OpenMC/xsdata/withPhotonuclear/mcnp_endfb71/cross_sections.xml"
-
-
 # In[18]:
 
 
@@ -37,8 +34,6 @@ fuel.add_nuclide("U235", 0.05)
 fuel.add_nuclide("U238", 0.95)
 
 materials = openmc.Materials([fuel])
-materials.cross_sections = "/home/bossi_ricky/openmc_data/mcnp_endfb71/cross_sections.xml"
-
 materials.export_to_xml()
 
 
@@ -79,10 +74,8 @@ plt.show()
 
 
 # # 3. Settings
-
+import xml.etree.ElementTree as ET
 # In[22]:
-
-
 seed = random.randint(1, int(1e9))
 
 source = openmc.IndependentSource()
@@ -94,15 +87,36 @@ source.particle = 'photon'
 settings = openmc.Settings()
 settings.run_mode = 'fixed source'
 settings.batches = 10
-settings.particles = 1000
-settings.photonuclear_physics = True
+settings.particles = 10000
+settings.max_lost_particles = 50
 settings.photon_transport = True
+settings.create_fission_neutrons = True
 settings.source = source
 settings.seed = seed
 
-
+# 1. Esporta le impostazioni base
 settings.export_to_xml()
 
+# 2. Iniezione forzata dei tag
+tree = ET.parse('settings.xml')
+root = tree.getroot()
+
+# Inietta ENTRAMBI i possibili tag per le reazioni fotonucleari
+for tag_name in ['photonuclear', 'photonuclear_physics']:
+    if root.find(tag_name) is None:
+        pn = ET.SubElement(root, tag_name)
+        pn.text = 'true'
+
+# Configura energy_max per superare il blocco fotoni ad alta energia
+em = root.find('energy_max')
+if em is not None:
+    root.remove(em)
+em = ET.SubElement(root, 'energy_max')
+em_neutron = ET.SubElement(em, 'neutron')
+em_neutron.text = '20000000.0'
+
+tree.write('settings.xml', encoding='UTF-8', xml_declaration=True)
+print("✅ settings.xml forzato con i tag photonuclear e photonuclear_physics!")
 
 # # 4. Tallies
 

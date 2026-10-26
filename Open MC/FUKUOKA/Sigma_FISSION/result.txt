@@ -1,0 +1,57 @@
+
+
+------ SIMULAZIONE DEL 22/10/2026 ALLE ORE 14:30 ------
+=== PARAMETRI DI SIMULAZIONE ===
+intensità sorgente: 2e+17 fotoni/s
+Arricchimento: 0.05
+percentuale di acqua leggera: 15.00 % 
+Target (R, H, Pos): 2.0, 10.0, 40.0 cm
+Settings: 12 batches, 10000 particles, 1 inactive batches
+================================
+
+Pres [Pa]    PITCH [cm]   T_WATER [K]  T_FUEL [K]   K_EFF        STD_DEV     
+101325      3.551       300          300          0.98043      0.00365     
+101325      3.551       300          350          0.96693      0.00533     
+101325      3.551       300          400          0.97741      0.00555     
+101325      3.551       300          450          0.97230      0.00308     
+101325      3.551       300          500          0.97387      0.00593     
+101325      3.551       300          550          0.97193      0.00519     
+101325      3.551       300          600          0.97432      0.00486     
+
+
+------ SIMULAZIONE DEL 22/10/2026 ALLE ORE 14:41 ------
+=== PARAMETRI DI SIMULAZIONE ===
+intensità sorgente: 2e+17 fotoni/s
+Arricchimento: 0.05
+percentuale di acqua leggera: 15.00 % 
+Target (R, H, Pos): 2.0, 10.0, 40.0 cm
+Settings: 12 batches, 10000 particles, 1 inactive batches
+================================
+
+Pres [Pa]    PITCH [cm]   T_WATER [K]  T_FUEL [K]   K_EFF        STD_DEV     
+101325      3.551       300          300          0.98043      0.00365     
+101325      3.551       300          350          0.96693      0.00533     
+101325      3.551       300          400          0.97741      0.00555     
+101325      3.551       300          450          0.97230      0.00308     
+101325      3.551       300          500          0.97387      0.00593     
+101325      3.551       300          550          0.97193      0.00519     
+101325      3.551       300          600          0.97432      0.00486     
+
+
+------ SIMULAZIONE DEL 22/10/2026 ALLE ORE 14:47 ------
+=== PARAMETRI DI SIMULAZIONE ===
+intensità sorgente: 2e+17 fotoni/s
+Arricchimento: 0.05
+percentuale di acqua leggera: 15.00 % 
+Target (R, H, Pos): 2.0, 10.0, 40.0 cm
+Settings: 120 batches, 100000 particles, 10 inactive batches
+================================
+
+Pres [Pa]    PITCH [cm]   T_WATER [K]  T_FUEL [K]   K_EFF        STD_DEV     
+101325      3.551       300          300          0.98058      0.00031     
+101325      3.551       300          350          0.97982      0.00030     
+101325      3.551       300          400          0.97904      0.00033     
+101325      3.551       300          450          0.97848      0.00032     
+101325      3.551       300          500          0.97747      0.00030     
+101325      3.551       300          550          0.97650      0.00032     
+101325      3.551       300          600          0.97610      0.00033     

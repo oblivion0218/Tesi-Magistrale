@@ -1,11 +1,3 @@
-*.out
-*.mp4
-*.xml
-
-Open MC/reattore_0/*.h5
-Open MC/reattore_1/*.h5
-Open MC/reattore_2/*.h5
-Open MC/reattore_3/*.h5
-Open MC/reattore_6/*.h5
-Open MC/reattore_7/*.h5
-
+Open MC/reattore_0/statepoint.10.h5
+Open MC/reattore_0/statepoint.100.h5
+Open MC/veleno_1/target/surface_source.h5

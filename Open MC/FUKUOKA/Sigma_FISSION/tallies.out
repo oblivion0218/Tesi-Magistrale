@@ -1,0 +1,1227 @@
+ ====================>     TALLY 7: FUEL_RR_GROUPS     <====================
+
+ Material 22
+   Incoming Energy [0, 0.625)
+     Total Material
+       Fission Rate                         0.337133 +/- 0.000189144
+       Nu-Fission Rate                      0.821492 +/- 0.000460886
+       (n,gamma)                            0.0899505 +/- 4.96983e-05
+       Absorption Rate                      0.427084 +/- 0.000238813
+       Flux                                 0.830498 +/- 0.000409104
+   Incoming Energy [0.625, 100000)
+     Total Material
+       Fission Rate                         0.0485661 +/- 2.17626e-05
+       Nu-Fission Rate                      0.11828 +/- 5.30126e-05
+       (n,gamma)                            0.119388 +/- 7.2963e-05
+       Absorption Rate                      0.167954 +/- 8.32031e-05
+       Flux                                 2.33139 +/- 0.000598412
+   Incoming Energy [100000, 20000000)
+     Total Material
+       Fission Rate                         0.0116521 +/- 4.71137e-06
+       Nu-Fission Rate                      0.0319448 +/- 1.33965e-05
+       (n,gamma)                            0.00400798 +/- 1.26777e-06
+       Absorption Rate                      0.0161208 +/- 5.35157e-06
+       Flux                                 1.83378 +/- 0.000499896
+ ===================>     TALLY 8: FUEL_RR_SPECTRUM     <===================
+
+ Material 22
+   Incoming Energy [9.999999999999999e-06, 1.0990145276672787e-05)
+     Total Material
+       Fission Rate                         0 +/- 0
+       (n,gamma)                            0 +/- 0
+   Incoming Energy [1.0990145276672787e-05, 1.2078329320237293e-05)
+     Total Material
+       Fission Rate                         0 +/- 0
+       (n,gamma)                            0 +/- 0
+   Incoming Energy [1.2078329320237293e-05, 1.3274259392890431e-05)
+     Total Material
+       Fission Rate                         0 +/- 0
+       (n,gamma)                            0 +/- 0
+   Incoming Energy [1.3274259392890431e-05, 1.4588603916810415e-05)
+     Total Material
+       Fission Rate                         5.03945e-08 +/- 5.03945e-08
+       (n,gamma)                            1.36716e-08 +/- 1.36716e-08
+   Incoming Energy [1.4588603916810415e-05, 1.6033087642958375e-05)
+     Total Material
+       Fission Rate                         3.80533e-08 +/- 3.80533e-08
+       (n,gamma)                            1.03235e-08 +/- 1.03235e-08
+   Incoming Energy [1.6033087642958375e-05, 1.7620596242973984e-05)
+     Total Material
+       Fission Rate                         0 +/- 0
+       (n,gamma)                            0 +/- 0
+   Incoming Energy [1.7620596242973984e-05, 1.9365291257187878e-05)
+     Total Material
+       Fission Rate                         0 +/- 0
+       (n,gamma)                            0 +/- 0
+   Incoming Energy [1.9365291257187878e-05, 2.1282736424157573e-05)
+     Total Material
+       Fission Rate                         0 +/- 0
+       (n,gamma)                            0 +/- 0
+   Incoming Energy [2.1282736424157573e-05, 2.3390036518662722e-05)
+     Total Material
+       Fission Rate                         4.18551e-08 +/- 4.18551e-08
+       (n,gamma)                            1.13556e-08 +/- 1.13556e-08
+   Incoming Energy [2.3390036518662722e-05, 2.570598993667851e-05)
+     Total Material
+       Fission Rate                         1.6793e-07 +/- 1.6793e-07
+       (n,gamma)                            4.55574e-08 +/- 4.55574e-08
+   Incoming Energy [2.570598993667851e-05, 2.8251256388478496e-05)
+     Total Material
+       Fission Rate                         3.44215e-07 +/- 1.95279e-07
+       (n,gamma)                            9.33838e-08 +/- 5.29782e-08
+   Incoming Energy [2.8251256388478496e-05, 3.1048541195790885e-05)
+     Total Material
+       Fission Rate                         3.50681e-08 +/- 3.50681e-08
+       (n,gamma)                            9.51398e-09 +/- 9.51398e-09
+   Incoming Energy [3.1048541195790885e-05, 3.412279783705016e-05)
+     Total Material
+       Fission Rate                         4.6553e-07 +/- 2.90393e-07
+       (n,gamma)                            1.26297e-07 +/- 7.87823e-08
+   Incoming Energy [3.412279783705016e-05, 3.750145054757165e-05)
+     Total Material
+       Fission Rate                         2.08604e-07 +/- 1.25904e-07
+       (n,gamma)                            5.65948e-08 +/- 3.41582e-08
+   Incoming Energy [3.750145054757165e-05, 4.121463896037726e-05)
+     Total Material
+       Fission Rate                         2.43176e-07 +/- 1.55331e-07
+       (n,gamma)                            6.59719e-08 +/- 4.21399e-08
+   Incoming Energy [4.121463896037726e-05, 4.529548697001644e-05)
+     Total Material
+       Fission Rate                         3.18469e-08 +/- 3.18469e-08
+       (n,gamma)                            8.64043e-09 +/- 8.64043e-09
+   Incoming Energy [4.529548697001644e-05, 4.978039821781189e-05)
+     Total Material
+       Fission Rate                         7.79318e-07 +/- 4.47957e-07
+       (n,gamma)                            2.11433e-07 +/- 1.21532e-07
+   Incoming Energy [4.978039821781189e-05, 5.4709380834437574e-05)
+     Total Material
+       Fission Rate                         2.37657e-07 +/- 1.42368e-07
+       (n,gamma)                            6.44779e-08 +/- 3.86253e-08
+   Incoming Energy [5.4709380834437574e-05, 6.0126404336728683e-05)
+     Total Material
+       Fission Rate                         1.40134e-07 +/- 1.05228e-07
+       (n,gamma)                            3.80195e-08 +/- 2.85493e-08
+   Incoming Energy [6.0126404336728683e-05, 6.607979186246155e-05)
+     Total Material
+       Fission Rate                         2.58003e-07 +/- 1.51152e-07
+       (n,gamma)                            6.99993e-08 +/- 4.10093e-08
+   Incoming Energy [6.607979186246155e-05, 7.262265124207526e-05)
+     Total Material
+       Fission Rate                         5.01148e-07 +/- 1.96559e-07
+       (n,gamma)                            1.35969e-07 +/- 5.33294e-08
+   Incoming Energy [7.262265124207526e-05, 7.981334875275487e-05)
+     Total Material
+       Fission Rate                         7.23614e-07 +/- 3.56265e-07
+       (n,gamma)                            1.96329e-07 +/- 9.66608e-08
+   Incoming Energy [7.981334875275487e-05, 8.771602978105249e-05)
+     Total Material
+       Fission Rate                         1.16945e-06 +/- 4.03573e-07
+       (n,gamma)                            3.17297e-07 +/- 1.09498e-07
+   Incoming Energy [8.771602978105249e-05, 9.640119103867236e-05)
+     Total Material
+       Fission Rate                         1.16666e-06 +/- 4.62755e-07
+       (n,gamma)                            3.16543e-07 +/- 1.25557e-07
+   Incoming Energy [9.640119103867236e-05, 0.0001059463094359295)
+     Total Material
+       Fission Rate                         9.08529e-07 +/- 3.0282e-07
+       (n,gamma)                            2.4651e-07 +/- 8.21638e-08
+   Incoming Energy [0.0001059463094359295, 0.00011643653322281929)
+     Total Material
+       Fission Rate                         6.11304e-07 +/- 2.42491e-07
+       (n,gamma)                            1.65867e-07 +/- 6.57961e-08
+   Incoming Energy [0.00011643653322281929, 0.00012796544156309215)
+     Total Material
+       Fission Rate                         1.25536e-06 +/- 5.70686e-07
+       (n,gamma)                            3.40626e-07 +/- 1.54848e-07
+   Incoming Energy [0.00012796544156309215, 0.00014063587931719632)
+     Total Material
+       Fission Rate                         1.38578e-06 +/- 3.44493e-07
+       (n,gamma)                            3.76023e-07 +/- 9.34758e-08
+   Incoming Energy [0.00014063587931719632, 0.00015456087448086075)
+     Total Material
+       Fission Rate                         1.71105e-06 +/- 4.21821e-07
+       (n,gamma)                            4.64292e-07 +/- 1.1446e-07
+   Incoming Energy [0.00015456087448086075, 0.00016986464646342474)
+     Total Material
+       Fission Rate                         2.76335e-06 +/- 6.09644e-07
+       (n,gamma)                            7.49851e-07 +/- 1.6543e-07
+   Incoming Energy [0.00016986464646342474, 0.0001866837142003698)
+     Total Material
+       Fission Rate                         2.42324e-06 +/- 4.93632e-07
+       (n,gamma)                            6.57573e-07 +/- 1.33953e-07
+   Incoming Energy [0.0001866837142003698, 0.00020516811398509248)
+     Total Material
+       Fission Rate                         3.10229e-06 +/- 5.94438e-07
+       (n,gamma)                            8.41869e-07 +/- 1.61313e-07
+   Incoming Energy [0.00020516811398509248, 0.0002254827378837128)
+     Total Material
+       Fission Rate                         4.10923e-06 +/- 6.63654e-07
+       (n,gamma)                            1.11515e-06 +/- 1.801e-07
+   Incoming Energy [0.0002254827378837128, 0.0002478088046723932)
+     Total Material
+       Fission Rate                         5.20591e-06 +/- 8.22623e-07
+       (n,gamma)                            1.41281e-06 +/- 2.23248e-07
+   Incoming Energy [0.0002478088046723932, 0.00027234547641882286)
+     Total Material
+       Fission Rate                         5.64502e-06 +/- 8.6184e-07
+       (n,gamma)                            1.53203e-06 +/- 2.33899e-07
+   Incoming Energy [0.00027234547641882286, 0.00029931163512875256)
+     Total Material
+       Fission Rate                         7.19663e-06 +/- 8.2998e-07
+       (n,gamma)                            1.9532e-06 +/- 2.25261e-07
+   Incoming Energy [0.00029931163512875256, 0.0003289478353063465)
+     Total Material
+       Fission Rate                         8.25411e-06 +/- 1.05255e-06
+       (n,gamma)                            2.2403e-06 +/- 2.85679e-07
+   Incoming Energy [0.0003289478353063465, 0.00036151844984637783)
+     Total Material
+       Fission Rate                         7.57403e-06 +/- 9.30992e-07
+       (n,gamma)                            2.05581e-06 +/- 2.52698e-07
+   Incoming Energy [0.00036151844984637783, 0.0003973140284009237)
+     Total Material
+       Fission Rate                         1.20571e-05 +/- 1.17962e-06
+       (n,gamma)                            3.27281e-06 +/- 3.20199e-07
+   Incoming Energy [0.0003973140284009237, 0.0004366538892586245)
+     Total Material
+       Fission Rate                         1.18345e-05 +/- 1.10994e-06
+       (n,gamma)                            3.21256e-06 +/- 3.013e-07
+   Incoming Energy [0.0004366538892586245, 0.0004798889678576469)
+     Total Material
+       Fission Rate                         1.70106e-05 +/- 1.3146e-06
+       (n,gamma)                            4.61791e-06 +/- 3.56878e-07
+   Incoming Energy [0.0004798889678576469, 0.0005274049473428096)
+     Total Material
+       Fission Rate                         2.10501e-05 +/- 1.38704e-06
+       (n,gamma)                            5.71484e-06 +/- 3.76565e-07
+   Incoming Energy [0.0005274049473428096, 0.0005796256990933434)
+     Total Material
+       Fission Rate                         1.89889e-05 +/- 1.3927e-06
+       (n,gamma)                            5.15558e-06 +/- 3.78124e-07
+   Incoming Energy [0.0005796256990933434, 0.0006370170639128863)
+     Total Material
+       Fission Rate                         2.67895e-05 +/- 1.58138e-06
+       (n,gamma)                            7.27399e-06 +/- 4.29383e-07
+   Incoming Energy [0.0006370170639128863, 0.0007000910076122174)
+     Total Material
+       Fission Rate                         3.30698e-05 +/- 1.97393e-06
+       (n,gamma)                            8.97988e-06 +/- 5.36009e-07
+   Incoming Energy [0.0007000910076122174, 0.0007694101880550496)
+     Total Material
+       Fission Rate                         3.23981e-05 +/- 1.75711e-06
+       (n,gamma)                            8.79817e-06 +/- 4.77171e-07
+   Incoming Energy [0.0007694101880550496, 0.0008455929744077116)
+     Total Material
+       Fission Rate                         4.01684e-05 +/- 2.22042e-06
+       (n,gamma)                            1.09092e-05 +/- 6.03034e-07
+   Incoming Energy [0.0008455929744077116, 0.0009293189633674604)
+     Total Material
+       Fission Rate                         5.42827e-05 +/- 2.53721e-06
+       (n,gamma)                            1.47436e-05 +/- 6.89125e-07
+   Incoming Energy [0.0009293189633674604, 0.0010213350415775335)
+     Total Material
+       Fission Rate                         6.47503e-05 +/- 2.64055e-06
+       (n,gamma)                            1.75883e-05 +/- 7.17256e-07
+   Incoming Energy [0.0010213350415775335, 0.0011224620483093722)
+     Total Material
+       Fission Rate                         7.0982e-05 +/- 2.97841e-06
+       (n,gamma)                            1.92827e-05 +/- 8.09102e-07
+   Incoming Energy [0.0011224620483093722, 0.0012336020978471708)
+     Total Material
+       Fission Rate                         8.88888e-05 +/- 2.96685e-06
+       (n,gamma)                            2.41493e-05 +/- 8.06036e-07
+   Incoming Energy [0.0012336020978471708, 0.0013557466268948712)
+     Total Material
+       Fission Rate                         0.000108512 +/- 3.07128e-06
+       (n,gamma)                            2.94832e-05 +/- 8.3448e-07
+   Incoming Energy [0.0013557466268948712, 0.0014899852387933717)
+     Total Material
+       Fission Rate                         0.000131483 +/- 3.43752e-06
+       (n,gamma)                            3.57276e-05 +/- 9.3407e-07
+   Incoming Energy [0.0014899852387933717, 0.0016375154234437147)
+     Total Material
+       Fission Rate                         0.000147228 +/- 3.2467e-06
+       (n,gamma)                            4.00091e-05 +/- 8.8229e-07
+   Incoming Energy [0.0016375154234437147, 0.0017996532396438762)
+     Total Material
+       Fission Rate                         0.000174071 +/- 4.21666e-06
+       (n,gamma)                            4.73071e-05 +/- 1.14596e-06
+   Incoming Energy [0.0017996532396438762, 0.0019778450551321005)
+     Total Material
+       Fission Rate                         0.000210305 +/- 4.38523e-06
+       (n,gamma)                            5.71579e-05 +/- 1.19184e-06
+   Incoming Energy [0.0019778450551321005, 0.0021736804490650684)
+     Total Material
+       Fission Rate                         0.000238285 +/- 4.67502e-06
+       (n,gamma)                            6.47651e-05 +/- 1.27065e-06
+   Incoming Energy [0.0021736804490650684, 0.002388906392028842)
+     Total Material
+       Fission Rate                         0.000282305 +/- 5.44734e-06
+       (n,gamma)                            7.67309e-05 +/- 1.4806e-06
+   Incoming Energy [0.002388906392028842, 0.0026254428300769178)
+     Total Material
+       Fission Rate                         0.000340699 +/- 6.16301e-06
+       (n,gamma)                            9.26011e-05 +/- 1.67509e-06
+   Incoming Energy [0.0026254428300769178, 0.002885399811814427)
+     Total Material
+       Fission Rate                         0.000398226 +/- 5.79477e-06
+       (n,gamma)                            0.000108231 +/- 1.57492e-06
+   Incoming Energy [0.002885399811814427, 0.0031710963113124845)
+     Total Material
+       Fission Rate                         0.000463991 +/- 6.64923e-06
+       (n,gamma)                            0.000126091 +/- 1.80696e-06
+   Incoming Energy [0.0031710963113124845, 0.003485080914764536)
+     Total Material
+       Fission Rate                         0.000557491 +/- 7.25873e-06
+       (n,gamma)                            0.000151474 +/- 1.97222e-06
+   Incoming Energy [0.003485080914764536, 0.003830154555422194)
+     Total Material
+       Fission Rate                         0.000660258 +/- 7.38097e-06
+       (n,gamma)                            0.00017935 +/- 2.00494e-06
+   Incoming Energy [0.003830154555422194, 0.004209395499619994)
+     Total Material
+       Fission Rate                         0.000777521 +/- 9.09103e-06
+       (n,gamma)                            0.000211127 +/- 2.46857e-06
+   Incoming Energy [0.004209395499619994, 0.004626186806779632)
+     Total Material
+       Fission Rate                         0.000915078 +/- 8.98306e-06
+       (n,gamma)                            0.000248359 +/- 2.43803e-06
+   Incoming Energy [0.004626186806779632, 0.0050842465083535135)
+     Total Material
+       Fission Rate                         0.00104152 +/- 8.23688e-06
+       (n,gamma)                            0.000282496 +/- 2.23421e-06
+   Incoming Energy [0.0050842465083535135, 0.005587660774922142)
+     Total Material
+       Fission Rate                         0.00123393 +/- 9.30241e-06
+       (n,gamma)                            0.000334414 +/- 2.5211e-06
+   Incoming Energy [0.005587660774922142, 0.006140920367316031)
+     Total Material
+       Fission Rate                         0.00144347 +/- 1.18739e-05
+       (n,gamma)                            0.000390801 +/- 3.21472e-06
+   Incoming Energy [0.006140920367316031, 0.0067489606969282)
+     Total Material
+       Fission Rate                         0.00168539 +/- 1.23455e-05
+       (n,gamma)                            0.000455718 +/- 3.33828e-06
+   Incoming Energy [0.0067489606969282, 0.007417205852579566)
+     Total Material
+       Fission Rate                         0.00193849 +/- 1.12772e-05
+       (n,gamma)                            0.000523339 +/- 3.04439e-06
+   Incoming Energy [0.007417205852579566, 0.008151616986683699)
+     Total Material
+       Fission Rate                         0.00224961 +/- 1.1606e-05
+       (n,gamma)                            0.000606193 +/- 3.12727e-06
+   Incoming Energy [0.008151616986683699, 0.00895874549234475)
+     Total Material
+       Fission Rate                         0.00262987 +/- 1.32257e-05
+       (n,gamma)                            0.000707078 +/- 3.55596e-06
+   Incoming Energy [0.00895874549234475, 0.009845791445760617)
+     Total Material
+       Fission Rate                         0.00297423 +/- 1.41571e-05
+       (n,gamma)                            0.000797565 +/- 3.79636e-06
+   Incoming Energy [0.009845791445760617, 0.010820667835273128)
+     Total Material
+       Fission Rate                         0.00340436 +/- 1.49234e-05
+       (n,gamma)                            0.000910131 +/- 3.98954e-06
+   Incoming Energy [0.010820667835273128, 0.011892071150027212)
+     Total Material
+       Fission Rate                         0.00388488 +/- 1.74527e-05
+       (n,gamma)                            0.00103499 +/- 4.64993e-06
+   Incoming Energy [0.011892071150027212, 0.013069558957932813)
+     Total Material
+       Fission Rate                         0.00440447 +/- 1.78315e-05
+       (n,gamma)                            0.00116886 +/- 4.73247e-06
+   Incoming Energy [0.013069558957932813, 0.014363635164972167)
+     Total Material
+       Fission Rate                         0.00499567 +/- 1.74471e-05
+       (n,gamma)                            0.00132006 +/- 4.61092e-06
+   Incoming Energy [0.014363635164972167, 0.015785843716417003)
+     Total Material
+       Fission Rate                         0.00564973 +/- 1.89364e-05
+       (n,gamma)                            0.00148595 +/- 4.97953e-06
+   Incoming Energy [0.015785843716417003, 0.01734887157582749)
+     Total Material
+       Fission Rate                         0.00634584 +/- 1.67313e-05
+       (n,gamma)                            0.00166078 +/- 4.37843e-06
+   Incoming Energy [0.01734887157582749, 0.01906666190046831)
+     Total Material
+       Fission Rate                         0.00706165 +/- 2.16165e-05
+       (n,gamma)                            0.00183866 +/- 5.62826e-06
+   Incoming Energy [0.01906666190046831, 0.020954538422734877)
+     Total Material
+       Fission Rate                         0.00781103 +/- 2.10618e-05
+       (n,gamma)                            0.00202326 +/- 5.45611e-06
+   Incoming Energy [0.020954538422734877, 0.02302934214714779)
+     Total Material
+       Fission Rate                         0.00858334 +/- 2.11341e-05
+       (n,gamma)                            0.00221204 +/- 5.44649e-06
+   Incoming Energy [0.02302934214714779, 0.025309581582335757)
+     Total Material
+       Fission Rate                         0.00938031 +/- 2.2798e-05
+       (n,gamma)                            0.00240579 +/- 5.84734e-06
+   Incoming Energy [0.025309581582335757, 0.027815597848167187)
+     Total Material
+       Fission Rate                         0.0102112 +/- 2.35392e-05
+       (n,gamma)                            0.00260749 +/- 6.01138e-06
+   Incoming Energy [0.027815597848167187, 0.030569746130886404)
+     Total Material
+       Fission Rate                         0.0110427 +/- 2.072e-05
+       (n,gamma)                            0.00280913 +/- 5.27039e-06
+   Incoming Energy [0.030569746130886404, 0.033596595104944706)
+     Total Material
+       Fission Rate                         0.0117066 +/- 2.6425e-05
+       (n,gamma)                            0.00296904 +/- 6.70182e-06
+   Incoming Energy [0.033596595104944706, 0.036923146100489614)
+     Total Material
+       Fission Rate                         0.012403 +/- 2.52659e-05
+       (n,gamma)                            0.00313899 +/- 6.39466e-06
+   Incoming Energy [0.036923146100489614, 0.04057907397161947)
+     Total Material
+       Fission Rate                         0.0129281 +/- 2.44314e-05
+       (n,gamma)                            0.00326828 +/- 6.17645e-06
+   Incoming Energy [0.04057907397161947, 0.04459699181409489)
+     Total Material
+       Fission Rate                         0.0134287 +/- 2.34558e-05
+       (n,gamma)                            0.00339498 +/- 5.93005e-06
+   Incoming Energy [0.04459699181409489, 0.04901274189394899)
+     Total Material
+       Fission Rate                         0.0136937 +/- 2.36277e-05
+       (n,gamma)                            0.00346634 +/- 5.98088e-06
+   Incoming Energy [0.04901274189394899, 0.05386571538225654)
+     Total Material
+       Fission Rate                         0.013777 +/- 2.36541e-05
+       (n,gamma)                            0.00349626 +/- 6.00297e-06
+   Incoming Energy [0.05386571538225654, 0.05919920374829068)
+     Total Material
+       Fission Rate                         0.0135954 +/- 2.25662e-05
+       (n,gamma)                            0.00346367 +/- 5.74868e-06
+   Incoming Energy [0.05919920374829068, 0.06506078494570668)
+     Total Material
+       Fission Rate                         0.0133142 +/- 2.26534e-05
+       (n,gamma)                            0.00341019 +/- 5.80183e-06
+   Incoming Energy [0.06506078494570668, 0.07150274783676815)
+     Total Material
+       Fission Rate                         0.0128109 +/- 2.13332e-05
+       (n,gamma)                            0.0033039 +/- 5.5026e-06
+   Incoming Energy [0.07150274783676815, 0.0785825586407382)
+     Total Material
+       Fission Rate                         0.0121114 +/- 1.90578e-05
+       (n,gamma)                            0.00315005 +/- 4.95456e-06
+   Incoming Energy [0.0785825586407382, 0.08636337356743712)
+     Total Material
+       Fission Rate                         0.0112982 +/- 2.00395e-05
+       (n,gamma)                            0.00296838 +/- 5.26594e-06
+   Incoming Energy [0.08636337356743712, 0.09491460220896954)
+     Total Material
+       Fission Rate                         0.0103553 +/- 1.70523e-05
+       (n,gamma)                            0.00275314 +/- 4.53466e-06
+   Incoming Energy [0.09491460220896954, 0.1043125267154182)
+     Total Material
+       Fission Rate                         0.00936788 +/- 1.63088e-05
+       (n,gamma)                            0.00252536 +/- 4.39725e-06
+   Incoming Energy [0.1043125267154182, 0.11464098227792573)
+     Total Material
+       Fission Rate                         0.00836378 +/- 1.38116e-05
+       (n,gamma)                            0.00229093 +/- 3.78159e-06
+   Incoming Energy [0.11464098227792573, 0.12599210498948715)
+     Total Material
+       Fission Rate                         0.00738433 +/- 1.43866e-05
+       (n,gamma)                            0.00205986 +/- 4.01337e-06
+   Incoming Energy [0.12599210498948715, 0.1384671537548274)
+     Total Material
+       Fission Rate                         0.00646011 +/- 1.29751e-05
+       (n,gamma)                            0.00183979 +/- 3.69627e-06
+   Incoming Energy [0.1384671537548274, 0.1521774135812941)
+     Total Material
+       Fission Rate                         0.00566116 +/- 1.1827e-05
+       (n,gamma)                            0.00165027 +/- 3.45017e-06
+   Incoming Energy [0.1521774135812941, 0.16724518830867371)
+     Total Material
+       Fission Rate                         0.00495916 +/- 9.81365e-06
+       (n,gamma)                            0.00148335 +/- 2.93495e-06
+   Incoming Energy [0.16724518830867371, 0.1838048916336821)
+     Total Material
+       Fission Rate                         0.00438783 +/- 9.25502e-06
+       (n,gamma)                            0.00134949 +/- 2.84575e-06
+   Incoming Energy [0.1838048916336821, 0.2020042461617265)
+     Total Material
+       Fission Rate                         0.00398387 +/- 8.70221e-06
+       (n,gamma)                            0.00126044 +/- 2.75458e-06
+   Incoming Energy [0.2020042461617265, 0.22200560118221407)
+     Total Material
+       Fission Rate                         0.00371252 +/- 9.0635e-06
+       (n,gamma)                            0.00120461 +/- 2.94218e-06
+   Incoming Energy [0.22200560118221407, 0.24398738092276126)
+     Total Material
+       Fission Rate                         0.00360396 +/- 8.6296e-06
+       (n,gamma)                            0.00118748 +/- 2.84152e-06
+   Incoming Energy [0.24398738092276126, 0.26814567620160484)
+     Total Material
+       Fission Rate                         0.00356893 +/- 8.24629e-06
+       (n,gamma)                            0.0011715 +/- 2.70646e-06
+   Incoming Energy [0.26814567620160484, 0.2946959936767292)
+     Total Material
+       Fission Rate                         0.00355837 +/- 8.90584e-06
+       (n,gamma)                            0.00113487 +/- 2.84388e-06
+   Incoming Energy [0.2946959936767292, 0.32387517829606993)
+     Total Material
+       Fission Rate                         0.00334831 +/- 8.16382e-06
+       (n,gamma)                            0.00101791 +/- 2.48394e-06
+   Incoming Energy [0.32387517829606993, 0.35594352609821095)
+     Total Material
+       Fission Rate                         0.00293693 +/- 7.19066e-06
+       (n,gamma)                            0.000849634 +/- 2.08233e-06
+   Incoming Energy [0.35594352609821095, 0.3911871062110502)
+     Total Material
+       Fission Rate                         0.00247918 +/- 6.37404e-06
+       (n,gamma)                            0.000693167 +/- 1.78318e-06
+   Incoming Energy [0.3911871062110502, 0.4299203127620669)
+     Total Material
+       Fission Rate                         0.00208933 +/- 5.35307e-06
+       (n,gamma)                            0.000576859 +/- 1.47799e-06
+   Incoming Energy [0.4299203127620669, 0.4724886694647717)
+     Total Material
+       Fission Rate                         0.00178955 +/- 4.82171e-06
+       (n,gamma)                            0.000496293 +/- 1.33721e-06
+   Incoming Energy [0.4724886694647717, 0.5192719118999659)
+     Total Material
+       Fission Rate                         0.00155583 +/- 4.08678e-06
+       (n,gamma)                            0.000437873 +/- 1.15079e-06
+   Incoming Energy [0.5192719118999659, 0.5706873749876258)
+     Total Material
+       Fission Rate                         0.00137946 +/- 4.09937e-06
+       (n,gamma)                            0.000395777 +/- 1.17624e-06
+   Incoming Energy [0.5706873749876258, 0.6271937158677048)
+     Total Material
+       Fission Rate                         0.00123623 +/- 3.00392e-06
+       (n,gamma)                            0.00036209 +/- 8.79964e-07
+   Incoming Energy [0.6271937158677048, 0.6892950054002295)
+     Total Material
+       Fission Rate                         0.00112521 +/- 3.47145e-06
+       (n,gamma)                            0.000335735 +/- 1.03569e-06
+   Incoming Energy [0.6892950054002295, 0.7575452247833475)
+     Total Material
+       Fission Rate                         0.00105079 +/- 3.07395e-06
+       (n,gamma)                            0.000317943 +/- 9.30503e-07
+   Incoming Energy [0.7575452247833475, 0.8325532074018732)
+     Total Material
+       Fission Rate                         0.00100075 +/- 2.76715e-06
+       (n,gamma)                            0.000304588 +/- 8.42242e-07
+   Incoming Energy [0.8325532074018732, 0.9149880699906457)
+     Total Material
+       Fission Rate                         0.000997115 +/- 2.67988e-06
+       (n,gamma)                            0.000301513 +/- 8.10963e-07
+   Incoming Energy [0.9149880699906457, 1.0055851815619643)
+     Total Material
+       Fission Rate                         0.00109894 +/- 2.85391e-06
+       (n,gamma)                            0.000326015 +/- 8.46188e-07
+   Incoming Energy [1.0055851815619643, 1.105152723343537)
+     Total Material
+       Fission Rate                         0.00146358 +/- 3.67911e-06
+       (n,gamma)                            0.00044794 +/- 1.129e-06
+   Incoming Energy [1.105152723343537, 1.2145788982456016)
+     Total Material
+       Fission Rate                         0.00152941 +/- 4.85509e-06
+       (n,gamma)                            0.000628371 +/- 1.98585e-06
+   Incoming Energy [1.2145788982456016, 1.3348398541700335)
+     Total Material
+       Fission Rate                         0.000558668 +/- 1.61292e-06
+       (n,gamma)                            0.000394866 +/- 1.11026e-06
+   Incoming Energy [1.3348398541700335, 1.4670083918421386)
+     Total Material
+       Fission Rate                         0.000340967 +/- 8.81724e-07
+       (n,gamma)                            0.000258621 +/- 6.66073e-07
+   Incoming Energy [1.4670083918421386, 1.6122635348443186)
+     Total Material
+       Fission Rate                         0.000286094 +/- 8.41609e-07
+       (n,gamma)                            0.000222258 +/- 6.53807e-07
+   Incoming Energy [1.6122635348443186, 1.771901047222106)
+     Total Material
+       Fission Rate                         0.000266067 +/- 6.18979e-07
+       (n,gamma)                            0.000212407 +/- 4.936e-07
+   Incoming Energy [1.771901047222106, 1.9473449924859594)
+     Total Material
+       Fission Rate                         0.000254477 +/- 7.21979e-07
+       (n,gamma)                            0.000238051 +/- 6.87033e-07
+   Incoming Energy [1.9473449924859594, 2.1401604371221925)
+     Total Material
+       Fission Rate                         0.000340927 +/- 9.02603e-07
+       (n,gamma)                            0.00066832 +/- 1.91735e-06
+   Incoming Energy [2.1401604371221925, 2.352067411936043)
+     Total Material
+       Fission Rate                         0.000218031 +/- 5.41656e-07
+       (n,gamma)                            0.000220404 +/- 5.50712e-07
+   Incoming Energy [2.352067411936043, 2.5849562557704893)
+     Total Material
+       Fission Rate                         0.000184463 +/- 4.78426e-07
+       (n,gamma)                            0.00019955 +/- 5.14266e-07
+   Incoming Energy [2.5849562557704893, 2.8409044784761757)
+     Total Material
+       Fission Rate                         0.000185142 +/- 5.16571e-07
+       (n,gamma)                            0.000223897 +/- 6.08535e-07
+   Incoming Energy [2.8409044784761757, 3.1221952935603507)
+     Total Material
+       Fission Rate                         0.000483789 +/- 1.36636e-06
+       (n,gamma)                            0.000283003 +/- 7.71803e-07
+   Incoming Energy [3.1221952935603507, 3.4313379858372293)
+     Total Material
+       Fission Rate                         0.0005254 +/- 1.39582e-06
+       (n,gamma)                            0.000364194 +/- 9.39104e-07
+   Incoming Energy [3.4313379858372293, 3.7710902957716863)
+     Total Material
+       Fission Rate                         0.000754926 +/- 2.28387e-06
+       (n,gamma)                            0.000688298 +/- 2.02182e-06
+   Incoming Energy [3.7710902957716863, 4.144483020198178)
+     Total Material
+       Fission Rate                         5.72776e-05 +/- 1.428e-07
+       (n,gamma)                            0.000312046 +/- 7.51764e-07
+   Incoming Energy [4.144483020198178, 4.554847048868157)
+     Total Material
+       Fission Rate                         6.70536e-05 +/- 1.66581e-07
+       (n,gamma)                            0.000422109 +/- 1.07557e-06
+   Incoming Energy [4.554847048868157, 5.005843078008526)
+     Total Material
+       Fission Rate                         0.000148564 +/- 4.16527e-07
+       (n,gamma)                            0.0011741 +/- 3.53718e-06
+   Incoming Energy [5.005843078008526, 5.501494265954056)
+     Total Material
+       Fission Rate                         0.000166877 +/- 4.98183e-07
+       (n,gamma)                            0.000714161 +/- 1.98651e-06
+   Incoming Energy [5.501494265954056, 6.04622212216174)
+     Total Material
+       Fission Rate                         0.000278392 +/- 8.79823e-07
+       (n,gamma)                            0.00156929 +/- 5.13714e-06
+   Incoming Energy [6.04622212216174, 6.644885949759022)
+     Total Material
+       Fission Rate                         0.000507877 +/- 1.84119e-06
+       (n,gamma)                            0.00961005 +/- 3.51399e-05
+   Incoming Energy [6.644885949759022, 7.302826193477348)
+     Total Material
+       Fission Rate                         0.000305167 +/- 1.1384e-06
+       (n,gamma)                            0.0108711 +/- 3.29285e-05
+   Incoming Energy [7.302826193477348, 8.025912079660738)
+     Total Material
+       Fission Rate                         6.87376e-05 +/- 1.93661e-07
+       (n,gamma)                            0.00137768 +/- 4.05053e-06
+   Incoming Energy [8.025912079660738, 8.820593973327435)
+     Total Material
+       Fission Rate                         0.00185102 +/- 7.18935e-06
+       (n,gamma)                            0.0011377 +/- 3.17398e-06
+   Incoming Energy [8.820593973327435, 9.693960919341295)
+     Total Material
+       Fission Rate                         0.0019211 +/- 6.38518e-06
+       (n,gamma)                            0.00085314 +/- 2.6029e-06
+   Incoming Energy [9.693960919341295, 10.653803880994934)
+     Total Material
+       Fission Rate                         0.000410335 +/- 1.04983e-06
+       (n,gamma)                            0.000516721 +/- 1.70585e-06
+   Incoming Energy [10.653803880994934, 11.708685240131443)
+     Total Material
+       Fission Rate                         0.000345167 +/- 1.10303e-06
+       (n,gamma)                            0.0010289 +/- 4.85547e-06
+   Incoming Energy [11.708685240131443, 12.868015178787894)
+     Total Material
+       Fission Rate                         0.00120819 +/- 4.30659e-06
+       (n,gamma)                            0.00189867 +/- 6.78419e-06
+   Incoming Energy [12.868015178787894, 14.142135623730951)
+     Total Material
+       Fission Rate                         0.000800159 +/- 2.34928e-06
+       (n,gamma)                            0.000247052 +/- 6.55962e-07
+   Incoming Energy [14.142135623730951, 15.542412502721236)
+     Total Material
+       Fission Rate                         0.000557388 +/- 1.5987e-06
+       (n,gamma)                            0.000444678 +/- 1.38517e-06
+   Incoming Energy [15.542412502721236, 17.081337135488184)
+     Total Material
+       Fission Rate                         0.000499141 +/- 1.7063e-06
+       (n,gamma)                            0.000644845 +/- 2.19133e-06
+   Incoming Energy [17.081337135488184, 18.772637663884094)
+     Total Material
+       Fission Rate                         0.000453258 +/- 1.65888e-06
+       (n,gamma)                            0.000514963 +/- 1.46959e-06
+   Incoming Energy [18.772637663884094, 20.6314015152425)
+     Total Material
+       Fission Rate                         0.00151426 +/- 5.94943e-06
+       (n,gamma)                            0.00471345 +/- 1.61878e-05
+   Incoming Energy [20.6314015152425, 22.674209991388217)
+     Total Material
+       Fission Rate                         0.000126437 +/- 4.24138e-07
+       (n,gamma)                            0.00827834 +/- 2.91122e-05
+   Incoming Energy [22.674209991388217, 24.919286183914213)
+     Total Material
+       Fission Rate                         0.00100512 +/- 2.54677e-06
+       (n,gamma)                            0.00122194 +/- 3.46756e-06
+   Incoming Energy [24.919286183914213, 27.386657535220166)
+     Total Material
+       Fission Rate                         0.000842886 +/- 2.27314e-06
+       (n,gamma)                            0.000287476 +/- 7.57478e-07
+   Incoming Energy [27.386657535220166, 30.098334495455507)
+     Total Material
+       Fission Rate                         0.00039199 +/- 1.40001e-06
+       (n,gamma)                            0.000341275 +/- 9.91801e-07
+   Incoming Energy [30.098334495455507, 33.078506869094795)
+     Total Material
+       Fission Rate                         0.000540002 +/- 2.24042e-06
+       (n,gamma)                            0.000726152 +/- 2.21901e-06
+   Incoming Energy [33.078506869094795, 36.35375960267698)
+     Total Material
+       Fission Rate                         0.00174178 +/- 5.85521e-06
+       (n,gamma)                            0.00452237 +/- 1.51621e-05
+   Incoming Energy [36.35375960267698, 39.95330993866583)
+     Total Material
+       Fission Rate                         0.000514683 +/- 2.23535e-06
+       (n,gamma)                            0.0062004 +/- 2.04131e-05
+   Incoming Energy [39.95330993866583, 43.90926805098722)
+     Total Material
+       Fission Rate                         0.000562731 +/- 1.4716e-06
+       (n,gamma)                            0.000723215 +/- 2.14039e-06
+   Incoming Energy [43.90926805098722, 48.25692348727156)
+     Total Material
+       Fission Rate                         0.000727484 +/- 2.09651e-06
+       (n,gamma)                            0.000372121 +/- 1.07235e-06
+   Incoming Energy [48.25692348727156, 53.03505997303976)
+     Total Material
+       Fission Rate                         0.0011392 +/- 3.59914e-06
+       (n,gamma)                            0.000578653 +/- 1.82153e-06
+   Incoming Energy [53.03505997303976, 58.28630138607608)
+     Total Material
+       Fission Rate                         0.00122826 +/- 3.89263e-06
+       (n,gamma)                            0.000604337 +/- 2.03548e-06
+   Incoming Energy [58.28630138607608, 64.05749198729093)
+     Total Material
+       Fission Rate                         0.000497812 +/- 1.3005e-06
+       (n,gamma)                            0.000335773 +/- 9.01973e-07
+   Incoming Energy [64.05749198729093, 70.40011429996304)
+     Total Material
+       Fission Rate                         0.000225836 +/- 9.41787e-07
+       (n,gamma)                            0.00422711 +/- 2.00148e-05
+   Incoming Energy [70.40011429996304, 77.3707483650963)
+     Total Material
+       Fission Rate                         0.00070813 +/- 2.40859e-06
+       (n,gamma)                            0.000306405 +/- 1.02177e-06
+   Incoming Energy [77.3707483650963, 85.03157646973001)
+     Total Material
+       Fission Rate                         0.000543539 +/- 1.76868e-06
+       (n,gamma)                            0.00217043 +/- 1.36493e-05
+   Incoming Energy [85.03157646973001, 93.45093785068441)
+     Total Material
+       Fission Rate                         0.000559049 +/- 1.55313e-06
+       (n,gamma)                            0.000600082 +/- 2.33391e-06
+   Incoming Energy [93.45093785068441, 102.70393832203415)
+     Total Material
+       Fission Rate                         0.000294595 +/- 1.0036e-06
+       (n,gamma)                            0.00221799 +/- 9.87188e-06
+   Incoming Energy [102.70393832203415, 112.87312026455946)
+     Total Material
+       Fission Rate                         0.00030193 +/- 1.01423e-06
+       (n,gamma)                            0.00132729 +/- 5.57595e-06
+   Incoming Energy [112.87312026455946, 124.04919895388676)
+     Total Material
+       Fission Rate                         0.000456527 +/- 1.54573e-06
+       (n,gamma)                            0.00230387 +/- 1.35488e-05
+   Incoming Energy [124.04919895388676, 136.33187179581012)
+     Total Material
+       Fission Rate                         0.000688766 +/- 2.10957e-06
+       (n,gamma)                            0.000362411 +/- 1.20628e-06
+   Incoming Energy [136.33187179581012, 149.83070768766797)
+     Total Material
+       Fission Rate                         0.000355686 +/- 1.14764e-06
+       (n,gamma)                            0.000801123 +/- 5.46162e-06
+   Incoming Energy [149.83070768766797, 164.6661244394165)
+     Total Material
+       Fission Rate                         0.000366266 +/- 1.10056e-06
+       (n,gamma)                            0.000392939 +/- 1.24013e-06
+   Incoming Energy [164.6661244394165, 180.97046297358665)
+     Total Material
+       Fission Rate                         0.000499845 +/- 1.50325e-06
+       (n,gamma)                            0.00126527 +/- 7.57648e-06
+   Incoming Energy [180.97046297358665, 198.88916788664469)
+     Total Material
+       Fission Rate                         0.0002783 +/- 9.10962e-07
+       (n,gamma)                            0.0014485 +/- 5.92638e-06
+   Incoming Energy [198.88916788664469, 218.5820849030789)
+     Total Material
+       Fission Rate                         0.000401463 +/- 1.33607e-06
+       (n,gamma)                            0.00140001 +/- 7.44851e-06
+   Incoming Energy [218.5820849030789, 240.22488679628626)
+     Total Material
+       Fission Rate                         0.000528112 +/- 1.687e-06
+       (n,gamma)                            0.00132645 +/- 8.47694e-06
+   Incoming Energy [240.22488679628626, 264.0106404963455)
+     Total Material
+       Fission Rate                         0.000500316 +/- 1.4225e-06
+       (n,gamma)                            0.00030522 +/- 1.11136e-06
+   Incoming Energy [264.0106404963455, 290.15152936422686)
+     Total Material
+       Fission Rate                         0.000481892 +/- 1.54145e-06
+       (n,gamma)                            0.00116012 +/- 7.50874e-06
+   Incoming Energy [290.15152936422686, 318.8807459961643)
+     Total Material
+       Fission Rate                         0.000221689 +/- 6.27427e-07
+       (n,gamma)                            0.000975134 +/- 6.34486e-06
+   Incoming Energy [318.8807459961643, 350.45457244316333)
+     Total Material
+       Fission Rate                         0.000380132 +/- 1.10669e-06
+       (n,gamma)                            0.000747128 +/- 4.61612e-06
+   Incoming Energy [350.45457244316333, 385.1546664024612)
+     Total Material
+       Fission Rate                         0.00025702 +/- 7.04805e-07
+       (n,gamma)                            0.00032885 +/- 1.66405e-06
+   Incoming Energy [385.1546664024612, 423.2905737751492)
+     Total Material
+       Fission Rate                         0.000243316 +/- 6.73849e-07
+       (n,gamma)                            0.00103439 +/- 7.11929e-06
+   Incoming Energy [423.2905737751492, 465.20249000350606)
+     Total Material
+       Fission Rate                         0.00032493 +/- 9.4203e-07
+       (n,gamma)                            0.000915942 +/- 6.12102e-06
+   Incoming Energy [465.20249000350606, 511.2642948208451)
+     Total Material
+       Fission Rate                         0.000330576 +/- 9.1899e-07
+       (n,gamma)                            0.000426035 +/- 2.88851e-06
+   Incoming Energy [511.2642948208451, 561.8868874856754)
+     Total Material
+       Fission Rate                         0.000316979 +/- 1.00065e-06
+       (n,gamma)                            0.000961552 +/- 5.55828e-06
+   Incoming Energy [561.8868874856754, 617.5218522525057)
+     Total Material
+       Fission Rate                         0.000337717 +/- 9.29615e-07
+       (n,gamma)                            0.000761742 +/- 4.71694e-06
+   Incoming Energy [617.5218522525057, 678.6654867775105)
+     Total Material
+       Fission Rate                         0.000232571 +/- 5.63938e-07
+       (n,gamma)                            0.000992888 +/- 5.49471e-06
+   Incoming Energy [678.6654867775105, 745.8632293948696)
+     Total Material
+       Fission Rate                         0.000253438 +/- 6.3294e-07
+       (n,gamma)                            0.000875812 +/- 4.49772e-06
+   Incoming Energy [745.8632293948696, 819.714524757792)
+     Total Material
+       Fission Rate                         0.000257676 +/- 7.23842e-07
+       (n,gamma)                            0.000548635 +/- 2.91524e-06
+   Incoming Energy [819.714524757792, 900.8781712486926)
+     Total Material
+       Fission Rate                         0.000174228 +/- 4.59772e-07
+       (n,gamma)                            0.000901014 +/- 4.6319e-06
+   Incoming Energy [900.8781712486926, 990.0781978606417)
+     Total Material
+       Fission Rate                         0.00018312 +/- 4.89578e-07
+       (n,gamma)                            0.000887975 +/- 4.20823e-06
+   Incoming Energy [990.0781978606417, 1088.1103229754835)
+     Total Material
+       Fission Rate                         0.000167812 +/- 4.93467e-07
+       (n,gamma)                            0.000624165 +/- 2.54691e-06
+   Incoming Energy [1088.1103229754835, 1195.8490526547887)
+     Total Material
+       Fission Rate                         0.000222153 +/- 6.02878e-07
+       (n,gamma)                            0.00106232 +/- 4.69417e-06
+   Incoming Energy [1195.8490526547887, 1314.255481764768)
+     Total Material
+       Fission Rate                         0.000175422 +/- 3.73268e-07
+       (n,gamma)                            0.000565234 +/- 2.49654e-06
+   Incoming Energy [1314.255481764768, 1444.3858675258355)
+     Total Material
+       Fission Rate                         0.000190033 +/- 5.15472e-07
+       (n,gamma)                            0.000577248 +/- 2.65258e-06
+   Incoming Energy [1444.3858675258355, 1587.4010519681954)
+     Total Material
+       Fission Rate                         0.000144495 +/- 4.2944e-07
+       (n,gamma)                            0.000425728 +/- 1.90869e-06
+   Incoming Energy [1587.4010519681954, 1744.576817347371)
+     Total Material
+       Fission Rate                         0.000163617 +/- 5.09804e-07
+       (n,gamma)                            0.000627539 +/- 2.98587e-06
+   Incoming Energy [1744.576817347371, 1917.3152668963014)
+     Total Material
+       Fission Rate                         0.000149636 +/- 4.08184e-07
+       (n,gamma)                            0.000524589 +/- 2.55315e-06
+   Incoming Energy [1917.3152668963014, 2107.1573324372966)
+     Total Material
+       Fission Rate                         0.000142399 +/- 3.54791e-07
+       (n,gamma)                            0.000531504 +/- 1.97317e-06
+   Incoming Energy [2107.1573324372966, 2315.796520429223)
+     Total Material
+       Fission Rate                         0.000130151 +/- 2.98543e-07
+       (n,gamma)                            0.000551736 +/- 2.34726e-06
+   Incoming Energy [2315.796520429223, 2545.0940190730453)
+     Total Material
+       Fission Rate                         0.000142566 +/- 3.28953e-07
+       (n,gamma)                            0.000555827 +/- 2.3553e-06
+   Incoming Energy [2545.0940190730453, 2797.095301240373)
+     Total Material
+       Fission Rate                         0.000123864 +/- 2.98441e-07
+       (n,gamma)                            0.000509138 +/- 1.84918e-06
+   Incoming Energy [2797.095301240373, 3074.0483713330595)
+     Total Material
+       Fission Rate                         0.000123058 +/- 2.9668e-07
+       (n,gamma)                            0.000472362 +/- 1.84576e-06
+   Incoming Energy [3074.0483713330595, 3378.4238188469626)
+     Total Material
+       Fission Rate                         0.000122477 +/- 3.22485e-07
+       (n,gamma)                            0.000571006 +/- 2.08165e-06
+   Incoming Energy [3378.4238188469626, 3712.936857529971)
+     Total Material
+       Fission Rate                         0.000119136 +/- 3.02239e-07
+       (n,gamma)                            0.000423107 +/- 1.6622e-06
+   Incoming Energy [3712.936857529971, 4080.5715467367395)
+     Total Material
+       Fission Rate                         0.000117554 +/- 2.63381e-07
+       (n,gamma)                            0.000426699 +/- 1.34981e-06
+   Incoming Energy [4080.5715467367395, 4484.6074110494055)
+     Total Material
+       Fission Rate                         0.000113397 +/- 2.68578e-07
+       (n,gamma)                            0.000404115 +/- 1.42727e-06
+   Incoming Energy [4484.6074110494055, 4928.648695627629)
+     Total Material
+       Fission Rate                         0.000101896 +/- 2.64556e-07
+       (n,gamma)                            0.000449461 +/- 1.38278e-06
+   Incoming Energy [4928.648695627629, 5416.656518263159)
+     Total Material
+       Fission Rate                         0.000100472 +/- 2.27904e-07
+       (n,gamma)                            0.000369583 +/- 1.32932e-06
+   Incoming Energy [5416.656518263159, 5952.984204954861)
+     Total Material
+       Fission Rate                         0.000101387 +/- 2.61807e-07
+       (n,gamma)                            0.000441427 +/- 1.44163e-06
+   Incoming Energy [5952.984204954861, 6542.416124219223)
+     Total Material
+       Fission Rate                         8.67524e-05 +/- 2.19839e-07
+       (n,gamma)                            0.000431282 +/- 1.5103e-06
+   Incoming Energy [6542.416124219223, 7190.210366561592)
+     Total Material
+       Fission Rate                         8.71468e-05 +/- 2.00904e-07
+       (n,gamma)                            0.000390202 +/- 1.23686e-06
+   Incoming Energy [7190.210366561592, 7902.145649835043)
+     Total Material
+       Fission Rate                         8.15486e-05 +/- 1.95034e-07
+       (n,gamma)                            0.00036754 +/- 1.04636e-06
+   Incoming Energy [7902.145649835043, 8684.572868911482)
+     Total Material
+       Fission Rate                         7.82971e-05 +/- 1.57987e-07
+       (n,gamma)                            0.000358958 +/- 1.0219e-06
+   Incoming Energy [8684.572868911482, 9544.471749518836)
+     Total Material
+       Fission Rate                         8.18261e-05 +/- 1.78512e-07
+       (n,gamma)                            0.000362385 +/- 1.12852e-06
+   Incoming Energy [9544.471749518836, 10489.513111631108)
+     Total Material
+       Fission Rate                         7.79509e-05 +/- 1.84926e-07
+       (n,gamma)                            0.00039246 +/- 1.15625e-06
+   Incoming Energy [10489.513111631108, 11528.127297838964)
+     Total Material
+       Fission Rate                         7.94253e-05 +/- 1.66222e-07
+       (n,gamma)                            0.000339966 +/- 8.36559e-07
+   Incoming Energy [11528.127297838964, 12669.579377122778)
+     Total Material
+       Fission Rate                         7.23126e-05 +/- 1.47622e-07
+       (n,gamma)                            0.000330057 +/- 9.0935e-07
+   Incoming Energy [12669.579377122778, 13924.051794891657)
+     Total Material
+       Fission Rate                         7.65387e-05 +/- 1.73332e-07
+       (n,gamma)                            0.00037398 +/- 9.79155e-07
+   Incoming Energy [13924.051794891657, 15302.735206577547)
+     Total Material
+       Fission Rate                         7.40242e-05 +/- 1.61545e-07
+       (n,gamma)                            0.000332068 +/- 8.39028e-07
+   Incoming Energy [15302.735206577547, 16817.928305074292)
+     Total Material
+       Fission Rate                         6.86797e-05 +/- 1.49424e-07
+       (n,gamma)                            0.000315184 +/- 8.48205e-07
+   Incoming Energy [16817.928305074292, 18483.147532543342)
+     Total Material
+       Fission Rate                         6.72404e-05 +/- 1.49074e-07
+       (n,gamma)                            0.000305964 +/- 7.88554e-07
+   Incoming Energy [18483.147532543342, 20313.247655282707)
+     Total Material
+       Fission Rate                         6.93403e-05 +/- 1.4915e-07
+       (n,gamma)                            0.000292841 +/- 6.57142e-07
+   Incoming Energy [20313.247655282707, 22324.554277259027)
+     Total Material
+       Fission Rate                         6.56857e-05 +/- 1.41595e-07
+       (n,gamma)                            0.000299389 +/- 6.66182e-07
+   Incoming Energy [22324.554277259027, 24535.009474404305)
+     Total Material
+       Fission Rate                         6.45585e-05 +/- 1.35211e-07
+       (n,gamma)                            0.000291893 +/- 6.19661e-07
+   Incoming Energy [24535.009474404305, 26964.3318488246)
+     Total Material
+       Fission Rate                         6.33367e-05 +/- 1.2914e-07
+       (n,gamma)                            0.000285445 +/- 6.07424e-07
+   Incoming Energy [26964.3318488246, 29634.192430699786)
+     Total Material
+       Fission Rate                         6.30261e-05 +/- 1.10679e-07
+       (n,gamma)                            0.000277801 +/- 4.74769e-07
+   Incoming Energy [29634.192430699786, 32568.407997026705)
+     Total Material
+       Fission Rate                         6.24895e-05 +/- 1.31285e-07
+       (n,gamma)                            0.000270196 +/- 5.53943e-07
+   Incoming Energy [32568.407997026705, 35793.153531727454)
+     Total Material
+       Fission Rate                         6.14381e-05 +/- 1.26498e-07
+       (n,gamma)                            0.000260368 +/- 5.6056e-07
+   Incoming Energy [35793.153531727454, 39337.19572239392)
+     Total Material
+       Fission Rate                         6.05512e-05 +/- 1.23752e-07
+       (n,gamma)                            0.000252118 +/- 5.22658e-07
+   Incoming Energy [39337.19572239392, 43232.14957660196)
+     Total Material
+       Fission Rate                         5.98284e-05 +/- 1.38204e-07
+       (n,gamma)                            0.000244574 +/- 5.87682e-07
+   Incoming Energy [43232.14957660196, 47512.76044697024)
+     Total Material
+       Fission Rate                         5.88911e-05 +/- 1.17882e-07
+       (n,gamma)                            0.00023182 +/- 4.58992e-07
+   Incoming Energy [47512.76044697024, 52217.21398079567)
+     Total Material
+       Fission Rate                         5.9221e-05 +/- 1.1741e-07
+       (n,gamma)                            0.000217478 +/- 4.43374e-07
+   Incoming Energy [52217.21398079567, 57387.47675920526)
+     Total Material
+       Fission Rate                         5.94841e-05 +/- 1.21834e-07
+       (n,gamma)                            0.000204561 +/- 4.21863e-07
+   Incoming Energy [57387.47675920526, 63069.67066453477)
+     Total Material
+       Fission Rate                         5.96224e-05 +/- 1.14007e-07
+       (n,gamma)                            0.000192174 +/- 3.81264e-07
+   Incoming Energy [63069.67066453477, 69314.48431551465)
+     Total Material
+       Fission Rate                         5.91888e-05 +/- 1.12231e-07
+       (n,gamma)                            0.000180536 +/- 3.55949e-07
+   Incoming Energy [69314.48431551465, 76177.62524051616)
+     Total Material
+       Fission Rate                         5.89088e-05 +/- 1.18863e-07
+       (n,gamma)                            0.000171023 +/- 3.54736e-07
+   Incoming Energy [76177.62524051616, 83720.31682252068)
+     Total Material
+       Fission Rate                         5.79821e-05 +/- 1.16381e-07
+       (n,gamma)                            0.000160389 +/- 3.2768e-07
+   Incoming Energy [83720.31682252068, 92009.84444885768)
+     Total Material
+       Fission Rate                         5.72383e-05 +/- 1.18779e-07
+       (n,gamma)                            0.000151062 +/- 3.20629e-07
+   Incoming Energy [92009.84444885768, 101120.15573770089)
+     Total Material
+       Fission Rate                         5.79511e-05 +/- 1.1482e-07
+       (n,gamma)                            0.000144418 +/- 2.90947e-07
+   Incoming Energy [101120.15573770089, 111132.52019571078)
+     Total Material
+       Fission Rate                         5.83458e-05 +/- 1.09978e-07
+       (n,gamma)                            0.000138764 +/- 2.54843e-07
+   Incoming Energy [111132.52019571078, 122136.25419136364)
+     Total Material
+       Fission Rate                         5.74182e-05 +/- 1.05339e-07
+       (n,gamma)                            0.000132452 +/- 2.44955e-07
+   Incoming Energy [122136.25419136364, 134229.51771117194)
+     Total Material
+       Fission Rate                         5.76106e-05 +/- 1.10823e-07
+       (n,gamma)                            0.000128667 +/- 2.52505e-07
+   Incoming Energy [134229.51771117194, 147520.19000634993)
+     Total Material
+       Fission Rate                         5.79033e-05 +/- 1.10886e-07
+       (n,gamma)                            0.000125179 +/- 2.39395e-07
+   Incoming Energy [147520.19000634993, 162126.8319412162)
+     Total Material
+       Fission Rate                         5.83146e-05 +/- 1.14137e-07
+       (n,gamma)                            0.000122954 +/- 2.41895e-07
+   Incoming Energy [162126.8319412162, 178179.74362806763)
+     Total Material
+       Fission Rate                         5.82502e-05 +/- 1.01361e-07
+       (n,gamma)                            0.000120431 +/- 2.0948e-07
+   Incoming Energy [178179.74362806763, 195822.12678327717)
+     Total Material
+       Fission Rate                         5.8636e-05 +/- 1.11761e-07
+       (n,gamma)                            0.000118951 +/- 2.26474e-07
+   Incoming Energy [195822.12678327717, 215211.36217352576)
+     Total Material
+       Fission Rate                         5.9283e-05 +/- 1.0919e-07
+       (n,gamma)                            0.000118285 +/- 2.1802e-07
+   Incoming Energy [215211.36217352576, 236520.41354776858)
+     Total Material
+       Fission Rate                         5.98506e-05 +/- 8.94732e-08
+       (n,gamma)                            0.000118192 +/- 1.76663e-07
+   Incoming Energy [236520.41354776858, 259939.37057886977)
+     Total Material
+       Fission Rate                         6.05309e-05 +/- 1.01879e-07
+       (n,gamma)                            0.000118553 +/- 1.99478e-07
+   Incoming Energy [259939.37057886977, 285677.14457886684)
+     Total Material
+       Fission Rate                         6.1301e-05 +/- 1.08231e-07
+       (n,gamma)                            0.000120352 +/- 2.12467e-07
+   Incoming Energy [285677.14457886684, 313963.3321146796)
+     Total Material
+       Fission Rate                         6.11701e-05 +/- 9.48377e-08
+       (n,gamma)                            0.000119411 +/- 1.85547e-07
+   Incoming Energy [313963.3321146796, 345050.26314885885)
+     Total Material
+       Fission Rate                         6.40761e-05 +/- 1.02597e-07
+       (n,gamma)                            0.000121061 +/- 1.93895e-07
+   Incoming Energy [345050.26314885885, 379215.2519760141)
+     Total Material
+       Fission Rate                         5.3259e-05 +/- 9.70421e-08
+       (n,gamma)                            9.91367e-05 +/- 1.80749e-07
+   Incoming Energy [379215.2519760141, 416763.07103464636)
+     Total Material
+       Fission Rate                         4.59463e-05 +/- 8.70593e-08
+       (n,gamma)                            8.50172e-05 +/- 1.61107e-07
+   Incoming Energy [416763.07103464636, 458028.66966230544)
+     Total Material
+       Fission Rate                         3.72489e-05 +/- 7.18344e-08
+       (n,gamma)                            7.03076e-05 +/- 1.35589e-07
+   Incoming Energy [458028.66966230544, 503380.16204699164)
+     Total Material
+       Fission Rate                         5.28865e-05 +/- 8.88808e-08
+       (n,gamma)                            0.000103018 +/- 1.73327e-07
+   Incoming Energy [503380.16204699164, 553222.1110291516)
+     Total Material
+       Fission Rate                         6.0431e-05 +/- 1.04276e-07
+       (n,gamma)                            0.000119893 +/- 2.06834e-07
+   Incoming Energy [553222.1110291516, 607999.1370477966)
+     Total Material
+       Fission Rate                         6.34654e-05 +/- 1.02558e-07
+       (n,gamma)                            0.0001293 +/- 2.09065e-07
+   Incoming Energy [607999.1370477966, 668199.8844246987)
+     Total Material
+       Fission Rate                         6.68103e-05 +/- 9.89593e-08
+       (n,gamma)                            0.000141355 +/- 2.09231e-07
+   Incoming Energy [668199.8844246987, 734361.3803683389)
+     Total Material
+       Fission Rate                         7.16259e-05 +/- 1.12765e-07
+       (n,gamma)                            0.000153297 +/- 2.41361e-07
+   Incoming Energy [734361.3803683389, 807073.825582599)
+     Total Material
+       Fission Rate                         8.34637e-05 +/- 1.52755e-07
+       (n,gamma)                            0.000169578 +/- 3.10195e-07
+   Incoming Energy [807073.825582599, 886985.8592152856)
+     Total Material
+       Fission Rate                         8.32603e-05 +/- 1.20425e-07
+       (n,gamma)                            0.000160215 +/- 2.31704e-07
+   Incoming Energy [886985.8592152856, 974810.3451130404)
+     Total Material
+       Fission Rate                         7.76271e-05 +/- 1.31466e-07
+       (n,gamma)                            0.000134348 +/- 2.26661e-07
+   Incoming Energy [974810.3451130404, 1071330.730999583)
+     Total Material
+       Fission Rate                         7.08411e-05 +/- 1.09823e-07
+       (n,gamma)                            0.000115259 +/- 1.76754e-07
+   Incoming Energy [1071330.730999583, 1177408.0373049495)
+     Total Material
+       Fission Rate                         0.000104786 +/- 1.6209e-07
+       (n,gamma)                            0.000128224 +/- 1.97679e-07
+   Incoming Energy [1177408.0373049495, 1293988.537990354)
+     Total Material
+       Fission Rate                         0.000125252 +/- 1.76985e-07
+       (n,gamma)                            0.000126214 +/- 1.81203e-07
+   Incoming Energy [1293988.537990354, 1422112.2018863384)
+     Total Material
+       Fission Rate                         0.000233146 +/- 3.50806e-07
+       (n,gamma)                            0.000102746 +/- 1.45672e-07
+   Incoming Energy [1422112.2018863384, 1562921.969845991)
+     Total Material
+       Fission Rate                         0.000523377 +/- 9.73722e-07
+       (n,gamma)                            0.000102006 +/- 1.88036e-07
+   Incoming Energy [1562921.969845991, 1717673.950471101)
+     Total Material
+       Fission Rate                         0.000642078 +/- 1.02942e-06
+       (n,gamma)                            8.74089e-05 +/- 1.40382e-07
+   Incoming Energy [1717673.950471101, 1887748.625363382)
+     Total Material
+       Fission Rate                         0.000723929 +/- 1.16671e-06
+       (n,gamma)                            7.98785e-05 +/- 1.28194e-07
+   Incoming Energy [1887748.625363382, 2074663.1638582961)
+     Total Material
+       Fission Rate                         0.000735486 +/- 1.17873e-06
+       (n,gamma)                            6.42816e-05 +/- 1.04027e-07
+   Incoming Energy [2074663.1638582961, 2280084.9570964226)
+     Total Material
+       Fission Rate                         0.00082389 +/- 1.35228e-06
+       (n,gamma)                            5.73459e-05 +/- 9.33712e-08
+   Incoming Energy [2280084.9570964226, 2505846.492164587)
+     Total Material
+       Fission Rate                         0.000926016 +/- 1.47311e-06
+       (n,gamma)                            5.20005e-05 +/- 8.41941e-08
+   Incoming Energy [2505846.492164587, 2753961.698992977)
+     Total Material
+       Fission Rate                         0.000853331 +/- 1.23548e-06
+       (n,gamma)                            3.83608e-05 +/- 5.54015e-08
+   Incoming Energy [2753961.698992977, 3026643.9158325363)
+     Total Material
+       Fission Rate                         0.000726058 +/- 1.18881e-06
+       (n,gamma)                            2.57559e-05 +/- 4.22029e-08
+   Incoming Energy [3026643.9158325363, 3326325.633575731)
+     Total Material
+       Fission Rate                         0.000639952 +/- 1.17203e-06
+       (n,gamma)                            1.73462e-05 +/- 3.16075e-08
+   Incoming Energy [3326325.633575731, 3655680.195051801)
+     Total Material
+       Fission Rate                         0.000513391 +/- 9.90583e-07
+       (n,gamma)                            9.94036e-06 +/- 1.91241e-08
+   Incoming Energy [3655680.195051801, 4017645.642867472)
+     Total Material
+       Fission Rate                         0.000467164 +/- 9.61165e-07
+       (n,gamma)                            6.2814e-06 +/- 1.28468e-08
+   Incoming Energy [4017645.642867472, 4415450.928530486)
+     Total Material
+       Fission Rate                         0.000443485 +/- 9.50708e-07
+       (n,gamma)                            4.04135e-06 +/- 8.7448e-09
+   Incoming Energy [4415450.928530486, 4852644.716656989)
+     Total Material
+       Fission Rate                         0.00036948 +/- 9.99597e-07
+       (n,gamma)                            2.19615e-06 +/- 5.90835e-09
+   Incoming Energy [4852644.716656989, 5333127.041213886)
+     Total Material
+       Fission Rate                         0.000297066 +/- 7.68048e-07
+       (n,gamma)                            1.248e-06 +/- 3.23927e-09
+   Incoming Energy [5333127.041213886, 5861184.096189258)
+     Total Material
+       Fission Rate                         0.00022681 +/- 6.96447e-07
+       (n,gamma)                            7.56964e-07 +/- 2.32035e-09
+   Incoming Energy [5861184.096189258, 6441526.471044417)
+     Total Material
+       Fission Rate                         0.000202311 +/- 7.47155e-07
+       (n,gamma)                            4.87407e-07 +/- 1.77843e-09
+   Incoming Energy [6441526.471044417, 7079331.172031137)
+     Total Material
+       Fission Rate                         0.000193769 +/- 9.86604e-07
+       (n,gamma)                            3.15894e-07 +/- 1.61372e-09
+   Incoming Energy [7079331.172031137, 7780287.804230027)
+     Total Material
+       Fission Rate                         0.000134342 +/- 6.89826e-07
+       (n,gamma)                            1.79243e-07 +/- 9.19409e-10
+   Incoming Energy [7780287.804230027, 8550649.326281369)
+     Total Material
+       Fission Rate                         8.90299e-05 +/- 5.95778e-07
+       (n,gamma)                            1.09274e-07 +/- 7.31135e-10
+   Incoming Energy [8550649.326281369, 9397287.830571635)
+     Total Material
+       Fission Rate                         5.38076e-05 +/- 5.60075e-07
+       (n,gamma)                            6.73158e-08 +/- 6.99879e-10
+   Incoming Energy [9397287.830571635, 10327755.84646913)
+     Total Material
+       Fission Rate                         2.96363e-05 +/- 3.7998e-07
+       (n,gamma)                            4.07161e-08 +/- 5.23561e-10
+   Incoming Energy [10327755.84646913, 11350353.713470269)
+     Total Material
+       Fission Rate                         1.56807e-05 +/- 2.73842e-07
+       (n,gamma)                            2.22478e-08 +/- 3.88463e-10
+   Incoming Energy [11350353.713470269, 12474203.625266045)
+     Total Material
+       Fission Rate                         6.80883e-06 +/- 1.63684e-07
+       (n,gamma)                            9.31408e-09 +/- 2.23701e-10
+   Incoming Energy [12474203.625266045, 13709331.00524719)
+     Total Material
+       Fission Rate                         3.15146e-06 +/- 1.1017e-07
+       (n,gamma)                            3.66387e-09 +/- 1.27418e-10
+   Incoming Energy [13709331.00524719, 15066753.93936615)
+     Total Material
+       Fission Rate                         1.4872e-06 +/- 9.35813e-08
+       (n,gamma)                            1.28614e-09 +/- 8.16517e-11
+   Incoming Energy [15066753.93936615, 16558581.464151567)
+     Total Material
+       Fission Rate                         6.38699e-07 +/- 5.50198e-08
+       (n,gamma)                            3.93209e-10 +/- 3.38286e-11
+   Incoming Energy [16558581.464151567, 18198121.586664654)
+     Total Material
+       Fission Rate                         2.38543e-07 +/- 3.65521e-08
+       (n,gamma)                            1.13539e-10 +/- 1.73021e-11
+   Incoming Energy [18198121.586664654, 20000000.000000004)
+     Total Material
+       Fission Rate                         4.32434e-08 +/- 1.09644e-08
+       (n,gamma)                            1.76554e-11 +/- 4.4776e-12

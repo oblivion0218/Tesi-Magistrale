@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<materials>
+  <material id="1" name="cladding" temperature="600.0">
+    <density value="6.49" units="g/cm3"/>
+    <nuclide name="Zr90" ao="0.5145"/>
+    <nuclide name="Zr91" ao="0.1122"/>
+    <nuclide name="Zr92" ao="0.1715"/>
+    <nuclide name="Zr94" ao="0.1738"/>
+    <nuclide name="Zr96" ao="0.028"/>
+  </material>
+  <material id="2" name="water" temperature="350.0">
+    <density value="1.0628880233588527" units="g/cm3"/>
+    <nuclide name="H1" ao="0.15"/>
+    <nuclide name="H2" ao="0.85"/>
+    <nuclide name="O16" ao="0.999621"/>
+    <nuclide name="O17" ao="0.000379"/>
+    <sab name="c_D_in_D2O"/>
+    <sab name="c_H_in_H2O"/>
+  </material>
+  <material id="3" name="reflector" temperature="600.0">
+    <density value="1.75" units="g/cm3"/>
+    <nuclide name="C0" ao="1.0"/>
+  </material>
+  <material id="4" name="marker" temperature="600.0">
+    <density value="1e-10" units="g/cm3"/>
+    <nuclide name="He4" ao="1.0"/>
+  </material>
+  <material id="5" name="void_air" temperature="600.0">
+    <density value="1e-10" units="g/cm3"/>
+    <nuclide name="N14" ao="1"/>
+  </material>
+  <material id="6" name="mat_target" depletable="true" temperature="600.0">
+    <density value="10.96" units="g/cm3"/>
+    <nuclide name="U235" ao="0.007"/>
+    <nuclide name="U238" ao="0.993"/>
+    <nuclide name="O16" ao="2.0"/>
+  </material>
+  <material id="7" name="fuel_ring_0" depletable="true" temperature="600.0">
+    <density value="10.96" units="g/cm3"/>
+    <nuclide name="U235" ao="0.00065"/>
+    <nuclide name="U238" ao="0.99935"/>
+    <nuclide name="O16" ao="2.0"/>
+  </material>
+  <material id="8" name="fuel_ring_1" depletable="true" temperature="600.0">
+    <density value="10.96" units="g/cm3"/>
+    <nuclide name="U235" ao="0.008929166666666667"/>
+    <nuclide name="U238" ao="0.9910708333333333"/>
+    <nuclide name="O16" ao="2.0"/>
+  </material>
+  <material id="9" name="fuel_ring_2" depletable="true" temperature="600.0">
+    <density value="10.96" units="g/cm3"/>
+    <nuclide name="U235" ao="0.017208333333333336"/>
+    <nuclide name="U238" ao="0.9827916666666666"/>
+    <nuclide name="O16" ao="2.0"/>
+  </material>
+  <material id="10" name="fuel_ring_3" depletable="true" temperature="600.0">
+    <density value="10.96" units="g/cm3"/>
+    <nuclide name="U235" ao="0.025487500000000003"/>
+    <nuclide name="U238" ao="0.9745125"/>
+    <nuclide name="O16" ao="2.0"/>
+  </material>
+  <material id="11" name="fuel_ring_4" depletable="true" temperature="600.0">
+    <density value="10.96" units="g/cm3"/>
+    <nuclide name="U235" ao="0.03376666666666667"/>
+    <nuclide name="U238" ao="0.9662333333333333"/>
+    <nuclide name="O16" ao="2.0"/>
+  </material>
+  <material id="12" name="fuel_ring_5" depletable="true" temperature="600.0">
+    <density value="10.96" units="g/cm3"/>
+    <nuclide name="U235" ao="0.04204583333333334"/>
+    <nuclide name="U238" ao="0.9579541666666667"/>
+    <nuclide name="O16" ao="2.0"/>
+  </material>
+  <material id="13" name="fuel_ring_6" depletable="true" temperature="600.0">
+    <density value="10.96" units="g/cm3"/>
+    <nuclide name="U235" ao="0.050325"/>
+    <nuclide name="U238" ao="0.949675"/>
+    <nuclide name="O16" ao="2.0"/>
+  </material>
+  <material id="14" name="fuel_ring_7" depletable="true" temperature="600.0">
+    <density value="10.96" units="g/cm3"/>
+    <nuclide name="U235" ao="0.05860416666666667"/>
+    <nuclide name="U238" ao="0.9413958333333333"/>
+    <nuclide name="O16" ao="2.0"/>
+  </material>
+  <material id="15" name="fuel_ring_8" depletable="true" temperature="600.0">
+    <density value="10.96" units="g/cm3"/>
+    <nuclide name="U235" ao="0.06688333333333334"/>
+    <nuclide name="U238" ao="0.9331166666666667"/>
+    <nuclide name="O16" ao="2.0"/>
+  </material>
+  <material id="16" name="fuel_ring_9" depletable="true" temperature="600.0">
+    <density value="10.96" units="g/cm3"/>
+    <nuclide name="U235" ao="0.07516250000000001"/>
+    <nuclide name="U238" ao="0.9248375"/>
+    <nuclide name="O16" ao="2.0"/>
+  </material>
+  <material id="17" name="fuel_ring_10" depletable="true" temperature="600.0">
+    <density value="10.96" units="g/cm3"/>
+    <nuclide name="U235" ao="0.08344166666666668"/>
+    <nuclide name="U238" ao="0.9165583333333334"/>
+    <nuclide name="O16" ao="2.0"/>
+  </material>
+  <material id="18" name="fuel_ring_11" depletable="true" temperature="600.0">
+    <density value="10.96" units="g/cm3"/>
+    <nuclide name="U235" ao="0.09172083333333333"/>
+    <nuclide name="U238" ao="0.9082791666666666"/>
+    <nuclide name="O16" ao="2.0"/>
+  </material>
+  <material id="19" name="fuel_ring_12" depletable="true" temperature="600.0">
+    <density value="10.96" units="g/cm3"/>
+    <nuclide name="U235" ao="0.1"/>
+    <nuclide name="U238" ao="0.9"/>
+    <nuclide name="O16" ao="2.0"/>
+  </material>
+</materials>

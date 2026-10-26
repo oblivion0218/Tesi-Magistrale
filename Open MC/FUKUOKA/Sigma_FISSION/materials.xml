@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<materials>
+  <material id="22" name="fuel" depletable="true" temperature="600">
+    <density value="10.96" units="g/cm3"/>
+    <nuclide name="U235" ao="0.05"/>
+    <nuclide name="U238" ao="0.95"/>
+    <nuclide name="O16" ao="2.0"/>
+  </material>
+  <material id="23" name="cladding" temperature="600">
+    <density value="6.49" units="g/cm3"/>
+    <nuclide name="Zr90" ao="0.5145"/>
+    <nuclide name="Zr91" ao="0.1122"/>
+    <nuclide name="Zr92" ao="0.1715"/>
+    <nuclide name="Zr94" ao="0.1738"/>
+    <nuclide name="Zr96" ao="0.028"/>
+  </material>
+  <material id="24" name="water" temperature="300">
+    <density value="1.086480415094422" units="g/cm3"/>
+    <nuclide name="H1" ao="0.15"/>
+    <nuclide name="H2" ao="0.85"/>
+    <nuclide name="O16" ao="0.999621"/>
+    <nuclide name="O17" ao="0.000379"/>
+    <sab name="c_D_in_D2O"/>
+    <sab name="c_H_in_H2O"/>
+  </material>
+  <material id="25" name="reflector" temperature="600">
+    <density value="1.75" units="g/cm3"/>
+    <nuclide name="C0" ao="1.0"/>
+  </material>
+  <material id="26" name="marker">
+    <density value="1e-10" units="g/cm3"/>
+    <nuclide name="He4" ao="1.0"/>
+  </material>
+  <material id="27" name="void_air">
+    <density value="1e-10" units="g/cm3"/>
+    <nuclide name="N14" ao="1"/>
+  </material>
+  <material id="28" name="mat_target" depletable="true" temperature="600">
+    <density value="10.96" units="g/cm3"/>
+    <nuclide name="U235" ao="0.05"/>
+    <nuclide name="U238" ao="0.95"/>
+    <nuclide name="O16" ao="2.0"/>
+  </material>
+</materials>

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<materials>
+  <material id="1" name="Homogeneous" depletable="true">
+    <density value="5" units="g/cm3"/>
+    <nuclide name="H1" ao="2"/>
+    <nuclide name="U235" ao="0.05"/>
+    <nuclide name="U238" ao="0.95"/>
+  </material>
+</materials>

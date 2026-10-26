@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<plots>
+  <plot id="3" filename="reactor_xy" color_by="material" type="slice" basis="xy">
+    <pixels>800 800</pixels>
+    <origin>0.0 0.0 40.0</origin>
+    <width>156.0 156.0</width>
+    <color id="8" rgb="255 255 0"/>
+    <color id="9" rgb="211 211 211"/>
+    <color id="10" rgb="173 216 230"/>
+    <color id="11" rgb="0 128 0"/>
+    <color id="12" rgb="255 0 0"/>
+    <color id="13" rgb="255 255 255"/>
+    <color id="14" rgb="255 165 0"/>
+  </plot>
+  <plot id="4" filename="reactor_xz" color_by="material" type="slice" basis="xz">
+    <pixels>800 800</pixels>
+    <origin>0.0 0.0 32.5</origin>
+    <width>156.0 110.0</width>
+    <color id="8" rgb="255 255 0"/>
+    <color id="9" rgb="211 211 211"/>
+    <color id="10" rgb="173 216 230"/>
+    <color id="11" rgb="0 128 0"/>
+    <color id="12" rgb="255 0 0"/>
+    <color id="13" rgb="255 255 255"/>
+    <color id="14" rgb="255 165 0"/>
+  </plot>
+</plots>
