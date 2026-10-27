@@ -12,7 +12,7 @@
   <cell id="10" material="5" region="-7" universe="4"/>
   <cell id="11" material="6" region="-33 34 -35 -38 36 37 3 -4 7" universe="4"/>
   <hex_lattice id="3" name="core_hex_lattice" n_rings="13" orientation="x">
-    <pitch>5.326056233274297</pitch>
+    <pitch>6.213732272153346</pitch>
     <outer>2</outer>
     <center>0.0 0.0</center>
     <universes>
@@ -61,23 +61,23 @@
   <surface id="17" type="plane" coeffs="-1.7320508075688772 1.0 0.0 -0.9526279441628825"/>
   <surface id="18" type="plane" coeffs="1.7320508075688772 1.0 0.0 -0.9526279441628825"/>
   <surface id="19" type="plane" coeffs="-1.7320508075688772 1.0 0.0 0.9526279441628825"/>
-  <surface id="20" type="y-plane" coeffs="2.3062499999999995"/>
-  <surface id="21" type="y-plane" coeffs="-2.3062499999999995"/>
-  <surface id="22" type="plane" coeffs="1.7320508075688772 1.0 0.0 4.612499999999999"/>
-  <surface id="23" type="plane" coeffs="-1.7320508075688772 1.0 0.0 -4.612499999999999"/>
-  <surface id="24" type="plane" coeffs="1.7320508075688772 1.0 0.0 -4.612499999999999"/>
-  <surface id="25" type="plane" coeffs="-1.7320508075688772 1.0 0.0 4.612499999999999"/>
+  <surface id="20" type="y-plane" coeffs="2.6906249999999994"/>
+  <surface id="21" type="y-plane" coeffs="-2.6906249999999994"/>
+  <surface id="22" type="plane" coeffs="1.7320508075688772 1.0 0.0 5.381249999999999"/>
+  <surface id="23" type="plane" coeffs="-1.7320508075688772 1.0 0.0 -5.381249999999999"/>
+  <surface id="24" type="plane" coeffs="1.7320508075688772 1.0 0.0 -5.381249999999999"/>
+  <surface id="25" type="plane" coeffs="-1.7320508075688772 1.0 0.0 5.381249999999999"/>
   <surface id="26" type="z-cylinder" coeffs="0.0 0.0 2.0"/>
-  <surface id="27" type="y-plane" coeffs="59.96249999999999"/>
-  <surface id="28" type="y-plane" coeffs="-59.96249999999999"/>
-  <surface id="29" type="plane" coeffs="1.7320508075688772 1.0 0.0 119.92499999999998"/>
-  <surface id="30" type="plane" coeffs="-1.7320508075688772 1.0 0.0 -119.92499999999998"/>
-  <surface id="31" type="plane" coeffs="1.7320508075688772 1.0 0.0 -119.92499999999998"/>
-  <surface id="32" type="plane" coeffs="-1.7320508075688772 1.0 0.0 119.92499999999998"/>
-  <surface id="33" type="y-plane" boundary="vacuum" coeffs="68.62275403784437"/>
-  <surface id="34" type="y-plane" boundary="vacuum" coeffs="-68.62275403784437"/>
-  <surface id="35" type="plane" boundary="vacuum" coeffs="1.7320508075688772 1.0 0.0 137.24550807568875"/>
-  <surface id="36" type="plane" boundary="vacuum" coeffs="-1.7320508075688772 1.0 0.0 -137.24550807568875"/>
-  <surface id="37" type="plane" boundary="vacuum" coeffs="1.7320508075688772 1.0 0.0 -137.24550807568875"/>
-  <surface id="38" type="plane" boundary="vacuum" coeffs="-1.7320508075688772 1.0 0.0 137.24550807568875"/>
+  <surface id="27" type="y-plane" coeffs="69.95624999999998"/>
+  <surface id="28" type="y-plane" coeffs="-69.95624999999998"/>
+  <surface id="29" type="plane" coeffs="1.7320508075688772 1.0 0.0 139.91249999999997"/>
+  <surface id="30" type="plane" coeffs="-1.7320508075688772 1.0 0.0 -139.91249999999997"/>
+  <surface id="31" type="plane" coeffs="1.7320508075688772 1.0 0.0 -139.91249999999997"/>
+  <surface id="32" type="plane" coeffs="-1.7320508075688772 1.0 0.0 139.91249999999997"/>
+  <surface id="33" type="y-plane" boundary="vacuum" coeffs="78.61650403784436"/>
+  <surface id="34" type="y-plane" boundary="vacuum" coeffs="-78.61650403784436"/>
+  <surface id="35" type="plane" boundary="vacuum" coeffs="1.7320508075688772 1.0 0.0 157.23300807568873"/>
+  <surface id="36" type="plane" boundary="vacuum" coeffs="-1.7320508075688772 1.0 0.0 -157.23300807568873"/>
+  <surface id="37" type="plane" boundary="vacuum" coeffs="1.7320508075688772 1.0 0.0 -157.23300807568873"/>
+  <surface id="38" type="plane" boundary="vacuum" coeffs="-1.7320508075688772 1.0 0.0 157.23300807568873"/>
 </geometry>

@@ -2,8 +2,8 @@
 <tallies>
   <mesh id="1">
     <dimension>30 1 1</dimension>
-    <lower_left>-60.0 -60.0 0.0</lower_left>
-    <upper_right>60.0 60.0 80.0</upper_right>
+    <lower_left>-70.0 -70.0 0.0</lower_left>
+    <upper_right>70.0 70.0 80.0</upper_right>
   </mesh>
   <filter id="2" type="material">
     <bins>1</bins>
