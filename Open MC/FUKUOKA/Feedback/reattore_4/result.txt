@@ -81,30 +81,15 @@ MoltiplicatoreT_WATER [K]  T_FUEL [K]   K_EFF        STD_DEV
 2            335          335          1.07542      0.00013      
 2            325          325          1.07804      0.00014      
 2            315          315          1.08084      0.00016      
-2            305          305          1.08351      0.00015      
-
-
------- SIMULAZIONE DEL 04/11/2026 ALLE ORE 08:17 ------
-=== PARAMETRI DI SIMULAZIONE ===
-intensità sorgente: 2.02e+17 fotoni/s
-Arricchimento: 5.61 %
-Pressione di funzionamento: 101325 Pa
-percentuale di acqua leggera nella miscela: 15.00 % 
-RAGGGIO CORE: 70.0 cm
-REFLECTOR SIDE: 10.0 cm
-REFLECTOR BOTTOM: 15.0 cm
-H_CORE: 80.0 cm
-R_PIPE (Soglia): 5.0 cm
-Geometria PIN (R_FUEL, CLAD, R_WATER): 0.5, 0.05, 1.5 cm
-PITCH: 6.21373 cm
-Target (R, H, Pos): 2.0, 10.0, 40.0 cm
-Settings: 100 batches, 500000 particles, 10 inactive batches
-================================
-
-MoltiplicatoreT_WATER [K]  T_FUEL [K]   K_EFF        STD_DEV      
+2            305          305          1.08351      0.00015           
 1.75         350          350          1.09773      0.00016      
 1.75         350          400          1.09766      0.00014      
 1.75         350          450          1.09768      0.00015      
 1.75         350          500          1.09780      0.00014      
 1.75         350          550          1.09728      0.00015      
 1.75         350          600          1.09711      0.00014      
+1.75         345          345          1.09937      0.00015      
+1.75         335          335          1.10309      0.00015      
+1.75         325          325          1.10649      0.00015      
+1.75         315          315          1.10912      0.00018      
+1.75         305          305          1.11143      0.00014      
