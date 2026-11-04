@@ -79,15 +79,86 @@ w = 0.15    # percentuale acqua
 
 notebook_in = 'auto/auto.ipynb'
 
-a_m = 0.11        # a_m rappresenta l'arricimento più esterno
-ARR_MAX = 0.2
+## Limiti iniziali per la ricerca dell'arricchimento omogeneo (tra 5% e 6%)
+#a_homo_min = 0.05
+#a_homo_max = 0.06
+#max_bisection_iters = 15
+#
+#best_delta_k = np.inf
+#best_line = ""
+#converged = False
+#
+#iter_count = 0
+#
+#while iter_count < max_bisection_iters:
+#    # Calcolo dell'arricchimento omogeneo corrente
+#    a_homo = (a_homo_min + a_homo_max) / 2.0
+#    
+#    print(f"\n[BISEZIONE OMOGENEA] iter={iter_count+1}/{max_bisection_iters}: m={m:.3f}, a_homo={a_homo*100:.3f}% ...")
+#    
+#    # Esecuzione passando a_homo sia come arricchimento interno che esterno
+#    pm.execute_notebook(
+#        notebook_in,
+#        os.devnull,
+#        parameters=dict(moltiplicatore=m, pressione=p, water_perc=w, enrich_min=a_homo, enrich_max=a_homo, is_first_run=is_first, iter=i)
+#    )
+#
+#    is_first = False  
+#
+#    df_results = parse_result_auto('result_auto.txt')
+#    idx = len(df_results) - 1  
+#    
+#    k_auto = df_results['k_eff'].iloc[idx] 
+#    std_k_auto = df_results['std_dev'].iloc[idx]
+#    T_water = df_results['T_water_K'].iloc[idx]
+#    T_fuel = df_results['T_fuel_K'].iloc[idx]
+#    sigma = df_results['compatibility'].iloc[idx]
+#
+#    delta_k_abs = np.abs(k - k_auto)
+#    
+#    # Formattazione stringa usando a_homo per entrambe le colonne di arricchimento
+#    current_line = f"{p:<12.0f} {m:<15.3f} {w:<12.2f} {a_homo*100:<12.3f} {a_homo*100:<12.0f} {T_water:<12.0f} {T_fuel:<12.0f} {k:<12.5f} {std_k_max:<12.5f} {k_auto:<12.5f} {std_k_auto:<12.5f} {sigma:<12.5f}\n"
+#    
+#    # Tracking della migliore configurazione sub-critica
+#    if delta_k_abs < best_delta_k and k_auto < 1.0:
+#        best_delta_k = delta_k_abs
+#        best_line = current_line
+#
+#    # Controllo convergenza
+#    if delta_k_abs <= 0.00015:   # 15 PCM di tolleranza
+#        converged = True
+#        with open(output_file, "a") as f_out:
+#            f_out.write(best_line if best_line else current_line)
+#        print(f"-> CONVERGENZA RAGGIUNTA: a_homo = {a_homo*100:.3f}%")
+#        break
+#        
+#    # Aggiornamento limiti bisezione: 
+#    # Se k_auto è inferiore al target k, serve maggiore reattività (alzo il limite inferiore)
+#    if k_auto < k:
+#        a_homo_min = a_homo
+#    else:
+#        a_homo_max = a_homo
+#        
+#    iter_count += 1
+#    
+#if not converged:
+#    print(f"-> ATTENZIONE: Bisezione non ha raggiunto la tolleranza. Ultimo scarto = {delta_k_abs:.5f}")
+#    with open(output_file, "a") as f_out:
+#        f_out.write(best_line if best_line else current_line)
+#
+#os.system("rm *.h5 *.xml *.out *.png 2>/dev/null")
+
+
+### ARRICCHIMENTO RADIALE
+
+a_m = 0.007        # a_m rappresenta l'arricimento più esterno
+ARR_MAX = 0.008
 
 while a_m <= ARR_MAX: #itero fino al 20%
     
-    a_M_min = (0.118 * (a_m*100)**2 - 3.015*100*a_m + 18.670)/100 - 0.02    # da interpolazione parabolica
-    a_M_max = (0.118 * (a_m*100)**2 - 3.015*100*a_m + 18.670)/100 + 0.02   
+    a_M_min = (0.089 * (a_m*100)**2 - 2.684*100*a_m + 17.918)/100 - 0.01    # da interpolazione parabolica
+    a_M_max = (0.089 * (a_m*100)**2 - 2.684*100*a_m + 17.918)/100 + 0.01   
     
-
     #if a_m >= 0.10:
     #    a_M_max = 0
     #    a_M_min = 0
@@ -106,7 +177,7 @@ while a_m <= ARR_MAX: #itero fino al 20%
     iter_count = 0
     
     while iter_count < max_bisection_iters:
-        print(f"\n[BISEZIONE] iter={iter_count+1}/{max_bisection_iters}: m={m:.3f}, a_M={a_M*100:.2f}%, a_m={a_m*100:.0f}% ...")
+        print(f"\n[BISEZIONE] iter={iter_count+1}/{max_bisection_iters}: m={m:.3f}, a_M={a_M*100:.2f}%, a_m={a_m*100:.2f}% ...")
         
         pm.execute_notebook(    #a_M è max che è interno, FIGA
             notebook_in,
@@ -126,7 +197,7 @@ while a_m <= ARR_MAX: #itero fino al 20%
         sigma = df_results['compatibility'].iloc[idx]
 
         delta_k_abs = np.abs(k - k_auto)
-        current_line = f"{p:<12.0f} {m:<15.3f} {w:<12.2f} {a_M*100:<12.3f} {a_m*100:<12.0f} {T_water:<12.0f} {T_fuel:<12.0f} {k:<12.5f} {std_k_max:<12.5f} {k_auto:<12.5f} {std_k_auto:<12.5f} {sigma:<12.5f}\n"
+        current_line = f"{p:<12.0f} {m:<15.3f} {w:<12.2f} {a_M*100:<12.3f} {a_m*100:<12.3f} {T_water:<12.0f} {T_fuel:<12.0f} {k:<12.5f} {std_k_max:<12.5f} {k_auto:<12.5f} {std_k_auto:<12.5f} {sigma:<12.5f}\n"
         
         # Tracking della migliore configurazione sub-critica
         if delta_k_abs < best_delta_k and k_auto < 1.0:
@@ -155,5 +226,3 @@ while a_m <= ARR_MAX: #itero fino al 20%
             f_out.write(best_line if best_line else current_line)
 
     a_m = round(a_m + 0.01, 2)
-
-os.system("rm *.h5 *.xml *.out *.png 2>/dev/null")

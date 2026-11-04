@@ -1,0 +1,64 @@
+------ SIMULAZIONE DEL 02/11/2026 ALLE ORE 14:45 ------
+=== PARAMETRI DI SIMULAZIONE ===
+intensità sorgente: 2.02e+17 fotoni/s
+Arricchimento: 5.61 %
+target: 0.7%
+Pressione di funzionamento: 101325.0 Pa
+percentuale di acqua leggera nella miscela: 15.00 % 
+RAGGGIO CORE: 40.0 cm
+REFLECTOR SIDE: 10.0 cm
+REFLECTOR BOTTOM: 15.0 cm
+H_CORE: 80.0 cm
+R_PIPE (Soglia): 5.0 cm
+Geometria PIN (R_FUEL, CLAD, R_WATER): 0.5, 0.05, 1.5 cm
+PITCH: 3.55070 cm
+Target (R, H, Pos): 2.0, 10.0, 40.0 cm
+Settings: 120 batches, 500000 particles, 20 inactive batches
+================================
+
+T_WATER [K]  T_FUEL [K]   K_EFF        STD_DEV      
+350          350          0.97976      0.00012      
+
+
+------ SIMULAZIONE DEL 02/11/2026 ALLE ORE 15:26 ------
+=== PARAMETRI DI SIMULAZIONE ===
+intensità sorgente: 2.02e+17 fotoni/s
+Arricchimento: 5.00 %
+target: 5%
+Pressione di funzionamento: 101325.0 Pa
+percentuale di acqua leggera nella miscela: 15.00 % 
+RAGGGIO CORE: 40.0 cm
+REFLECTOR SIDE: 10.0 cm
+REFLECTOR BOTTOM: 15.0 cm
+H_CORE: 80.0 cm
+R_PIPE (Soglia): 5.0 cm
+Geometria PIN (R_FUEL, CLAD, R_WATER): 0.5, 0.05, 1.5 cm
+PITCH: 3.55070 cm
+Target (R, H, Pos): 2.0, 10.0, 40.0 cm
+Settings: 100 batches, 500000 particles, 10 inactive batches
+================================
+
+T_WATER [K]  T_FUEL [K]   K_EFF        STD_DEV      
+350          350          0.96277      0.00015      
+
+
+------ SIMULAZIONE DEL 02/11/2026 ALLE ORE 15:46 ------
+=== PARAMETRI DI SIMULAZIONE ===
+intensità sorgente: 2.02e+17 fotoni/s
+Arricchimento: 5.61 %
+target: 5%
+Pressione di funzionamento: 101325.0 Pa
+percentuale di acqua leggera nella miscela: 15.00 % 
+RAGGGIO CORE: 40.0 cm
+REFLECTOR SIDE: 10.0 cm
+REFLECTOR BOTTOM: 15.0 cm
+H_CORE: 80.0 cm
+R_PIPE (Soglia): 5.0 cm
+Geometria PIN (R_FUEL, CLAD, R_WATER): 0.5, 0.05, 1.5 cm
+PITCH: 3.55070 cm
+Target (R, H, Pos): 2.0, 10.0, 40.0 cm
+Settings: 100 batches, 500000 particles, 10 inactive batches
+================================
+
+T_WATER [K]  T_FUEL [K]   K_EFF        STD_DEV      
+350          350          0.98082      0.00013      

@@ -30,13 +30,9 @@ riga_partenza = 0
 # 2. Esecuzione ciclica con slicing del DataFrame
 for idx, row in df_results.iloc[riga_partenza:].iterrows():
     
-    # Condizione di skip se arricch_INT è 0
-    if row['arricch_INT'] == 0.000:
-        print(f"Skipping simulazione alla riga {idx}: arricch_INT è 0.")
-        continue
 
     # ID univoco per il salvataggio dei file
-    run_id = f"arr_ext_{row['arricch_EXT']:.0f}_pitch_{row['moltiplicatore']:.0f}"
+    run_id = f"arr_ext_{row['arricch_EXT']:.3f}_pitch_{row['moltiplicatore']:.0f}"
     
     print(f"Avvio simulazione fixed: {run_id} ...")
 
